@@ -7,7 +7,7 @@ on:
     branches: ['main']
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   changes:
@@ -18,6 +18,15 @@ jobs:
       needs_build: ${{ steps.filter.outputs.needs_build }}
       templates: ${{ steps.filter.outputs.templates }}
     steps:
+      - name: Print GitHub context
+          run: |
+            echo "GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME"
+            echo "GITHUB_REF: $GITHUB_REF"
+            echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+            echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+            echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
+            echo "GITHUB_BASE_REF: $GITHUB_BASE_REF"
+            echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
       # https://github.com/actions/virtual-environments/issues/1187
       - name: tune linux network
         run: sudo ethtool -K eth0 tx off rx off
