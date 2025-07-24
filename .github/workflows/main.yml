@@ -186,9 +186,23 @@ jobs:
     needs: core-build
     strategy:
       fail-fast: false
-      max-parallel: 1
       matrix:
-        part: [1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8]
+        suite:
+          - _community
+          - access-control
+          - admin
+          - auth
+          - field-error-states
+          - fields-relationship
+          - fields
+          - live-preview
+          - localization
+          - plugin-nested-docs
+          - plugin-seo
+          - refresh-permissions
+          - uploads
+          - versions
+        # part: [1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8]
 
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
@@ -240,7 +254,7 @@ jobs:
           retry_on: error
           max_attempts: 2
           timeout_minutes: 15
-          command: pnpm test:e2e --part ${{ matrix.part }} --bail
+          command: pnpm test:e2e ${{ matrix.suite }} --bail
 
   tests-type-generation:
     runs-on: ubuntu-24.04
