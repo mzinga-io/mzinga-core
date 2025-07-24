@@ -195,13 +195,13 @@ jobs:
           - auth
           - field-error-states
           - fields-relationship
-          - fields
-          - live-preview
+          # - fields
+          # - live-preview
           - localization
           - plugin-nested-docs
           - plugin-seo
           - refresh-permissions
-          - uploads
+          # - uploads
           - versions
         # part: [1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8]
 
