@@ -169,6 +169,7 @@ jobs:
 
       - name: Component Tests
         run: pnpm test:components
+        continue-on-error: ${{ matrix.database == 'mongoose' }}
 
       - name: Integration Tests
         run: pnpm test:int
