@@ -143,7 +143,7 @@ export const findTableRow = async (page: Page, title: string): Promise<Locator> 
 export function initPageConsoleErrorCatch(page: Page) {
   page.on('console', (msg) => {
     if (msg.type() === 'error' && !msg.text().includes('the server responded with a status of')) {
-      // the the server responded with a status of error happens frequently. Will ignore it for now.
+      // the server responded with a status of error happens frequently. Will ignore it for now.
       // Most importantly, this should catch react errors.
       throw new Error(`Browser console error: ${msg.text()}`)
     }
