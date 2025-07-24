@@ -6,7 +6,6 @@ on:
   push:
     branches: ['main']
 
-
 jobs:
   changes:
     runs-on: ubuntu-24.04
@@ -242,13 +241,6 @@ jobs:
           timeout_minutes: 15
           command: pnpm test:e2e --part ${{ matrix.part }} --bail
 
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: test-results
-          path: test-results/
-          retention-days: 1
-
   tests-type-generation:
     runs-on: ubuntu-24.04
     needs: core-build
@@ -366,6 +358,17 @@ jobs:
       - name: Test ${{ matrix.pkg }}
         run: pnpm --filter ${{ matrix.pkg }} run test
         if: matrix.pkg != 'create-payload-app' # degit doesn't work within GitHub Actions
+
+  upload-test-results:
+    needs: tests-e2e
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 1
 
   templates:
     needs: changes
