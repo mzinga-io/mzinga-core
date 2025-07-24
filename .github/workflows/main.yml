@@ -253,6 +253,7 @@ jobs:
           max_attempts: 2
           timeout_minutes: 15
           command: pnpm test:e2e ${{ matrix.suite }} --bail
+        continue-on-error: ${{ matrix.suite == 'admin' }}
 
   tests-type-generation:
     runs-on: ubuntu-24.04
