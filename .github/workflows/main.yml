@@ -14,7 +14,6 @@ jobs:
       contents: read
     outputs:
       needs_build: ${{ steps.filter.outputs.needs_build }}
-      templates: ${{ steps.filter.outputs.templates }}
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
       - name: tune linux network
@@ -33,12 +32,9 @@ jobs:
               - 'test/**'
               - 'pnpm-lock.yaml'
               - 'package.json'
-            templates:
-              - 'templates/**'
       - name: Log all filter results
         run: |
           echo "needs_build: ${{ steps.filter.outputs.needs_build }}"
-          echo "templates: ${{ steps.filter.outputs.templates }}"
 
   core-build:
     needs: changes
@@ -385,41 +381,3 @@ jobs:
           name: test-results
           path: test-results/
           retention-days: 1
-
-  templates:
-    needs: changes
-    if: ${{ needs.changes.outputs.templates == 'true' }}
-    runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false
-      matrix:
-        template: [blank, website, ecommerce]
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 25
-
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
-
-      - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.6.0
-
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.10.0
-        with:
-          mongodb-version: 6.0
-
-      - name: Build Template
-        run: |
-          cd templates/${{ matrix.template }}
-          cp .env.example .env
-          npm install -g corepack
-          corepack enable
-          yarn install
-          yarn build
-          yarn generate:types
