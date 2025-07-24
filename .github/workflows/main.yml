@@ -418,6 +418,8 @@ jobs:
         run: |
           cd templates/${{ matrix.template }}
           cp .env.example .env
+          npm install -g corepack
+          corepack enable
           yarn install
           yarn build
           yarn generate:types
