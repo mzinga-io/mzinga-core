@@ -7,7 +7,7 @@ const defaultOpenGraph: Metadata['openGraph'] = {
   description: 'An open-source e-commerce store built with Payload and Next.js.',
   images: [
     {
-      url: 'https://payloadcms.com/images/og-image.jpg',
+      url: 'https://www.mzinga.io/Site_Logo.png',
     },
   ],
 }

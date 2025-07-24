@@ -2132,7 +2132,7 @@ describe('fields', () => {
       })
       await pasteURLButton.click()
 
-      const remoteImage = 'https://payloadcms.com/images/og-image.jpg'
+      const remoteImage = 'https://www.mzinga.io/Site_Logo.png'
 
       const inputField = page.locator('.file-field__upload .file-field__remote-file')
       await inputField.fill(remoteImage)
@@ -2358,7 +2358,7 @@ describe('fields', () => {
       expect(difference).toBeLessThanOrEqual(tolerance)
     })
 
-    test('should render nested row fields in the correct position ', async () => {
+    test('should render nested row fields in the correct position', async () => {
       await page.goto(url.create)
 
       // These fields are not given explicit `width` values
