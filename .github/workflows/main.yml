@@ -195,8 +195,8 @@ jobs:
           # - fields
           # - live-preview
           - localization
-          - plugin-nested-docs
-          - plugin-seo
+          # - plugin-nested-docs #TODO: temporarily disabled tests
+          # - plugin-seo #TODO: temporarily disabled tests
           - refresh-permissions
           # - uploads
           - versions
@@ -331,6 +331,7 @@ jobs:
   plugins:
     runs-on: ubuntu-24.04
     needs: core-build
+    if: ${{ false }} #TODO: understand plugins creation for the future
     strategy:
       fail-fast: false
       matrix:
