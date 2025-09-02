@@ -16,8 +16,8 @@ jobs:
       needs_build: ${{ steps.filter.outputs.needs_build }}
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      # - name: tune linux network
+      #   run: sudo ethtool -K eth0 tx off rx off
 
       - uses: actions/checkout@v4
         with:
@@ -204,8 +204,8 @@ jobs:
 
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      # - name: tune linux network
+      #   run: sudo ethtool -K eth0 tx off rx off
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
@@ -261,8 +261,8 @@ jobs:
 
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      # - name: tune linux network
+      #   run: sudo ethtool -K eth0 tx off rx off
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
@@ -305,8 +305,8 @@ jobs:
 
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      # - name: tune linux network
+      #   run: sudo ethtool -K eth0 tx off rx off
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
@@ -347,8 +347,8 @@ jobs:
 
     steps:
       # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      # - name: tune linux network
+      #   run: sudo ethtool -K eth0 tx off rx off
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
