@@ -125,12 +125,15 @@ jobs:
       #   uses: actions/setup-node@v4
       #   with:
       #     node-version: 22.6.0
+      - name: Install pnpm manually
+        run: |
+          wget -qO- https://get.pnpm.io/install.sh | env PNPM_VERSION=9.7.0 ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9.7.0
-          run_install: false
+      # - name: Install pnpm
+      #   uses: pnpm/action-setup@v3
+      #   with:
+      #     version: 9.7.0
+      #     run_install: false
 
       - name: Restore build
         uses: actions/cache@v4
