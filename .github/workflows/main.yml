@@ -133,6 +133,11 @@ jobs:
           postgresql user: ${{ env.POSTGRES_USER }}
           postgresql password: ${{ env.POSTGRES_PASSWORD }}
         if: startsWith(matrix.database, 'postgres')
+      - name: Setup PostgreSQL
+        uses: tj-actions/install-postgresql@v3
+        with:
+          postgresql-version: 14
+        if: startsWith(matrix.database, 'postgres')
 
       - name: Install Supabase CLI
         uses: supabase/setup-cli@v1
