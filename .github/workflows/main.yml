@@ -88,6 +88,7 @@ jobs:
     runs-on: [self-hosted]
     needs: core-build
     strategy:
+      max-parallel: 1
       fail-fast: false
       matrix:
         database: [mongoose, postgres, postgres-custom-schema, postgres-uuid, supabase]
