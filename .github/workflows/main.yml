@@ -8,7 +8,7 @@ on:
 
 jobs:
   changes:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     permissions:
       pull-requests: read
       contents: read
@@ -39,7 +39,7 @@ jobs:
   core-build:
     needs: changes
     if: ${{ needs.changes.outputs.needs_build == 'true' }}
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
 
     steps:
       - uses: actions/checkout@v4
@@ -85,7 +85,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
   tests:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     strategy:
       fail-fast: false
@@ -179,7 +179,7 @@ jobs:
           POSTGRES_URL: ${{ env.POSTGRES_URL }}
 
   tests-e2e:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     strategy:
       fail-fast: false
@@ -256,7 +256,7 @@ jobs:
         continue-on-error: ${{ matrix.suite == 'admin' }}
 
   tests-type-generation:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
 
     steps:
@@ -288,7 +288,7 @@ jobs:
         run: pnpm dev:generate-graphql-schema graphql-schema-gen
 
   build-packages:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     strategy:
       fail-fast: false
@@ -329,7 +329,7 @@ jobs:
         run: pnpm turbo run build --filter=${{ matrix.pkg }}
 
   plugins:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     if: ${{ false }} #TODO: understand plugins creation for the future
     strategy:
@@ -376,7 +376,7 @@ jobs:
 
   upload-test-results:
     needs: tests-e2e
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     steps:
       - uses: actions/upload-artifact@v4
         if: always()
