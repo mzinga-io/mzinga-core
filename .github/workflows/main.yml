@@ -85,7 +85,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
   tests:
-    # runs-on: [self-hosted]
+    runs-on: [self-hosted]
     # container: node:22.6.0
     # services:
     #   # Label used to access the service container
@@ -125,6 +125,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.6.0
+
       - name: install postgresql manually
         run: |
           apt install postgresql-14
