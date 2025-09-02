@@ -86,7 +86,7 @@ jobs:
 
   tests:
     runs-on: [self-hosted]
-    container: ubuntu:24.04
+    container: node:22.16.0
     services:
       # Label used to access the service container
       postgres:
