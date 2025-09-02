@@ -85,22 +85,22 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
   tests:
-    runs-on: [self-hosted]
-    container: node:22.6.0
-    services:
-      # Label used to access the service container
-      postgres:
-        # Docker Hub image
-        image: postgres:14.19
-        # Provide the password for postgres
-        env:
-          POSTGRES_PASSWORD: postgres
-        # Set health checks to wait until postgres has started
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    # runs-on: [self-hosted]
+    # container: node:22.6.0
+    # services:
+    #   # Label used to access the service container
+    #   postgres:
+    #     # Docker Hub image
+    #     image: postgres:14.19
+    #     # Provide the password for postgres
+    #     env:
+    #       POSTGRES_PASSWORD: postgres
+    #     # Set health checks to wait until postgres has started
+    #     options: >-
+    #       --health-cmd pg_isready
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
     needs: core-build
     strategy:
       max-parallel: 1
@@ -121,13 +121,17 @@ jobs:
       # - name: tune linux network
       #   run: sudo ethtool -K eth0 tx off rx off
 
-      # - name: Use Node.js 22.6.0
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 22.6.0
-      - name: Install pnpm manually
+      - name: Use Node.js 22.6.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.6.0
+      - name: install postgresql manually
         run: |
-          wget -qO- https://get.pnpm.io/install.sh | env PNPM_VERSION=9.7.0 ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+          apt install postgresql-14
+
+      # - name: Install pnpm manually
+      #   run: |
+      #     wget -qO- https://get.pnpm.io/install.sh | env PNPM_VERSION=9.7.0 ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
 
       # - name: Install pnpm
       #   uses: pnpm/action-setup@v3
