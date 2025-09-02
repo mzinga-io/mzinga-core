@@ -121,10 +121,10 @@ jobs:
       # - name: tune linux network
       #   run: sudo ethtool -K eth0 tx off rx off
 
-      - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.6.0
+      # - name: Use Node.js 22.6.0
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 22.6.0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
