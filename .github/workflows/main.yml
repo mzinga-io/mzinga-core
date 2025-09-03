@@ -125,13 +125,14 @@ jobs:
         run: |
           apt update
           dpkg --configure -a
+          docker info
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
           node-version: 22.6.0
 
-      - name: install postgresql manually
+      - name: install PostgreSQL manually
         run: |
           apt install curl ca-certificates
           install -d /usr/share/postgresql-common/pgdg
@@ -141,10 +142,7 @@ jobs:
           apt update
           apt -y install postgresql
           apt install -y postgresql-14
-
-      # - name: Install pnpm manually
-      #   run: |
-      #     wget -qO- https://get.pnpm.io/install.sh | env PNPM_VERSION=9.7.0 ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+        if: startsWith(matrix.database, 'postgres')
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
