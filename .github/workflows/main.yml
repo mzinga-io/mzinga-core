@@ -143,10 +143,10 @@ jobs:
           apt install -y postgresql-14
         if: startsWith(matrix.database, 'postgres')
 
-      - name: start MongoDB docker
-        run: |
-          docker run -it --rm -d --name mongodb -e MONGO_ROOTUSER=${MONGO_ROOTUSER:-admin} -e MONGO_ROOTPASSWORD=${MONGO_ROOTPASSWORD:-admin} mongo:8.0.13
-        if: startsWith(matrix.database, 'mongoose')
+      # - name: start MongoDB docker
+      #   run: |
+      #     docker run -it --rm -d --name mongodb -e MONGO_ROOTUSER=${MONGO_ROOTUSER:-admin} -e MONGO_ROOTPASSWORD=${MONGO_ROOTPASSWORD:-admin} mongo:8.0.13
+      #   if: startsWith(matrix.database, 'mongoose')
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -220,10 +220,10 @@ jobs:
           PAYLOAD_DATABASE: ${{ matrix.database }}
           POSTGRES_URL: ${{ env.POSTGRES_URL }}
 
-      - name: stop MongoDB container
-        run: |
-          docker stop mongodb || true
-        if: always() && matrix.database == 'mongoose'
+      # - name: stop MongoDB container
+      #   run: |
+      #     docker stop mongodb || true
+      #   if: always() && matrix.database == 'mongoose'
 
   tests-e2e:
     runs-on: [self-hosted]
