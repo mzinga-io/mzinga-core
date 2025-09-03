@@ -16,7 +16,7 @@ export const connect: Connect = async function connect(this: MongooseAdapter, pa
   }
 
   let urlToConnect = this.url
-  console.log(urlToConnect)
+
   let successfulConnectionMessage = 'Connected to MongoDB server successfully!'
 
   const connectionOptions: { useFacet: undefined } & ConnectOptions = {

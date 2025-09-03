@@ -187,6 +187,10 @@ jobs:
           supabase start
         if: matrix.database == 'supabase'
 
+      - name: Wait for MongoDB
+        run: sleep 30
+        if: matrix.database == 'mongoose'
+
       - name: Wait for PostgreSQL
         run: sleep 30
         if: startsWith(matrix.database, 'postgres')
