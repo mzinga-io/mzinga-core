@@ -143,7 +143,7 @@ jobs:
       #     apt install -y postgresql-14
       - name: start MongoDB docker
         run: |
-          docker run -it --rm -d --name mongodb -e MONGO_ROOTUSER=${MONGO_ROOTUSER:-admin} -e MONGO_ROOTPASSWORD=${MONGO_ROOTPASSWORD:-admin} mongo:8.0.19
+          docker run -it --rm -d --name mongodb -e MONGO_ROOTUSER=${MONGO_ROOTUSER:-admin} -e MONGO_ROOTPASSWORD=${MONGO_ROOTPASSWORD:-admin} mongo:8.0.13
         if: startsWith(matrix.database, 'mongoose')
 
       - name: start PostgreSQL docker
