@@ -125,23 +125,30 @@ jobs:
         run: |
           apt update
           dpkg --configure -a
-          docker info
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
           node-version: 22.6.0
 
-      - name: install PostgreSQL manually
+      # - name: install PostgreSQL manually
+      #   run: |
+      #     apt install curl ca-certificates
+      #     install -d /usr/share/postgresql-common/pgdg
+      #     curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+      #     . /etc/os-release
+      #     sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+      #     apt update
+      #     apt -y install postgresql
+      #     apt install -y postgresql-14
+      - name: start MongoDB docker
         run: |
-          apt install curl ca-certificates
-          install -d /usr/share/postgresql-common/pgdg
-          curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-          . /etc/os-release
-          sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-          apt update
-          apt -y install postgresql
-          apt install -y postgresql-14
+          docker run -it --rm -d --name mongodb -e MONGO_ROOTUSER=${MONGO_ROOTUSER:-admin} -e MONGO_ROOTPASSWORD=${MONGO_ROOTPASSWORD:-admin} mongo:8.0.19
+        if: startsWith(matrix.database, 'mongoose')
+
+      - name: start PostgreSQL docker
+        run: |
+          docker run -it --rm -d --name postgres -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD -e POSTGRES_USER=$POSTGRES_USER postgres:14.19
         if: startsWith(matrix.database, 'postgres')
 
       - name: Install pnpm
@@ -211,6 +218,16 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=8096
           PAYLOAD_DATABASE: ${{ matrix.database }}
           POSTGRES_URL: ${{ env.POSTGRES_URL }}
+
+      - name: stop PostgreSQL container
+        run: |
+          docker stop postgres || true
+        if: always() && startsWith(matrix.database, 'postgres')
+
+      - name: stop MongoDB container
+        run: |
+          docker stop mongodb || true
+        if: always() && matrix.database == 'mongoose'
 
   tests-e2e:
     runs-on: [self-hosted]
