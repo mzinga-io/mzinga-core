@@ -37,6 +37,8 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.needs_build == 'true' }}
     runs-on: [self-hosted]
+    env:
+      HUSKY: 0
 
     steps:
       - uses: actions/checkout@v4
@@ -79,21 +81,6 @@ jobs:
 
   tests:
     runs-on: [self-hosted]
-    # container: node:22.6.0
-    # services:
-    #   # Label used to access the service container
-    #   postgres:
-    #     # Docker Hub image
-    #     image: postgres:14.19
-    #     # Provide the password for postgres
-    #     env:
-    #       POSTGRES_PASSWORD: postgres
-    #     # Set health checks to wait until postgres has started
-    #     options: >-
-    #       --health-cmd pg_isready
-    #       --health-interval 10s
-    #       --health-timeout 5s
-    #       --health-retries 5
     needs: core-build
     strategy:
       max-parallel: 1
