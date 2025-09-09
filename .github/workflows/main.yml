@@ -42,6 +42,11 @@ jobs:
       NODE_ENV: development
 
     steps:
+      - name: cleanup work folder
+        run: |
+          if [ -n "${GITHUB_WORKSPACE}" ]; then
+            rm -rf ${GITHUB_WORKSPACE}/*
+          fi
       - uses: actions/checkout@v4
         with:
           fetch-depth: 25
