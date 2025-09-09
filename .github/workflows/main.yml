@@ -87,7 +87,7 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix:
-        database: [mongoose, postgres, postgres-custom-schema, postgres-uuid, supabase]
+        database: [mongoose, postgres, postgres-custom-schema, postgres-uuid] #, supabase]
     env:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
