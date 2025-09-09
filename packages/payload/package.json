@@ -64,7 +64,7 @@
     "conf": "10.2.0",
     "connect-history-api-fallback": "1.6.0",
     "console-table-printer": "2.11.2",
-    "dataloader": "2.2.2",
+    "dataloader": "2.2.3",
     "date-fns": "2.30.0",
     "deep-equal": "2.2.3",
     "deepmerge": "4.3.1",
@@ -131,7 +131,7 @@
     "scmp": "2.1.0",
     "sharp": "0.32.6",
     "swc-loader": "0.2.6",
-    "terser-webpack-plugin": "5.3.10",
+    "terser-webpack-plugin": "5.3.14",
     "ts-essentials": "7.0.3",
     "use-context-selector": "1.4.1",
     "uuid": "9.0.1"
@@ -197,7 +197,7 @@
     "serve-static": "1.15.0",
     "swc-loader": "^0.2.6",
     "terser": "5.19.2",
-    "terser-webpack-plugin": "^5.3.10",
+    "terser-webpack-plugin": "^5.3.14",
     "url-loader": "4.1.1",
     "vite": "^4.4.9",
     "webpack": "5.91.0"
