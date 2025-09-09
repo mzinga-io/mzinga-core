@@ -21,7 +21,7 @@
     "fix": "eslint \"packages/**/*.ts\" --fix",
     "lint": "eslint \"packages/**/*.ts\"",
     "lint-staged": "lint-staged",
-    "prepare": "husky install || true",
+    "prepare": "husky install",
     "pretest": "pnpm build",
     "reinstall": "pnpm clean:unix && pnpm install",
     "script:list-packages": "tsx ./scripts/list-packages.ts",

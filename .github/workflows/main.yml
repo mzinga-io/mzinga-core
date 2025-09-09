@@ -39,6 +39,7 @@ jobs:
     runs-on: [self-hosted]
     env:
       HUSKY: 0
+      NODE_ENV: development
 
     steps:
       - uses: actions/checkout@v4
