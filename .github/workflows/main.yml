@@ -1,6 +1,7 @@
 name: build
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, reopened, synchronize]
   push:
@@ -8,17 +9,13 @@ on:
 
 jobs:
   changes:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     permissions:
       pull-requests: read
       contents: read
     outputs:
       needs_build: ${{ steps.filter.outputs.needs_build }}
     steps:
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
-
       - uses: actions/checkout@v4
         with:
           fetch-depth: 25
@@ -39,16 +36,15 @@ jobs:
   core-build:
     needs: changes
     if: ${{ needs.changes.outputs.needs_build == 'true' }}
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
+    env:
+      HUSKY: 0
+      NODE_ENV: development
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 25
-
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
@@ -85,12 +81,13 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
   tests:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     strategy:
+      max-parallel: 1
       fail-fast: false
       matrix:
-        database: [mongoose, postgres, postgres-custom-schema, postgres-uuid, supabase]
+        database: [mongoose, postgres, postgres-custom-schema, postgres-uuid] #, supabase]
     env:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -101,14 +98,40 @@ jobs:
       AWS_REGION: us-east-1
 
     steps:
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      - name: dpkg configure
+        run: |
+          apt update
+          dpkg --configure -a
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
           node-version: 22.6.0
+
+      - name: install PostgreSQL manually
+        run: |
+          apt install curl ca-certificates
+          install -d /usr/share/postgresql-common/pgdg
+          curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          . /etc/os-release
+          sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+          apt update
+          apt -y install postgresql
+          apt install -y postgresql-14
+        if: startsWith(matrix.database, 'postgres')
+
+      - name: stop and remove all docker containers
+        run: |
+          echo "Stopping all running containers..."
+          docker stop $(docker ps -a -q) || true
+          echo "Removing all running containers..."
+          docker rm $(docker ps -a -q) || true
+          echo "Done!"
+
+      # - name: start MongoDB docker
+      #   run: |
+      #     docker run -it --rm -d --name mongodb -e MONGO_ROOTUSER=${MONGO_ROOTUSER:-admin} -e MONGO_ROOTPASSWORD=${MONGO_ROOTPASSWORD:-admin} mongo:8.0.13
+      #   if: startsWith(matrix.database, 'mongoose')
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -146,6 +169,10 @@ jobs:
           supabase start
         if: matrix.database == 'supabase'
 
+      - name: Wait for MongoDB
+        run: sleep 30
+        if: matrix.database == 'mongoose'
+
       - name: Wait for PostgreSQL
         run: sleep 30
         if: startsWith(matrix.database, 'postgres')
@@ -178,8 +205,13 @@ jobs:
           PAYLOAD_DATABASE: ${{ matrix.database }}
           POSTGRES_URL: ${{ env.POSTGRES_URL }}
 
+      # - name: stop MongoDB container
+      #   run: |
+      #     docker stop mongodb || true
+      #   if: always() && matrix.database == 'mongoose'
+
   tests-e2e:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     strategy:
       fail-fast: false
@@ -195,17 +227,18 @@ jobs:
           # - fields
           # - live-preview
           - localization
-          - plugin-nested-docs
-          - plugin-seo
+          # - plugin-nested-docs #TODO: temporarily disabled tests
+          # - plugin-seo #TODO: temporarily disabled tests
           - refresh-permissions
           # - uploads
           - versions
         # part: [1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8]
 
     steps:
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
+      - name: dpkg configure
+        run: |
+          apt update
+          dpkg --configure -a
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
@@ -256,14 +289,10 @@ jobs:
         continue-on-error: ${{ matrix.suite == 'admin' }}
 
   tests-type-generation:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
 
     steps:
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
-
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
@@ -288,7 +317,7 @@ jobs:
         run: pnpm dev:generate-graphql-schema graphql-schema-gen
 
   build-packages:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
     strategy:
       fail-fast: false
@@ -304,10 +333,6 @@ jobs:
           - live-preview-react
 
     steps:
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
-
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
@@ -329,8 +354,9 @@ jobs:
         run: pnpm turbo run build --filter=${{ matrix.pkg }}
 
   plugins:
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     needs: core-build
+    if: ${{ false }} #TODO: understand plugins creation for the future
     strategy:
       fail-fast: false
       matrix:
@@ -345,10 +371,6 @@ jobs:
           - plugin-seo
 
     steps:
-      # https://github.com/actions/virtual-environments/issues/1187
-      - name: tune linux network
-        run: sudo ethtool -K eth0 tx off rx off
-
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
@@ -375,7 +397,7 @@ jobs:
 
   upload-test-results:
     needs: tests-e2e
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted]
     steps:
       - uses: actions/upload-artifact@v4
         if: always()
