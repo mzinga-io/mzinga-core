@@ -16,7 +16,12 @@ jobs:
     outputs:
       needs_build: ${{ steps.filter.outputs.needs_build }}
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - uses: actions/checkout@v4
         with:
           fetch-depth: 25
@@ -42,7 +47,12 @@ jobs:
       NODE_ENV: development
 
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - uses: actions/checkout@v4
         with:
           fetch-depth: 25
@@ -99,7 +109,12 @@ jobs:
       AWS_REGION: us-east-1
 
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - name: dpkg configure
         run: |
           apt update
@@ -237,7 +252,12 @@ jobs:
         # part: [1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8]
 
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - name: dpkg configure
         run: |
           apt update
@@ -296,7 +316,12 @@ jobs:
     needs: core-build
 
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
@@ -337,7 +362,12 @@ jobs:
           - live-preview-react
 
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
@@ -376,7 +406,12 @@ jobs:
           - plugin-seo
 
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v4
         with:
@@ -405,7 +440,12 @@ jobs:
     needs: tests-e2e
     runs-on: [self-hosted]
     steps:
-      - uses: TooMuch4U/actions-clean@v2.1
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
       - uses: actions/upload-artifact@v4
         if: always()
         with:
