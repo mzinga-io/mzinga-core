@@ -123,9 +123,9 @@ jobs:
       - name: stop and remove all docker containers
         run: |
           echo "Stopping all running containers..."
-          docker stop $(docker ps -a -q)
+          docker stop $(docker ps -a -q) || true
           echo "Removing all running containers..."
-          docker rm $(docker ps -a -q)
+          docker rm $(docker ps -a -q) || true
           echo "Done!"
 
       # - name: start MongoDB docker
