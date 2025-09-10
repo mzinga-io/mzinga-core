@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mzinga-core
+  description: |
+    Mzinga is an open-source Data API that puts the developer experience first.
+  links:
+    - title: Website
+      url: https://www.mzinga.io
+    - title: Documentation
+      url: https://www.mzinga.io/docs
+  annotations:
+    github.com/project-slug: mzinga-io/mzinga-core
+    backstage.io/techdocs-ref: dir:.
+    lighthouse.com/website-url: https://www.mzinga.io
+spec:
+  type: library
+  owner: Newesis
+  lifecycle: production

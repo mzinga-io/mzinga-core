@@ -24,7 +24,7 @@
     "prepublishOnly": "pnpm clean && pnpm build"
   },
   "dependencies": {
-    "@libsql/client": "^0.3.1",
+    "@libsql/client": "^0.15.15",
     "console-table-printer": "2.11.2",
     "drizzle-kit": "0.23.2-df9e596",
     "drizzle-orm": "0.32.1",
