@@ -35,7 +35,7 @@
     "@types/jest": "^29.5.1",
     "@types/nodemailer": "7.0.1",
     "payload": "workspace:*",
-    "ts-jest": "^29.1.0",
+    "ts-jest": "^29.4.0",
     "webpack": "5.94.0"
   },
   "files": [
