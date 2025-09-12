@@ -1,7 +1,7 @@
 import type { Response } from 'express'
 
-import type { PayloadRequest } from '../../../packages/payload/src/express/types'
-import type { GlobalConfig } from '../../../packages/payload/src/globals/config/types'
+import type { PayloadRequest } from '../../../packages/mzinga/src/express/types'
+import type { GlobalConfig } from '../../../packages/mzinga/src/globals/config/types'
 
 import { globalEndpoint } from '../shared'
 

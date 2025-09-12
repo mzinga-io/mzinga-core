@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 
-import { AdminViewComponent } from '../../../../../packages/payload/src/config/types'
+import { AdminViewComponent } from '../../../../../packages/mzinga/src/config/types'
 
 const CustomDashboardView: AdminViewComponent = () => {
   return (

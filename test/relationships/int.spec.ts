@@ -1,17 +1,17 @@
 import { randomBytes } from 'crypto'
 
-import type { PayloadRequest } from '../../packages/payload/types'
+import type { PayloadRequest } from '../../packages/mzinga/types'
 import type {
   ChainedRelation,
   CustomIdNumberRelation,
   CustomIdRelation,
   Director,
   Post,
+  PostsLocalized,
   Relation,
 } from './payload-types'
-import type { PostsLocalized } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'

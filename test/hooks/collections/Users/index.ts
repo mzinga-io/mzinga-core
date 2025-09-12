@@ -1,10 +1,10 @@
 import type {
   BeforeLoginHook,
   CollectionConfig,
-} from '../../../../packages/payload/src/collections/config/types'
-import type { Payload } from '../../../../packages/payload/src/payload'
+} from '../../../../packages/mzinga/src/collections/config/types'
+import type { Payload } from '../../../../packages/mzinga/src/payload'
 
-import { AuthenticationError } from '../../../../packages/payload/src/errors'
+import { AuthenticationError } from '../../../../packages/mzinga/src/errors'
 import { devUser, regularUser } from '../../../credentials'
 import { afterLoginHook } from './afterLoginHook'
 import { meHook } from './meHook'

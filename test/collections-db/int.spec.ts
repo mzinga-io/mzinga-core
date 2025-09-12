@@ -1,8 +1,7 @@
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
-import { collectionSlug } from './config'
-import { doc } from './config'
+import { collectionSlug, doc } from './config'
 
 require('isomorphic-fetch')
 

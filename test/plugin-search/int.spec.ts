@@ -1,5 +1,5 @@
-import payload from '../../packages/payload/src'
-import wait from '../../packages/payload/src/utilities/wait'
+import payload from '../../packages/mzinga/src'
+import wait from '../../packages/mzinga/src/utilities/wait'
 import { initPayloadTest } from '../helpers/configHelpers'
 
 describe('Search Plugin', () => {

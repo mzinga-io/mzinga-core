@@ -1,6 +1,6 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 import { Gutter } from '../Gutter'
 import { HeaderNav } from './Nav'
@@ -14,14 +14,14 @@ export const Header: React.FC = () => {
         <Link href="/" className={classes.logo}>
           <picture>
             <source
-              srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
+              srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/mzinga/src/admin/assets/images/payload-logo-light.svg"
               media="(prefers-color-scheme: dark)"
             />
             <Image
               width={150}
               height={30}
               alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-dark.svg"
+              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/mzinga/src/admin/assets/images/payload-logo-dark.svg"
             />
           </picture>
         </Link>

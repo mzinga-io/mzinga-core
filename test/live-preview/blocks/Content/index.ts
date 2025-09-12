@@ -1,4 +1,4 @@
-import type { Block, Field } from '../../../../packages/payload/src/fields/config/types'
+import type { Block, Field } from '../../../../packages/mzinga/src/fields/config/types'
 
 import { invertBackground } from '../../fields/invertBackground'
 import link from '../../fields/link'

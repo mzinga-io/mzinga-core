@@ -1,7 +1,7 @@
 import { sql } from 'drizzle-orm'
 
 import type { PostgresAdapter } from '../../packages/db-postgres/src/types'
-import type { Payload } from '../../packages/payload/src'
+import type { Payload } from '../../packages/mzinga/src'
 
 import { isMongoose } from './isMongoose'
 

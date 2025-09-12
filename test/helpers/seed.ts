@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { type Payload } from '../../packages/payload/src'
+import { type Payload } from '../../packages/mzinga/src'
 import { isMongoose } from './isMongoose'
 import { resetDB } from './reset'
 import { createSnapshot, dbSnapshot, restoreFromSnapshot } from './snapshot'

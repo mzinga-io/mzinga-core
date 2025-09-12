@@ -1,6 +1,6 @@
 import type { Collection1 } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { collection1Slug, versionedRelationshipFieldSlug } from './collectionSlugs'

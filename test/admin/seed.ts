@@ -1,17 +1,16 @@
-import type { Payload } from '../../packages/payload/src'
+import type { Payload } from '../../packages/mzinga/src'
 
 import { devUser } from '../credentials'
 import { seedDB } from '../helpers/seed'
 import {
   collectionSlugs,
+  customIdCollectionId,
   customViews1CollectionSlug,
   customViews2CollectionSlug,
   geoCollectionSlug,
   noApiViewCollectionSlug,
   postsCollectionSlug,
   usersCollectionSlug,
-  customIdCollectionSlug,
-  customIdCollectionId,
 } from './slugs'
 
 export async function clearAndSeedEverything(_payload: Payload) {

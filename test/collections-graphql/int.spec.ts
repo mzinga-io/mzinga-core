@@ -3,9 +3,9 @@ import path from 'path'
 
 import type { Post } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import getFileByPath from '../../packages/payload/src/uploads/getFileByPath'
-import { mapAsync } from '../../packages/payload/src/utilities/mapAsync'
+import payload from '../../packages/mzinga/src'
+import getFileByPath from '../../packages/mzinga/src/uploads/getFileByPath'
+import { mapAsync } from '../../packages/mzinga/src/utilities/mapAsync'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { idToString } from '../helpers/idToString'
 import configPromise, {

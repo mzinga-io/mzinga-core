@@ -6,7 +6,7 @@ import { expect, test } from '@playwright/test'
 import type { SerializedBlockNode } from '../../packages/richtext-lexical/src'
 import type { LexicalField } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPageConsoleErrorCatch, saveDocAndAssert } from '../helpers'
 import { AdminUrlUtil } from '../helpers/adminUrlUtil'
 import { initPayloadE2E } from '../helpers/configHelpers'

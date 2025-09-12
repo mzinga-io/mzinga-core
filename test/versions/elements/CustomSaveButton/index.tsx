@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import type { CustomPublishButtonProps } from '../../../../packages/payload/src/admin/components/elements/types'
+import type { CustomPublishButtonProps } from '../../../../packages/mzinga/src/admin/components/elements/types'
 
 // In your projects, you can import as follows:
 // import { CustomPublishButtonProps } from 'mzinga/types';

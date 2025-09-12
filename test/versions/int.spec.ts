@@ -1,7 +1,7 @@
 import { GraphQLClient, request } from 'graphql-request'
 
-import payload from '../../packages/payload/src'
-import { ValidationError } from '../../packages/payload/src/errors'
+import payload from '../../packages/mzinga/src'
+import { ValidationError } from '../../packages/mzinga/src/errors'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import AutosavePosts from './collections/Autosave'

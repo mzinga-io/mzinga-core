@@ -1,4 +1,4 @@
-import type { RichTextCustomElement } from '../../../../../../packages/payload/src/fields/config/types'
+import type { RichTextCustomElement } from '../../../../../../packages/mzinga/src/fields/config/types'
 
 import Button from './Button'
 import Element from './Element'

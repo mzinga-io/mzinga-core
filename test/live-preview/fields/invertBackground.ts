@@ -1,4 +1,4 @@
-import type { CheckboxField } from '../../../packages/payload/src/fields/config/types'
+import type { CheckboxField } from '../../../packages/mzinga/src/fields/config/types'
 
 export const invertBackground: CheckboxField = {
   name: 'invertBackground',

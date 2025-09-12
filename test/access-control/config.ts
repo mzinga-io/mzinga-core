@@ -1,16 +1,18 @@
-import type { FieldAccess } from '../../packages/payload/src/fields/config/types'
+import type { FieldAccess } from '../../packages/mzinga/src/fields/config/types'
 
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'
-import { firstArrayText, hiddenAccessCountSlug, secondArrayText } from './shared'
 import {
   docLevelAccessSlug,
+  firstArrayText,
+  hiddenAccessCountSlug,
   hiddenAccessSlug,
   hiddenFieldsSlug,
   readOnlySlug,
   relyOnRequestHeadersSlug,
   restrictedSlug,
   restrictedVersionsSlug,
+  secondArrayText,
   siblingDataSlug,
   slug,
   unrestrictedSlug,

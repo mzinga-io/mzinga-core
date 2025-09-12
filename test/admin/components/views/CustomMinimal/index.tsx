@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Button from '../../../../../packages/payload/src/admin/components/elements/Button'
+import Button from '../../../../../packages/mzinga/src/admin/components/elements/Button'
 // As this is the demo project, we import our dependencies from the `src` directory.
-import MinimalTemplate from '../../../../../packages/payload/src/admin/components/templates/Minimal'
-import { useConfig } from '../../../../../packages/payload/src/admin/components/utilities/Config'
+import MinimalTemplate from '../../../../../packages/mzinga/src/admin/components/templates/Minimal'
+import { useConfig } from '../../../../../packages/mzinga/src/admin/components/utilities/Config'
 
 // In your projects, you can import as follows:
 // import { MinimalTemplate } from 'mzinga/components/templates';

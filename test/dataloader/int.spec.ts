@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { postDoc } from './config'

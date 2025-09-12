@@ -1,6 +1,6 @@
 import path from 'path'
 
-import getFileByPath from '../../packages/payload/src/uploads/getFileByPath'
+import getFileByPath from '../../packages/mzinga/src/uploads/getFileByPath'
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'
 import removeFiles from '../helpers/removeFiles'

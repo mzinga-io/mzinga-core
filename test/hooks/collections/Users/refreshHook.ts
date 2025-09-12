@@ -1,4 +1,4 @@
-import type { RefreshHook } from '../../../../packages/payload/src/collections/config/types'
+import type { RefreshHook } from '../../../../packages/mzinga/src/collections/config/types'
 
 export const refreshHook: RefreshHook = ({ user }) => {
   if (user.email === 'dontrefresh@payloadcms.com') {

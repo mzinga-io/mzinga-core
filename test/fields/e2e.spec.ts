@@ -5,8 +5,8 @@ import path from 'path'
 
 import type { RelationshipField, TextField } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import wait from '../../packages/payload/src/utilities/wait'
+import payload from '../../packages/mzinga/src'
+import wait from '../../packages/mzinga/src/utilities/wait'
 import {
   exactText,
   initPageConsoleErrorCatch,

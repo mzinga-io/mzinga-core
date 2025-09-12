@@ -1,4 +1,4 @@
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'
 import configPromise, { pagesSlug } from './config'

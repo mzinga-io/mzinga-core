@@ -1,4 +1,4 @@
-import { type Payload } from '../../packages/payload/src'
+import { type Payload } from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { seedDB } from '../helpers/seed'
 import { titleToDelete } from './shared'

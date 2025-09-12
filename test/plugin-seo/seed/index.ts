@@ -2,9 +2,9 @@ import type { Payload } from 'payload'
 
 import path from 'path'
 
-import type { PayloadRequest } from '../../../packages/payload/types'
+import type { PayloadRequest } from '../../../packages/mzinga/types'
 
-import getFileByPath from '../../../packages/payload/src/uploads/getFileByPath'
+import getFileByPath from '../../../packages/mzinga/src/uploads/getFileByPath'
 import { mediaSlug } from '../shared'
 
 export const seed = async (payload: Payload): Promise<boolean> => {

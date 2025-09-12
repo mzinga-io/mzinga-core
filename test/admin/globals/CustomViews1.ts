@@ -1,4 +1,4 @@
-import type { GlobalConfig } from '../../../packages/payload/src/globals/config/types'
+import type { GlobalConfig } from '../../../packages/mzinga/src/globals/config/types'
 
 import CustomEditView from '../components/views/CustomEdit'
 import { customGlobalViews1GlobalSlug } from '../slugs'

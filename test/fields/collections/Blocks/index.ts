@@ -1,5 +1,5 @@
-import type { CollectionConfig } from '../../../../packages/payload/src/collections/config/types'
-import type { BlockField } from '../../../../packages/payload/src/fields/config/types'
+import type { CollectionConfig } from '../../../../packages/mzinga/src/collections/config/types'
+import type { BlockField } from '../../../../packages/mzinga/src/fields/config/types'
 
 import { blockFieldsSlug, textFieldsSlug } from '../../slugs'
 import { AddCustomBlocks } from './components/AddCustomBlocks'

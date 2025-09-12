@@ -1,6 +1,6 @@
-import type { ArrayField, RelationshipField } from '../../packages/payload/src/fields/config/types'
+import type { ArrayField, RelationshipField } from '../../packages/mzinga/src/fields/config/types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPayloadTest } from '../helpers/configHelpers'
 
 describe('Nested Docs', () => {

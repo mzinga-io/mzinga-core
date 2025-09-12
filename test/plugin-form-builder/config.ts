@@ -1,4 +1,4 @@
-import type { Block } from '../../packages/payload/src/fields/config/types'
+import type { Block } from '../../packages/mzinga/src/fields/config/types'
 
 import formBuilder, { fields as formFields } from '../../packages/plugin-form-builder/src'
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'

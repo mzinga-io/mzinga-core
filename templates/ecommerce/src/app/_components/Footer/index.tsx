@@ -1,8 +1,7 @@
-import React from 'react'
 import Link from 'next/link'
 
 import { Footer } from '../../../payload/payload-types'
-import { fetchFooter, fetchGlobals } from '../../_api/fetchGlobals'
+import { fetchFooter } from '../../_api/fetchGlobals'
 import { ThemeSelector } from '../../_providers/Theme/ThemeSelector'
 import { Gutter } from '../Gutter'
 import { CMSLink } from '../Link'
@@ -31,7 +30,7 @@ export async function Footer() {
             <img
               className={classes.logo}
               alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
+              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/mzinga/src/admin/assets/images/payload-logo-light.svg"
             />
           </picture>
         </Link>

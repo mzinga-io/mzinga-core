@@ -3,8 +3,8 @@ import { randomBytes } from 'crypto'
 import type { Relation } from './config'
 import type { ErrorOnHook, Post } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import { mapAsync } from '../../packages/payload/src/utilities/mapAsync'
+import payload from '../../packages/mzinga/src'
+import { mapAsync } from '../../packages/mzinga/src/utilities/mapAsync'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'
 import config, {
