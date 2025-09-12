@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { generateTypes } from '../packages/payload/src/bin/generateTypes'
+import { generateTypes } from '../packages/mzinga/src/bin/generateTypes'
 import { setTestEnvPaths } from './helpers/setTestEnvPaths'
 
 const [testConfigDir] = process.argv.slice(2)
