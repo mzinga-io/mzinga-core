@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/live-preview-vue",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "The official live preview Vue SDK for MZinga",
   "repository": {
     "type": "git",

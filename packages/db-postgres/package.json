@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/db-postgres",
-  "version": "0.8.10",
+  "version": "0.0.1",
   "description": "The officially supported Postgres database adapter for MZinga",
   "repository": {
     "type": "git",

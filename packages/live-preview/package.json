@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/live-preview",
-  "version": "0.2.2",
+  "version": "0.0.1",
   "description": "The official live preview JavaScript SDK for MZinga",
   "repository": {
     "type": "git",

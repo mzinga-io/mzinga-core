@@ -1,7 +1,7 @@
 {
   "name": "@mzinga/plugin-form-builder",
   "description": "Form builder plugin for Payload CMS",
-  "version": "1.2.3",
+  "version": "0.0.1",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
