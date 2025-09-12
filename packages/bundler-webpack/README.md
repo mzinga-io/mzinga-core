@@ -1,28 +1,26 @@
-# Payload Webpack Adapter
+# MZinga Webpack Adapter
 
-Official Webpack adapter for [Payload](https://payloadcms.com).
+Official Webpack adapter for [MZinga](https://mzinga.io).
 
-- [Main Repository](https://github.com/payloadcms/payload)
-- [Payload Docs](https://payloadcms.com/docs)
+- [Main Repository](https://github.com/mzinga-io/mzinga-core)
+- [MZinga Docs](https://mzinga.io/docs)
 
 ## Installation
 
 ```bash
-npm install @payloadcms/bundler-webpack
+npm install @mzinga/bundler-webpack
 ```
 
 ## Usage
 
 ```ts
-import { buildConfig } from 'payload/config'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
+import { buildConfig } from 'mzinga/config'
+import { webpackBundler } from '@mzinga/bundler-webpack'
 
 export default buildConfig({
-  bundler: webpackBundler()
+  bundler: webpackBundler(),
   // ...rest of config
 })
-
 ```
 
-More detailed usage can be found in the [Payload Docs](https://payloadcms.com/docs/configuration/overview).
-
+More detailed usage can be found in the [MZinga Docs](https://mzinga.io/docs/configuration/overview).

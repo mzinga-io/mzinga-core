@@ -1,6 +1,6 @@
 # Payload E-Commerce Template
 
-This is the official [Payload E-Commerce Template](https://github.com/payloadcms/payload/blob/main/templates/ecommerce). Use it to power e-commerce businesses and online stores of all sizes. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
+This is the official [Payload E-Commerce Template](https://github.com/mzinga-io/mzinga-core/blob/main/templates/ecommerce). Use it to power e-commerce businesses and online stores of all sizes. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
 
 This template is right for you if you are selling:
 
@@ -30,7 +30,7 @@ If you have not done so already, you need to have standalone copy of this repo o
 
 #### Method 1 (recommended)
 
-  Go to Payload Cloud and [clone this template](https://payloadcms.com/new/clone/ecommerce). This will create a new repository on your GitHub account with this template's code which you can then clone to your own machine.
+  Go to Payload Cloud and [clone this template](https://mzinga.io/new/clone/ecommerce). This will create a new repository on your GitHub account with this template's code which you can then clone to your own machine.
 
 #### Method 2
 
@@ -42,7 +42,7 @@ If you have not done so already, you need to have standalone copy of this repo o
 
   Use the `git` CLI to clone this template directly to your machine:
 
-    git clone -n --depth=1 --filter=tree:0 https://github.com/payloadcms/payload my-project && cd my-project && git sparse-checkout set --no-cone templates/ecommerce && git checkout && rm -rf .git && git init && git add . && git mv -f templates/ecommerce/{.,}* . && git add . && git commit -m "Initial commit"
+    git clone -n --depth=1 --filter=tree:0 https://github.com/mzinga-io/mzinga-core my-project && cd my-project && git sparse-checkout set --no-cone templates/ecommerce && git checkout && rm -rf .git && git init && git add . && git mv -f templates/ecommerce/{.,}* . && git add . && git commit -m "Initial commit"
 
 ### Development
 
@@ -59,17 +59,17 @@ The Payload config is tailored specifically to the needs of most e-commerce busi
 
 ### Collections
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections)  docs for details on how to extend this functionality.
+See the [Collections](https://mzinga.io/docs/configuration/collections)  docs for details on how to extend this functionality.
 
 - #### Users (Authentication)
 
   Users are auth-enabled and encompass both admins and customers based on the value of their `roles` field. Only `admin` users can access your admin panel to manage your store whereas `customer` can authenticate on your front-end to create [shopping carts](#shopping-cart) and place [orders](#orders) but have limited access to the platform. See [Access Control](#access-control) for more details.
 
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+  For additional help, see the official [Auth Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/auth) or the [Authentication](https://mzinga.io/docs/authentication/overview#authentication-overview) docs.
 
 - #### Products
 
-  Products are linked to Stripe via a custom select field that is dynamically populated in the sidebar of each product. This field fetches all available products in the background and displays them as options. Once a product has been selected, prices get automatically synced between Stripe and Payload through [Payload Hooks](https://payloadcms.com/docs/hooks) and [Stripe Webhooks](https://stripe.com/docs/webhooks). See [Stripe](#stripe) for more details.
+  Products are linked to Stripe via a custom select field that is dynamically populated in the sidebar of each product. This field fetches all available products in the background and displays them as options. Once a product has been selected, prices get automatically synced between Stripe and Payload through [Payload Hooks](https://mzinga.io/docs/hooks) and [Stripe Webhooks](https://stripe.com/docs/webhooks). See [Stripe](#stripe) for more details.
 
   All products are layout builder enabled so you can generate unique pages for each product using layout building blocks, see [Layout Builder](#layout-builder) for more details.
 
@@ -93,7 +93,7 @@ See the [Collections](https://payloadcms.com/docs/configuration/collections)  do
 
 ### Globals
 
-See the [Globals](https://payloadcms.com/docs/configuration/globals) docs for details on how to extend this functionality.
+See the [Globals](https://mzinga.io/docs/configuration/globals) docs for details on how to extend this functionality.
 
 - `Header`
 
@@ -115,7 +115,7 @@ This applies to each collection in the following ways:
 - `users`: Only admins and the user themselves can access their profile. Anyone can create a user but only admins can delete users.
 - `products`: Everyone can access products, but only admins can create, update, or delete them. Paywall-enabled products may also have content that is only accessible to only users who have purchased the product. See [Paywall](#paywall) for more details.
 
-For more details on how to extend this functionality, see the [Payload Access Control](https://payloadcms.com/docs/access-control/overview#access-control) docs.
+For more details on how to extend this functionality, see the [Payload Access Control](https://mzinga.io/docs/access-control/overview#access-control) docs.
 
 ## Shopping cart
 
@@ -149,7 +149,7 @@ Payload itself handles no currency exchange. All payments are processed and bill
    - `product.updated`
    - `price.updated`
 
-1. Payload to Stripe using [Payload Hooks](https://payloadcms.com/docs/hooks/overview):
+1. Payload to Stripe using [Payload Hooks](https://mzinga.io/docs/hooks/overview):
    - `user.create`
 
 For more details on how to extend this functionality, see the the official [Payload Stripe Plugin](https://github.com/payloadcms/plugin-stripe).
@@ -230,11 +230,11 @@ Each block is fully designed and built into the front-end website that comes wit
 
 ## Draft Preview
 
-All pages and products are draft-enabled so you can preview them before publishing them to your website. To do this, these collections use [Versions](https://payloadcms.com/docs/configuration/collections#versions) with `drafts` set to `true`. This means that when you create a new page or product, it will be saved as a draft and will not be visible on your website until you publish it. This also means that you can preview your draft before publishing it to your website. To do this, we automatically format a custom URL which redirects to your front-end to securely fetch the draft version of your content.
+All pages and products are draft-enabled so you can preview them before publishing them to your website. To do this, these collections use [Versions](https://mzinga.io/docs/configuration/collections#versions) with `drafts` set to `true`. This means that when you create a new page or product, it will be saved as a draft and will not be visible on your website until you publish it. This also means that you can preview your draft before publishing it to your website. To do this, we automatically format a custom URL which redirects to your front-end to securely fetch the draft version of your content.
 
 Since the front-end of this template is statically generated, this also means that pages and products will need to be regenerated as changes are made to published documents. To do this, we use an `afterChange` hook to regenerate the front-end when a document has changed and its `_status` is `published`.
 
-For more details on how to extend this functionality, see the official [Draft Preview Example](https://github.com/payloadcms/payload/tree/main/examples/draft-preview).
+For more details on how to extend this functionality, see the official [Draft Preview Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/draft-preview).
 
 ## SEO
 
@@ -246,7 +246,7 @@ If you are migrating an existing site or moving content to a new URL, you can us
 
 ## Website
 
-This template includes a beautifully designed, production-ready front-end built with the [Next.js App Router](https://nextjs.org), served right alongside your Payload app in a single Express server. This makes is so that you can deploy both apps simultaneously and host them together. If you prefer a different front-end framework, this pattern works for any framework that supports a custom server. If you prefer to host your website separately from Payload, you can easily [Eject](#eject) the front-end out from this template to swap in your own, or to use it as a standalone CMS. For more details, see the official [Custom Server Example](https://github.com/payloadcms/payload/tree/main/examples/custom-server).
+This template includes a beautifully designed, production-ready front-end built with the [Next.js App Router](https://nextjs.org), served right alongside your Payload app in a single Express server. This makes is so that you can deploy both apps simultaneously and host them together. If you prefer a different front-end framework, this pattern works for any framework that supports a custom server. If you prefer to host your website separately from Payload, you can easily [Eject](#eject) the front-end out from this template to swap in your own, or to use it as a standalone CMS. For more details, see the official [Custom Server Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/custom-server).
 
 Core features:
 
@@ -255,7 +255,7 @@ Core features:
 - [GraphQL](https://graphql.org)
 - [TypeScript](https://www.typescriptlang.org)
 - [React Hook Form](https://react-hook-form.com)
-- [Payload Admin Bar](https://github.com/payloadcms/payload-admin-bar)
+- [Payload Admin Bar](https://github.com/mzinga-io/mzinga-core-admin-bar)
 - Authentication
 - Publication workflow
 - Shopping cart
@@ -277,7 +277,7 @@ If you prefer another front-end framework or would like to use Payload as a stan
 
 > Note: Your eject script may not work as expected if you've made significant modifications to your project. If you run into any issues, compare your project's dependencies and file structure with this template. See [./src/eject](./src/eject) for full details.
 
-For more details on how setup a custom server, see the official [Custom Server Example](https://github.com/payloadcms/payload/tree/main/examples/custom-server).
+For more details on how setup a custom server, see the official [Custom Server Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/custom-server).
 
 ##  Development
 
@@ -304,8 +304,8 @@ To seed the database with a few products and pages you can run `yarn seed`. This
 
 >In a monorepo when routes are bootstrapped to the same host, they can conflict with Payload's own routes if they have the same name. In our template we've named the Nextjs API routes to `next` to avoid this conflict.
 >
->This can happen with any other routes conflicting with Payload such as `admin` and we recommend using different names for custom routes.  
->Alternatively you can also rename Payload's own routes via the [configuration](https://payloadcms.com/docs/configuration/overview).
+>This can happen with any other routes conflicting with Payload such as `admin` and we recommend using different names for custom routes.
+>Alternatively you can also rename Payload's own routes via the [configuration](https://mzinga.io/docs/configuration/overview).
 
 ## Production
 
@@ -322,8 +322,8 @@ Before deploying your app, you need to:
 1. Switch [your Stripe account to live mode](https://stripe.com/docs/test-mode) and update your [Stripe API keys](https://dashboard.stripe.com/test/apikeys). See [Connect Stripe](#connect-stripe) for more details.
 1. Ensure your app builds and serves in production. See [Production](#production) for more details.
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

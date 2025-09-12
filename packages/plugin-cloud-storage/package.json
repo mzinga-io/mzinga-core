@@ -1,14 +1,14 @@
 {
-  "name": "@payloadcms/plugin-cloud-storage",
+  "name": "@mzinga/plugin-cloud-storage",
   "description": "The official cloud storage plugin for Payload CMS",
   "version": "1.2.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "homepage": "https://payloadcms.com",
+  "homepage": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/plugin-cloud-storage"
   },
   "scripts": {
@@ -60,7 +60,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "nodemon": "3.0.3",
-    "payload": "workspace:*",
+    "mzinga": "workspace:*",
     "rimraf": "^4.1.2",
     "ts-node": "^9.1.1",
     "webpack": "5.91.0"

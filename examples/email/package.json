@@ -1,6 +1,6 @@
 {
   "name": "payload-example-email",
-  "description": "Payload Email integration example.",
+  "description": "MZinga Email integration example.",
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",

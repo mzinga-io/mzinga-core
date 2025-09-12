@@ -1,15 +1,14 @@
 {
-  "name": "@payloadcms/richtext-lexical",
+  "name": "@mzinga/richtext-lexical",
   "version": "0.11.4",
-  "description": "The officially supported Lexical richtext adapter for Payload",
+  "description": "The officially supported Lexical richtext adapter for MZinga",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/richtext-lexical"
   },
   "license": "MIT",
-  "homepage": "https://payloadcms.com",
-  "author": "Payload CMS, Inc.",
+  "homepage": "https://mzinga.io",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -44,11 +43,11 @@
     "ts-essentials": "7.0.3"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
     "@types/json-schema": "7.0.15",
     "@types/node": "20.6.2",
     "@types/react": "18.2.15",
-    "payload": "workspace:*"
+    "mzinga": "workspace:*"
   },
   "peerDependencies": {
     "payload": "^2.4.0",

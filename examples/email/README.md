@@ -47,7 +47,7 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Resources
 
@@ -55,9 +55,9 @@ For more information on integrating email, check out these resources:
 
 <!-- Update with live blog post URL when published -->
 
-- [Blog Post - Email 101](https://payloadcms.com/blog)
-- [Email Documentation](https://payloadcms.com/docs/email/overview#email-functionality)
+- [Blog Post - Email 101](https://mzinga.io/blog)
+- [Email Documentation](https://mzinga.io/docs/email/overview#email-functionality)
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).
