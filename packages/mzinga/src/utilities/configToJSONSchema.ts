@@ -478,7 +478,7 @@ export function fieldsToJSONSchema(
   }
 }
 
-// This function is part of the public API and is exported through payload/utilities
+// This function is part of the public API and is exported through mzinga/utilities
 export function entityToJSONSchema(
   config: SanitizedConfig,
   incomingEntity: SanitizedCollectionConfig | SanitizedGlobalConfig,

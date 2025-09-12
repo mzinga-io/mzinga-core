@@ -191,7 +191,7 @@ export const LinkFeature = (props: LinkFeatureProps): FeatureProvider => {
               // @ts-expect-error
               import('./plugins/floatingLinkEditor').then((module) => {
                 const floatingLinkEditorPlugin = module.FloatingLinkEditorPlugin
-                return import('payload/utilities').then((module) =>
+                return import('mzinga/utilities').then((module) =>
                   module.withMergedProps({
                     Component: floatingLinkEditorPlugin,
                     toMergeIntoProps: props,
