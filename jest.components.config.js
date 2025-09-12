@@ -1,8 +1,8 @@
 module.exports = {
   moduleNameMapper: {
-    '\\.(css|scss)$': '<rootDir>/packages/payload/src/bundlers/mocks/emptyModule.js',
+    '\\.(css|scss)$': '<rootDir>/packages/mzinga/src/bundlers/mocks/emptyModule.js',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/packages/payload/src/bundlers/mocks/fileMock.js',
+      '<rootDir>/packages/mzinga/src/bundlers/mocks/fileMock.js',
   },
   setupFilesAfterEnv: ['./test/componentsSetup.js'],
   testEnvironment: 'jsdom',
