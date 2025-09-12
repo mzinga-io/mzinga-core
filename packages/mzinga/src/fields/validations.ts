@@ -133,7 +133,7 @@ export const code: Validate<unknown, unknown, CodeField> = (value: string, { req
   return true
 }
 
-export const json: Validate<unknown, unknown, JSONField & { jsonError?: string }> = async (
+export const json: Validate<unknown, unknown, { jsonError?: string } & JSONField> = async (
   value: string,
   { jsonError, jsonSchema, required, t },
 ) => {
@@ -594,7 +594,7 @@ export const point: Validate<unknown, unknown, PointField> = (
   return true
 }
 
-export default {
+const result: any = {
   array,
   blocks,
   checkbox,
@@ -613,3 +613,4 @@ export default {
   textarea,
   upload,
 }
+export default result
