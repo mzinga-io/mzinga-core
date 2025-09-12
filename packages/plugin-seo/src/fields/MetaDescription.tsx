@@ -1,10 +1,10 @@
 'use client'
 
-import type { FieldType, Options } from 'payload/dist/admin/components/forms/useField/types'
-import type { TextareaField } from 'payload/types'
+import type { FieldType, Options } from 'mzinga/dist/admin/components/forms/useField/types'
+import type { TextareaField } from 'mzinga/types'
 
-import { TextareaInput, useAllFormFields, useField } from 'payload/components/forms'
-import { useDocumentInfo, useLocale } from 'payload/components/utilities'
+import { TextareaInput, useAllFormFields, useField } from 'mzinga/components/forms'
+import { useDocumentInfo, useLocale } from 'mzinga/components/utilities'
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 

@@ -1,5 +1,5 @@
+import type { Connect } from 'mzinga/database'
 import type { Payload } from 'payload'
-import type { Connect } from 'payload/database'
 
 import { sql } from 'drizzle-orm'
 import { drizzle } from 'drizzle-orm/node-postgres'

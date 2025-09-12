@@ -1,8 +1,8 @@
-import type { DeleteVersions } from 'payload/database'
-import type { PayloadRequest, SanitizedCollectionConfig } from 'payload/types'
+import type { DeleteVersions } from 'mzinga/database'
+import type { PayloadRequest, SanitizedCollectionConfig } from 'mzinga/types'
 
 import { inArray } from 'drizzle-orm'
-import { buildVersionCollectionFields } from 'payload/versions'
+import { buildVersionCollectionFields } from 'mzinga/versions'
 import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from './types'

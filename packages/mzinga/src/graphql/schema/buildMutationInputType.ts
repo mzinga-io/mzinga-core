@@ -37,15 +37,15 @@ import type {
   TextareaField,
   UploadField,
 } from '../../fields/config/types'
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 
 import { fieldAffectsData, optionIsObject, tabHasName } from '../../fields/config/types'
+import flattenFields from '../../utilities/flattenTopLevelFields'
 import { toWords } from '../../utilities/formatLabels'
 import { groupOrTabHasRequiredSubfield } from '../../utilities/groupOrTabHasRequiredSubfield'
 import combineParentName from '../utilities/combineParentName'
 import formatName from '../utilities/formatName'
 import withNullableType from './withNullableType'
-import flattenFields from '../../utilities/flattenTopLevelFields'
 
 const idFieldTypes = {
   number: GraphQLInt,

@@ -1,5 +1,5 @@
-import type { Create } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { Create } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
 import type { MongooseAdapter } from '.'
 

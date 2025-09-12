@@ -6,7 +6,7 @@ import queryComplexity, {
   simpleEstimator,
 } from 'graphql-query-complexity'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 import accessResolver from '../auth/graphql/resolvers/access'
 import initCollections from '../collections/graphql/init'
@@ -45,8 +45,8 @@ export default function registerGraphQLSchema(payload: Payload): void {
   initGlobals(payload)
 
   payload.Query.fields.Access = {
-    resolve: accessResolver(payload),
     type: buildPoliciesType(payload),
+    resolve: accessResolver(payload),
   }
 
   if (typeof payload.config.graphQL.queries === 'function') {

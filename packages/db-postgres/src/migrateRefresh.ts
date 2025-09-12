@@ -1,10 +1,10 @@
 /* eslint-disable no-restricted-syntax, no-await-in-loop */
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadRequest } from 'mzinga/types'
 
-import { getMigrations, readMigrationFiles } from 'payload/database'
-import { commitTransaction } from 'payload/dist/utilities/commitTransaction'
-import { initTransaction } from 'payload/dist/utilities/initTransaction'
-import { killTransaction } from 'payload/dist/utilities/killTransaction'
+import { getMigrations, readMigrationFiles } from 'mzinga/database'
+import { commitTransaction } from 'mzinga/dist/utilities/commitTransaction'
+import { initTransaction } from 'mzinga/dist/utilities/initTransaction'
+import { killTransaction } from 'mzinga/dist/utilities/killTransaction'
 
 import type { PostgresAdapter } from './types'
 

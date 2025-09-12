@@ -8,7 +8,7 @@ dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
 
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'mzinga/config'
 
 import { Pages } from './collections/Pages'
 import { Tenants } from './collections/Tenants'

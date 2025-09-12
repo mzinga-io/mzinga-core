@@ -1,6 +1,6 @@
 import { slateEditor } from '@payloadcms/richtext-slate'
 import type { RichTextElement, RichTextLeaf } from '@payloadcms/richtext-slate/dist/types'
-import type { RichTextField } from 'payload/types'
+import type { RichTextField } from 'mzinga/types'
 
 import deepMerge from '../../utilities/deepMerge'
 import link from '../link'

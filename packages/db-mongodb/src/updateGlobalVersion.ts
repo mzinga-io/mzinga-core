@@ -1,5 +1,5 @@
-import type { UpdateGlobalVersionArgs } from 'payload/database'
-import type { PayloadRequest, TypeWithID } from 'payload/types'
+import type { UpdateGlobalVersionArgs } from 'mzinga/database'
+import type { PayloadRequest, TypeWithID } from 'mzinga/types'
 
 import type { MongooseAdapter } from '.'
 

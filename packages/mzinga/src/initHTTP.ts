@@ -5,7 +5,7 @@ import express from 'express'
 
 import type { InitOptions } from './config/types'
 import type { PayloadRequest } from './express/types'
-import type { Payload } from './payload'
+import type { Payload } from './mzinga'
 
 import initAuth from './auth/init'
 import access from './auth/requestHandlers/access'
@@ -21,7 +21,7 @@ import initStatic from './express/static'
 import initGlobalsHTTP from './globals/initHTTP'
 import graphQLHandler from './graphql/graphQLHandler'
 import initGraphQLPlayground from './graphql/initPlayground'
-import { getPayload } from './payload'
+import { getPayload } from './mzinga'
 
 export const initHTTP = async (incomingOptions: InitOptions): Promise<Payload> => {
   const options = { ...incomingOptions }

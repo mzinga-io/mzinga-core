@@ -1,10 +1,10 @@
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadRequest } from 'mzinga/types'
 
 import { sql } from 'drizzle-orm'
-import { readMigrationFiles } from 'payload/database'
-import { commitTransaction } from 'payload/dist/utilities/commitTransaction'
-import { initTransaction } from 'payload/dist/utilities/initTransaction'
-import { killTransaction } from 'payload/dist/utilities/killTransaction'
+import { readMigrationFiles } from 'mzinga/database'
+import { commitTransaction } from 'mzinga/dist/utilities/commitTransaction'
+import { initTransaction } from 'mzinga/dist/utilities/initTransaction'
+import { killTransaction } from 'mzinga/dist/utilities/killTransaction'
 import prompts from 'prompts'
 
 import type { PostgresAdapter } from './types'

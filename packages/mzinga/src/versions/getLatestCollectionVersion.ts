@@ -1,6 +1,6 @@
 import type { SanitizedCollectionConfig, TypeWithID } from '../collections/config/types'
 import type { FindOneArgs } from '../database/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { PayloadRequest } from '../types'
 import type { TypeWithVersion } from './types'
 

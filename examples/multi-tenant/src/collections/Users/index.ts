@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'mzinga/types'
 
 import { anyone } from '../../access/anyone'
 import { superAdminFieldAccess } from '../../access/superAdmins'

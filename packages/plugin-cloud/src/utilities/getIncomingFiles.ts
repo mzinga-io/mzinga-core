@@ -1,5 +1,4 @@
-import type { FileData } from 'payload/types'
-import type { PayloadRequest } from 'payload/types'
+import type { FileData, PayloadRequest } from 'mzinga/types'
 
 import type { File } from '../types'
 

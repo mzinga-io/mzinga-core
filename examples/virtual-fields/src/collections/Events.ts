@@ -1,12 +1,11 @@
-import payload from 'payload';
-import { CollectionConfig, FieldHook } from 'payload/types';
+import { CollectionConfig, FieldHook } from 'mzinga/types'
 
 const getTotalPrice: FieldHook = async ({ data }) => {
-  const { price, salesTaxPercentage, fees } = data.tickets;
-  const totalPrice = Math.round(price * (1 + (salesTaxPercentage / 100))) + fees;
+  const { price, salesTaxPercentage, fees } = data.tickets
+  const totalPrice = Math.round(price * (1 + salesTaxPercentage / 100)) + fees
 
-  return totalPrice;
-};
+  return totalPrice
+}
 
 const Events: CollectionConfig = {
   slug: 'events',
@@ -82,11 +81,13 @@ const Events: CollectionConfig = {
                 readOnly: true,
               },
               hooks: {
-                beforeChange: [({ siblingData }) => {
-                  // Mutate the sibling data to prevent DB storage
-                  // eslint-disable-next-line no-param-reassign
-                  siblingData.totalPrice = undefined;
-                }],
+                beforeChange: [
+                  ({ siblingData }) => {
+                    // Mutate the sibling data to prevent DB storage
+                    // eslint-disable-next-line no-param-reassign
+                    siblingData.totalPrice = undefined
+                  },
+                ],
                 afterRead: [getTotalPrice],
               },
             },
@@ -95,6 +96,6 @@ const Events: CollectionConfig = {
       ],
     },
   ],
-};
+}
 
-export default Events;
+export default Events

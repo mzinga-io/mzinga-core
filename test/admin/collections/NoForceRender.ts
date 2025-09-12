@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload/dist/collections/config/types'
+import type { CollectionConfig } from 'mzinga/dist/collections/config/types'
 
 import { noForceRenderCollectionSlug } from '../slugs'
 

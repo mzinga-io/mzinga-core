@@ -1,6 +1,6 @@
 import express from 'express'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { SanitizedGlobalConfig } from './config/types'
 
 import mountEndpoints from '../express/mountEndpoints'

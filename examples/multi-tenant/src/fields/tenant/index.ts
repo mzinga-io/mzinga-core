@@ -1,4 +1,4 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
 import { superAdminFieldAccess } from '../../access/superAdmins'
 import { isSuperAdmin } from '../../utilities/isSuperAdmin'

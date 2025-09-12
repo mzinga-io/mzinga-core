@@ -1,19 +1,14 @@
 import type { JSONSchema4 } from 'json-schema'
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 
-import type { PayloadRequest } from '../../../../../express/types'
-import type { RequestContext } from '../../../../../express/types'
+import type { PayloadRequest, RequestContext } from '../../../../../express/types'
 import type { RichTextField, Validate } from '../../../../../fields/config/types'
-import type { Payload } from '../../../../../payload'
+import type { Payload } from '../../../../../mzinga'
 import type { CellComponentProps } from '../../../views/collections/List/Cell/types'
 
-export type RichTextFieldProps<
-  Value extends object,
-  AdapterProps,
-  ExtraFieldProperties = {},
-> = Omit<RichTextField<Value, AdapterProps, ExtraFieldProperties>, 'type'> & {
+export type RichTextFieldProps<Value extends object, AdapterProps, ExtraFieldProperties = {}> = {
   path?: string
-}
+} & Omit<RichTextField<Value, AdapterProps, ExtraFieldProperties>, 'type'>
 
 type RichTextAdapterBase<
   Value extends object = object,
@@ -73,20 +68,20 @@ export type RichTextAdapter<
   Value extends object = object,
   AdapterProps = any,
   ExtraFieldProperties = {},
-> = RichTextAdapterBase<Value, AdapterProps, ExtraFieldProperties> &
-  (
-    | {
-        CellComponent: React.FC<
-          CellComponentProps<RichTextField<Value, AdapterProps, ExtraFieldProperties>>
-        >
-        FieldComponent: React.FC<RichTextFieldProps<Value, AdapterProps, ExtraFieldProperties>>
-      }
-    | {
-        LazyCellComponent: () => Promise<
-          React.FC<CellComponentProps<RichTextField<Value, AdapterProps, ExtraFieldProperties>>>
-        >
-        LazyFieldComponent: () => Promise<
-          React.FC<RichTextFieldProps<Value, AdapterProps, ExtraFieldProperties>>
-        >
-      }
-  )
+> = (
+  | {
+      CellComponent: React.FC<
+        CellComponentProps<RichTextField<Value, AdapterProps, ExtraFieldProperties>>
+      >
+      FieldComponent: React.FC<RichTextFieldProps<Value, AdapterProps, ExtraFieldProperties>>
+    }
+  | {
+      LazyCellComponent: () => Promise<
+        React.FC<CellComponentProps<RichTextField<Value, AdapterProps, ExtraFieldProperties>>>
+      >
+      LazyFieldComponent: () => Promise<
+        React.FC<RichTextFieldProps<Value, AdapterProps, ExtraFieldProperties>>
+      >
+    }
+) &
+  RichTextAdapterBase<Value, AdapterProps, ExtraFieldProperties>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { CommitTransaction } from 'payload/database'
+import type { CommitTransaction } from 'mzinga/database'
 
 /**
  * Commits a transaction identified by its ID.

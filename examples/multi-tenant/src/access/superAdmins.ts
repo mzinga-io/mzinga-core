@@ -1,5 +1,5 @@
-import type { Access } from 'payload/config'
-import type { FieldHook } from 'payload/types'
+import type { Access } from 'mzinga/config'
+import type { FieldHook } from 'mzinga/types'
 
 import { checkUserRoles } from '../utilities/checkUserRoles'
 

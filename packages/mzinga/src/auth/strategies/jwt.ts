@@ -4,7 +4,7 @@ import type { Strategy as PassportStrategy } from 'passport-strategy'
 import passportJwt from 'passport-jwt'
 import url from 'url'
 
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 
 import getExtractJWT from '../getExtractJWT'
 

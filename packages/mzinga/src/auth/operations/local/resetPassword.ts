@@ -1,6 +1,6 @@
 import type { GeneratedTypes, RequestContext } from '../../..'
 import type { PayloadRequest } from '../../../express/types'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 import type { Result } from '../resetPassword'
 
 import { APIError } from '../../../errors'

@@ -1,6 +1,6 @@
-import type { Block } from 'payload/types'
+import type { Block } from 'mzinga/types'
 
-import { sanitizeFields } from 'payload/config'
+import { sanitizeFields } from 'mzinga/config'
 
 import type { BlocksFeatureProps } from '.'
 import type { NodeValidation } from '../types'

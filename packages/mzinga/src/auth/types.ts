@@ -2,7 +2,7 @@ import type { Strategy } from 'passport'
 import type { DeepRequired } from 'ts-essentials'
 
 import type { PayloadRequest } from '../express/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { Where } from '../types'
 
 export type Permission = {

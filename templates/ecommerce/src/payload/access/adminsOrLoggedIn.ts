@@ -1,4 +1,4 @@
-import type { Access, AccessArgs } from 'payload/config'
+import type { Access, AccessArgs } from 'mzinga/config'
 
 import { checkRole } from '../collections/Users/checkRole'
 import type { User } from '../payload-types'

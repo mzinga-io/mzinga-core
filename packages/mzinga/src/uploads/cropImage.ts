@@ -1,5 +1,5 @@
 import type { UploadedFile } from 'express-fileupload'
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadRequest } from 'mzinga/types'
 import type { SharpOptions } from 'sharp'
 
 import sharp from 'sharp'

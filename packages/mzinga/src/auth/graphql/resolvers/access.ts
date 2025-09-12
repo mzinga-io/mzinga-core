@@ -1,5 +1,5 @@
 import type { PayloadRequest } from '../../../express/types'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 
 import formatName from '../../../graphql/utilities/formatName'
 import isolateObjectProperty from '../../../utilities/isolateObjectProperty'

@@ -3,7 +3,7 @@ import type { MarkOptional } from 'ts-essentials'
 
 import type { GeneratedTypes } from '../../..'
 import type { PayloadRequest, RequestContext } from '../../../express/types'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 import type { Document } from '../../../types'
 import type { File } from '../../../uploads/types'
 

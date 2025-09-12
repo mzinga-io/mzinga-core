@@ -287,3 +287,4 @@ test/collections-graphql/media/
 test/uploads/media-with-relation-preview/
 test/uploads/media-without-relation-preview/
 test/uploads/focal-only/
+.turbo

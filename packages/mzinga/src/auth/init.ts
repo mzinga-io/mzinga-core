@@ -1,7 +1,7 @@
 import passport from 'passport'
 import AnonymousStrategy from 'passport-anonymous'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 import jwtStrategy from './strategies/jwt'
 

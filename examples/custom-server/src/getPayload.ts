@@ -1,8 +1,8 @@
 import dotenv from 'dotenv'
+import type { InitOptions } from 'mzinga/config'
 import path from 'path'
 import type { Payload } from 'payload'
 import payload from 'payload'
-import type { InitOptions } from 'payload/config'
 
 import { seed as seedData } from './seed'
 

@@ -1,7 +1,7 @@
 import type { SanitizedCollectionConfig, TypeWithID } from '../collections/config/types'
 import type { PayloadRequest } from '../express/types'
 import type { SanitizedGlobalConfig } from '../globals/config/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 import { deepCopyObject } from '../utilities/deepCopyObject'
 import sanitizeInternalFields from '../utilities/sanitizeInternalFields'

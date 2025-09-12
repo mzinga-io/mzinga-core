@@ -1,7 +1,7 @@
-import type { Config } from 'payload/config'
-import type { Field, GroupField, TabsField } from 'payload/dist/fields/config/types'
+import type { Config } from 'mzinga/config'
+import type { Field, GroupField, TabsField } from 'mzinga/dist/fields/config/types'
 
-import { deepMerge } from 'payload/utilities'
+import { deepMerge } from 'mzinga/utilities'
 
 import type { PluginConfig } from './types'
 

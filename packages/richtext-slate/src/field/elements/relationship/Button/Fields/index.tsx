@@ -1,9 +1,9 @@
 'use client'
 
-import { RelationshipComponent } from 'payload/components/fields/Relationship'
-import { SelectComponent } from 'payload/components/fields/Select'
-import { useFormFields } from 'payload/components/forms'
-import { useAuth, useConfig } from 'payload/components/utilities'
+import { RelationshipComponent } from 'mzinga/components/fields/Relationship'
+import { SelectComponent } from 'mzinga/components/fields/Select'
+import { useFormFields } from 'mzinga/components/forms'
+import { useAuth, useConfig } from 'mzinga/components/utilities'
 import React, { Fragment, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 

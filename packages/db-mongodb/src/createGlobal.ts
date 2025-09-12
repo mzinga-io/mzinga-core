@@ -1,5 +1,5 @@
-import type { CreateGlobal } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { CreateGlobal } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
 import type { MongooseAdapter } from '.'
 

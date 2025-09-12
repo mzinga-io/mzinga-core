@@ -1,11 +1,16 @@
 import type { Transformer } from '@lexical/markdown'
 import type { JSONSchema4 } from 'json-schema'
-import type { Klass, LexicalEditor, LexicalNode, SerializedEditorState } from 'lexical'
-import type { SerializedLexicalNode } from 'lexical'
-import type { LexicalNodeReplacement } from 'lexical'
+import type {
+  Klass,
+  LexicalEditor,
+  LexicalNode,
+  LexicalNodeReplacement,
+  SerializedEditorState,
+  SerializedLexicalNode,
+} from 'lexical'
+import type { SanitizedConfig } from 'mzinga/config'
+import type { PayloadRequest, RichTextField, ValidateOptions } from 'mzinga/types'
 import type { Payload, RequestContext } from 'payload'
-import type { SanitizedConfig } from 'payload/config'
-import type { PayloadRequest, RichTextField, ValidateOptions } from 'payload/types'
 import type React from 'react'
 
 import type { AdapterProps } from '../../types'
@@ -215,9 +220,7 @@ export type SanitizedPlugin =
       position: 'top' // Determines at which position the Component will be added.
     }
 
-export type SanitizedFeatures = Required<
-  Pick<ResolvedFeature, 'markdownTransformers' | 'nodes'>
-> & {
+export type SanitizedFeatures = {
   /**  The node types mapped to their converters */
   converters: {
     html: HTMLConverter[]
@@ -292,4 +295,4 @@ export type SanitizedFeatures = Required<
   }
   /**  The node types mapped to their validations */
   validations: Map<string, Array<NodeValidation>>
-}
+} & Required<Pick<ResolvedFeature, 'markdownTransformers' | 'nodes'>>

@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
-import type { SanitizedConfig } from 'payload/config'
-import type { Field, TypeWithID } from 'payload/types'
+import type { SanitizedConfig } from 'mzinga/config'
+import type { Field, TypeWithID } from 'mzinga/types'
 
 import { createBlocksMap } from '../../utilities/createBlocksMap'
 import { createPathMap } from '../../utilities/createRelationshipMap'

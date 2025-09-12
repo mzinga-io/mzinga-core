@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "payload/generated-types": ["./payload-types.ts"]
+      "mzinga/generated-types": ["./payload-types.ts"]
     }
   }
 }

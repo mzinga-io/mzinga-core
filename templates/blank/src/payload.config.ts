@@ -1,10 +1,10 @@
 import path from 'path'
 
-import { payloadCloud } from '@payloadcms/plugin-cloud'
-import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
 import { webpackBundler } from '@payloadcms/bundler-webpack' // bundler-import
+import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
+import { payloadCloud } from '@payloadcms/plugin-cloud'
 import { slateEditor } from '@payloadcms/richtext-slate' // editor-import
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'mzinga/config'
 
 import Users from './collections/Users'
 

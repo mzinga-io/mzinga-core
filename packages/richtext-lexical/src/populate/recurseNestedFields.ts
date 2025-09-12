@@ -1,7 +1,7 @@
+import type { Field, PayloadRequest } from 'mzinga/types'
 import type { RequestContext } from 'payload'
-import type { Field, PayloadRequest } from 'payload/types'
 
-import { afterReadTraverseFields } from 'payload/utilities'
+import { afterReadTraverseFields } from 'mzinga/utilities'
 
 import type { PopulationPromise } from '../field/features/types'
 

@@ -1,5 +1,5 @@
 'use client'
-import type { CellComponentProps, RichTextField } from 'payload/types'
+import type { CellComponentProps, RichTextField } from 'mzinga/types'
 
 import React from 'react'
 

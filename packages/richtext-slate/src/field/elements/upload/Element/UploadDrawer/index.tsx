@@ -1,19 +1,19 @@
 'use client'
 
-import type { SanitizedCollectionConfig } from 'payload/types'
+import type { SanitizedCollectionConfig } from 'mzinga/types'
 
 import { useModal } from '@faceless-ui/modal'
-import { Drawer } from 'payload/components/elements'
-import { Form, FormSubmit, RenderFields, fieldTypes } from 'payload/components/forms'
+import { Drawer } from 'mzinga/components/elements'
+import { Form, FormSubmit, RenderFields, fieldTypes } from 'mzinga/components/forms'
 import {
   buildStateFromSchema,
   useAuth,
   useConfig,
   useDocumentInfo,
   useLocale,
-} from 'payload/components/utilities'
-import { sanitizeFields } from 'payload/config'
-import { deepCopyObject, getTranslation } from 'payload/utilities'
+} from 'mzinga/components/utilities'
+import { sanitizeFields } from 'mzinga/config'
+import { deepCopyObject, getTranslation } from 'mzinga/utilities'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Transforms } from 'slate'

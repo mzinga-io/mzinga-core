@@ -10,15 +10,15 @@ import type { NodePgDatabase, NodePgQueryResultHKT } from 'drizzle-orm/node-post
 import type {
   PgColumn,
   PgEnum,
+  pgEnum,
   PgSchema,
   PgTableWithColumns,
   PgTransaction,
 } from 'drizzle-orm/pg-core'
-import type { pgEnum } from 'drizzle-orm/pg-core'
 import type { PgTableFn } from 'drizzle-orm/pg-core/table'
+import type { BaseDatabaseAdapter } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 import type { Payload } from 'payload'
-import type { BaseDatabaseAdapter } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
 import type { Pool, PoolConfig } from 'pg'
 
 export type DrizzleDB = NodePgDatabase<Record<string, unknown>>
@@ -68,7 +68,7 @@ type Schema =
     }
   | PgSchema
 
-export type PostgresAdapter = BaseDatabaseAdapter & {
+export type PostgresAdapter = {
   drizzle: DrizzleDB
   enums: Record<string, GenericEnum>
   /**
@@ -97,7 +97,7 @@ export type PostgresAdapter = BaseDatabaseAdapter & {
   tableNameMap: Map<string, string>
   tables: Record<string, GenericTable | PgTableWithColumns<any>>
   versionsSuffix?: string
-}
+} & BaseDatabaseAdapter
 
 export type IDType = 'integer' | 'numeric' | 'uuid' | 'varchar'
 

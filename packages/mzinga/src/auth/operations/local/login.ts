@@ -2,7 +2,7 @@ import type { Response } from 'express'
 
 import type { PayloadRequest, RequestContext } from '../../../express/types'
 import type { GeneratedTypes } from '../../../index'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 import type { Result } from '../login'
 
 import { APIError } from '../../../errors'
@@ -28,7 +28,7 @@ export type Options<TSlug extends keyof GeneratedTypes['collections']> = {
 async function localLogin<TSlug extends keyof GeneratedTypes['collections']>(
   payload: Payload,
   options: Options<TSlug>,
-): Promise<Result & { user: GeneratedTypes['collections'][TSlug] }> {
+): Promise<{ user: GeneratedTypes['collections'][TSlug] } & Result> {
   const {
     collection: collectionSlug,
     data,

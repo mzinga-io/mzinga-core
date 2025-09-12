@@ -1,6 +1,6 @@
 import type { GeneratedTypes } from '../../..'
 import type { PayloadRequest, RequestContext } from '../../../express/types'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 import type { Document } from '../../../types'
 import type { TypeWithVersion } from '../../../versions/types'
 

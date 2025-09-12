@@ -1,4 +1,4 @@
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 async function initAdmin(ctx: Payload): Promise<void> {
   if (!ctx.config.admin.disable) {

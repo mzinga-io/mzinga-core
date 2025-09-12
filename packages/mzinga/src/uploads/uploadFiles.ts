@@ -1,6 +1,6 @@
 import type { TFunction } from 'i18next'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { FileToSave } from './types'
 
 import { FileUploadError } from '../errors'

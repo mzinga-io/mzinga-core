@@ -2,7 +2,7 @@ import express from 'express'
 import passport from 'passport'
 import path from 'path'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 import getExecuteStaticAccess from '../auth/getExecuteStaticAccess'
 import authenticate from './middleware/authenticate'

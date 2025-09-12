@@ -1,6 +1,6 @@
 import graphQLPlayground from 'graphql-playground-middleware-express'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 function initPlayground(ctx: Payload): void {
   if (
@@ -14,7 +14,7 @@ function initPlayground(ctx: Payload): void {
       graphQLPlayground({
         endpoint: `${ctx.config.routes.api}${ctx.config.routes.graphQL}`,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore ISettings interface has all properties required for some reason
+        // @ts-expect-error ISettings interface has all properties required for some reason
         settings: {
           'request.credentials': 'include',
         },

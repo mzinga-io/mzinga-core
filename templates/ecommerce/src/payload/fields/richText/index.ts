@@ -4,7 +4,7 @@ import type {
   RichTextElement,
   RichTextLeaf,
 } from '@payloadcms/richtext-slate/dist/types'
-import type { RichTextField } from 'payload/dist/fields/config/types'
+import type { RichTextField } from 'mzinga/dist/fields/config/types'
 
 import deepMerge from '../../utilities/deepMerge'
 import link from '../link'

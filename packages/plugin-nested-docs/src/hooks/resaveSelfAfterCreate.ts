@@ -1,4 +1,4 @@
-import type { CollectionAfterChangeHook, CollectionConfig } from 'payload/types'
+import type { CollectionAfterChangeHook, CollectionConfig } from 'mzinga/types'
 
 import type { PluginConfig } from '../types'
 

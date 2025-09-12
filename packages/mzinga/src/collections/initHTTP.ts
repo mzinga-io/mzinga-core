@@ -1,7 +1,7 @@
 import express from 'express'
 import passport from 'passport'
 
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { SanitizedCollectionConfig } from './config/types'
 
 import apiKeyStrategy from '../auth/strategies/apiKey'

@@ -2,7 +2,7 @@ import type {
   CollectionAfterChangeHook,
   CollectionAfterDeleteHook,
   PayloadRequest,
-} from 'payload/types'
+} from 'mzinga/types'
 
 interface Args {
   endpoint: string

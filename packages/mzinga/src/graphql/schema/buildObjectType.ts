@@ -42,7 +42,7 @@ import type {
   TextareaField,
   UploadField,
 } from '../../fields/config/types'
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 
 import { tabHasName } from '../../fields/config/types'
 import { toWords } from '../../utilities/formatLabels'

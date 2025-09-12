@@ -1,4 +1,4 @@
-import type { PayloadRequest } from 'payload/dist/types'
+import type { PayloadRequest } from 'mzinga/dist/types'
 
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 

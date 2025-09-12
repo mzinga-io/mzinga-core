@@ -9,7 +9,7 @@ import {
 
 import type { Field } from '../../fields/config/types'
 import type { ObjectTypeConfig } from '../../graphql/schema/buildObjectType'
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 import type { Collection, SanitizedCollectionConfig } from '../config/types'
 
 import forgotPassword from '../../auth/graphql/resolvers/forgotPassword'

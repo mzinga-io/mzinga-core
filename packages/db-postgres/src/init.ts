@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
-import type { Init } from 'payload/database'
-import type { SanitizedCollectionConfig } from 'payload/types'
+import type { Init } from 'mzinga/database'
+import type { SanitizedCollectionConfig } from 'mzinga/types'
 
 import { pgEnum, pgSchema, pgTable } from 'drizzle-orm/pg-core'
-import { buildVersionCollectionFields, buildVersionGlobalFields } from 'payload/versions'
+import { buildVersionCollectionFields, buildVersionGlobalFields } from 'mzinga/versions'
 
 import type { PostgresAdapter } from './types'
 

@@ -7,7 +7,7 @@ import {
   FieldDescription,
   useField,
   withCondition,
-} from 'payload/components/forms'
+} from 'mzinga/components/forms'
 import React, { useCallback } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 

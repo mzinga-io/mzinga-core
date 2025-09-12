@@ -1,5 +1,5 @@
 import type { SQL } from 'drizzle-orm'
-import type { Field, Where } from 'payload/types'
+import type { Field, Where } from 'mzinga/types'
 
 import type { GenericColumn, PostgresAdapter } from '../types'
 import type { BuildQueryJoinAliases, BuildQueryJoins } from './buildQuery'

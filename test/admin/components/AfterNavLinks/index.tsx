@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { useConfig } from '../../../../packages/payload/src/admin/components/utilities/Config'
 
 // In your projects, you can import as follows:
-// import { useConfig } from 'payload/components/utilities';
+// import { useConfig } from 'mzinga/components/utilities';
 
 const baseClass = 'after-nav-links'
 

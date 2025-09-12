@@ -6,7 +6,7 @@ import type { SanitizedCollectionConfig } from '../collections/config/types'
 import type { SanitizedConfig } from '../exports/config'
 import type { Field, FieldAffectingData, Option } from '../fields/config/types'
 import type { SanitizedGlobalConfig } from '../globals/config/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 import { fieldAffectsData, tabHasName } from '../fields/config/types'
 import { deepCopyObject } from './deepCopyObject'

@@ -1,5 +1,5 @@
+import { Banner } from 'mzinga/components'
 import React from 'react'
-import { Banner } from 'payload/components'
 
 import { SeedButton } from './SeedButton'
 

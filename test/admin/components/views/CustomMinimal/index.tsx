@@ -6,9 +6,9 @@ import MinimalTemplate from '../../../../../packages/payload/src/admin/component
 import { useConfig } from '../../../../../packages/payload/src/admin/components/utilities/Config'
 
 // In your projects, you can import as follows:
-// import { MinimalTemplate } from 'payload/components/templates';
-// import { Button } from 'payload/components/elements';
-// import { useConfig } from 'payload/components/utilities';
+// import { MinimalTemplate } from 'mzinga/components/templates';
+// import { Button } from 'mzinga/components/elements';
+// import { useConfig } from 'mzinga/components/utilities';
 
 import './index.scss'
 

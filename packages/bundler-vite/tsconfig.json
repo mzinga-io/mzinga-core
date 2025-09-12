@@ -9,5 +9,5 @@
   },
   "exclude": ["dist", "node_modules", ".eslintrc.js"],
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "src/**/*.json"],
-  "references": [{ "path": "../payload" }]
+  "references": [{ "path": "../mzinga" }]
 }

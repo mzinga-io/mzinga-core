@@ -4,7 +4,7 @@ import { randomBytes } from 'crypto'
 import findUp from 'find-up'
 import fs from 'fs'
 
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 import type { AdminInitEvent } from './events/adminInit'
 import type { ServerInitEvent } from './events/serverInit'
 

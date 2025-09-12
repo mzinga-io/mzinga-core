@@ -1,5 +1,9 @@
-import type { FileData, TypeWithID } from 'payload/types'
-import type { CollectionAfterDeleteHook, CollectionConfig } from 'payload/types'
+import type {
+  CollectionAfterDeleteHook,
+  CollectionConfig,
+  FileData,
+  TypeWithID,
+} from 'mzinga/types'
 
 import type { GeneratedAdapter, TypeWithPrefix } from '../types'
 

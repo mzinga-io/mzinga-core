@@ -1,4 +1,4 @@
-import { Root } from 'payload/components/root'
+import { Root } from 'mzinga/components/root'
 // @ts-expect-error
 import config from 'payload-config'
 import React from 'react'

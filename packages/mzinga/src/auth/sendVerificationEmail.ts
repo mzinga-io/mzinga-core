@@ -1,7 +1,7 @@
 import type { Collection } from '../collections/config/types'
 import type { EmailOptions, SanitizedConfig } from '../config/types'
 import type { PayloadRequest } from '../express/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { User, VerifyConfig } from './types'
 
 type Args = {

@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import payload from 'payload';
-import { CollectionConfig, FieldHook } from 'payload/types';
+import { CollectionConfig, FieldHook } from 'mzinga/types'
+import payload from 'payload'
 
 const formatLocation: FieldHook = async ({ data }) => {
-  return `${data.city}${data.state ? `, ${data.state},` : ','} ${data.country}`;
-};
+  return `${data.city}${data.state ? `, ${data.state},` : ','} ${data.country}`
+}
 
 const getLocationStaff: FieldHook = async ({ data }) => {
   const staff = await payload.find({
@@ -14,14 +14,14 @@ const getLocationStaff: FieldHook = async ({ data }) => {
         equals: data.id,
       },
     },
-  });
+  })
 
   if (staff.docs) {
-    return staff.docs.map((doc) => doc.id);
+    return staff.docs.map((doc) => doc.id)
   }
 
-  return null;
-};
+  return null
+}
 
 const getNextEvent: FieldHook = async ({ data }) => {
   const eventsByDate = await payload.find({
@@ -32,14 +32,14 @@ const getNextEvent: FieldHook = async ({ data }) => {
         equals: data.id,
       },
     },
-  });
+  })
 
   if (eventsByDate?.docs) {
-    return eventsByDate.docs[0]?.id;
+    return eventsByDate.docs[0]?.id
   }
 
-  return null;
-};
+  return null
+}
 
 const getAllEvents: FieldHook = async ({ data }) => {
   const allEvents = await payload.find({
@@ -49,11 +49,11 @@ const getAllEvents: FieldHook = async ({ data }) => {
         equals: data.id,
       },
     },
-  });
-  if (allEvents.docs) return allEvents.docs.map((doc) => doc.id);
+  })
+  if (allEvents.docs) return allEvents.docs.map((doc) => doc.id)
 
-  return null;
-};
+  return null
+}
 
 const Locations: CollectionConfig = {
   slug: 'locations',
@@ -67,14 +67,14 @@ const Locations: CollectionConfig = {
       label: false,
       type: 'text',
       hooks: {
-        beforeChange: [({ siblingData }) => {
-          // Mutate the sibling data to prevent DB storage
-          // eslint-disable-next-line no-param-reassign
-          siblingData.location = undefined;
-        }],
-        afterRead: [
-          formatLocation,
+        beforeChange: [
+          ({ siblingData }) => {
+            // Mutate the sibling data to prevent DB storage
+            // eslint-disable-next-line no-param-reassign
+            siblingData.location = undefined
+          },
         ],
+        afterRead: [formatLocation],
       },
       access: {
         create: () => false,
@@ -117,11 +117,13 @@ const Locations: CollectionConfig = {
         readOnly: true,
       },
       hooks: {
-        beforeChange: [({ siblingData }) => {
-          // Mutate the sibling data to prevent DB storage
-          // eslint-disable-next-line no-param-reassign
-          siblingData.events = undefined;
-        }],
+        beforeChange: [
+          ({ siblingData }) => {
+            // Mutate the sibling data to prevent DB storage
+            // eslint-disable-next-line no-param-reassign
+            siblingData.events = undefined
+          },
+        ],
         afterRead: [getAllEvents],
       },
     },
@@ -139,11 +141,13 @@ const Locations: CollectionConfig = {
         readOnly: true,
       },
       hooks: {
-        beforeChange: [({ siblingData }) => {
-          // Mutate the sibling data to prevent DB storage
-          // eslint-disable-next-line no-param-reassign
-          siblingData.staff = undefined;
-        }],
+        beforeChange: [
+          ({ siblingData }) => {
+            // Mutate the sibling data to prevent DB storage
+            // eslint-disable-next-line no-param-reassign
+            siblingData.staff = undefined
+          },
+        ],
         afterRead: [getLocationStaff],
       },
     },
@@ -160,15 +164,17 @@ const Locations: CollectionConfig = {
         update: () => false,
       },
       hooks: {
-        beforeChange: [({ siblingData }) => {
-          // Mutate the sibling data to prevent DB storage
-          // eslint-disable-next-line no-param-reassign
-          siblingData.nextEvent = undefined;
-        }],
+        beforeChange: [
+          ({ siblingData }) => {
+            // Mutate the sibling data to prevent DB storage
+            // eslint-disable-next-line no-param-reassign
+            siblingData.nextEvent = undefined
+          },
+        ],
         afterRead: [getNextEvent],
       },
     },
   ],
-};
+}
 
-export default Locations;
+export default Locations

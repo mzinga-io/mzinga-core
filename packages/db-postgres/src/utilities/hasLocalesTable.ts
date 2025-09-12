@@ -1,6 +1,6 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
-import { fieldAffectsData, fieldHasSubFields } from 'payload/types'
+import { fieldAffectsData, fieldHasSubFields } from 'mzinga/types'
 
 export const hasLocalesTable = (fields: Field[]): boolean => {
   return fields.some((field) => {

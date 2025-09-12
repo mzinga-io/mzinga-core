@@ -1,5 +1,5 @@
 import type { SanitizedGlobalConfig } from '../globals/config/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { Document, PayloadRequest, Where } from '../types'
 
 import { docHasTimestamps } from '../types'
@@ -14,11 +14,11 @@ type Args = {
 }
 
 export const getLatestGlobalVersion = async ({
+  slug,
   config,
   locale,
   payload,
   req,
-  slug,
   where,
 }: Args): Promise<{ global: Document; globalExists: boolean }> => {
   let latestVersion
@@ -37,9 +37,9 @@ export const getLatestGlobalVersion = async ({
   }
 
   const global = await payload.db.findGlobal({
+    slug,
     locale,
     req,
-    slug,
     where,
   })
   const globalExists = Boolean(global)

@@ -4,7 +4,7 @@ import { GraphQLJSONObject } from 'graphql-type-json'
 import type { CollectionConfig, SanitizedCollectionConfig } from '../../collections/config/types'
 import type { Field } from '../../fields/config/types'
 import type { GlobalConfig, SanitizedGlobalConfig } from '../../globals/config/types'
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 
 import { toWords } from '../../utilities/formatLabels'
 import formatName from '../utilities/formatName'
@@ -139,8 +139,8 @@ type BuildPolicyType = {
     }
 )
 export function buildPolicyType(args: BuildPolicyType): GraphQLObjectType {
-  const { entity, scope, type, typeSuffix } = args
-  const { fields, graphQL, slug, versions } = entity
+  const { type, entity, scope, typeSuffix } = args
+  const { slug, fields, graphQL, versions } = entity
 
   let operations = []
 
@@ -207,8 +207,8 @@ export default function buildPoliciesType(payload: Payload): GraphQLObjectType {
       return
     }
     const collectionPolicyType = buildPolicyType({
-      entity: collection,
       type: 'collection',
+      entity: collection,
       typeSuffix: 'Access',
     })
 
@@ -222,8 +222,8 @@ export default function buildPoliciesType(payload: Payload): GraphQLObjectType {
       return
     }
     const globalPolicyType = buildPolicyType({
-      entity: global,
       type: 'global',
+      entity: global,
       typeSuffix: 'Access',
     })
 

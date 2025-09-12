@@ -1,4 +1,4 @@
-import type { Where } from 'payload/types'
+import type { Where } from 'mzinga/types'
 
 import qs from 'qs'
 import React, { useCallback, useEffect, useReducer, useState } from 'react'
@@ -80,7 +80,7 @@ const RelationshipField: React.FC<Props> = (props) => {
         void relationsToFetch.reduce(async (priorRelation, relation) => {
           await priorRelation
           if (resultsFetched < 10) {
-            const search: Record<string, unknown> & { where: Where } = {
+            const search: { where: Where } & Record<string, unknown> = {
               depth: 0,
               limit: maxResultsPerRequest,
               page: lastLoadedPageToUse,

@@ -1,4 +1,4 @@
-import type { Field, Fields } from 'payload/types'
+import type { Field, Fields } from 'mzinga/types'
 
 export type Props = {
   drawerSlug: string

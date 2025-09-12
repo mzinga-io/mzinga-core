@@ -6,10 +6,10 @@ import type { i18n as Ii18n, TFunction } from 'i18next'
 import type { User } from '../auth/types'
 import type { Collection, TypeWithID } from '../collections/config/types'
 import type { FindOneArgs } from '../database/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 /** Express request with some Payload related context added */
-export declare type PayloadRequest<U = any> = Request & {
+export declare type PayloadRequest<U = any> = {
   /** Information about the collection that is being accessed
    * - Configuration from payload-config.ts
    * - MongoDB model for this collection
@@ -59,10 +59,10 @@ export declare type PayloadRequest<U = any> = Request & {
    * Identifier for the database transaction for interactions in a single, all-or-nothing operation.
    * Can also be used to ensure consistency when multiple operations try to create a transaction concurrently on the same request.
    */
-  transactionID?: number | string | Promise<number | string>
+  transactionID?: Promise<number | string> | number | string
   /** The signed in user */
   user: (U & User) | null
-}
+} & Request
 
 export interface RequestContext {
   [key: string]: unknown

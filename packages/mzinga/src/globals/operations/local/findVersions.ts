@@ -1,7 +1,7 @@
 import type { GeneratedTypes, RequestContext } from '../../..'
 import type { PaginatedDocs } from '../../../database/types'
 import type { PayloadRequest } from '../../../express/types'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 import type { Document, Where } from '../../../types'
 import type { TypeWithVersion } from '../../../versions/types'
 

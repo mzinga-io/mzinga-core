@@ -1,10 +1,10 @@
 'use client'
 
-import type { Props as UploadInputProps } from 'payload/components/fields/Upload'
-import type { FieldType, Options } from 'payload/dist/admin/components/forms/useField/types'
+import type { Props as UploadInputProps } from 'mzinga/components/fields/Upload'
+import type { FieldType, Options } from 'mzinga/dist/admin/components/forms/useField/types'
 
-import { UploadInput, useAllFormFields, useField } from 'payload/components/forms'
-import { useConfig, useDocumentInfo, useLocale } from 'payload/components/utilities'
+import { UploadInput, useAllFormFields, useField } from 'mzinga/components/forms'
+import { useConfig, useDocumentInfo, useLocale } from 'mzinga/components/utilities'
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 

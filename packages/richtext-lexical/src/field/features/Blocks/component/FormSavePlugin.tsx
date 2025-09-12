@@ -1,7 +1,7 @@
-import type { Data, Fields } from 'payload/types'
+import type { Data, Fields } from 'mzinga/types'
 import type React from 'react'
 
-import { reduceFieldsToValues, useAllFormFields } from 'payload/components/forms'
+import { reduceFieldsToValues, useAllFormFields } from 'mzinga/components/forms'
 import { useEffect } from 'react'
 
 type Props = {

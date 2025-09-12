@@ -1,4 +1,4 @@
-import type { EmailTransport } from 'payload/config'
+import type { EmailTransport } from 'mzinga/config'
 
 import nodemailer from 'nodemailer'
 

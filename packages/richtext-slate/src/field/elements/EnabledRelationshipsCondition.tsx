@@ -1,9 +1,9 @@
 'use client'
 
-import type { User } from 'payload/auth'
-import type { SanitizedCollectionConfig } from 'payload/types'
+import type { User } from 'mzinga/auth'
+import type { SanitizedCollectionConfig } from 'mzinga/types'
 
-import { useAuth, useConfig } from 'payload/components/utilities'
+import { useAuth, useConfig } from 'mzinga/components/utilities'
 import * as React from 'react'
 
 type options = {

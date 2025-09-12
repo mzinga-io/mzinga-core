@@ -6,7 +6,7 @@ import rateLimit from 'express-rate-limit'
 import methodOverride from 'method-override'
 import passport from 'passport'
 
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 import type { PayloadRequest } from '../types'
 
 import localizationMiddleware from '../../localization/middleware'

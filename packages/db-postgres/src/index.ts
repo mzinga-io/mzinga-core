@@ -1,8 +1,8 @@
 import type { Payload } from 'payload'
 
 import fs from 'fs'
+import { createDatabaseAdapter } from 'mzinga/database'
 import path from 'path'
-import { createDatabaseAdapter } from 'payload/database'
 
 import type { Args, PostgresAdapter, PostgresAdapterResult } from './types'
 

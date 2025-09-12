@@ -24,7 +24,7 @@ import type {
 import type { BaseDatabaseAdapter } from '../database/types'
 import type { PayloadRequest } from '../express/types'
 import type { GlobalConfig, SanitizedGlobalConfig } from '../globals/config/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { Where } from '../types'
 import type { PayloadLogger } from '../utilities/logger'
 
@@ -78,15 +78,15 @@ export type GeneratePreviewURL = (
   options: GeneratePreviewURLOptions,
 ) => Promise<null | string> | null | string
 
-export type EmailTransport = Email & {
+export type EmailTransport = {
   transport: Transporter
   transportOptions?: SMTPConnection.Options
-}
+} & Email
 
-export type EmailTransportOptions = Email & {
+export type EmailTransportOptions = {
   transport?: Transporter
   transportOptions: SMTPConnection.Options
-}
+} & Email
 
 export type EmailOptions = Email | EmailTransport | EmailTransportOptions
 
@@ -319,17 +319,17 @@ export type BaseLocalizationConfig = {
 }
 
 export type LocalizationConfigWithNoLabels = Prettify<
-  BaseLocalizationConfig & {
+  {
     /**
      * List of supported locales
      * @example `["en", "es", "fr", "nl", "de", "jp"]`
      */
     locales: string[]
-  }
+  } & BaseLocalizationConfig
 >
 
 export type LocalizationConfigWithLabels = Prettify<
-  BaseLocalizationConfig & {
+  {
     /**
      * List of supported locales with labels
      * @example {
@@ -339,17 +339,17 @@ export type LocalizationConfigWithLabels = Prettify<
      * }
      */
     locales: Locale[]
-  }
+  } & BaseLocalizationConfig
 >
 
 export type SanitizedLocalizationConfig = Prettify<
-  LocalizationConfigWithLabels & {
+  {
     /**
      * List of supported locales
      * @example `["en", "es", "fr", "nl", "de", "jp"]`
      */
     localeCodes: string[]
-  }
+  } & LocalizationConfigWithLabels
 >
 
 /**
@@ -475,10 +475,10 @@ export type Config = {
     inactivityRoute?: string
     /** Replace the entirety of the index.html file used by the Admin panel. Reference the base index.html file to ensure your replacement has the appropriate HTML elements. */
     indexHTML?: string
-    livePreview?: LivePreviewConfig & {
+    livePreview?: {
       collections?: string[]
       globals?: string[]
-    }
+    } & LivePreviewConfig
     /** The route for the logout page. */
     logoutRoute?: string
     /** Base meta data to use for the Admin panel. Included properties are titleSuffix, ogImage, and favicon. */
@@ -711,10 +711,7 @@ export type Config = {
   upload?: ExpressFileUploadOptions
 }
 
-export type SanitizedConfig = Omit<
-  DeepRequired<Config>,
-  'collections' | 'endpoint' | 'globals' | 'localization'
-> & {
+export type SanitizedConfig = {
   collections: SanitizedCollectionConfig[]
   endpoints: Endpoint[]
   globals: SanitizedGlobalConfig[]
@@ -724,7 +721,7 @@ export type SanitizedConfig = Omit<
     configDir: string
     rawConfig: string
   }
-}
+} & Omit<DeepRequired<Config>, 'collections' | 'endpoint' | 'globals' | 'localization'>
 
 export type EntityDescription =
   | (() => string)

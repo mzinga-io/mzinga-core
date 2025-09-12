@@ -1,5 +1,5 @@
+import type { PayloadHandler } from 'mzinga/config'
 import type { Payload } from 'payload'
-import type { PayloadHandler } from 'payload/config'
 
 import compression from 'compression'
 import history from 'connect-history-api-fallback'

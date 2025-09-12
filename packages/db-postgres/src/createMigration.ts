@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax, no-await-in-loop */
 import type { DrizzleSnapshotJSON } from 'drizzle-kit/api'
-import type { CreateMigration } from 'payload/database'
+import type { CreateMigration } from 'mzinga/database'
 
 import fs from 'fs'
 import prompts from 'prompts'

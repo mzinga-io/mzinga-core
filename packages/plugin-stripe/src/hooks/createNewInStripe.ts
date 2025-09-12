@@ -1,6 +1,6 @@
-import type { CollectionBeforeValidateHook, CollectionConfig } from 'payload/types'
+import type { CollectionBeforeValidateHook, CollectionConfig } from 'mzinga/types'
 
-import { APIError } from 'payload/errors'
+import { APIError } from 'mzinga/errors'
 import Stripe from 'stripe'
 
 import type { StripeConfig } from '../types'
@@ -10,18 +10,15 @@ import { deepen } from '../utilities/deepen'
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 const stripe = new Stripe(stripeSecretKey || '', { apiVersion: '2022-08-01' })
 
-type HookArgsWithCustomCollection = Omit<
-  Parameters<CollectionBeforeValidateHook>[0],
-  'collection'
-> & {
+type HookArgsWithCustomCollection = {
   collection: CollectionConfig
-}
+} & Omit<Parameters<CollectionBeforeValidateHook>[0], 'collection'>
 
 export type CollectionBeforeValidateHookWithArgs = (
-  args: HookArgsWithCustomCollection & {
+  args: {
     collection?: CollectionConfig
     stripeConfig?: StripeConfig
-  },
+  } & HookArgsWithCustomCollection,
 ) => void
 
 export const createNewInStripe: CollectionBeforeValidateHookWithArgs = async (args) => {
@@ -52,15 +49,12 @@ export const createNewInStripe: CollectionBeforeValidateHookWithArgs = async (ar
 
       if (syncConfig) {
         // combine all fields of this object and match their respective values within the document
-        let syncedFields = syncConfig.fields.reduce(
-          (acc, field) => {
-            const { fieldPath, stripeProperty } = field
+        let syncedFields = syncConfig.fields.reduce((acc, field) => {
+          const { fieldPath, stripeProperty } = field
 
-            acc[stripeProperty] = dataRef[fieldPath]
-            return acc
-          },
-          {} as Record<string, any>,
-        )
+          acc[stripeProperty] = dataRef[fieldPath]
+          return acc
+        }, {} as Record<string, any>)
 
         syncedFields = deepen(syncedFields)
 

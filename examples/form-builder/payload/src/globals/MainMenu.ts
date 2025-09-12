@@ -1,4 +1,4 @@
-import { GlobalConfig } from 'payload/types'
+import { GlobalConfig } from 'mzinga/types'
 import link from '../fields/link'
 
 export const MainMenu: GlobalConfig = {

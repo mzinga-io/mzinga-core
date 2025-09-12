@@ -1,8 +1,8 @@
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import Users from './collections/Users'
 import { payloadCloud } from '../../src'
 import { Media } from './collections/Media'
+import Users from './collections/Users'
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',

@@ -1,9 +1,9 @@
 import type { JSONSchema4 } from 'json-schema'
 import type { SerializedEditorState } from 'lexical'
 import type { EditorConfig as LexicalEditorConfig } from 'lexical/LexicalEditor'
-import type { RichTextAdapter } from 'payload/types'
+import type { RichTextAdapter } from 'mzinga/types'
 
-import { withNullableJSONSchemaType } from 'payload/utilities'
+import { withNullableJSONSchemaType } from 'mzinga/utilities'
 
 import type { FeatureProvider } from './field/features/types'
 import type { EditorConfig, SanitizedEditorConfig } from './field/lexical/config/types'
@@ -26,9 +26,9 @@ export type LexicalEditorProps = {
   lexical?: LexicalEditorConfig
 }
 
-export type LexicalRichTextAdapter = RichTextAdapter<SerializedEditorState, AdapterProps, any> & {
+export type LexicalRichTextAdapter = {
   editorConfig: SanitizedEditorConfig
-}
+} & RichTextAdapter<SerializedEditorState, AdapterProps, any>
 
 export function lexicalEditor(props?: LexicalEditorProps): LexicalRichTextAdapter {
   let finalSanitizedEditorConfig: SanitizedEditorConfig
@@ -224,8 +224,8 @@ export { BlocksFeature, type BlocksFeatureProps } from './field/features/Blocks'
 export {
   $createBlockNode,
   $isBlockNode,
-  type BlockFields,
   BlockNode,
+  type BlockFields,
   type SerializedBlockNode,
 } from './field/features/Blocks/nodes/BlocksNode'
 export { HeadingFeature } from './field/features/Heading'
@@ -241,32 +241,15 @@ export {
 export {
   $createLinkNode,
   $isLinkNode,
-  type LinkFields,
   LinkNode,
-  type SerializedLinkNode,
   TOGGLE_LINK_COMMAND,
+  type LinkFields,
+  type SerializedLinkNode,
 } from './field/features/Link/nodes/LinkNode'
 
 export { ParagraphFeature } from './field/features/Paragraph'
 export { RelationshipFeature } from './field/features/Relationship'
 
-export {
-  $createRelationshipNode,
-  $isRelationshipNode,
-  type RelationshipData,
-  RelationshipNode,
-  type SerializedRelationshipNode,
-} from './field/features/Relationship/nodes/RelationshipNode'
-export { UploadFeature } from './field/features/Upload'
-export type { UploadFeatureProps } from './field/features/Upload'
-export {
-  $createUploadNode,
-  $isUploadNode,
-  RawUploadPayload,
-  type SerializedUploadNode,
-  type UploadData,
-  UploadNode,
-} from './field/features/Upload/nodes/UploadNode'
 export { AlignFeature } from './field/features/align'
 export { TextDropdownSectionWithEntries } from './field/features/common/floatingSelectToolbarTextDropdownSection'
 export {
@@ -282,16 +265,32 @@ export { ParagraphHTMLConverter } from './field/features/converters/html/convert
 export { TextHTMLConverter } from './field/features/converters/html/converter/converters/text'
 export { defaultHTMLConverters } from './field/features/converters/html/converter/defaultConverters'
 export type { HTMLConverter } from './field/features/converters/html/converter/types'
-export { consolidateHTMLConverters } from './field/features/converters/html/field'
-export { lexicalHTML } from './field/features/converters/html/field'
+export { consolidateHTMLConverters, lexicalHTML } from './field/features/converters/html/field'
 export { TestRecorderFeature } from './field/features/debug/TestRecorder'
+export {
+  $createRelationshipNode,
+  $isRelationshipNode,
+  RelationshipNode,
+  type RelationshipData,
+  type SerializedRelationshipNode,
+} from './field/features/Relationship/nodes/RelationshipNode'
+export { UploadFeature } from './field/features/Upload'
+export type { UploadFeatureProps } from './field/features/Upload'
+export {
+  $createUploadNode,
+  $isUploadNode,
+  RawUploadPayload,
+  UploadNode,
+  type SerializedUploadNode,
+  type UploadData,
+} from './field/features/Upload/nodes/UploadNode'
 
 export { TreeViewFeature } from './field/features/debug/TreeView'
 export { BoldTextFeature } from './field/features/format/Bold'
 
+export { SectionWithEntries as FormatSectionWithEntries } from './field/features/format/common/floatingSelectToolbarSection'
 export { InlineCodeTextFeature } from './field/features/format/InlineCode'
 export { ItalicTextFeature } from './field/features/format/Italic'
-export { SectionWithEntries as FormatSectionWithEntries } from './field/features/format/common/floatingSelectToolbarSection'
 export { StrikethroughTextFeature } from './field/features/format/strikethrough'
 export { SubscriptTextFeature } from './field/features/format/subscript'
 export { SuperscriptTextFeature } from './field/features/format/superscript'
@@ -338,14 +337,14 @@ export type {
   SanitizedFeatures,
 } from './field/features/types'
 export {
-  EditorConfigProvider,
-  useEditorConfigContext,
-} from './field/lexical/config/EditorConfigProvider'
-export {
   defaultEditorConfig,
   defaultEditorFeatures,
   defaultSanitizedEditorConfig,
 } from './field/lexical/config/default'
+export {
+  EditorConfigProvider,
+  useEditorConfigContext,
+} from './field/lexical/config/EditorConfigProvider'
 export { loadFeatures, sortFeaturesForOptimalLoading } from './field/lexical/config/loader'
 export { sanitizeEditorConfig, sanitizeFeatures } from './field/lexical/config/sanitize'
 export { getEnabledNodes } from './field/lexical/nodes'
@@ -356,8 +355,7 @@ export {
 } from './field/lexical/plugins/FloatingSelectToolbar/types'
 export { ENABLE_SLASH_MENU_COMMAND } from './field/lexical/plugins/SlashMenu/LexicalTypeaheadMenuPlugin/index'
 // export SanitizedEditorConfig
-export type { EditorConfig, SanitizedEditorConfig }
-export type { AdapterProps }
+export type { AdapterProps, EditorConfig, SanitizedEditorConfig }
 
 export {
   SlashMenuGroup,
@@ -378,14 +376,14 @@ export {
   ELEMENT_TYPE_TO_FORMAT,
   IS_ALL_FORMATTING,
   LTR_REGEX,
-  NON_BREAKING_SPACE,
   NodeFormat,
+  NON_BREAKING_SPACE,
   RTL_REGEX,
   TEXT_MODE_TO_TYPE,
   TEXT_TYPE_TO_FORMAT,
   TEXT_TYPE_TO_MODE,
 } from './field/lexical/utils/nodeFormat'
-export { Point, isPoint } from './field/lexical/utils/point'
+export { isPoint, Point } from './field/lexical/utils/point'
 export { Rect } from './field/lexical/utils/rect'
 export { setFloatingElemPosition } from './field/lexical/utils/setFloatingElemPosition'
 export { setFloatingElemPositionForLinkEditor } from './field/lexical/utils/setFloatingElemPositionForLinkEditor'

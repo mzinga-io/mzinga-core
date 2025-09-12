@@ -3,7 +3,7 @@ import PassportAPIKey from 'passport-headerapikey'
 
 import type { SanitizedCollectionConfig } from '../../collections/config/types'
 import type { PayloadRequest } from '../../express/types'
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 
 import find from '../../collections/operations/find'
 

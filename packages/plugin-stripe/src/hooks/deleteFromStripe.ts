@@ -1,6 +1,6 @@
-import type { CollectionAfterDeleteHook, CollectionConfig } from 'payload/types'
+import type { CollectionAfterDeleteHook, CollectionConfig } from 'mzinga/types'
 
-import { APIError } from 'payload/errors'
+import { APIError } from 'mzinga/errors'
 import Stripe from 'stripe'
 
 import type { StripeConfig } from '../types'
@@ -8,15 +8,15 @@ import type { StripeConfig } from '../types'
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 const stripe = new Stripe(stripeSecretKey || '', { apiVersion: '2022-08-01' })
 
-type HookArgsWithCustomCollection = Omit<Parameters<CollectionAfterDeleteHook>[0], 'collection'> & {
+type HookArgsWithCustomCollection = {
   collection: CollectionConfig
-}
+} & Omit<Parameters<CollectionAfterDeleteHook>[0], 'collection'>
 
 export type CollectionAfterDeleteHookWithArgs = (
-  args: HookArgsWithCustomCollection & {
+  args: {
     collection?: CollectionConfig
     stripeConfig?: StripeConfig
-  },
+  } & HookArgsWithCustomCollection,
 ) => void
 
 export const deleteFromStripe: CollectionAfterDeleteHookWithArgs = async (args) => {

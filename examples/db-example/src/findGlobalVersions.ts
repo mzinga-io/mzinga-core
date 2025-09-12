@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { FindGlobalVersions, PaginatedDocs, TypeWithVersion } from 'payload/database'
-import type { PayloadRequest, Where } from 'payload/types'
+import type { FindGlobalVersions, PaginatedDocs, TypeWithVersion } from 'mzinga/database'
+import type { PayloadRequest, Where } from 'mzinga/types'
 
 import type { ExampleAdapter } from '.'
 

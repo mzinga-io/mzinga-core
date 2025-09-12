@@ -2,7 +2,7 @@ import type { DeepPartial } from 'ts-essentials'
 
 import type { GeneratedTypes, RequestContext } from '../../..'
 import type { PayloadRequest } from '../../../express/types'
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 import type { Document } from '../../../types'
 
 import { APIError } from '../../../errors'

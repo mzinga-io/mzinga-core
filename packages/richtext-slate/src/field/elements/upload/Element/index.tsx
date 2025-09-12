@@ -1,19 +1,19 @@
 'use client'
 
-import type { SanitizedCollectionConfig } from 'payload/types'
+import type { SanitizedCollectionConfig } from 'mzinga/types'
 import type { HTMLAttributes } from 'react'
 
-import { Button } from 'payload/components'
+import { Button } from 'mzinga/components'
 import {
   DrawerToggler,
   useDocumentDrawer,
   useDrawerSlug,
   useListDrawer,
-} from 'payload/components/elements'
-import { FileGraphic } from 'payload/components/graphics'
-import { usePayloadAPI, useThumbnail } from 'payload/components/hooks'
-import { useConfig } from 'payload/components/utilities'
-import { getTranslation } from 'payload/utilities'
+} from 'mzinga/components/elements'
+import { FileGraphic } from 'mzinga/components/graphics'
+import { usePayloadAPI, useThumbnail } from 'mzinga/components/hooks'
+import { useConfig } from 'mzinga/components/utilities'
+import { getTranslation } from 'mzinga/utilities'
 import React, { useCallback, useReducer, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Transforms } from 'slate'

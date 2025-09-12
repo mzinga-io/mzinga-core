@@ -1,4 +1,4 @@
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 
 /**
  *  While the default ID is determined by the db adapter, it can still differ for a collection if they

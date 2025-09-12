@@ -1,4 +1,4 @@
-import type { AfterLoginHook } from 'payload/dist/collections/config/types'
+import type { AfterLoginHook } from 'mzinga/dist/collections/config/types'
 
 export const recordLastLoggedInTenant: AfterLoginHook = async ({ req, user }) => {
   try {

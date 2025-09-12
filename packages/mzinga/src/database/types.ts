@@ -1,6 +1,6 @@
 import type { TypeWithID } from '../collections/config/types'
 import type { TypeWithID as GlobalsTypeWithID } from '../globals/config/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 import type { Document, PayloadRequest, Where } from '../types'
 import type { TypeWithVersion } from '../versions/types'
 
@@ -157,9 +157,9 @@ export type BeginTransaction = (
   options?: Record<string, unknown>,
 ) => Promise<null | number | string>
 
-export type RollbackTransaction = (id: number | string | Promise<number | string>) => Promise<void>
+export type RollbackTransaction = (id: Promise<number | string> | number | string) => Promise<void>
 
-export type CommitTransaction = (id: number | string | Promise<number | string>) => Promise<void>
+export type CommitTransaction = (id: Promise<number | string> | number | string) => Promise<void>
 
 export type QueryDraftsArgs = {
   collection: string
@@ -220,17 +220,17 @@ type BaseVersionArgs = {
   where?: Where
 }
 
-export type FindVersionsArgs = BaseVersionArgs & {
+export type FindVersionsArgs = {
   collection: string
-}
+} & BaseVersionArgs
 
 export type FindVersions = <T = TypeWithID>(
   args: FindVersionsArgs,
 ) => Promise<PaginatedDocs<TypeWithVersion<T>>>
 
-export type FindGlobalVersionsArgs = BaseVersionArgs & {
+export type FindGlobalVersionsArgs = {
   global: string
-}
+} & BaseVersionArgs
 
 export type FindGlobalArgs = {
   locale?: string
@@ -391,10 +391,10 @@ export type DeleteManyArgs = {
 
 export type DeleteMany = (args: DeleteManyArgs) => Promise<void>
 
-export type Migration = MigrationData & {
+export type Migration = {
   down: ({ payload, req }: { payload: Payload; req: PayloadRequest }) => Promise<boolean>
   up: ({ payload, req }: { payload: Payload; req: PayloadRequest }) => Promise<boolean>
-}
+} & MigrationData
 
 export type MigrationData = {
   batch: number

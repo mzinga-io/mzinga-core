@@ -1,6 +1,7 @@
-import type { Config } from 'payload/config'
-import path from 'path'
+import type { Config } from 'mzinga/config'
 import type { Configuration as WebpackConfig } from 'webpack'
+
+import path from 'path'
 
 export const extendWebpackConfig =
   (config: Config): ((webpackConfig: WebpackConfig) => WebpackConfig) =>

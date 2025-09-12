@@ -8,8 +8,8 @@ import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 import stripePlugin from '@payloadcms/plugin-stripe'
 import { slateEditor } from '@payloadcms/richtext-slate' // editor-import
 import dotenv from 'dotenv'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import { buildConfig } from 'payload/config'
 
 import Categories from './collections/Categories'
 import { Media } from './collections/Media'

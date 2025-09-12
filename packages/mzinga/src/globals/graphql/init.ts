@@ -3,7 +3,7 @@ import { GraphQLBoolean, GraphQLInt, GraphQLNonNull, GraphQLString } from 'graph
 import { singular } from 'pluralize'
 
 import type { Field } from '../../fields/config/types'
-import type { Payload } from '../../payload'
+import type { Payload } from '../../mzinga'
 import type { SanitizedGlobalConfig } from '../config/types'
 
 import buildMutationInputType from '../../graphql/schema/buildMutationInputType'
@@ -43,9 +43,6 @@ function initGlobalsGraphQL(payload: Payload): void {
       formattedName,
     )
     payload.globals.graphQL[slug] = {
-      mutationInputType: updateMutationInputType
-        ? new GraphQLNonNull(updateMutationInputType)
-        : null,
       type: buildObjectType({
         name: formattedName,
         fields,
@@ -53,9 +50,13 @@ function initGlobalsGraphQL(payload: Payload): void {
         parentName: formattedName,
         payload,
       }),
+      mutationInputType: updateMutationInputType
+        ? new GraphQLNonNull(updateMutationInputType)
+        : null,
     }
 
     payload.Query.fields[formattedName] = {
+      type: payload.globals.graphQL[slug].type,
       args: {
         draft: { type: GraphQLBoolean },
         ...(payload.config.localization
@@ -66,10 +67,10 @@ function initGlobalsGraphQL(payload: Payload): void {
           : {}),
       },
       resolve: findOneResolver(global),
-      type: payload.globals.graphQL[slug].type,
     }
 
     payload.Mutation.fields[`update${formattedName}`] = {
+      type: payload.globals.graphQL[slug].type,
       args: {
         ...(updateMutationInputType
           ? { data: { type: payload.globals.graphQL[slug].mutationInputType } }
@@ -82,17 +83,16 @@ function initGlobalsGraphQL(payload: Payload): void {
           : {}),
       },
       resolve: updateResolver(global),
-      type: payload.globals.graphQL[slug].type,
     }
 
     payload.Query.fields[`docAccess${formattedName}`] = {
-      resolve: docAccessResolver(global),
       type: buildPolicyType({
+        type: 'global',
         entity: global,
         scope: 'docAccess',
-        type: 'global',
         typeSuffix: 'DocAccess',
       }),
+      resolve: docAccessResolver(global),
     }
 
     if (global.versions) {
@@ -106,13 +106,13 @@ function initGlobalsGraphQL(payload: Payload): void {
         },
         {
           name: 'createdAt',
-          label: 'Created At',
           type: 'date',
+          label: 'Created At',
         },
         {
           name: 'updatedAt',
-          label: 'Updated At',
           type: 'date',
+          label: 'Updated At',
         },
       ]
 
@@ -125,6 +125,7 @@ function initGlobalsGraphQL(payload: Payload): void {
       })
 
       payload.Query.fields[`version${formatName(formattedName)}`] = {
+        type: payload.globals.graphQL[slug].versionType,
         args: {
           id: { type: idType },
           ...(payload.config.localization
@@ -135,9 +136,12 @@ function initGlobalsGraphQL(payload: Payload): void {
             : {}),
         },
         resolve: findVersionByIDResolver(global),
-        type: payload.globals.graphQL[slug].versionType,
       }
       payload.Query.fields[`versions${formattedName}`] = {
+        type: buildPaginatedListType(
+          `versions${formatName(formattedName)}`,
+          payload.globals.graphQL[slug].versionType,
+        ),
         args: {
           where: {
             type: buildWhereInputType({
@@ -158,17 +162,13 @@ function initGlobalsGraphQL(payload: Payload): void {
           sort: { type: GraphQLString },
         },
         resolve: findVersionsResolver(global),
-        type: buildPaginatedListType(
-          `versions${formatName(formattedName)}`,
-          payload.globals.graphQL[slug].versionType,
-        ),
       }
       payload.Mutation.fields[`restoreVersion${formatName(formattedName)}`] = {
+        type: payload.globals.graphQL[slug].type,
         args: {
           id: { type: idType },
         },
         resolve: restoreVersionResolver(global),
-        type: payload.globals.graphQL[slug].type,
       }
     }
   })

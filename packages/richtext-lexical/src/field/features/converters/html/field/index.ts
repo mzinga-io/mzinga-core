@@ -1,5 +1,5 @@
 import type { SerializedEditorState } from 'lexical'
-import type { Field, RichTextField, TextField } from 'payload/types'
+import type { Field, RichTextField, TextField } from 'mzinga/types'
 
 import type { LexicalRichTextAdapter, SanitizedEditorConfig } from '../../../../../index'
 import type { AdapterProps } from '../../../../../types'
@@ -55,7 +55,8 @@ export const lexicalHTML: (
 ) => TextField = (lexicalFieldName, props) => {
   const { name = 'lexicalHTML' } = props
   return {
-    name: name,
+    name,
+    type: 'text',
     admin: {
       hidden: true,
     },
@@ -167,6 +168,5 @@ export const lexicalHTML: (
         },
       ],
     },
-    type: 'text',
   }
 }

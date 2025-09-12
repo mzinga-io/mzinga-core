@@ -1,7 +1,7 @@
-import type { Block, BlockField, Field } from 'payload/types'
+import type { Block, BlockField } from 'mzinga/types'
 
-import { baseBlockFields, sanitizeFields } from 'payload/config'
-import { fieldsToJSONSchema, formatLabels, getTranslation } from 'payload/utilities'
+import { baseBlockFields, sanitizeFields } from 'mzinga/config'
+import { fieldsToJSONSchema, formatLabels, getTranslation } from 'mzinga/utilities'
 
 import type { FeatureProvider } from '../types'
 

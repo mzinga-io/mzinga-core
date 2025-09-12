@@ -1,4 +1,4 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
 export function transformInputFormSchema(formSchema: any, blockFieldWrapperName: string): Field[] {
   const formSchemaCopy = [...formSchema]
@@ -18,6 +18,7 @@ export function transformInputFormSchema(formSchema: any, blockFieldWrapperName:
     ),
     {
       name: blockFieldWrapperName,
+      type: 'group',
       admin: {
         hideGutter: true,
       },
@@ -25,7 +26,6 @@ export function transformInputFormSchema(formSchema: any, blockFieldWrapperName:
         (field) => !('name' in field) || !['blockName', 'blockType', 'id'].includes(field.name),
       ),
       label: '',
-      type: 'group',
     },
   ]
 }

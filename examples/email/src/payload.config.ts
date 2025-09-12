@@ -1,10 +1,9 @@
-
 import dotenv from 'dotenv'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import { buildConfig } from 'payload/config'
 
-import Users from './collections/Users'
 import Newsletter from './collections/Newsletter'
+import Users from './collections/Users'
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
@@ -14,7 +13,7 @@ const mockModulePath = path.resolve(__dirname, './emptyModule.js')
 
 export default buildConfig({
   admin: {
-    webpack: config => ({
+    webpack: (config) => ({
       ...config,
       resolve: {
         ...config?.resolve,
@@ -36,10 +35,7 @@ export default buildConfig({
       },
     }),
   },
-  collections: [
-    Newsletter,
-    Users,
-  ],
+  collections: [Newsletter, Users],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },

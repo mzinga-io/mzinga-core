@@ -11,11 +11,11 @@ import { useConfig } from '../../../../../packages/payload/src/admin/components/
 import Meta from '../../../../../packages/payload/src/admin/components/utilities/Meta'
 
 // In your projects, you can import as follows:
-// import { DefaultTemplate } from 'payload/components/templates';
-// import { Button, Eyebrow } from 'payload/components/elements';
-// import { AdminView } from 'payload/config';
-// import { useStepNav } from 'payload/components/hooks';
-// import { useConfig, Meta } from 'payload/components/utilities';
+// import { DefaultTemplate } from 'mzinga/components/templates';
+// import { Button, Eyebrow } from 'mzinga/components/elements';
+// import { AdminView } from 'mzinga/config';
+// import { useStepNav } from 'mzinga/components/hooks';
+// import { useConfig, Meta } from 'mzinga/components/utilities';
 
 import './index.scss'
 

@@ -1,7 +1,7 @@
 'use client'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getNodeByKey, COMMAND_PRIORITY_EDITOR, type LexicalEditor } from 'lexical'
-import { useListDrawer } from 'payload/components/elements'
+import { useListDrawer } from 'mzinga/components/elements'
 import React, { useCallback, useEffect, useState } from 'react'
 
 import { EnabledRelationshipsCondition } from '../../Relationship/utils/EnabledRelationshipsCondition'

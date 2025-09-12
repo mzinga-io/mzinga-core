@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'mzinga/types'
 import generateEmailHTML from '../email/generateEmailHTML'
 
 const Newsletter: CollectionConfig = {
@@ -32,7 +32,7 @@ const Newsletter: CollectionConfig = {
       name: 'email',
       type: 'text',
       required: true,
-    }
+    },
   ],
 }
 

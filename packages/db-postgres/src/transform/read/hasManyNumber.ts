@@ -1,4 +1,4 @@
-import type { NumberField } from 'payload/types'
+import type { NumberField } from 'mzinga/types'
 
 type Args = {
   field: NumberField

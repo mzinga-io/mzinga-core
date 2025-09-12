@@ -1,9 +1,10 @@
-import type { Config } from 'payload/config'
-import type { Field } from 'payload/types'
-import { extendWebpackConfig } from './webpack'
-import { getBeforeChangeHook } from './hooks/beforeChange'
+import type { Config } from 'mzinga/config'
+import type { Field } from 'mzinga/types'
 
-const traverseFields = ({ config, fields }: { fields: Field[]; config: Config }): Field[] => {
+import { getBeforeChangeHook } from './hooks/beforeChange'
+import { extendWebpackConfig } from './webpack'
+
+const traverseFields = ({ config, fields }: { config: Config; fields: Field[] }): Field[] => {
   return fields.map((field) => {
     if (field.type === 'relationship' || field.type === 'upload') {
       return {
@@ -53,8 +54,7 @@ const traverseFields = ({ config, fields }: { fields: Field[]; config: Config })
   })
 }
 
-export const relationshipsAsObjectID =
-  (/** Possible args in the future */) =>
+export const relationshipsAsObjectID = (/** Possible args in the future */) =>
   (config: Config): Config => {
     const webpack = extendWebpackConfig(config)
 

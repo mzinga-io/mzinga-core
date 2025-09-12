@@ -3,7 +3,7 @@ import type { GraphQLFormattedError } from 'graphql'
 import httpStatus from 'http-status'
 
 import type { AfterErrorHook } from '../collections/config/types'
-import type { Payload } from '../payload'
+import type { Payload } from '../mzinga'
 
 const errorHandler = async (
   payload: Payload,
