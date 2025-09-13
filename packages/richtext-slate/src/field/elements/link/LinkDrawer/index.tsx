@@ -1,10 +1,9 @@
 'use client'
 
-import { Drawer } from 'payload/components/elements'
-import { Form, FormSubmit, RenderFields } from 'payload/components/forms'
-import { fieldTypes } from 'payload/components/forms'
-import { useHotkey } from 'payload/components/hooks'
-import { useEditDepth } from 'payload/components/utilities'
+import { Drawer } from 'mzinga/components/elements'
+import { fieldTypes, Form, FormSubmit, RenderFields } from 'mzinga/components/forms'
+import { useHotkey } from 'mzinga/components/hooks'
+import { useEditDepth } from 'mzinga/components/utilities'
 import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 

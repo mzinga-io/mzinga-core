@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import type { AdminViewComponent } from '../../../../../packages/payload/src/config/types'
+import type { AdminViewComponent } from '../../../../../packages/mzinga/src/config/types'
 
-import Button from '../../../../../packages/payload/src/admin/components/elements/Button'
-import { useStepNav } from '../../../../../packages/payload/src/admin/components/elements/StepNav'
+import Button from '../../../../../packages/mzinga/src/admin/components/elements/Button'
+import { useStepNav } from '../../../../../packages/mzinga/src/admin/components/elements/StepNav'
 // As this is the demo project, we import our dependencies from the `src` directory.
-import DefaultTemplate from '../../../../../packages/payload/src/admin/components/templates/Default'
-import { useConfig } from '../../../../../packages/payload/src/admin/components/utilities/Config'
-import Meta from '../../../../../packages/payload/src/admin/components/utilities/Meta'
+import DefaultTemplate from '../../../../../packages/mzinga/src/admin/components/templates/Default'
+import { useConfig } from '../../../../../packages/mzinga/src/admin/components/utilities/Config'
+import Meta from '../../../../../packages/mzinga/src/admin/components/utilities/Meta'
 
 // In your projects, you can import as follows:
-// import { DefaultTemplate } from 'payload/components/templates';
-// import { Button, Eyebrow } from 'payload/components/elements';
-// import { AdminView } from 'payload/config';
-// import { useStepNav } from 'payload/components/hooks';
-// import { useConfig, Meta } from 'payload/components/utilities';
+// import { DefaultTemplate } from 'mzinga/components/templates';
+// import { Button, Eyebrow } from 'mzinga/components/elements';
+// import { AdminView } from 'mzinga/config';
+// import { useStepNav } from 'mzinga/components/hooks';
+// import { useConfig, Meta } from 'mzinga/components/utilities';
 
 import './index.scss'
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
-import { fieldAffectsData, tabHasName } from 'payload/types'
+import { fieldAffectsData, tabHasName } from 'mzinga/types'
 import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from '../types'
@@ -40,9 +40,9 @@ export const traverseFields = ({
         currentArgs,
         currentTableName,
         depth,
-        tablePath,
         fields: field.fields,
         path,
+        tablePath,
         topLevelArgs,
         topLevelTableName,
       })
@@ -153,9 +153,9 @@ export const traverseFields = ({
                 currentArgs: withBlock,
                 currentTableName: tableName,
                 depth,
-                tablePath: '',
                 fields: block.fields,
                 path: '',
+                tablePath: '',
                 topLevelArgs,
                 topLevelTableName,
               })
@@ -170,10 +170,10 @@ export const traverseFields = ({
             adapter,
             currentArgs,
             currentTableName,
-            tablePath: `${tablePath}${toSnakeCase(field.name)}_`,
             depth,
             fields: field.fields,
             path: `${path}${field.name}_`,
+            tablePath: `${tablePath}${toSnakeCase(field.name)}_`,
             topLevelArgs,
             topLevelTableName,
           })

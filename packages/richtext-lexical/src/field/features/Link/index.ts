@@ -1,6 +1,6 @@
 import type { i18n } from 'i18next'
-import type { SanitizedConfig } from 'payload/config'
-import type { Field } from 'payload/types'
+import type { SanitizedConfig } from 'mzinga/config'
+import type { Field } from 'mzinga/types'
 
 import { $findMatchingParent } from '@lexical/utils'
 import { $getSelection, $isRangeSelection } from 'lexical'
@@ -40,7 +40,7 @@ type ExclusiveLinkCollectionsProps =
       enabledCollections?: string[]
     }
 
-export type LinkFeatureProps = ExclusiveLinkCollectionsProps & {
+export type LinkFeatureProps = {
   /**
    * A function or array defining additional fields for the link feature. These will be
    * displayed in the link editor drawer.
@@ -53,7 +53,7 @@ export type LinkFeatureProps = ExclusiveLinkCollectionsProps & {
    * This behaves exactly like the maxDepth properties of relationship and upload fields.
    */
   maxDepth?: number
-}
+} & ExclusiveLinkCollectionsProps
 
 export const LinkFeature = (props: LinkFeatureProps): FeatureProvider => {
   return {
@@ -191,7 +191,7 @@ export const LinkFeature = (props: LinkFeatureProps): FeatureProvider => {
               // @ts-expect-error
               import('./plugins/floatingLinkEditor').then((module) => {
                 const floatingLinkEditorPlugin = module.FloatingLinkEditorPlugin
-                return import('payload/utilities').then((module) =>
+                return import('mzinga/utilities').then((module) =>
                   module.withMergedProps({
                     Component: floatingLinkEditorPlugin,
                     toMergeIntoProps: props,

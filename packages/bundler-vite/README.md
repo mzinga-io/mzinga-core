@@ -1,28 +1,26 @@
-# Payload Vite Adapter
+# MZinga Vite Adapter
 
-Official Vite adapter for [Payload](https://payloadcms.com).
+Official Vite adapter for [MZinga](https://mzinga.io).
 
-- [Main Repository](https://github.com/payloadcms/payload)
-- [Payload Docs](https://payloadcms.com/docs)
+- [Main Repository](https://github.com/mzinga-io/mzinga-core)
+- [MZinga Docs](https://mzinga.io/docs)
 
 ## Installation
 
 ```bash
-npm install @payloadcms/bundler-vite
+npm install @mzinga/bundler-vite
 ```
 
 ## Usage
 
 ```ts
-import { buildConfig } from 'payload/config'
-import { viteBundler } from '@payloadcms/bundler-vite'
+import { buildConfig } from 'mzinga/config'
+import { viteBundler } from '@mzinga/bundler-vite'
 
 export default buildConfig({
   bundler: viteBundler(),
   // ...rest of config
 })
-
 ```
 
-More detailed usage can be found in the [Payload Docs](https://payloadcms.com/docs/configuration/overview).
-
+More detailed usage can be found in the [MZinga Docs](https://mzinga.io/docs/configuration/overview).

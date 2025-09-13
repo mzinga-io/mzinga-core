@@ -1,4 +1,4 @@
-import type { Connect } from 'payload/database'
+import type { Connect } from 'mzinga/database'
 
 import type { ExampleAdapter } from '.'
 

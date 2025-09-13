@@ -1,13 +1,10 @@
 'use client'
 
-import type {
-  FieldType as FieldType,
-  Options,
-} from 'payload/dist/admin/components/forms/useField/types'
-import type { TextField as TextFieldType } from 'payload/types'
+import type { FieldType, Options } from 'mzinga/dist/admin/components/forms/useField/types'
+import type { TextField as TextFieldType } from 'mzinga/types'
 
-import { TextInput, useAllFormFields, useField } from 'payload/components/forms'
-import { useDocumentInfo, useLocale } from 'payload/components/utilities'
+import { TextInput, useAllFormFields, useField } from 'mzinga/components/forms'
+import { useDocumentInfo, useLocale } from 'mzinga/components/utilities'
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 

@@ -4,8 +4,8 @@ import { expect, test } from '@playwright/test'
 
 import type { ReadOnlyCollection, RestrictedVersion } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import wait from '../../packages/payload/src/utilities/wait'
+import payload from '../../packages/mzinga/src'
+import wait from '../../packages/mzinga/src/utilities/wait'
 import { exactText, initPageConsoleErrorCatch, openDocControls, openNav } from '../helpers'
 import { AdminUrlUtil } from '../helpers/adminUrlUtil'
 import { initPayloadE2E } from '../helpers/configHelpers'

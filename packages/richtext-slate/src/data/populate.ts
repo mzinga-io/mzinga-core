@@ -1,5 +1,4 @@
-import type { PayloadRequest } from 'payload/types'
-import type { Collection, Field, RichTextField } from 'payload/types'
+import type { Collection, Field, PayloadRequest, RichTextField } from 'mzinga/types'
 
 import type { AdapterArguments } from '../types'
 
@@ -26,11 +25,11 @@ export const populate = async ({
   overrideAccess,
   req,
   showHiddenFields,
-}: Omit<Arguments, 'field'> & {
+}: {
   collection: Collection
   field: Field
   id: string
-}): Promise<void> => {
+} & Omit<Arguments, 'field'>): Promise<void> => {
   const dataRef = data as Record<string, unknown>
 
   const doc = await req.payloadDataLoader.load(

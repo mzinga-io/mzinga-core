@@ -1,13 +1,11 @@
-import type { Payload } from 'payload'
-import type { PathToQuery } from 'payload/database'
-import type { Field } from 'payload/types'
-import type { Operator } from 'payload/types'
+import type { Payload } from 'mzinga'
+import type { PathToQuery } from 'mzinga/database'
+import type { Field, Operator } from 'mzinga/types'
 
 import ObjectIdImport from 'bson-objectid'
 import mongoose from 'mongoose'
-import { getLocalizedPaths } from 'payload/database'
-import { fieldAffectsData } from 'payload/types'
-import { validOperators } from 'payload/types'
+import { getLocalizedPaths } from 'mzinga/database'
+import { fieldAffectsData, validOperators } from 'mzinga/types'
 
 import type { MongooseAdapter } from '..'
 

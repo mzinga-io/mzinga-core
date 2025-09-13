@@ -1,5 +1,5 @@
-import type { Payload } from 'payload'
-import type { PayloadHandler } from 'payload/config'
+import type { Payload } from 'mzinga'
+import type { PayloadHandler } from 'mzinga/config'
 
 import history from 'connect-history-api-fallback'
 import express from 'express'

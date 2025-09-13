@@ -1,5 +1,5 @@
-import { fieldAffectsData } from 'payload/types'
-import { getIDType, isValidID } from 'payload/utilities'
+import { fieldAffectsData } from 'mzinga/types'
+import { getIDType, isValidID } from 'mzinga/utilities'
 
 import type { NodeValidation } from '../types'
 import type { SerializedUploadNode } from './nodes/UploadNode'

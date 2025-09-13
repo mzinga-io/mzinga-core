@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'mzinga/types'
 
 import richText from '../fields/richText'
 import { slugField } from '../fields/slug'

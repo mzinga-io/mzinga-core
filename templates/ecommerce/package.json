@@ -1,6 +1,6 @@
 {
-  "name": "@payloadcms/template-ecommerce",
-  "description": "E-commerce template for Payload",
+  "name": "@mzinga/template-ecommerce",
+  "description": "E-commerce template for MZinga",
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.1.6",
-    "@payloadcms/eslint-config": "^0.0.1",
+    "@mzinga/eslint-config": "^0.0.1",
     "@swc/core": "1.6.1",
     "@types/escape-html": "^1.0.2",
     "@types/express": "^4.17.9",

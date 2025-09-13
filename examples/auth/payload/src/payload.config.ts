@@ -1,8 +1,8 @@
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { slateEditor } from '@payloadcms/richtext-slate'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import { buildConfig } from 'payload/config'
 
 import { Users } from './collections/Users'
 import BeforeLogin from './components/BeforeLogin'

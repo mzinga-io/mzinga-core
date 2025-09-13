@@ -1,5 +1,5 @@
-import type { PayloadHandler } from 'payload/config'
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadHandler } from 'mzinga/config'
+import type { PayloadRequest } from 'mzinga/types'
 import Stripe from 'stripe'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {

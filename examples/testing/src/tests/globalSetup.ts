@@ -1,6 +1,6 @@
-import { resolve } from 'path'
-import payload from 'payload'
 import express from 'express'
+import payload from 'mzinga'
+import { resolve } from 'path'
 import testCredentials from './credentials'
 
 require('dotenv').config({

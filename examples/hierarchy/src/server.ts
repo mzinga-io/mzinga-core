@@ -1,5 +1,5 @@
 import express from 'express'
-import payload from 'payload'
+import payload from 'mzinga'
 
 require('dotenv').config()
 const app = express()

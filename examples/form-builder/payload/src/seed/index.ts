@@ -1,11 +1,11 @@
-import { Payload } from 'payload'
-import { home } from './home'
-import { contact } from './contact'
+import { Payload } from 'mzinga'
 import { advanced } from './advanced'
-import { signUp } from './signUp'
-import { basicForm } from './basicForm'
-import { contactForm } from './contactForm'
 import { advancedForm } from './advancedForm'
+import { basicForm } from './basicForm'
+import { contact } from './contact'
+import { contactForm } from './contactForm'
+import { home } from './home'
+import { signUp } from './signUp'
 import { signUpForm } from './signUpForm'
 
 export const seed = async (payload: Payload) => {

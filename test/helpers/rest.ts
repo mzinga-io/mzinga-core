@@ -2,9 +2,9 @@
 import fetch from 'node-fetch'
 import qs from 'qs'
 
-import type { Config } from '../../packages/payload/src/config/types'
-import type { PaginatedDocs } from '../../packages/payload/src/database/types'
-import type { Where } from '../../packages/payload/src/types'
+import type { Config } from '../../packages/mzinga/src/config/types'
+import type { PaginatedDocs } from '../../packages/mzinga/src/database/types'
+import type { Where } from '../../packages/mzinga/src/types'
 
 import { devUser } from '../credentials'
 

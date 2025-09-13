@@ -1,7 +1,7 @@
 import type { Response } from 'express'
 
-import type { CollectionConfig } from '../../../packages/payload/src/collections/config/types'
-import type { PayloadRequest } from '../../../packages/payload/src/express/types'
+import type { CollectionConfig } from '../../../packages/mzinga/src/collections/config/types'
+import type { PayloadRequest } from '../../../packages/mzinga/src/express/types'
 
 export const collectionEndpoints: CollectionConfig['endpoints'] = [
   {

@@ -1,13 +1,13 @@
 {
-  "name": "@payloadcms/plugin-stripe",
-  "version": "0.0.19",
-  "homepage:": "https://payloadcms.com",
+  "name": "@mzinga/plugin-stripe",
+  "version": "0.0.1",
+  "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/plugin-stripe"
   },
-  "description": "Stripe plugin for Payload",
+  "description": "Stripe plugin for MZinga",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -43,10 +43,10 @@
   "devDependencies": {
     "@types/lodash.get": "^4.4.7",
     "@types/uuid": "^9.0.0",
-    "@payloadcms/eslint-config": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
     "@types/express": "^4.17.9",
     "@types/react": "18.0.21",
-    "payload": "workspace:*",
+    "mzinga": "workspace:*",
     "prettier": "^2.7.1",
     "webpack": "5.91.0"
   },

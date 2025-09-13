@@ -3,7 +3,7 @@ import type { Locator, Page } from '@playwright/test'
 import { expect } from '@playwright/test'
 import shelljs from 'shelljs'
 
-import wait from '../packages/payload/src/utilities/wait'
+import wait from '../packages/mzinga/src/utilities/wait'
 import { devUser } from './credentials'
 
 type FirstRegisterArgs = {

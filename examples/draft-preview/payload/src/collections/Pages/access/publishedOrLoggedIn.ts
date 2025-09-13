@@ -1,4 +1,4 @@
-import type { Access } from 'payload/config'
+import type { Access } from 'mzinga/config'
 
 export const publishedOrLoggedIn: Access = ({ req: { user } }) => {
   if (user) {

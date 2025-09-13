@@ -1,5 +1,5 @@
-import type { DeleteOne } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { DeleteOne } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
 import type { MongooseAdapter } from '.'
 

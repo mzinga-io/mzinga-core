@@ -1,4 +1,4 @@
-import type { AfterChangeHook } from 'payload/dist/collections/config/types'
+import type { AfterChangeHook } from 'mzinga/dist/collections/config/types'
 
 export const loginAfterCreate: AfterChangeHook = async ({
   doc,

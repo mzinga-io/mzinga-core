@@ -7,7 +7,7 @@ import type {
   PgTableWithColumns,
   UniqueConstraintBuilder,
 } from 'drizzle-orm/pg-core'
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
 import { relations } from 'drizzle-orm'
 import {
@@ -20,7 +20,7 @@ import {
   unique,
   varchar,
 } from 'drizzle-orm/pg-core'
-import { fieldAffectsData } from 'payload/types'
+import { fieldAffectsData } from 'mzinga/types'
 import toSnakeCase from 'to-snake-case'
 
 import type { GenericColumns, GenericTable, IDType, PostgresAdapter } from '../types'

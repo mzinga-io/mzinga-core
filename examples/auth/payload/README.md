@@ -1,6 +1,6 @@
 # Payload Auth Example
 
-The [Payload Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) demonstrates how to implement [Payload Authentication](https://payloadcms.com/docs/authentication/overview). Follow the [Quick Start](#quick-start) to get up and running quickly. There are various fully working front-ends made explicitly for this example, including:
+The [Payload Auth Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/auth) demonstrates how to implement [Payload Authentication](https://mzinga.io/docs/authentication/overview). Follow the [Quick Start](#quick-start) to get up and running quickly. There are various fully working front-ends made explicitly for this example, including:
 
 - [Next.js App Router](../next-app)
 - [Next.js Pages Router](../next-pages)
@@ -22,7 +22,7 @@ That's it! Changes made in `./src` will be reflected in your app. See the [Devel
 
 ## How it works
 
-The `users` collection exposes all [auth-related operations](https://payloadcms.com/docs/authentication/operations) needed to create a fully custom workflow on your front-end using the REST or GraphQL APIs, including:
+The `users` collection exposes all [auth-related operations](https://mzinga.io/docs/authentication/operations) needed to create a fully custom workflow on your front-end using the REST or GraphQL APIs, including:
 
 - `Me`
 - `Login`
@@ -33,7 +33,7 @@ The `users` collection exposes all [auth-related operations](https://payloadcms.
 - `Forgot Password`
 - `Reset Password`
 
-The [`cors`](https://payloadcms.com/docs/production/preventing-abuse#cross-origin-resource-sharing-cors), [`csrf`](https://payloadcms.com/docs/production/preventing-abuse#cross-site-request-forgery-csrf), and [`cookies`](https://payloadcms.com/docs/authentication/config#options) settings are also configured to ensure that the admin panel and front-end can communicate with each other securely.
+The [`cors`](https://mzinga.io/docs/production/preventing-abuse#cross-origin-resource-sharing-cors), [`csrf`](https://mzinga.io/docs/production/preventing-abuse#cross-site-request-forgery-csrf), and [`cookies`](https://mzinga.io/docs/authentication/config#options) settings are also configured to ensure that the admin panel and front-end can communicate with each other securely.
 
 ### Access Control
 
@@ -63,9 +63,9 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).
 

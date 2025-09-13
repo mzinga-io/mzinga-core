@@ -1,6 +1,6 @@
 import path from 'path'
 
-import type { Config } from '../../packages/payload/src/config/types'
+import type { Config } from '../../packages/mzinga/src/config/types'
 
 import { mongooseAdapter } from '../../packages/db-mongodb/src'
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'

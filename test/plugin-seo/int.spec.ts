@@ -1,7 +1,7 @@
 import path from 'path'
 
-import payload from '../../packages/payload/src'
-import getFileByPath from '../../packages/payload/src/uploads/getFileByPath'
+import payload from '../../packages/mzinga/src'
+import getFileByPath from '../../packages/mzinga/src/uploads/getFileByPath'
 import { initPayloadTest } from '../helpers/configHelpers'
 import removeFiles from '../helpers/removeFiles'
 import { mediaSlug } from './shared'

@@ -6,14 +6,14 @@ import { v4 as uuid } from 'uuid'
 
 import type { MongooseAdapter } from '../../packages/db-mongodb/src'
 import type { PostgresAdapter } from '../../packages/db-postgres/src/types'
-import type { TypeWithID } from '../../packages/payload/src/collections/config/types'
-import type { PayloadRequest } from '../../packages/payload/src/express/types'
+import type { TypeWithID } from '../../packages/mzinga/src/collections/config/types'
+import type { PayloadRequest } from '../../packages/mzinga/src/express/types'
 import type { CustomSchema } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import { migrate } from '../../packages/payload/src/bin/migrate'
-import { commitTransaction } from '../../packages/payload/src/utilities/commitTransaction'
-import { initTransaction } from '../../packages/payload/src/utilities/initTransaction'
+import payload from '../../packages/mzinga/src'
+import { migrate } from '../../packages/mzinga/src/bin/migrate'
+import { commitTransaction } from '../../packages/mzinga/src/utilities/commitTransaction'
+import { initTransaction } from '../../packages/mzinga/src/utilities/initTransaction'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import removeFiles from '../helpers/removeFiles'
@@ -140,7 +140,7 @@ describe('database', () => {
       expect(migration.batch).toStrictEqual(1)
     })
 
-    // known issue: https://github.com/payloadcms/payload/issues/4597
+    // known issue: https://github.com/mzinga-io/mzinga-core/issues/4597
     it.skip('should run migrate:down', async () => {
       let error
       const args = {
@@ -154,7 +154,7 @@ describe('database', () => {
       expect(error).toBeUndefined()
     })
 
-    // known issue: https://github.com/payloadcms/payload/issues/4597
+    // known issue: https://github.com/mzinga-io/mzinga-core/issues/4597
     it.skip('should run migrate:refresh', async () => {
       let error
       const args = {

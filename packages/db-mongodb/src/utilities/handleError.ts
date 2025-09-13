@@ -1,5 +1,5 @@
 import httpStatus from 'http-status'
-import { APIError, ValidationError } from 'payload/errors'
+import { APIError, ValidationError } from 'mzinga/errors'
 
 const handleError = (error, req) => {
   // Handle uniqueness error from MongoDB

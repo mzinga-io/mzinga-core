@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { TransactionOptions } from 'mongodb'
-import type { BeginTransaction } from 'payload/database'
+import type { BeginTransaction } from 'mzinga/database'
 
 import type { ExampleAdapter } from '../index'
 

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { generateGraphQLSchema } from '../packages/payload/src/bin/generateGraphQLSchema'
+import { generateGraphQLSchema } from '../packages/mzinga/src/bin/generateGraphQLSchema'
 import { setTestEnvPaths } from './helpers/setTestEnvPaths'
 
 const [testConfigDir] = process.argv.slice(2)

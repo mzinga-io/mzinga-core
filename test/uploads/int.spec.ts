@@ -5,8 +5,8 @@ import { promisify } from 'util'
 
 import type { Enlarge, Media } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import getFileByPath from '../../packages/payload/src/uploads/getFileByPath'
+import payload from '../../packages/mzinga/src'
+import getFileByPath from '../../packages/mzinga/src/uploads/getFileByPath'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'
 import configPromise from './config'

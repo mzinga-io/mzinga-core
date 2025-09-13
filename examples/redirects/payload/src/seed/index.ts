@@ -1,4 +1,4 @@
-import type { Payload } from 'payload'
+import type { Payload } from 'mzinga'
 
 import { externalRedirect } from './externalRedirect'
 import { home } from './home'

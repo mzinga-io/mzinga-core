@@ -1,8 +1,8 @@
-import type { PayloadRequest } from '../../packages/payload/src/types'
+import type { PayloadRequest } from '../../packages/mzinga/src/types'
 import type { Post, RelyOnRequestHeader, Restricted } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import { Forbidden } from '../../packages/payload/src/errors'
+import payload from '../../packages/mzinga/src'
+import { Forbidden } from '../../packages/mzinga/src/errors'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { requestHeaders } from './config'
 import {

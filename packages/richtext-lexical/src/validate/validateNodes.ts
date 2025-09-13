@@ -1,6 +1,6 @@
 import type { SerializedEditorState, SerializedLexicalNode } from 'lexical'
-import type { SanitizedConfig } from 'payload/config'
-import type { RichTextField, ValidateOptions } from 'payload/types'
+import type { SanitizedConfig } from 'mzinga/config'
+import type { RichTextField, ValidateOptions } from 'mzinga/types'
 
 import type { NodeValidation } from '../field/features/types'
 

@@ -1,5 +1,5 @@
-import type { Payload } from '../../../packages/payload/src'
-import type { PayloadRequest } from '../../../packages/payload/src/express/types'
+import type { Payload } from '../../../packages/mzinga/src'
+import type { PayloadRequest } from '../../../packages/mzinga/src/express/types'
 
 export const seed = async (payload: Payload): Promise<boolean> => {
   payload.logger.info('Seeding data...')

@@ -4,8 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import { v4 as uuid } from 'uuid'
 
-import payload from '../packages/payload/src'
-import { prettySyncLoggerDestination } from '../packages/payload/src/utilities/logger'
+import payload from '../packages/mzinga/src'
+import { prettySyncLoggerDestination } from '../packages/mzinga/src/utilities/logger'
 import { startLivePreviewDemo } from './live-preview/startLivePreviewDemo'
 
 dotenv.config()

@@ -31,7 +31,7 @@ export const home: Partial<Page> = {
         {
           type: 'link',
           linkType: 'custom',
-          url: 'https://github.com/payloadcms/payload/tree/main/examples/redirects/cms',
+          url: 'https://github.com/mzinga-io/mzinga-core/tree/main/examples/redirects/cms',
           children: [
             {
               text: 'Redirects Example',

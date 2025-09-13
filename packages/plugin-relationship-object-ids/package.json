@@ -1,10 +1,10 @@
 {
-  "name": "@payloadcms/plugin-relationship-object-ids",
-  "version": "0.0.6",
-  "homepage:": "https://payloadcms.com",
+  "name": "@mzinga/plugin-relationship-object-ids",
+  "version": "0.0.1",
+  "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/plugin-relationship-object-ids"
   },
   "description": "A Payload plugin to store all relationship IDs as ObjectIDs",
@@ -23,7 +23,7 @@
   "author": "dev@payloadcms.com",
   "license": "MIT",
   "peerDependencies": {
-    "payload": "workspace:*",
+    "mzinga": "workspace:*",
     "mongoose": "^6.12.3"
   },
   "files": [
@@ -33,8 +33,8 @@
     "!.prettierrc.js"
   ],
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
-    "payload": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
+    "mzinga": "workspace:*",
     "webpack": "5.91.0"
   }
 }

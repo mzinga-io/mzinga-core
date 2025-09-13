@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import type { User } from '../../packages/payload/src/auth'
-import type { UIField } from '../../packages/payload/src/fields/config/types'
+import type { User } from '../../packages/mzinga/src/auth'
+import type { UIField } from '../../packages/mzinga/src/fields/config/types'
 
-import { useAuth } from '../../packages/payload/src/admin/components/utilities/Auth'
+import { useAuth } from '../../packages/mzinga/src/admin/components/utilities/Auth'
 
 export const AuthDebug: React.FC<UIField> = () => {
   const [state, setState] = useState<User | null | undefined>()

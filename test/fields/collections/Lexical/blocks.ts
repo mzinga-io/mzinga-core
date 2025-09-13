@@ -1,4 +1,4 @@
-import type { ArrayField, Block } from '../../../../packages/payload/src/fields/config/types'
+import type { ArrayField, Block } from '../../../../packages/mzinga/src/fields/config/types'
 
 import { lexicalEditor } from '../../../../packages/richtext-lexical/src'
 import { textFieldsSlug } from '../Text/shared'

@@ -2,7 +2,7 @@ import type { Request } from 'express'
 
 import { Strategy } from 'passport-strategy'
 
-import type { Payload } from '../../../packages/payload/src/payload'
+import type { Payload } from '../../../packages/mzinga/src/payload'
 
 import { buildConfigWithDefaults } from '../../buildConfigWithDefaults'
 

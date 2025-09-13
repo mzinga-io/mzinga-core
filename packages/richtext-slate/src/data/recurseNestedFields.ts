@@ -1,6 +1,6 @@
-import type { Field, PayloadRequest } from 'payload/types'
+import type { Field, PayloadRequest } from 'mzinga/types'
 
-import { fieldAffectsData, fieldHasSubFields, fieldIsArrayType } from 'payload/types'
+import { fieldAffectsData, fieldHasSubFields, fieldIsArrayType } from 'mzinga/types'
 
 import { populate } from './populate'
 import { recurseRichText } from './richTextRelationshipPromise'

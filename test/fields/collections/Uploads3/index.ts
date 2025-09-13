@@ -1,6 +1,6 @@
 import path from 'path'
 
-import type { CollectionConfig } from '../../../../packages/payload/src/collections/config/types'
+import type { CollectionConfig } from '../../../../packages/mzinga/src/collections/config/types'
 
 import { uploads3Slug } from '../../slugs'
 

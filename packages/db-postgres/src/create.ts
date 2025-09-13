@@ -1,9 +1,10 @@
-import type { Create } from 'payload/database'
+import type { Create } from 'mzinga/database'
+
+import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from './types'
 
 import { upsertRow } from './upsertRow'
-import toSnakeCase from 'to-snake-case'
 
 export const create: Create = async function create(
   this: PostgresAdapter,

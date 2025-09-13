@@ -2,10 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 // As this is the demo project, we import our dependencies from the `src` directory.
-import { useConfig } from '../../../../packages/payload/src/admin/components/utilities/Config'
+import { useConfig } from '../../../../packages/mzinga/src/admin/components/utilities/Config'
 
 // In your projects, you can import as follows:
-// import { useConfig } from 'payload/components/utilities';
+// import { useConfig } from 'mzinga/components/utilities';
 
 const baseClass = 'after-nav-links'
 

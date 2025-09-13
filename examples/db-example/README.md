@@ -1,7 +1,7 @@
 # Example Database Adapter for Payload
 
-- [Main Repository](https://github.com/payloadcms/payload)
-- [Payload Docs](https://payloadcms.com/docs)
+- [Main Repository](https://github.com/mzinga-io/mzinga-core)
+- [MZinga Docs](https://mzinga.io/docs)
 
 To build a fully working database adapter for Payload you must implement the database adapter interface. There is a mix
 of required and not required methods depending on the areas you need to support. Payload will call the adapter's `init`
@@ -18,8 +18,8 @@ npm install @payloadcms/db-example
 ## Usage
 
 ```ts
-import { buildConfig } from 'payload/config'
-import { exampleAdapter } from '@payloadcms/db-example'
+import { buildConfig } from 'mzinga/config'
+import { exampleAdapter } from '@mzinga/db-example'
 
 export default buildConfig({
   db: exampleAdapter({
@@ -29,4 +29,4 @@ export default buildConfig({
 })
 ```
 
-More detailed usage can be found in the [Payload Docs](https://payloadcms.com/docs/configuration/overview).
+More detailed usage can be found in the [MZinga Docs](https://mzinga.io/docs/configuration/overview).

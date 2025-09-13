@@ -127,7 +127,7 @@ The default typescript interface for `context` is `{ [key: string]: unknown }`. 
 This is known as "type augmentation" - a TypeScript feature which allows us to add types to existing objects. Simply put this in any .ts or .d.ts file:
 
 ```ts
-import { RequestContext as OriginalRequestContext } from 'payload'
+import { RequestContext as OriginalRequestContext } from 'mzinga'
 
 declare module 'payload' {
   // Create a new interface that merges your additional fields with the original one

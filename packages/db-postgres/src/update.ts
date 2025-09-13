@@ -1,4 +1,4 @@
-import type { UpdateOne } from 'payload/database'
+import type { UpdateOne } from 'mzinga/database'
 
 import toSnakeCase from 'to-snake-case'
 

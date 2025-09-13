@@ -1,7 +1,7 @@
 import { GraphQLClient, request } from 'graphql-request'
 
-import payload from '../../packages/payload/src'
-import { ValidationError } from '../../packages/payload/src/errors'
+import payload from '../../packages/mzinga/src'
+import { ValidationError } from '../../packages/mzinga/src/errors'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import AutosavePosts from './collections/Autosave'
@@ -236,7 +236,7 @@ describe('Versions', () => {
         )
       })
 
-      // https://github.com/payloadcms/payload/issues/4827
+      // https://github.com/mzinga-io/mzinga-core/issues/4827
       it('should query drafts with relation', async () => {
         const draftPost = await payload.create({
           collection: draftCollectionSlug,

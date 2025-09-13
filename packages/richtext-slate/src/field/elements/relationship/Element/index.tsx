@@ -2,11 +2,11 @@
 
 import type { HTMLAttributes } from 'react'
 
-import { Button } from 'payload/components'
-import { useDocumentDrawer, useListDrawer } from 'payload/components/elements'
-import { usePayloadAPI } from 'payload/components/hooks'
-import { useConfig } from 'payload/components/utilities'
-import { getTranslation } from 'payload/utilities'
+import { Button } from 'mzinga/components'
+import { useDocumentDrawer, useListDrawer } from 'mzinga/components/elements'
+import { usePayloadAPI } from 'mzinga/components/hooks'
+import { useConfig } from 'mzinga/components/utilities'
+import { getTranslation } from 'mzinga/utilities'
 import React, { useCallback, useReducer, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Transforms } from 'slate'

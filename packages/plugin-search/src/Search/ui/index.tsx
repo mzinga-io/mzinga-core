@@ -1,10 +1,10 @@
-import type { Fields } from 'payload/dist/admin/components/forms/Form/types'
-import type { UIField } from 'payload/dist/fields/config/types'
+import type { Fields } from 'mzinga/dist/admin/components/forms/Form/types'
+import type { UIField } from 'mzinga/dist/fields/config/types'
 
-import { useWatchForm } from 'payload/components/forms'
-import { useConfig } from 'payload/components/utilities'
+import { useWatchForm } from 'mzinga/components/forms'
+import { useConfig } from 'mzinga/components/utilities'
 // TODO: fix this import to work in dev mode within the monorepo in a way that is backwards compatible with 1.x
-// import CopyToClipboard from 'payload/dist/admin/components/elements/CopyToClipboard'
+// import CopyToClipboard from 'mzinga/dist/admin/components/elements/CopyToClipboard'
 import React from 'react'
 
 type FieldsWithDoc = Fields & {

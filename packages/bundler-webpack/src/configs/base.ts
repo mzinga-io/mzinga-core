@@ -1,4 +1,4 @@
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 import type { Configuration } from 'webpack'
 
 import findNodeModules from 'find-node-modules'
@@ -54,8 +54,8 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
         {
           oneOf: [
             {
-              test: /\.(?:ico|gif|png|jpg|jpeg|woff(2)?|eot|ttf|otf|svg)$/i,
               type: 'asset/resource',
+              test: /\.(?:ico|gif|png|jpg|jpeg|woff(2)?|eot|ttf|otf|svg)$/i,
             },
           ],
         },

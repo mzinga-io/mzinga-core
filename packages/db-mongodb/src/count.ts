@@ -1,8 +1,8 @@
 import type { QueryOptions } from 'mongoose'
-import type { Count } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { Count } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
-import { flattenWhereToOperators } from 'payload/database'
+import { flattenWhereToOperators } from 'mzinga/database'
 
 import type { MongooseAdapter } from '.'
 

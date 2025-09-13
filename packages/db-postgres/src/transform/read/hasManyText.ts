@@ -1,4 +1,4 @@
-import type { TextField } from 'payload/types'
+import type { TextField } from 'mzinga/types'
 
 type Args = {
   field: TextField

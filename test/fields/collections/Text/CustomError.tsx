@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { Props } from '../../../../packages/payload/src/admin/components/forms/Error/types'
+import type { Props } from '../../../../packages/mzinga/src/admin/components/forms/Error/types'
 
 const CustomError: React.FC<Props> = (props) => {
   const { showError = false } = props

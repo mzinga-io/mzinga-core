@@ -1,4 +1,4 @@
-import { ready, subscribe, unsubscribe } from '@payloadcms/live-preview'
+import { ready, subscribe, unsubscribe } from '@mzinga/live-preview'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 // To prevent the flicker of missing data on initial load,

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { UpdateGlobalVersionArgs } from 'payload/database'
-import type { PayloadRequest, TypeWithID, Where } from 'payload/types'
+import type { UpdateGlobalVersionArgs } from 'mzinga/database'
+import type { PayloadRequest, TypeWithID, Where } from 'mzinga/types'
 
 import type { ExampleAdapter } from '.'
 

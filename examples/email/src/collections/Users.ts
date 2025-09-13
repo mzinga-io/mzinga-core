@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'mzinga/types'
 
 import generateForgotPasswordEmail from '../email/generateForgotPasswordEmail'
 import generateVerificationEmail from '../email/generateVerificationEmail'

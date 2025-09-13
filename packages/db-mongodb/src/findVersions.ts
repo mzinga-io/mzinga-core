@@ -1,8 +1,8 @@
 import type { PaginateOptions } from 'mongoose'
-import type { FindVersions } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { FindVersions } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
-import { flattenWhereToOperators } from 'payload/database'
+import { flattenWhereToOperators } from 'mzinga/database'
 
 import type { MongooseAdapter } from '.'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 import { fetchFooter } from '../../_api/fetchFooter'
@@ -20,7 +19,7 @@ export async function Footer() {
             <img
               className={classes.logo}
               alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
+              src="https://raw.githubusercontent.com/mzinga-io/mzinga-core/main/packages/mzinga/src/admin/assets/images/payload-logo-light.svg"
             />
           </picture>
         </Link>
@@ -29,10 +28,10 @@ export async function Footer() {
             return <CMSLink key={i} {...link} />
           })}
           <Link href="/admin">Admin</Link>
-          <Link href="https://github.com/payloadcms/payload/tree/main/templates/ecommerce">
+          <Link href="https://github.com/mzinga-io/mzinga-core/tree/main/templates/ecommerce">
             Source Code
           </Link>
-          <Link href="https://github.com/payloadcms/payload">Payload</Link>
+          <Link href="https://github.com/mzinga-io/mzinga-core">Payload</Link>
         </nav>
       </Gutter>
     </footer>

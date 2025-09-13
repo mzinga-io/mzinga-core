@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import type { Relation } from 'drizzle-orm'
 import type { IndexBuilder, PgColumnBuilder } from 'drizzle-orm/pg-core'
-import type { Field, TabAsField } from 'payload/types'
+import type { Field, TabAsField } from 'mzinga/types'
 
 import { relations } from 'drizzle-orm'
 import {
@@ -18,8 +18,8 @@ import {
   timestamp,
   varchar,
 } from 'drizzle-orm/pg-core'
-import { InvalidConfiguration } from 'payload/errors'
-import { fieldAffectsData, optionIsObject } from 'payload/types'
+import { InvalidConfiguration } from 'mzinga/errors'
+import { fieldAffectsData, optionIsObject } from 'mzinga/types'
 import toSnakeCase from 'to-snake-case'
 
 import type { GenericColumns, IDType, PostgresAdapter } from '../types'

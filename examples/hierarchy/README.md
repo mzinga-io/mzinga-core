@@ -1,6 +1,6 @@
 # Payload Hierarchy Example
 
-This example demonstrates how to achieve a virtual hierarchy between documents in your [Payload](https://github.com/payloadcms/payload) application.
+This example demonstrates how to achieve a virtual hierarchy between documents in your [Payload](https://github.com/mzinga-io/mzinga-core) application.
 
 ## Quick Start
 
@@ -18,11 +18,11 @@ That's it! Changes made in `./src` will be reflected in your app.
 
 This example achieves parent/child relationships between your documents through the use of virtual fields. When you query a document with the `?children=true` query param, an afterRead hook is used to populate the documents within its own tree.
 
-For more information on how virtual fields, see the [Official Virtual Fields Example](https://github.com/payloadcms/payload/tree/main/examples/virtual-fields).
+For more information on how virtual fields, see the [Official Virtual Fields Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/virtual-fields).
 
 ### Collections
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend any of this functionality.
+See the [Collections](https://mzinga.io/docs/configuration/collections) docs for details on how to extend any of this functionality.
 
 - #### Users
 
@@ -30,8 +30,8 @@ See the [Collections](https://payloadcms.com/docs/configuration/collections) doc
 
 - #### Entities
 
-  The `entities` collection can define a parent as any other entity.  It has a virtual field that will also populate children when it is called via the API using a query `children=true`. See [Virtual Fields](https://github.com/payloadcms/payload/tree/main/examples/virtual-fields) for more details on how virtual fields work. 
-  
+  The `entities` collection can define a parent as any other entity.  It has a virtual field that will also populate children when it is called via the API using a query `children=true`. See [Virtual Fields](https://github.com/mzinga-io/mzinga-core/tree/main/examples/virtual-fields) for more details on how virtual fields work.
+
   The virtual field retrieves __all__ children which includes other entities and people.
 
 - #### People
@@ -51,8 +51,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

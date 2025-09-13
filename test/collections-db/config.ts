@@ -1,4 +1,4 @@
-import type { CollectionConfig } from '../../packages/payload/types'
+import type { CollectionConfig } from '../../packages/mzinga/types'
 
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'

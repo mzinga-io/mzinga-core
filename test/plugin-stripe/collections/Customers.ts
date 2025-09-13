@@ -1,4 +1,4 @@
-import type { CollectionConfig } from '../../../packages/payload/src/collections/config/types'
+import type { CollectionConfig } from '../../../packages/mzinga/src/collections/config/types'
 
 import { LinkToDoc } from '../../../packages/plugin-stripe/src/ui/LinkToDoc'
 import { customersSlug } from '../shared'

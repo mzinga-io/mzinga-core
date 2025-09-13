@@ -1,6 +1,6 @@
 # Payload White-label Example
 
-This example demonstrates how to re-brand or white-label the [Payload Admin Panel](https://payloadcms.com/docs/admin/overview#the-admin-panel) by modifying the favicon, icon, logo, ogImage and title suffix.
+This example demonstrates how to re-brand or white-label the [Payload Admin Panel](https://mzinga.io/docs/admin/overview#the-admin-panel) by modifying the favicon, icon, logo, ogImage and title suffix.
 
 ## Quick Start
 
@@ -29,7 +29,7 @@ The following sub-properties have already been configured:
 
 `graphics.Icon`: Image component displayed above the Nav in the admin panel, often a condensed version of a full logo.
 
-👉 Check out this blog post for a more in-depth walkthrough: [White-label the Admin UI](https://payloadcms.com/blog/white-label-admin-ui)
+👉 Check out this blog post for a more in-depth walkthrough: [White-label the Admin UI](https://mzinga.io/blog/white-label-admin-ui)
 
 ## Development
 
@@ -48,8 +48,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

@@ -1,4 +1,4 @@
-import type { FieldAccess } from 'payload/types'
+import type { FieldAccess } from 'mzinga/types'
 
 import { checkUserRoles } from '../../../utilities/checkUserRoles'
 import { checkTenantRoles } from '../utilities/checkTenantRoles'

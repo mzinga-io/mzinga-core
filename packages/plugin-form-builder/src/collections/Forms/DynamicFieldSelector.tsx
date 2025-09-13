@@ -1,8 +1,8 @@
 'use client'
 
-import type { TextField } from 'payload/dist/fields/config/types'
+import type { TextField } from 'mzinga/dist/fields/config/types'
 
-import { Select, useForm } from 'payload/components/forms'
+import { Select, useForm } from 'mzinga/components/forms'
 import React, { useEffect, useState } from 'react'
 
 import type { SelectFieldOption } from '../../types'

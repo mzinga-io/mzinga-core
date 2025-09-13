@@ -21,8 +21,8 @@ Add the plugin to your Payload config
 `yarn add @payloadcms/plugin-cloud`
 
 ```ts
-import { payloadCloud } from '@payloadcms/plugin-cloud'
-import { buildConfig } from 'payload/config'
+import { payloadCloud } from '@mzinga/plugin-cloud'
+import { buildConfig } from 'mzinga/config'
 
 export default buildConfig({
   plugins: [payloadCloud()],

@@ -1,18 +1,18 @@
 {
-  "name": "@payloadcms/eslint-config",
-  "version": "1.1.1",
-  "description": "Payload styles for ESLint and Prettier",
+  "name": "@mzinga/eslint-config",
+  "version": "0.0.1",
+  "description": "MZinga styles for ESLint and Prettier",
   "license": "MIT",
-  "homepage": "https://payloadcms.com",
+  "homepage": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/eslint-config"
   },
   "author": {
-    "email": "info@payloadcms.com",
-    "name": "Payload",
-    "url": "https://payloadcms.com"
+    "email": "info@mzinga.io",
+    "name": "MZinga",
+    "url": "https://mzinga.io"
   },
   "main": "index.js",
   "scripts": {

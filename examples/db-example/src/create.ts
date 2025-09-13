@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Create } from 'payload/database'
-import type { Document, PayloadRequest } from 'payload/types'
+import type { Create } from 'mzinga/database'
+import type { Document, PayloadRequest } from 'mzinga/types'
 
 import type { ExampleAdapter } from '.'
 

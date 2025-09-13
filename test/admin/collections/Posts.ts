@@ -1,4 +1,4 @@
-import type { CollectionConfig } from '../../../packages/payload/src/collections/config/types'
+import type { CollectionConfig } from '../../../packages/mzinga/src/collections/config/types'
 
 import { slateEditor } from '../../../packages/richtext-slate/src'
 import DemoUIFieldCell from '../components/DemoUIField/Cell'

@@ -1,6 +1,6 @@
-import { APIError } from 'payload/errors'
-import { type Field, type TabAsField, fieldAffectsData } from 'payload/types'
-import { createArrayFromCommaDelineated } from 'payload/utilities'
+import { APIError } from 'mzinga/errors'
+import { type Field, type TabAsField, fieldAffectsData } from 'mzinga/types'
+import { createArrayFromCommaDelineated } from 'mzinga/utilities'
 import { validate as uuidValidate } from 'uuid'
 
 import type { PostgresAdapter } from '../types'

@@ -1,10 +1,10 @@
 import { GraphQLClient } from 'graphql-request'
 
-import type { Config } from '../../packages/payload/src/config/types'
-import type { Where } from '../../packages/payload/src/types'
+import type { Config } from '../../packages/mzinga/src/config/types'
+import type { Where } from '../../packages/mzinga/src/types'
 import type { LocalizedPost, LocalizedSort, WithLocalizedRelationship } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { englishLocale } from '../globals/config'
 import { initPayloadTest } from '../helpers/configHelpers'
@@ -15,10 +15,12 @@ import { groupSlug } from './collections/Group'
 import { nestedToArrayAndBlockCollectionSlug } from './collections/NestedToArrayAndBlock'
 import { tabSlug } from './collections/Tab'
 import configPromise from './config'
-import { defaultLocale, hungarianLocale, localizedSortSlug } from './shared'
 import {
+  defaultLocale,
   englishTitle,
+  hungarianLocale,
   localizedPostsSlug,
+  localizedSortSlug,
   portugueseLocale,
   relationEnglishTitle,
   relationEnglishTitle2,
@@ -398,7 +400,7 @@ describe('Localization', () => {
       expect(sortByIdQuery.totalDocs).toEqual(expectedTotalDocs)
     })
 
-    // https://github.com/payloadcms/payload/issues/4889
+    // https://github.com/mzinga-io/mzinga-core/issues/4889
     it('should have correct totalDocs when sorted by localized fields', async () => {
       const sortByTitleQuery = await payload.find({
         collection: localizedSortSlug,

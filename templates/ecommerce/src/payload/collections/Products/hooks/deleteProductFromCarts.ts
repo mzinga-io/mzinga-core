@@ -1,4 +1,4 @@
-import type { AfterDeleteHook } from 'payload/dist/collections/config/types'
+import type { AfterDeleteHook } from 'mzinga/dist/collections/config/types'
 
 import type { Product } from '../../../payload-types'
 

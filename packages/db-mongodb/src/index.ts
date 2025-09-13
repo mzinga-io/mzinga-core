@@ -1,12 +1,12 @@
 import type { CollationOptions, TransactionOptions } from 'mongodb'
 import type { ClientSession, ConnectOptions, Connection, SchemaOptions } from 'mongoose'
-import type { Payload } from 'payload'
-import type { BaseDatabaseAdapter } from 'payload/database'
+import type { Payload } from 'mzinga'
+import type { BaseDatabaseAdapter } from 'mzinga/database'
 
 import fs from 'fs'
 import mongoose from 'mongoose'
+import { createDatabaseAdapter } from 'mzinga/database'
 import path from 'path'
-import { createDatabaseAdapter } from 'payload/database'
 
 import type { CollectionModel, GlobalModel } from './types'
 
@@ -76,10 +76,10 @@ export interface Args {
     }
   }
   /** Extra configuration options */
-  connectOptions?: ConnectOptions & {
+  connectOptions?: {
     /** Set false to disable $facet aggregation in non-supporting databases, Defaults to true */
     useFacet?: boolean
-  }
+  } & ConnectOptions
 
   /** Set to true to disable hinting to MongoDB to use 'id' as index. This is currently done when counting documents for pagination. Disabling this optimization might fix some problems with AWS DocumentDB. Defaults to false */
   disableIndexHints?: boolean
@@ -99,33 +99,33 @@ export interface Args {
   url: false | string
 }
 
-export type MongooseAdapter = BaseDatabaseAdapter &
-  Args & {
-    collectionOptions: {
-      [slug: string]: {
-        schemaOptions?: SchemaOptions
-      }
-    }
-    collections: {
-      [slug: string]: CollectionModel
-    }
-    connection: Connection
-    globals: GlobalModel
-    globalsOptions: {
+export type MongooseAdapter = {
+  collectionOptions: {
+    [slug: string]: {
       schemaOptions?: SchemaOptions
     }
-    jsonParse: boolean
-    mongoMemoryServer: any
-    schemaOptions?: SchemaOptions
-    sessions: Record<number | string, ClientSession>
-    versions: {
-      [slug: string]: CollectionModel
-    }
   }
+  collections: {
+    [slug: string]: CollectionModel
+  }
+  connection: Connection
+  globals: GlobalModel
+  globalsOptions: {
+    schemaOptions?: SchemaOptions
+  }
+  jsonParse: boolean
+  mongoMemoryServer: any
+  schemaOptions?: SchemaOptions
+  sessions: Record<number | string, ClientSession>
+  versions: {
+    [slug: string]: CollectionModel
+  }
+} & Args &
+  BaseDatabaseAdapter
 
 type MongooseAdapterResult = (args: { payload: Payload }) => MongooseAdapter
 
-declare module 'payload' {
+declare module 'mzinga' {
   export interface DatabaseAdapter
     extends Omit<BaseDatabaseAdapter, 'sessions'>,
       Omit<Args, 'collections' | 'globals' | 'migrationDir'> {

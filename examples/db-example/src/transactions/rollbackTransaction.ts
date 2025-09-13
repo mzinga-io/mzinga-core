@@ -1,4 +1,4 @@
-import type { RollbackTransaction } from 'payload/database'
+import type { RollbackTransaction } from 'mzinga/database'
 
 /**
  * Rolls back a transaction identified by its ID.

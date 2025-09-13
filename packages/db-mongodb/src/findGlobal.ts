@@ -1,7 +1,7 @@
-import type { FindGlobal } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { FindGlobal } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
-import { combineQueries } from 'payload/database'
+import { combineQueries } from 'mzinga/database'
 
 import type { MongooseAdapter } from '.'
 

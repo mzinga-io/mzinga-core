@@ -1,5 +1,5 @@
 import express from 'express'
-import payload from 'payload'
+import payload from 'mzinga'
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 require('dotenv').config()

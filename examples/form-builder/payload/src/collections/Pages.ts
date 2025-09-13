@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from 'mzinga/types'
 import { publishedOnly } from '../access/publishedOnly'
 import { FormBlock } from '../blocks/Form'
 import { slugField } from '../fields/slug'

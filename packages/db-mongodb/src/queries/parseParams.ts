@@ -1,13 +1,12 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
 import type { FilterQuery } from 'mongoose'
-import type { Payload } from 'payload'
-import type { Operator, Where } from 'payload/types'
-import type { Field } from 'payload/types'
+import type { Payload } from 'mzinga'
+import type { Field, Operator, Where } from 'mzinga/types'
 
 import deepmerge from 'deepmerge'
-import { validOperators } from 'payload/types'
-import { combineMerge } from 'payload/utilities'
+import { validOperators } from 'mzinga/types'
+import { combineMerge } from 'mzinga/utilities'
 
 import { buildAndOrConditions } from './buildAndOrConditions'
 import { buildSearchParam } from './buildSearchParams'

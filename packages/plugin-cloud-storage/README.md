@@ -19,9 +19,9 @@ Add this package into your dependencies executing this code in your command line
 Now install this plugin within your Payload as follows:
 
 ```ts
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import { cloudStorage } from '@payloadcms/plugin-cloud-storage'
+import { cloudStorage } from '@mzinga/plugin-cloud-storage'
 
 export default buildConfig({
   plugins: [
@@ -94,7 +94,7 @@ To use the Azure Blob Storage adapter, you need to have `@azure/storage-blob` in
 From there, create the adapter, passing in all of its required properties:
 
 ```js
-import { azureBlobStorageAdapter } from '@payloadcms/plugin-cloud-storage/azure'
+import { azureBlobStorageAdapter } from '@mzinga/plugin-cloud-storage/azure'
 
 // if you need to obtain credentials you may do so by following the instructions here: https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-app?tabs=javascript
 // or you can use the connection string directly.
@@ -108,7 +108,10 @@ const adapter = azureBlobStorageAdapter({
    * Optional: You may wish to obtain credentials that cannot be passed through in the connectionString connection option. In that case the connectionString will only be the URL to the storage account.
    * Can be one of AnonymousCredential | StorageSharedKeyCredential | TokenCredential
    **/
-  credentials: new StorageSharedKeyCredential(process.env.AZURE_STORAGE_ACCOUNT_NAME, process.env.AZURE_STORAGE_ACCOUNT_KEY),
+  credentials: new StorageSharedKeyCredential(
+    process.env.AZURE_STORAGE_ACCOUNT_NAME,
+    process.env.AZURE_STORAGE_ACCOUNT_KEY,
+  ),
 })
 
 // Now you can pass this adapter to the plugin
@@ -123,7 +126,7 @@ To use the S3 adapter, some peer dependencies need to be installed:
 From there, create the adapter, passing in all of its required properties:
 
 ```js
-import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
+import { s3Adapter } from '@mzinga/plugin-cloud-storage/s3'
 
 const adapter = s3Adapter({
   config: {
@@ -151,7 +154,7 @@ Any upload over 50MB will automatically be uploaded using S3's multi-part upload
 If you're running an S3-compatible object storage such as MinIO or Digital Ocean Spaces, you'll have to set the `endpoint` appropriately for the provider.
 
 ```js
-import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
+import { s3Adapter } from '@mzinga/plugin-cloud-storage/s3'
 
 const adapter = s3Adapter({
   config: {
@@ -169,7 +172,7 @@ To use the GCS adapter, you need to have `@google-cloud/storage` installed in yo
 From there, create the adapter, passing in all of its required properties:
 
 ```js
-import { gcsAdapter } from '@payloadcms/plugin-cloud-storage/gcs'
+import { gcsAdapter } from '@mzinga/plugin-cloud-storage/gcs'
 
 const adapter = gcsAdapter({
   options: {
@@ -196,7 +199,7 @@ If this does not apply to you (your upload collection has `read: () => true` or 
 
 ## Local development
 
-For instructions regarding how to develop with this plugin locally, [click here](https://github.com/payloadcms/payload/blob/main/packages/plugin-cloud-storage/docs/local-dev.md).
+For instructions regarding how to develop with this plugin locally, [click here](https://github.com/mzinga-io/mzinga-core/blob/main/packages/plugin-cloud-storage/docs/local-dev.md).
 
 ## Questions
 

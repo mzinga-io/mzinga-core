@@ -1,5 +1,5 @@
-import type { FindArgs } from 'payload/database'
-import type { Field, PayloadRequest, TypeWithID } from 'payload/types'
+import type { FindArgs } from 'mzinga/database'
+import type { Field, PayloadRequest, TypeWithID } from 'mzinga/types'
 
 import { inArray, count as sqlCount } from 'drizzle-orm'
 
@@ -12,11 +12,11 @@ import { transform } from '../transform/read'
 import { buildFindManyArgs } from './buildFindManyArgs'
 import { chainMethods } from './chainMethods'
 
-type Args = Omit<FindArgs, 'collection'> & {
+type Args = {
   adapter: PostgresAdapter
   fields: Field[]
   tableName: string
-}
+} & Omit<FindArgs, 'collection'>
 
 export const findMany = async function find({
   adapter,

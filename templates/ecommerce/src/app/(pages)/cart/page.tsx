@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { Fragment } from 'react'
 
 import { Page, Settings } from '../../../payload/payload-types'
 import { staticCart } from '../../../payload/seed/cart-static'
@@ -74,7 +74,7 @@ export default async function Cart() {
                 </a>
                 {' then set them as environment variables. See the '}
                 <a
-                  href="https://github.com/payloadcms/payload/blob/main/templates/ecommerce/README.md#stripe"
+                  href="https://github.com/mzinga-io/mzinga-core/blob/main/templates/ecommerce/README.md#stripe"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

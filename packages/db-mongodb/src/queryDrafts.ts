@@ -1,8 +1,8 @@
 import type { PaginateOptions } from 'mongoose'
-import type { QueryDrafts } from 'payload/database'
-import type { PayloadRequest } from 'payload/types'
+import type { QueryDrafts } from 'mzinga/database'
+import type { PayloadRequest } from 'mzinga/types'
 
-import { combineQueries, flattenWhereToOperators } from 'payload/database'
+import { combineQueries, flattenWhereToOperators } from 'mzinga/database'
 
 import type { MongooseAdapter } from '.'
 

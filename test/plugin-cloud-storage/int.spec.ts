@@ -2,7 +2,7 @@
 import * as AWS from '@aws-sdk/client-s3'
 import path from 'path'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { describeIfInCIOrHasLocalstack } from '../helpers'
 import { initPayloadTest } from '../helpers/configHelpers'
 

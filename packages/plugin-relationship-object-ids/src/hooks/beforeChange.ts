@@ -1,15 +1,16 @@
-import type { CollectionConfig, FieldHook, RelationshipField, UploadField } from 'payload/types'
+import type { Config } from 'mzinga/config'
+import type { CollectionConfig, FieldHook, RelationshipField, UploadField } from 'mzinga/types'
+
 import mongoose from 'mongoose'
-import type { Config } from 'payload/config'
-import { fieldAffectsData } from 'payload/dist/fields/config/types'
+import { fieldAffectsData } from 'mzinga/dist/fields/config/types'
 
 const convertValue = ({
-  value,
   relatedCollection,
+  value,
 }: {
-  value: string | number
   relatedCollection: CollectionConfig
-}): mongoose.Types.ObjectId | string | number => {
+  value: number | string
+}): mongoose.Types.ObjectId | number | string => {
   const customIDField = relatedCollection.fields.find(
     (field) => fieldAffectsData(field) && field.name === 'id',
   )
@@ -20,8 +21,8 @@ const convertValue = ({
 }
 
 interface RelationObject {
-  value: string | number
   relationTo: string
+  value: number | string
 }
 
 function isValidRelationObject(value: unknown): value is RelationObject {

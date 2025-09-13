@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from 'mzinga/types'
 
 const Users: CollectionConfig = {
   slug: 'users',

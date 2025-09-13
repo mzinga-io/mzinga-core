@@ -1,4 +1,4 @@
-import type { RichTextField, Validate } from 'payload/types'
+import type { RichTextField, Validate } from 'mzinga/types'
 
 import type { AdapterArguments } from '../types'
 

@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['@payloadcms'],
-  ignorePatterns: ['**/payload-types.ts'],
+  ignorePatterns: ['**/payload-types.ts', '**/mzinga-types.ts'],
   overrides: [
     {
       extends: ['plugin:@typescript-eslint/disable-type-checked'],

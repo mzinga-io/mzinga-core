@@ -1,5 +1,5 @@
-import type { Config } from 'payload/config'
-import { defaults } from 'payload/config'
+import type { Config } from 'mzinga/config'
+import { defaults } from 'mzinga/config'
 
 import { sentry } from './plugin'
 

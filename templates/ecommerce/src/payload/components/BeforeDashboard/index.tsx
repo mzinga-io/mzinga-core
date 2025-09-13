@@ -1,6 +1,6 @@
+import { Banner } from 'mzinga/components'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Banner } from 'payload/components'
 
 import { SeedButton } from './SeedButton'
 
@@ -35,7 +35,7 @@ const BeforeDashboard: React.FC = () => {
             '. Create a new account if needed, then copy them into your environment variables and restart your server. See the '
           }
           <a
-            href="https://github.com/payloadcms/payload/blob/main/templates/ecommerce/README.md#stripe"
+            href="https://github.com/mzinga-io/mzinga-core/blob/main/templates/ecommerce/README.md#stripe"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -2,8 +2,8 @@ import type { Response } from 'express'
 
 import express from 'express'
 
-import type { Config } from '../../../packages/payload/src/config/types'
-import type { PayloadRequest } from '../../../packages/payload/src/express/types'
+import type { Config } from '../../../packages/mzinga/src/config/types'
+import type { PayloadRequest } from '../../../packages/mzinga/src/express/types'
 
 import { applicationEndpoint, rootEndpoint } from '../shared'
 

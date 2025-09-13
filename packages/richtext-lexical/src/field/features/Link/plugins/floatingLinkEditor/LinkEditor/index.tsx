@@ -1,5 +1,5 @@
 'use client'
-import type { Data, Fields } from 'payload/types'
+import type { Data, Fields } from 'mzinga/types'
 
 import { useModal } from '@faceless-ui/modal'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
@@ -12,7 +12,7 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical'
-import { formatDrawerSlug } from 'payload/components/elements'
+import { formatDrawerSlug } from 'mzinga/components/elements'
 import {
   buildStateFromSchema,
   useAuth,
@@ -20,9 +20,9 @@ import {
   useDocumentInfo,
   useEditDepth,
   useLocale,
-} from 'payload/components/utilities'
-import { sanitizeFields } from 'payload/config'
-import { getTranslation } from 'payload/utilities'
+} from 'mzinga/components/utilities'
+import { sanitizeFields } from 'mzinga/config'
+import { getTranslation } from 'mzinga/utilities'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -35,8 +35,7 @@ import { getSelectedNode } from '../../../../../lexical/utils/getSelectedNode'
 import { setFloatingElemPositionForLinkEditor } from '../../../../../lexical/utils/setFloatingElemPositionForLinkEditor'
 import { LinkDrawer } from '../../../drawer'
 import { $isAutoLinkNode } from '../../../nodes/AutoLinkNode'
-import { $createLinkNode } from '../../../nodes/LinkNode'
-import { $isLinkNode, TOGGLE_LINK_COMMAND } from '../../../nodes/LinkNode'
+import { $createLinkNode, $isLinkNode, TOGGLE_LINK_COMMAND } from '../../../nodes/LinkNode'
 import { transformExtraFields } from '../utilities'
 import { TOGGLE_LINK_WITH_MODAL_COMMAND } from './commands'
 
@@ -129,8 +128,9 @@ export function LinkEditor({
       } else {
         // internal link
         setLinkUrl(
-          `/admin/collections/${linkParent.getFields()?.doc?.relationTo}/${linkParent.getFields()
-            ?.doc?.value}`,
+          `/admin/collections/${linkParent.getFields()?.doc?.relationTo}/${
+            linkParent.getFields()?.doc?.value
+          }`,
         )
 
         const relatedField = config.collections.find(

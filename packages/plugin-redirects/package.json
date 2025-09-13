@@ -1,13 +1,13 @@
 {
-  "name": "@payloadcms/plugin-redirects",
-  "version": "1.0.2",
-  "homepage:": "https://payloadcms.com",
+  "name": "@mzinga/plugin-redirects",
+  "version": "0.0.1",
+  "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/plugin-redirects"
   },
-  "description": "Redirects plugin for Payload",
+  "description": "Redirects plugin for MZinga",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -34,10 +34,10 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
     "@types/express": "^4.17.9",
     "@types/react": "18.0.21",
-    "payload": "workspace:*"
+    "mzinga": "workspace:*"
   },
   "exports": {
     ".": {

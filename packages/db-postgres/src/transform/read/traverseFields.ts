@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
-import type { SanitizedConfig } from 'payload/config'
-import type { Field, TabAsField } from 'payload/types'
+import type { SanitizedConfig } from 'mzinga/config'
+import type { Field, TabAsField } from 'mzinga/types'
 
-import { fieldAffectsData } from 'payload/types'
+import { fieldAffectsData } from 'mzinga/types'
 
 import type { BlocksMap } from '../../utilities/createBlocksMap'
 

@@ -1,5 +1,5 @@
-import type { Payload } from 'payload'
-import type { Config as PayloadConfig } from 'payload/config'
+import type { Payload } from 'mzinga'
+import type { Config as PayloadConfig } from 'mzinga/config'
 import type Stripe from 'stripe'
 
 export type StripeWebhookHandler<T = any> = (args: {
@@ -37,9 +37,9 @@ export interface StripeConfig {
   webhooks?: StripeWebhookHandler | StripeWebhookHandlers
 }
 
-export type SanitizedStripeConfig = StripeConfig & {
+export type SanitizedStripeConfig = {
   sync: SyncConfig[] // convert to required
-}
+} & StripeConfig
 
 export type StripeProxy = (args: {
   stripeArgs: any[]

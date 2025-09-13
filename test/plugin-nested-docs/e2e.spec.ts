@@ -1,11 +1,11 @@
 import type { Page } from '@playwright/test'
 
 import { expect, test } from '@playwright/test'
-import type { Page as PayloadPage } from './payload-types'
+import payload from '../../packages/mzinga/src'
+import { initPageConsoleErrorCatch } from '../helpers'
 import { AdminUrlUtil } from '../helpers/adminUrlUtil'
 import { initPayloadE2E } from '../helpers/configHelpers'
-import payload from '../../packages/payload/src'
-import { initPageConsoleErrorCatch } from '../helpers'
+import type { Page as PayloadPage } from './payload-types'
 
 const { beforeAll, describe } = test
 let url: AdminUrlUtil

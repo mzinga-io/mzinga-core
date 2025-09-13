@@ -13,11 +13,12 @@ can interact directly with your database.
 <Banner type="success">
   **Tip:**
 
-  The Local API is incredibly powerful when used with server-side rendering app frameworks like
-  NextJS. With other headless CMS, you need to request your data from third-party servers which can
-  add significant loading time to your server-rendered pages. With Payload, you don't have to leave
-  your server to gather the data you need. It can be incredibly fast and is definitely a game
-  changer.
+The Local API is incredibly powerful when used with server-side rendering app frameworks like
+NextJS. With other headless CMS, you need to request your data from third-party servers which can
+add significant loading time to your server-rendered pages. With Payload, you don't have to leave
+your server to gather the data you need. It can be incredibly fast and is definitely a game
+changer.
+
 </Banner>
 
 Here are some common examples of how you can use the Local API:
@@ -39,7 +40,7 @@ initialized yet. That might be obvious. To us, it's usually not.
 Example:
 
 ```ts
-import payload from 'payload'
+import payload from 'mzinga'
 import { CollectionAfterChangeHook } from 'payload/types'
 
 const afterChangeHook: CollectionAfterChangeHook = async () => {
@@ -70,7 +71,7 @@ You can specify more options within the Local API vs. REST or GraphQL due to the
 executed in.
 
 | Local Option       | Description                                                                                                                                                                                                                                                                                                                                                           |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `collection`       | Required for Collection operations. Specifies the Collection slug to operate against.                                                                                                                                                                                                                                                                                 |
 | `data`             | The data to use within the operation. Required for `create`, `update`.                                                                                                                                                                                                                                                                                                |
 | `depth`            | [Control auto-population](/docs/getting-started/concepts#depth) of nested relationship and upload fields.                                                                                                                                                                                                                                                             |
@@ -87,8 +88,9 @@ _There are more options available on an operation by operation basis outlined be
 <Banner type="warning">
   **Note:**
 
-  By default, all access control checks are disabled in the Local API, but you can re-enable them if
-  you'd like, as well as pass a specific user to run the operation with.
+By default, all access control checks are disabled in the Local API, but you can re-enable them if
+you'd like, as well as pass a specific user to run the operation with.
+
 </Banner>
 
 ## Collections
@@ -435,8 +437,8 @@ As a workaround, we recommend leveraging the following pattern to determine and 
 ```
 import dotenv from 'dotenv'
 import path from 'path'
-import type { Payload } from 'payload'
-import payload from 'payload'
+import type { Payload } from 'mzinga'
+import payload from 'mzinga'
 import type { InitOptions } from 'payload/config'
 import { seed as seedData } from './seed'
 
@@ -489,14 +491,14 @@ export const getPayloadClient = async ({ initOptions, seed }: Args = {}): Promis
 ```
 
 To checkout how this works in a project, take a look at
-our [custom server example](https://github.com/payloadcms/payload/blob/master/examples/custom-server/src/getPayload.ts).
+our [custom server example](https://github.com/mzinga-io/mzinga-core/blob/master/examples/custom-server/src/getPayload.ts).
 
 ## Example Script using Local API
 
 The Local API is especially useful for running scripts
 
 ```ts
-import payload from 'payload'
+import payload from 'mzinga'
 import path from 'path'
 import dotenv from 'dotenv'
 

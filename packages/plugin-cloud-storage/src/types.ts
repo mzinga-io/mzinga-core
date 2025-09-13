@@ -1,7 +1,11 @@
 import type { NextFunction, Response } from 'express'
-import type { FileData, ImageSize } from 'payload/types'
-import type { TypeWithID } from 'payload/types'
-import type { CollectionConfig, PayloadRequest } from 'payload/types'
+import type {
+  CollectionConfig,
+  FileData,
+  ImageSize,
+  PayloadRequest,
+  TypeWithID,
+} from 'mzinga/types'
 import type { Configuration as WebpackConfig } from 'webpack'
 
 export interface File {
@@ -25,7 +29,7 @@ export interface TypeWithPrefix {
 
 export type HandleDelete = (args: {
   collection: CollectionConfig
-  doc: TypeWithID & FileData & TypeWithPrefix
+  doc: FileData & TypeWithID & TypeWithPrefix
   filename: string
   req: PayloadRequest
 }) => Promise<void> | void

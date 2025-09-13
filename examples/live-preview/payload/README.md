@@ -1,6 +1,6 @@
 # Payload Live Preview Example
 
-The [Payload Live Preview Example](https://github.com/payloadcms/payload/tree/main/examples/live-preview/payload) demonstrates how to implement [Live Preview](https://payloadcms.com/docs/live-preview) in [Payload](https://github.com/payloadcms/payload). With Live Preview you can render your front-end application directly within the Admin panel. As you type, your changes take effect in real-time. No need to save a draft or publish your changes.
+The [Payload Live Preview Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/live-preview/payload) demonstrates how to implement [Live Preview](https://mzinga.io/docs/live-preview) in [Payload](https://github.com/mzinga-io/mzinga-core). With Live Preview you can render your front-end application directly within the Admin panel. As you type, your changes take effect in real-time. No need to save a draft or publish your changes.
 
 There are various fully working front-ends made explicitly for this example, including:
 
@@ -26,7 +26,7 @@ Live Preview works by rendering an iframe on the page that loads your front-end 
 
 ### Collections
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend any of this functionality.
+See the [Collections](https://mzinga.io/docs/configuration/collections) docs for details on how to extend any of this functionality.
 
 - #### Users
 
@@ -40,7 +40,7 @@ See the [Collections](https://payloadcms.com/docs/configuration/collections) doc
   }
   ```
 
-  For additional help with authentication, see the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs or the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth).
+  For additional help with authentication, see the [Authentication](https://mzinga.io/docs/authentication/overview#authentication-overview) docs or the official [Auth Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/auth).
 
 - #### Pages
 
@@ -58,7 +58,7 @@ See the [Collections](https://payloadcms.com/docs/configuration/collections) doc
   }
   ```
 
-  For more details on how to extend this functionality, see the [Live Preview](https://payloadcms.com/docs/live-preview) docs.
+  For more details on how to extend this functionality, see the [Live Preview](https://mzinga.io/docs/live-preview) docs.
 
 ## Front-end
 
@@ -78,7 +78,7 @@ Then, use the `useLivePreview` hook in your React component:
 
 ```tsx
 'use client';
-import { useLivePreview } from '@payloadcms/live-preview-react';
+import { useLivePreview } from '@mzinga/live-preview-react';
 import { Page as PageType } from '@/payload-types'
 
 // Fetch the page in a server component, pass it to the client component, then thread it through the hook
@@ -114,7 +114,7 @@ npm install @payloadcms/live-preview
 Then, build your own hook:
 
 ```tsx
-import { subscribe, unsubscribe } from '@payloadcms/live-preview';
+import { subscribe, unsubscribe } from '@mzinga/live-preview';
 
 // Build your own hook to subscribe to the live preview events
 // This function will handle everything for you like
@@ -123,7 +123,7 @@ import { subscribe, unsubscribe } from '@payloadcms/live-preview';
 // 3. populating relationships and uploads
 ```
 
-See [building your own Live Preview hook](https://payloadcms.com/docs/live-preview/frontend#building-your-own-hook) for more details.
+See [building your own Live Preview hook](https://mzinga.io/docs/live-preview/frontend#building-your-own-hook) for more details.
 
 ## Development
 
@@ -144,8 +144,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://payloadcms.com/docs/production/deployment) docs for more details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://mzinga.io/docs/production/deployment) docs for more details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

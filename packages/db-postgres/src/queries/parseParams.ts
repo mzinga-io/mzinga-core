@@ -1,11 +1,11 @@
 /* eslint-disable no-await-in-loop */
 import type { SQL } from 'drizzle-orm'
-import type { Field, Operator, Where } from 'payload/types'
+import type { Field, Operator, Where } from 'mzinga/types'
 
 import { and, ilike, isNotNull, isNull, ne, notInArray, or, sql } from 'drizzle-orm'
 import { PgUUID } from 'drizzle-orm/pg-core'
-import { QueryError } from 'payload/errors'
-import { validOperators } from 'payload/types'
+import { QueryError } from 'mzinga/errors'
+import { validOperators } from 'mzinga/types'
 
 import type { GenericColumn, PostgresAdapter } from '../types'
 import type { BuildQueryJoinAliases, BuildQueryJoins } from './buildQuery'

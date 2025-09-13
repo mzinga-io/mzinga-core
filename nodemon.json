@@ -6,10 +6,14 @@
     ".git",
     "node_modules",
     "node_modules/**/node_modules",
-    "packages/payload/src/admin",
-    "packages/payload/src/**/*.spec.ts",
-    "test/**/payload-types.ts"
+    "packages/mzinga/src/admin",
+    "packages/mzinga/src/**/*.spec.ts",
+    "test/**/payload-types.ts",
+    "test/**/mzinga-types.ts"
   ],
-  "watch": ["./test/", "./packages/**/*.ts"],
+  "watch": [
+    "./test/",
+    "./packages/**/*.ts"
+  ],
   "stdin": false
 }

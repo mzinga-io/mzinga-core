@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import type { CollectionConfig, Field } from 'payload/types'
+import type { CollectionConfig, Field } from 'mzinga/types'
 
 const urlField: Field = {
   name: 'url',

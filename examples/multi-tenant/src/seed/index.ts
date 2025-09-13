@@ -1,4 +1,4 @@
-import type { Payload } from 'payload'
+import type { Payload } from 'mzinga'
 
 export const seed = async (payload: Payload): Promise<void> => {
   // create super admin

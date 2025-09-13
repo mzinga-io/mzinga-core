@@ -1,13 +1,13 @@
 import type { Page } from '@playwright/test'
 
 import { expect, test } from '@playwright/test'
-import type { Page as PayloadPage } from './payload-types'
+import path from 'path'
+import payload from '../../packages/mzinga/src'
+import getFileByPath from '../../packages/mzinga/src/uploads/getFileByPath'
+import { initPageConsoleErrorCatch } from '../helpers'
 import { AdminUrlUtil } from '../helpers/adminUrlUtil'
 import { initPayloadE2E } from '../helpers/configHelpers'
-import payload from '../../packages/payload/src'
-import { initPageConsoleErrorCatch } from '../helpers'
-import path from 'path'
-import getFileByPath from '../../packages/payload/src/uploads/getFileByPath'
+import type { Page as PayloadPage } from './payload-types'
 import { mediaSlug } from './shared'
 
 const { beforeAll, describe } = test

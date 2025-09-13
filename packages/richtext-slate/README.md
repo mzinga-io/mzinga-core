@@ -1,9 +1,9 @@
 # Payload Slate Rich Text Editor
 
-Slate Rich Text Editor for [Payload](https://payloadcms.com).
+Slate Rich Text Editor for [Payload](https://mzinga.io).
 
-- [Main Repository](https://github.com/payloadcms/payload)
-- [Payload Docs](https://payloadcms.com/docs)
+- [Main Repository](https://github.com/mzinga-io/mzinga-core)
+- [MZinga Docs](https://mzinga.io/docs)
 
 ## Installation
 
@@ -14,15 +14,13 @@ npm install @payloadcms/richtext-slate
 ## Usage
 
 ```ts
-import { buildConfig } from 'payload/config'
-import { slateEditor } from '@payloadcms/richtext-slate'
+import { buildConfig } from 'mzinga/config'
+import { slateEditor } from '@mzinga/richtext-slate'
 
 export default buildConfig({
-  editor: slateEditor({})
+  editor: slateEditor({}),
   // ...rest of config
 })
-
 ```
 
-More detailed usage can be found in the [Payload Docs](https://payloadcms.com/docs/configuration/overview).
-
+More detailed usage can be found in the [MZinga Docs](https://mzinga.io/docs/configuration/overview).

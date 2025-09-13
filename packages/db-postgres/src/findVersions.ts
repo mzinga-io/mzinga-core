@@ -1,7 +1,7 @@
-import type { FindVersions } from 'payload/database'
-import type { PayloadRequest, SanitizedCollectionConfig } from 'payload/types'
+import type { FindVersions } from 'mzinga/database'
+import type { PayloadRequest, SanitizedCollectionConfig } from 'mzinga/types'
 
-import { buildVersionCollectionFields } from 'payload/versions'
+import { buildVersionCollectionFields } from 'mzinga/versions'
 import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from './types'

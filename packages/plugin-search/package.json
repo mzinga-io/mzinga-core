@@ -1,13 +1,13 @@
 {
-  "name": "@payloadcms/plugin-search",
-  "version": "1.1.1",
-  "homepage:": "https://payloadcms.com",
+  "name": "@mzinga/plugin-search",
+  "version": "0.0.1",
+  "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/plugin-search"
   },
-  "description": "Search plugin for Payload",
+  "description": "Search plugin for MZinga",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -37,10 +37,10 @@
     "ts-deepmerge": "^2.0.1"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
     "@types/express": "^4.17.9",
     "@types/react": "18.0.21",
-    "payload": "workspace:*"
+    "mzinga": "workspace:*"
   },
   "exports": {
     ".": {

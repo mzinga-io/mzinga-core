@@ -1,6 +1,6 @@
-import type { RelationshipField, UploadField } from 'payload/types'
+import type { RelationshipField, UploadField } from 'mzinga/types'
 
-import { valueIsValueWithRelation } from 'payload/types'
+import { valueIsValueWithRelation } from 'mzinga/types'
 
 type Args = {
   baseRow: Record<string, unknown>

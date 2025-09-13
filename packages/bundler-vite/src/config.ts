@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 // @ts-expect-error
 import type { InlineConfig } from 'vite'
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import type { BlockField } from 'payload/types'
+import type { BlockField } from 'mzinga/types'
 
 import toSnakeCase from 'to-snake-case'
 

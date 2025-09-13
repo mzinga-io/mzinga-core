@@ -2,8 +2,8 @@ import type { SerializedEditorState, SerializedParagraphNode } from 'lexical'
 
 import { GraphQLClient } from 'graphql-request'
 
-import type { SanitizedConfig } from '../../packages/payload/src/config/types'
-import type { PaginatedDocs } from '../../packages/payload/src/database/types'
+import type { SanitizedConfig } from '../../packages/mzinga/src/config/types'
+import type { PaginatedDocs } from '../../packages/mzinga/src/database/types'
 import type {
   SerializedBlockNode,
   SerializedLinkNode,
@@ -12,7 +12,7 @@ import type {
 } from '../../packages/richtext-lexical/src'
 import type { LexicalField, LexicalMigrateField, RichTextField } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'
 import configPromise from '../uploads/config'
@@ -362,7 +362,7 @@ describe('Lexical', () => {
     })
 
     it('should correctly populate polymorphic hasMany relationships in blocks with depth=1', async () => {
-      // Related issue: https://github.com/payloadcms/payload/issues/4277
+      // Related issue: https://github.com/mzinga-io/mzinga-core/issues/4277
       const lexicalDoc: LexicalField = (
         await payload.find({
           collection: lexicalFieldsSlug,

@@ -1,4 +1,4 @@
-import type { CollectionConfig } from '../../../../packages/payload/src/exports/types'
+import type { CollectionConfig } from '../../../../packages/mzinga/src/exports/types'
 
 import { slugs } from '../../shared'
 

@@ -2,7 +2,6 @@
   /* eslint-disable @next/next/no-img-element */
 }
 
-import React from 'react'
 import Link from 'next/link'
 
 import { Header } from '../../../payload/payload-types'
@@ -37,7 +36,7 @@ export async function Header() {
             <img
               className={classes.logo}
               alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
+              src="https://raw.githubusercontent.com/mzinga-io/mzinga-core/main/packages/mzinga/src/admin/assets/images/payload-logo-light.svg"
             />
           </Link>
           <HeaderNav header={header} />

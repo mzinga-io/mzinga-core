@@ -1,7 +1,7 @@
-import type { Payload } from 'payload'
-import type { BaseDatabaseAdapter } from 'payload/database'
+import type { Payload } from 'mzinga'
+import type { BaseDatabaseAdapter } from 'mzinga/database'
 
-import { createDatabaseAdapter } from 'payload/database'
+import { createDatabaseAdapter } from 'mzinga/database'
 
 import { connect } from './connect'
 import { count } from './count'

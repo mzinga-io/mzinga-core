@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -23,14 +22,14 @@ export async function Header() {
         <Link href="/" className={classes.logo}>
           <picture>
             <source
-              srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
+              srcSet="https://raw.githubusercontent.com/mzinga-io/mzinga-core/main/packages/mzinga/src/admin/assets/images/payload-logo-light.svg"
               media="(prefers-color-scheme: dark)"
             />
             <Image
               width={150}
               height={30}
               alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-dark.svg"
+              src="https://raw.githubusercontent.com/mzinga-io/mzinga-core/main/packages/mzinga/src/admin/assets/images/payload-logo-dark.svg"
             />
           </picture>
         </Link>

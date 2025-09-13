@@ -1,5 +1,5 @@
 import type { SerializedEditorState } from 'lexical'
-import type { RichTextField, Validate } from 'payload/types'
+import type { RichTextField, Validate } from 'mzinga/types'
 
 import type { SanitizedEditorConfig } from '../field/lexical/config/types'
 

@@ -1,4 +1,4 @@
-import { APIError } from '../../../packages/payload/src/exports/errors'
+import { APIError } from '../../../packages/mzinga/src/exports/errors'
 
 export const subscriptionCreatedOrUpdated = async (args) => {
   const {

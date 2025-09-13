@@ -2,9 +2,9 @@ import { GraphQLClient } from 'graphql-request'
 import jwtDecode from 'jwt-decode'
 import { v4 as uuid } from 'uuid'
 
-import type { User } from '../../packages/payload/src/auth'
+import type { User } from '../../packages/mzinga/src/auth'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import configPromise from '../auth/config'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'

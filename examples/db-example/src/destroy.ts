@@ -1,4 +1,4 @@
-import type { Destroy } from 'payload/database'
+import type { Destroy } from 'mzinga/database'
 
 import type { ExampleAdapter } from './index'
 

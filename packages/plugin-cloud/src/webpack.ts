@@ -1,4 +1,4 @@
-import type { Config } from 'payload/config'
+import type { Config } from 'mzinga/config'
 import type { Configuration as WebpackConfig } from 'webpack'
 
 import path from 'path'

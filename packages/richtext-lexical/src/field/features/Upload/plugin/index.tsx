@@ -10,7 +10,7 @@ import {
   type LexicalCommand,
   createCommand,
 } from 'lexical'
-import { useConfig } from 'payload/components/utilities'
+import { useConfig } from 'mzinga/components/utilities'
 import React, { useEffect } from 'react'
 
 import type { RawUploadPayload } from '../nodes/UploadNode'

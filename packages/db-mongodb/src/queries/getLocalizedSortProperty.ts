@@ -1,8 +1,8 @@
-import type { SanitizedConfig } from 'payload/config'
-import type { Field } from 'payload/types'
+import type { SanitizedConfig } from 'mzinga/config'
+import type { Field } from 'mzinga/types'
 
-import { fieldAffectsData, fieldIsPresentationalOnly } from 'payload/types'
-import { flattenTopLevelFields } from 'payload/utilities'
+import { fieldAffectsData, fieldIsPresentationalOnly } from 'mzinga/types'
+import { flattenTopLevelFields } from 'mzinga/utilities'
 
 type Args = {
   config: SanitizedConfig

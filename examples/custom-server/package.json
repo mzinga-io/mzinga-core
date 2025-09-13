@@ -1,6 +1,6 @@
 {
   "name": "payload-example-custom-server",
-  "description": "Payload custom server example.",
+  "description": "MZinga custom server example.",
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.1.6",
-    "@payloadcms/eslint-config": "^0.0.2",
+    "@mzinga/eslint-config": "^0.0.2",
     "@types/escape-html": "^1.0.2",
     "@types/express": "^4.17.9",
     "@types/node": "18.11.3",

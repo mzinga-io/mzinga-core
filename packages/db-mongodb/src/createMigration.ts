@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax, no-await-in-loop */
-import type { CreateMigration } from 'payload/database'
+import type { CreateMigration } from 'mzinga/database'
 
 import fs from 'fs'
 import path from 'path'

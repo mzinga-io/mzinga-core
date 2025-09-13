@@ -1,5 +1,5 @@
-import type { Payload } from '../../../packages/payload/src'
-import type { PayloadRequest } from '../../../packages/payload/src/express/types'
+import type { Payload } from '../../../packages/mzinga/src'
+import type { PayloadRequest } from '../../../packages/mzinga/src/express/types'
 
 import { formSubmissionsSlug, formsSlug, pagesSlug } from '../shared'
 

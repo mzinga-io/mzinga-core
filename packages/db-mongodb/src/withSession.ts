@@ -1,5 +1,5 @@
 import type { ClientSession } from 'mongoose'
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadRequest } from 'mzinga/types'
 
 import type { MongooseAdapter } from './index'
 
