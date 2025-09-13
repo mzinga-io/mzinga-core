@@ -85,7 +85,7 @@ export const ToolbarButton = ({
       }}
       onMouseDown={(e) => {
         // This fixes a bug where you are unable to click the button if you are in a NESTED editor (editor in blocks field in editor).
-        // Thus only happens if you click on the SVG of the button. Clicking on the outside works. Related issue: https://github.com/payloadcms/payload/issues/4025
+        // Thus only happens if you click on the SVG of the button. Clicking on the outside works. Related issue: https://github.com/mzinga-io/mzinga-core/issues/4025
         // TODO: Find out why exactly it happens and why e.preventDefault() on the mouseDown fixes it. Write that down here, or potentially fix a root cause, if there is any.
         e.preventDefault()
       }}

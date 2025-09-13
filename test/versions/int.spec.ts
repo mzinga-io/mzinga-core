@@ -236,7 +236,7 @@ describe('Versions', () => {
         )
       })
 
-      // https://github.com/payloadcms/payload/issues/4827
+      // https://github.com/mzinga-io/mzinga-core/issues/4827
       it('should query drafts with relation', async () => {
         const draftPost = await payload.create({
           collection: draftCollectionSlug,

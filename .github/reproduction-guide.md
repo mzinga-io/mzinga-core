@@ -1,6 +1,6 @@
 # Reproduction Guide
 
-1. [Fork](https://github.com/payloadcms/payload/fork) this repo
+1. [Fork](https://github.com/mzinga-io/mzinga-core/fork) this repo
 2. Optionally, create a new branch for your reproduction
 3. Run `pnpm install` to install dependencies
 4. Open up the `test/_community` directory

@@ -69,7 +69,7 @@ describe('lexical', () => {
   })
 
   test('should not warn about unsaved changes when navigating to lexical editor with blocks node and then leaving the page after making a change and saving', async () => {
-    // Relevant issue: https://github.com/payloadcms/payload/issues/4115
+    // Relevant issue: https://github.com/mzinga-io/mzinga-core/issues/4115
     await navigateToLexicalFields()
     const thirdBlock = page.locator('.rich-text-lexical').nth(1).locator('.lexical-block').nth(2)
     await thirdBlock.scrollIntoViewIfNeeded()
@@ -220,7 +220,7 @@ describe('lexical', () => {
   })
 
   test('Make sure highly specific issue does not occur when two richText fields share the same editor prop', async () => {
-    // Reproduces https://github.com/payloadcms/payload/issues/4282
+    // Reproduces https://github.com/mzinga-io/mzinga-core/issues/4282
     const url: AdminUrlUtil = new AdminUrlUtil(serverURL, 'tabsWithRichText')
     await page.goto(url.global('tabsWithRichText'))
     const richTextField = page.locator('.rich-text-lexical').first()
@@ -348,7 +348,7 @@ describe('lexical', () => {
       )
     })
     test('should be able to bold text using floating select toolbar', async () => {
-      // Reproduces https://github.com/payloadcms/payload/issues/4025
+      // Reproduces https://github.com/mzinga-io/mzinga-core/issues/4025
       await navigateToLexicalFields()
       const richTextField = page.locator('.rich-text-lexical').nth(1) // second
       await richTextField.scrollIntoViewIfNeeded()
@@ -567,7 +567,7 @@ describe('lexical', () => {
     })
 
     test('should allow changing values of two different radio button blocks independently', async () => {
-      // This test ensures that https://github.com/payloadcms/payload/issues/3911 does not happen again
+      // This test ensures that https://github.com/mzinga-io/mzinga-core/issues/3911 does not happen again
 
       await navigateToLexicalFields()
       const richTextField = page.locator('.rich-text-lexical').nth(1) // second
@@ -630,7 +630,7 @@ describe('lexical', () => {
     })
 
     test('should not lose focus when writing in nested editor', async () => {
-      // https://github.com/payloadcms/payload/issues/4108
+      // https://github.com/mzinga-io/mzinga-core/issues/4108
       // Steps:
       // 1. Focus parent editor
       // 2. Focus nested editor and write something

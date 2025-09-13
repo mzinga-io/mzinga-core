@@ -362,7 +362,7 @@ describe('Lexical', () => {
     })
 
     it('should correctly populate polymorphic hasMany relationships in blocks with depth=1', async () => {
-      // Related issue: https://github.com/payloadcms/payload/issues/4277
+      // Related issue: https://github.com/mzinga-io/mzinga-core/issues/4277
       const lexicalDoc: LexicalField = (
         await payload.find({
           collection: lexicalFieldsSlug,

@@ -274,7 +274,7 @@ export default async function resizeAndTransformImageSizes({
 
   if (fileIsAnimatedType) sharpOptions.animated = true
 
-  const sharpBase: Sharp | undefined = sharp(file.tempFilePath || file.data, sharpOptions).rotate() // pass rotate() to auto-rotate based on EXIF data. https://github.com/payloadcms/payload/pull/3081
+  const sharpBase: Sharp | undefined = sharp(file.tempFilePath || file.data, sharpOptions).rotate() // pass rotate() to auto-rotate based on EXIF data. https://github.com/mzinga-io/mzinga-core/pull/3081
   const originalImageMeta = await sharpBase.metadata()
 
   let adjustedDimensions = { ...dimensions }

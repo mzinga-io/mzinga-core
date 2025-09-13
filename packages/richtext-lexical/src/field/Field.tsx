@@ -54,7 +54,7 @@ const RichText: React.FC<FieldProps> = (props) => {
     },
     // Important: do not add props to the dependencies array.
     // This would cause an infinite loop and endless re-rendering.
-    // Removing props from the dependencies array fixed this issue: https://github.com/payloadcms/payload/issues/3709
+    // Removing props from the dependencies array fixed this issue: https://github.com/mzinga-io/mzinga-core/issues/3709
     [validate, required],
   )
 
@@ -99,7 +99,7 @@ const RichText: React.FC<FieldProps> = (props) => {
           <LexicalProvider
             editorConfig={editorConfig}
             fieldProps={props}
-            key={JSON.stringify({ initialValue, path })} // makes sure lexical is completely re-rendered when initialValue changes, bypassing the lexical-internal value memoization. That way, external changes to the form will update the editor. More infos in PR description (https://github.com/payloadcms/payload/pull/5010)
+            key={JSON.stringify({ initialValue, path })} // makes sure lexical is completely re-rendered when initialValue changes, bypassing the lexical-internal value memoization. That way, external changes to the form will update the editor. More infos in PR description (https://github.com/mzinga-io/mzinga-core/pull/5010)
             onChange={(editorState) => {
               let serializedEditorState = editorState.toJSON()
 

@@ -3,7 +3,6 @@ import path from 'path'
 import type { BundlerType, CliArgs, DbType, ProjectTemplate } from '../types'
 import { createProject } from './create-project'
 import { bundlerPackages, dbPackages, editorPackages } from './packages'
-import exp from 'constants'
 import { getValidTemplates } from './templates'
 
 const projectDir = path.resolve(__dirname, './tmp')
@@ -37,7 +36,7 @@ describe('createProject', () => {
       const template: ProjectTemplate = {
         name: 'blank',
         type: 'starter',
-        url: 'https://github.com/payloadcms/payload/templates/blank',
+        url: 'https://github.com/mzinga-io/mzinga-core/templates/blank',
         description: 'Blank Template',
       }
       await createProject({
@@ -60,7 +59,7 @@ describe('createProject', () => {
       const template: ProjectTemplate = {
         name: 'plugin',
         type: 'plugin',
-        url: 'https://github.com/payloadcms/payload-plugin-template',
+        url: 'https://github.com/mzinga-io/mzinga-core-plugin-template',
         description: 'Template for creating a Payload plugin',
       }
       await createProject({

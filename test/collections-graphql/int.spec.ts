@@ -880,7 +880,7 @@ describe('collections-graphql', () => {
         expect(docs[0].relationHasManyField).toHaveLength(0)
       })
 
-      // fix: https://github.com/payloadcms/payload/issues/6518
+      // fix: https://github.com/mzinga-io/mzinga-core/issues/6518
       it('should query a document with a filtered relationship', async () => {
         const relWithAccessControl1 = await payload.create({
           collection: relationWithAccessControlSlug,

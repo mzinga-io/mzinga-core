@@ -10,7 +10,7 @@ body:
     id: reproduction-link
     attributes:
       label: Link to reproduction
-      description: Want us to look into your issue faster? Follow the [reproduction-guide](https://github.com/payloadcms/payload/blob/main/.github/reproduction-guide.md) for more information.
+      description: Want us to look into your issue faster? Follow the [reproduction-guide](https://github.com/mzinga-io/mzinga-core/blob/main/.github/reproduction-guide.md) for more information.
     validations:
       required: false
   - type: textarea

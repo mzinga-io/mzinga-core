@@ -349,7 +349,7 @@ describe('Fields', () => {
       expect(updatedDoc.selectHasMany).toEqual(['one', 'two'])
     })
 
-    // https://github.com/payloadcms/payload/issues/6485
+    // https://github.com/mzinga-io/mzinga-core/issues/6485
     it('delete with selectHasMany relationship', async () => {
       const { id } = await payload.create({
         collection: 'select-fields',

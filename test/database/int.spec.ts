@@ -140,7 +140,7 @@ describe('database', () => {
       expect(migration.batch).toStrictEqual(1)
     })
 
-    // known issue: https://github.com/payloadcms/payload/issues/4597
+    // known issue: https://github.com/mzinga-io/mzinga-core/issues/4597
     it.skip('should run migrate:down', async () => {
       let error
       const args = {
@@ -154,7 +154,7 @@ describe('database', () => {
       expect(error).toBeUndefined()
     })
 
-    // known issue: https://github.com/payloadcms/payload/issues/4597
+    // known issue: https://github.com/mzinga-io/mzinga-core/issues/4597
     it.skip('should run migrate:refresh', async () => {
       let error
       const args = {

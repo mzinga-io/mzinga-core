@@ -274,7 +274,7 @@ describe('Relationships', () => {
         expect(query.totalDocs).toEqual(2)
       })
 
-      // https://github.com/payloadcms/payload/issues/4240
+      // https://github.com/mzinga-io/mzinga-core/issues/4240
       it('should allow querying by relationship id field', async () => {
         /**
          * This test shows something which breaks on postgres but not on mongodb.

@@ -57,7 +57,7 @@ export const blockValidationHOC = (
             )
           : true
         if (!passesCondition) {
-          continue // Fixes https://github.com/payloadcms/payload/issues/4000
+          continue // Fixes https://github.com/mzinga-io/mzinga-core/issues/4000
         }
 
         const validationResult = await field.validate(fieldValue, {

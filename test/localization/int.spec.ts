@@ -400,7 +400,7 @@ describe('Localization', () => {
       expect(sortByIdQuery.totalDocs).toEqual(expectedTotalDocs)
     })
 
-    // https://github.com/payloadcms/payload/issues/4889
+    // https://github.com/mzinga-io/mzinga-core/issues/4889
     it('should have correct totalDocs when sorted by localized fields', async () => {
       const sortByTitleQuery = await payload.find({
         collection: localizedSortSlug,
