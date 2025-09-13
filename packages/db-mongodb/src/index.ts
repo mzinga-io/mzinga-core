@@ -1,7 +1,7 @@
 import type { CollationOptions, TransactionOptions } from 'mongodb'
 import type { ClientSession, ConnectOptions, Connection, SchemaOptions } from 'mongoose'
+import type { Payload } from 'mzinga'
 import type { BaseDatabaseAdapter } from 'mzinga/database'
-import type { Payload } from 'payload'
 
 import fs from 'fs'
 import mongoose from 'mongoose'

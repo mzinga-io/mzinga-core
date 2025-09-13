@@ -1,5 +1,5 @@
+import type { Payload } from 'mzinga'
 import type { Field, Where } from 'mzinga/types'
-import type { Payload } from 'payload'
 
 import { QueryError } from 'mzinga/errors'
 

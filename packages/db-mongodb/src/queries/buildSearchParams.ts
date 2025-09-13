@@ -1,6 +1,6 @@
+import type { Payload } from 'mzinga'
 import type { PathToQuery } from 'mzinga/database'
 import type { Field, Operator } from 'mzinga/types'
-import type { Payload } from 'payload'
 
 import ObjectIdImport from 'bson-objectid'
 import mongoose from 'mongoose'

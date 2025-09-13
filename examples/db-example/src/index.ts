@@ -1,5 +1,5 @@
+import type { Payload } from 'mzinga'
 import type { BaseDatabaseAdapter } from 'mzinga/database'
-import type { Payload } from 'payload'
 
 import { createDatabaseAdapter } from 'mzinga/database'
 

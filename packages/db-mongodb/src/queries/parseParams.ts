@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
 import type { FilterQuery } from 'mongoose'
+import type { Payload } from 'mzinga'
 import type { Field, Operator, Where } from 'mzinga/types'
-import type { Payload } from 'payload'
 
 import deepmerge from 'deepmerge'
 import { validOperators } from 'mzinga/types'

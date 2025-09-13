@@ -1,4 +1,4 @@
-import type { Payload } from 'payload'
+import type { Payload } from 'mzinga'
 
 import { home } from './home'
 import { examplePage } from './page'

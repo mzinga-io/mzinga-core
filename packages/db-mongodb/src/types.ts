@@ -6,6 +6,7 @@ import type {
   PaginateModel,
   SchemaOptions,
 } from 'mongoose'
+import type { Payload } from 'mzinga'
 import type { SanitizedConfig } from 'mzinga/config'
 import type {
   ArrayField,
@@ -30,7 +31,6 @@ import type {
   TextareaField,
   UploadField,
 } from 'mzinga/types'
-import type { Payload } from 'payload'
 
 import type { BuildQueryArgs } from './queries/buildQuery'
 

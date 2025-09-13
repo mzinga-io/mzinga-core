@@ -1,5 +1,5 @@
+import type { Payload } from 'mzinga'
 import type { Config as PayloadConfig } from 'mzinga/config'
-import type { Payload } from 'payload'
 import type Stripe from 'stripe'
 
 export type StripeWebhookHandler<T = any> = (args: {

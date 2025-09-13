@@ -1,5 +1,5 @@
+import type { Payload } from 'mzinga'
 import type { CollectionAfterChangeHook, CollectionConfig, PayloadRequest } from 'mzinga/types'
-import type { Payload } from 'payload'
 
 export interface DocToSync {
   [key: string]: any

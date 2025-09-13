@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import payload from 'mzinga'
 import { CollectionConfig, FieldHook } from 'mzinga/types'
-import payload from 'payload'
 
 const formatLocation: FieldHook = async ({ data }) => {
   return `${data.city}${data.state ? `, ${data.state},` : ','} ${data.country}`

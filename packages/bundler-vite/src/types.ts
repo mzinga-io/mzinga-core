@@ -1,5 +1,5 @@
+import type { Payload } from 'mzinga'
 import type { PayloadHandler, SanitizedConfig } from 'mzinga/config'
-import type { Payload } from 'payload'
 
 export interface PayloadBundler {
   build: (payloadConfig: SanitizedConfig) => Promise<void> // used in `payload build`

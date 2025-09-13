@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax, no-await-in-loop */
+import type { Payload } from 'mzinga'
 import type { Migration } from 'mzinga/database'
 import type { PayloadRequest } from 'mzinga/dist/express/types'
-import type { Payload } from 'payload'
 
 import { readMigrationFiles } from 'mzinga/database'
 import { commitTransaction } from 'mzinga/dist/utilities/commitTransaction'

@@ -8,9 +8,9 @@ import type {
   SerializedEditorState,
   SerializedLexicalNode,
 } from 'lexical'
+import type { Payload, RequestContext } from 'mzinga'
 import type { SanitizedConfig } from 'mzinga/config'
 import type { PayloadRequest, RichTextField, ValidateOptions } from 'mzinga/types'
-import type { Payload, RequestContext } from 'payload'
 import type React from 'react'
 
 import type { AdapterProps } from '../../types'

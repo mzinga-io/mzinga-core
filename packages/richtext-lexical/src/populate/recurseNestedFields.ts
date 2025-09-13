@@ -1,5 +1,5 @@
+import type { RequestContext } from 'mzinga'
 import type { Field, PayloadRequest } from 'mzinga/types'
-import type { RequestContext } from 'payload'
 
 import { afterReadTraverseFields } from 'mzinga/utilities'
 

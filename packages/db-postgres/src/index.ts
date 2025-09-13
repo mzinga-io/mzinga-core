@@ -1,4 +1,4 @@
-import type { Payload } from 'payload'
+import type { Payload } from 'mzinga'
 
 import fs from 'fs'
 import { createDatabaseAdapter } from 'mzinga/database'

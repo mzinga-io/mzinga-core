@@ -16,9 +16,9 @@ import type {
   PgTransaction,
 } from 'drizzle-orm/pg-core'
 import type { PgTableFn } from 'drizzle-orm/pg-core/table'
+import type { Payload } from 'mzinga'
 import type { BaseDatabaseAdapter } from 'mzinga/database'
 import type { PayloadRequest } from 'mzinga/types'
-import type { Payload } from 'payload'
 import type { Pool, PoolConfig } from 'pg'
 
 export type DrizzleDB = NodePgDatabase<Record<string, unknown>>

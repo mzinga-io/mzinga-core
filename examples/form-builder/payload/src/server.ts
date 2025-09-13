@@ -1,6 +1,6 @@
-import path from 'path'
 import express from 'express'
-import payload from 'payload'
+import payload from 'mzinga'
+import path from 'path'
 import { seed } from './seed'
 
 // eslint-disable-next-line

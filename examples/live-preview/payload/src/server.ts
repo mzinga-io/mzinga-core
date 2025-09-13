@@ -6,7 +6,7 @@ dotenv.config({
 })
 
 import express from 'express'
-import payload from 'payload'
+import payload from 'mzinga'
 
 import { seed } from './seed'
 

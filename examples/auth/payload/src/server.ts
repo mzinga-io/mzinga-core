@@ -1,6 +1,6 @@
 import express from 'express'
+import payload from 'mzinga'
 import path from 'path'
-import payload from 'payload'
 
 import { seed } from './seed'
 
