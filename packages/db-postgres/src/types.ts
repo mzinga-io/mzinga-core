@@ -112,7 +112,7 @@ export type MigrateDownArgs = {
   req?: Partial<PayloadRequest>
 }
 
-declare module 'payload' {
+declare module 'mzinga' {
   export interface DatabaseAdapter
     extends Omit<Args, 'migrationDir' | 'pool'>,
       BaseDatabaseAdapter {

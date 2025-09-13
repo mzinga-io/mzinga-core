@@ -125,7 +125,7 @@ export type MongooseAdapter = {
 
 type MongooseAdapterResult = (args: { payload: Payload }) => MongooseAdapter
 
-declare module 'payload' {
+declare module 'mzinga' {
   export interface DatabaseAdapter
     extends Omit<BaseDatabaseAdapter, 'sessions'>,
       Omit<Args, 'collections' | 'globals' | 'migrationDir'> {
