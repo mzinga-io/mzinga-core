@@ -1,23 +1,15 @@
 <a href="https://mzinga.io">
-  <img width="100%" src="https://github.com/mzinga-io/mzinga-core/blob/main/packages/payload/src/admin/assets/images/github-banner-alt.jpg?raw=true" alt="Payload headless CMS Admin panel built with React" />
+  <img width="100%" src="https://github.com/mzinga-io/mzinga-core/blob/main/packages/mzinga/src/admin/assets/images/github-banner-alt.jpg?raw=true" alt="Payload headless CMS Admin panel built with React" />
 </a>
 <br />
 <br />
 <p align="left">
   <a href="https://github.com/mzinga-io/mzinga-core/actions">
-    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/payloadcms/payload/main.yml?style=flat-square">
+    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/mzinga-io/mzinga-core/main.yml?style=flat-square">
   </a>
   &nbsp;
-  <a href="https://discord.gg/payload">
-    <img alt="Discord" src="https://img.shields.io/discord/967097582721572934?label=Discord&color=7289da&style=flat-square" />
-  </a>
-  &nbsp;
-  <a href="https://www.npmjs.com/package/payload">
-    <img alt="npm" src="https://img.shields.io/npm/v/payload?style=flat-square" />
-  </a>
-  &nbsp;
-  <a href="https://twitter.com/payloadcms">
-    <img src="https://img.shields.io/badge/follow-payloadcms-1DA1F2?logo=twitter&style=flat-square" alt="Payload Twitter" />
+  <a href="https://www.npmjs.com/package/mzinga">
+    <img alt="npm" src="https://img.shields.io/npm/v/mzinga?style=flat-square" />
   </a>
 </p>
 <hr/>
