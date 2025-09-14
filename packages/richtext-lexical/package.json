@@ -25,7 +25,7 @@
     "@lexical/headless": "0.13.1",
     "@lexical/link": "0.13.1",
     "@lexical/list": "0.13.1",
-    "@lexical/mark": "0.13.1",
+    "@lexical/mark": "0.35.0",
     "@lexical/markdown": "0.13.1",
     "@lexical/react": "0.13.1",
     "@lexical/rich-text": "0.13.1",
