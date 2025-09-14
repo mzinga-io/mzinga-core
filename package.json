@@ -97,7 +97,7 @@
     "shelljs": "0.8.5",
     "simple-git": "^3.28.0",
     "slash": "3.0.0",
-    "slate": "0.91.4",
+    "slate": "0.118.1",
     "tempfile": "^3.0.0",
     "ts-node": "10.9.2",
     "turbo": "^1.11.1",
