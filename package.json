@@ -36,7 +36,7 @@
     "translateNewKeys": "pnpm --filter mzinga run translateNewKeys"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.142.0",
+    "@aws-sdk/client-s3": "^3.888.0",
     "@mzinga/eslint-config": "workspace:*",
     "@playwright/test": "1.50.0",
     "@swc/cli": "0.1.65",
