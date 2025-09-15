@@ -15,7 +15,7 @@ const nodeModulesPaths = findNodeModules({ cwd: process.cwd(), relative: false }
 
 export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => {
   let nodeModulesPath = nodeModulesPaths.find((p) => {
-    const guess = path.resolve(p, 'payload/dist/admin')
+    const guess = path.resolve(p, 'mzinga/dist/admin')
     if (fs.existsSync(guess)) {
       return true
     }
@@ -26,7 +26,7 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
     nodeModulesPath = process.cwd()
   }
 
-  const adminFolderPath = path.resolve(nodeModulesPath, 'payload/dist/admin')
+  const adminFolderPath = path.resolve(nodeModulesPath, 'mzinga/dist/admin')
 
   const config: Configuration = {
     entry: {
