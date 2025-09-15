@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/db-mongodb",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The officially supported MongoDB database adapter for MZinga",
   "repository": {
     "type": "git",
