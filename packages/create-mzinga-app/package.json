@@ -1,6 +1,6 @@
 {
   "name": "create-mzinga-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "homepage": "https://mzinga.io",
   "bin": {
