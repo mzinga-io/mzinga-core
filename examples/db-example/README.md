@@ -12,7 +12,7 @@ artifacts necessary to perform all the needed operations.
 ## Installation
 
 ```bash
-npm install @payloadcms/db-example
+npm install @mzinga/db-example
 ```
 
 ## Usage

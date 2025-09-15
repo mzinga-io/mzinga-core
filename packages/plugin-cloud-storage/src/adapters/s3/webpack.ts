@@ -4,7 +4,7 @@ import findNodeModules from 'find-node-modules'
 import fs from 'fs'
 import path from 'path'
 
-const packageName = '@payloadcms/plugin-cloud-storage'
+const packageName = '@mzinga/plugin-cloud-storage'
 
 const nodeModulesPaths = findNodeModules({ cwd: __dirname, relative: false })
 
@@ -28,7 +28,7 @@ export const extendWebpackConfig = (existingWebpackConfig: WebpackConfig): Webpa
       ...(existingWebpackConfig.resolve || {}),
       alias: {
         ...(existingWebpackConfig.resolve?.alias ? existingWebpackConfig.resolve.alias : {}),
-        '@payloadcms/plugin-cloud-storage/s3$': path.resolve(
+        '@mzinga/plugin-cloud-storage/s3$': path.resolve(
           nodeModulesPath,
           `./${packageName}/dist/adapters/s3/mock.js`,
         ),

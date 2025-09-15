@@ -48,7 +48,7 @@ In the `plugins` array of your [Payload config](https://payloadcms.com/docs/conf
 
 ```ts
 import { buildConfig } from 'payload/config'
-import stripePlugin from '@payloadcms/plugin-stripe'
+import stripePlugin from '@mzinga/plugin-stripe'
 
 const config = buildConfig({
   plugins: [
@@ -133,7 +133,7 @@ Production:
 
 ```ts
 import { buildConfig } from 'payload/config'
-import stripePlugin from '@payloadcms/plugin-stripe'
+import stripePlugin from '@mzinga/plugin-stripe'
 
 const config = buildConfig({
   plugins: [
@@ -192,7 +192,7 @@ export const MyFunction = async () => {
 Alternatively, you can interface with the Stripe using the `stripeProxy`, which is exactly what the `/api/stripe/rest` endpoint does behind-the-scenes. Here's the same example as above, but piped through the proxy:
 
 ```ts
-import { stripeProxy } from '@payloadcms/plugin-stripe'
+import { stripeProxy } from '@mzinga/plugin-stripe'
 
 export const MyFunction = async () => {
   try {
@@ -232,7 +232,7 @@ If you wish to enable a _two-way_ sync, be sure to setup [`webhooks`](#webhooks)
 
 ```ts
 import { buildConfig } from 'payload/config'
-import stripePlugin from '@payloadcms/plugin-stripe'
+import stripePlugin from '@mzinga/plugin-stripe'
 
 const config = buildConfig({
   plugins: [
@@ -290,7 +290,7 @@ import {
   StripeWebhookHandler,
   StripeProxy,
   ...
-} from '@payloadcms/plugin-stripe/types';
+} from '@mzinga/plugin-stripe/types';
 ```
 
 ## Examples

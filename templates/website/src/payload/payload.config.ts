@@ -1,11 +1,11 @@
-import { webpackBundler } from '@payloadcms/bundler-webpack' // bundler-import
-import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
-import { payloadCloud } from '@payloadcms/plugin-cloud'
-import nestedDocs from '@payloadcms/plugin-nested-docs'
-import redirects from '@payloadcms/plugin-redirects'
-import seo from '@payloadcms/plugin-seo'
-import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
-import { slateEditor } from '@payloadcms/richtext-slate' // editor-import
+import { webpackBundler } from '@mzinga/bundler-webpack' // bundler-import
+import { mongooseAdapter } from '@mzinga/db-mongodb' // database-adapter-import
+import { payloadCloud } from '@mzinga/plugin-cloud'
+import nestedDocs from '@mzinga/plugin-nested-docs'
+import redirects from '@mzinga/plugin-redirects'
+import seo from '@mzinga/plugin-seo'
+import type { GenerateTitle } from '@mzinga/plugin-seo/types'
+import { slateEditor } from '@mzinga/richtext-slate' // editor-import
 import dotenv from 'dotenv'
 import { buildConfig } from 'mzinga/config'
 import path from 'path'

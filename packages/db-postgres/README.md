@@ -8,7 +8,7 @@ Official Postgres adapter for [MZinga](https://mzinga.io).
 ## Installation
 
 ```bash
-npm install @payloadcms/db-postgres
+npm install @mzinga/db-postgres
 ```
 
 ## Usage

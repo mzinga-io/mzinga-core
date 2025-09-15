@@ -117,7 +117,7 @@ describe('createProject', () => {
 
         // Should only have one db adapter
         expect(
-          Object.keys(packageJson.dependencies).filter((n) => n.startsWith('@payloadcms/db-')),
+          Object.keys(packageJson.dependencies).filter((n) => n.startsWith('@mzinga/db-')),
         ).toHaveLength(1)
 
         expect(packageJson.dependencies[bundlerReplacement.packageName]).toEqual(

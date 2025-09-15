@@ -1,8 +1,8 @@
-import React from 'react'
-import { useLivePreview } from '@payloadcms/live-preview-react'
+import { useLivePreview } from '@mzinga/live-preview-react'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import QueryString from 'qs'
 import { ParsedUrlQuery } from 'querystring'
+import React from 'react'
 
 import { Gutter } from '../components/Gutter'
 import RichText from '../components/RichText'

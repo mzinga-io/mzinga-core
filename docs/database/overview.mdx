@@ -42,20 +42,20 @@ You should prefer a relational DB like Postgres if:
 
 #### Differences in Payload features
 
-It's important to note that almost everything Payload does is available in all of our officially supported database adapters, including localization, arrays, blocks, etc. 
+It's important to note that almost everything Payload does is available in all of our officially supported database adapters, including localization, arrays, blocks, etc.
 
-The only thing that is not supported in Postgres yet is the [Point field](/docs/fields/point), but that should be added soon. 
+The only thing that is not supported in Postgres yet is the [Point field](/docs/fields/point), but that should be added soon.
 
 It's up to you to choose which database you would like to use.
 
 ## Configuration
 
-To configure the database for your Payload application, an adapter can be assigned to `config.db`. This property is required within your Payload config. 
+To configure the database for your Payload application, an adapter can be assigned to `config.db`. This property is required within your Payload config.
 
 Here's an example:
 
 ```ts
-import { postgresAdapter } from '@payloadcms/db-postgres'
+import { postgresAdapter } from '@mzinga/db-postgres'
 
 export default buildConfig({
   // Your config goes here
@@ -67,7 +67,7 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI,
-    }
+    },
   }),
 })
 ```
@@ -79,6 +79,7 @@ To configure Collection database operations in your Payload application, your Co
 The override methods receive arguments useful for augmenting operations such as Field data, the collection slug, and the req.
 
 Here is an example:
+
 ```ts
 import type { CollectionConfig } from 'payload/types'
 
@@ -96,7 +97,7 @@ export const Collection: CollectionConfig => {
             'Content-Type': 'application/json'
           }
         }).then(response => response.json())
-        
+
         return doc
       },
 
@@ -108,7 +109,7 @@ export const Collection: CollectionConfig => {
             'x-app-user': `payload_${req.payload.user}`
           }
         }).then(response => response.json())
-        
+
         return docs
       },
 
@@ -121,7 +122,7 @@ export const Collection: CollectionConfig => {
           }
           body: JSON.stringify(data),
         }).then(response => response.json())
-        
+
         return docs
       },
 
@@ -133,7 +134,7 @@ export const Collection: CollectionConfig => {
           }
           body: JSON.stringify({data, where, limit}),
         }).then(response => response.json())
-        
+
         return { docs }
       },
 
@@ -144,7 +145,7 @@ export const Collection: CollectionConfig => {
             'x-app-user': `payload_${req.payload.user}`
           }
         }).then(response => response.json())
-        
+
         return doc
       },
 
@@ -158,7 +159,7 @@ export const Collection: CollectionConfig => {
             'Content-Type': 'application/json'
           }
         }).then(response => response.json())
-        
+
         return { ...doc, updated: true }
       },
     },

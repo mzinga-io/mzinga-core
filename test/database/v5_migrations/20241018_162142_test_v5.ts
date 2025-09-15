@@ -1,4 +1,4 @@
-import { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
+import { MigrateDownArgs, MigrateUpArgs } from '@mzinga/db-postgres'
 import { sql } from 'drizzle-orm'
 
 export async function up({ payload }: MigrateUpArgs): Promise<void> {

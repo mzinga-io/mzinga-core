@@ -82,9 +82,9 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
     ],
     resolve: {
       alias: {
-        '@payloadcms/bundler-webpack': mockModulePath,
-        '@payloadcms/db-mongodb': mockDBAdapterPath,
-        '@payloadcms/db-postgres': mockDBAdapterPath,
+        '@mzinga/bundler-webpack': mockModulePath,
+        '@mzinga/db-mongodb': mockDBAdapterPath,
+        '@mzinga/db-postgres': mockDBAdapterPath,
         dotenv: mockDotENVPath,
         path: require.resolve('path-browserify'),
         payload$: mockModulePath,
