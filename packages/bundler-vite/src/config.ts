@@ -32,9 +32,10 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
     { find: '@mzinga/db-mongodb', replacement: path.resolve(__dirname, '../mock.js') },
     { find: '@mzinga/db-postgres', replacement: path.resolve(__dirname, '../mock.js') },
     { find: 'path', replacement: require.resolve('path-browserify') },
-    { find: 'payload-config', replacement: payloadConfig.paths.rawConfig },
+    { find: 'mzinga-config', replacement: payloadConfig.paths.rawConfig },
     { find: /payload$/, replacement: mockModulePath },
-    { find: '~payload-user-css', replacement: payloadConfig.admin.css },
+    { find: /mzinga$/, replacement: mockModulePath },
+    { find: '~mzinga-user-css', replacement: payloadConfig.admin.css },
     { find: '~react-toastify', replacement: 'react-toastify' },
     { find: 'dotenv', replacement: mockDotENVPath },
   ]
