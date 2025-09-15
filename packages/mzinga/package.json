@@ -45,7 +45,8 @@
     "lint": "eslint \"src/**/*.ts\"",
     "prepublishOnly": "pnpm clean && pnpm build",
     "pretest": "pnpm build",
-    "translateNewKeys": "ts-node -T ./scripts/translateNewKeys.ts"
+    "translateNewKeys": "ts-node -T ./scripts/translateNewKeys.ts",
+    "version": "npm version"
   },
   "dependencies": {
     "@date-io/date-fns": "2.16.0",
