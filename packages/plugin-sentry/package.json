@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-sentry",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
