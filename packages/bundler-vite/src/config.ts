@@ -28,9 +28,9 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
   const absoluteAliases = {}
 
   const alias = [
-    { find: '@payloadcms/bundler-vite', replacement: path.resolve(__dirname, '../mock.js') },
-    { find: '@payloadcms/db-mongodb', replacement: path.resolve(__dirname, '../mock.js') },
-    { find: '@payloadcms/db-postgres', replacement: path.resolve(__dirname, '../mock.js') },
+    { find: '@mzinga/bundler-vite', replacement: path.resolve(__dirname, '../mock.js') },
+    { find: '@mzinga/db-mongodb', replacement: path.resolve(__dirname, '../mock.js') },
+    { find: '@mzinga/db-postgres', replacement: path.resolve(__dirname, '../mock.js') },
     { find: 'path', replacement: require.resolve('path-browserify') },
     { find: 'payload-config', replacement: payloadConfig.paths.rawConfig },
     { find: /payload$/, replacement: mockModulePath },
@@ -93,9 +93,9 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
       exclude: [
         // Dependencies that need aliases should be excluded
         // from pre-bundling
-        '@payloadcms/bundler-vite',
-        '@payloadcms/db-mongodb',
-        '@payloadcms/db-postgres',
+        '@mzinga/bundler-vite',
+        '@mzinga/db-mongodb',
+        '@mzinga/db-postgres',
         ...(Object.keys(absoluteAliases) || []),
       ],
       include: ['payload/components/root', 'react-dom/client'],

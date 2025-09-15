@@ -1,4 +1,4 @@
-import type { RichTextLeaf } from '@payloadcms/richtext-slate'
+import type { RichTextLeaf } from '@mzinga/richtext-slate'
 
 const defaultLeaves: RichTextLeaf[] = ['bold', 'italic', 'underline']
 

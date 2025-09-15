@@ -45,7 +45,7 @@ In the `plugins` array of your [Payload config](https://payloadcms.com/docs/conf
 
 ```ts
 import { buildConfig } from 'payload/config'
-import formBuilder from '@payloadcms/plugin-form-builder'
+import formBuilder from '@mzinga/plugin-form-builder'
 
 const config = buildConfig({
   collections: [
@@ -174,7 +174,7 @@ First import the utility function. This will execute all of the price conditions
 
 ```ts
 // payload.config.ts
-import { getPaymentTotal } from '@payloadcms/plugin-form-builder'
+import { getPaymentTotal } from '@mzinga/plugin-form-builder'
 ```
 
 Then in your plugin's config:
@@ -341,7 +341,7 @@ Each of the `priceConditions` are executed by the `getPaymentTotal` utility that
 You can provide your own custom fields by passing a new [Payload Block](https://payloadcms.com/docs/fields/blocks#block-configs) object into `fields`. You can override or extend any existing fields by first importing the `fields` from the plugin:
 
 ```ts
-import { fields } from '@payloadcms/plugin-form-builder'
+import { fields } from '@mzinga/plugin-form-builder'
 ```
 
 Then merging it into your own custom field:

@@ -6,13 +6,13 @@ desc: Payload has supported MongoDB natively since we started. The flexible natu
 keywords: MongoDB, documentation, typescript, Content Management System, cms, headless, javascript, node, react, express
 ---
 
-To use Payload with MongoDB, install the package `@payloadcms/db-mongodb`. It will come with everything you need to
+To use Payload with MongoDB, install the package `@mzinga/db-mongodb`. It will come with everything you need to
 store your Payload data in MongoDB.
 
 Then from there, pass it to your Payload config as follows:
 
 ```ts
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { mongooseAdapter } from '@mzinga/db-mongodb'
 
 export default buildConfig({
   // Your config goes here
@@ -31,7 +31,7 @@ export default buildConfig({
 ### Options
 
 | Option               | Description                                                                                                                                                                                                                                                                                                  |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `autoPluralization`  | Tell Mongoose to auto-pluralize any collection names if it encounters any singular words used as collection `slug`s.                                                                                                                                                                                         |
 | `schemaOptions`      | Customize schema options for all Mongoose schemas created internally.                                                                                                                                                                                                                                        |
 | `jsonParse`          | Set to false to disable the automatic JSON stringify/parse of data queried by MongoDB. For example, if you have data not tracked by Payload such as `Date` fields and similar, you can use this option to ensure that existing `Date` properties remain as `Date` and not strings.                           |
@@ -68,9 +68,9 @@ const db = mongooseAdapter({
       //
       schemaOptions: {
         strict: false,
-      }
-    }
-  }
+      },
+    },
+  },
 })
 ```
 

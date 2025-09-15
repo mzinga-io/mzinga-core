@@ -27,13 +27,13 @@ yarn add @payloadcms/bundler-vite
 // payload.config.ts
 
 import { buildConfig } from 'payload/config'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
-// import { viteBundler } from '@payloadcms/bundler-vite'
+import { webpackBundler } from '@mzinga/bundler-webpack'
+// import { viteBundler } from '@mzinga/bundler-vite'
 
 export default buildConfig({
   // highlight-start
   admin: {
-    bundler: webpackBundler() // or viteBundler()
+    bundler: webpackBundler(), // or viteBundler()
   },
   // highlight-end
 })
@@ -48,7 +48,8 @@ Since the bundled file is sent to the browser, it can't include any server-only 
 <Banner type="warning">
   **Using environment variables in the admin UI**
 
-  Bundles should not contain sensitive information. By default, Payload
-  excludes env variables from the bundle. If you need to use env variables in your payload config,
-  you need to prefix them with `PAYLOAD_PUBLIC_` to make them available to the client-side code.
+Bundles should not contain sensitive information. By default, Payload
+excludes env variables from the bundle. If you need to use env variables in your payload config,
+you need to prefix them with `PAYLOAD_PUBLIC_` to make them available to the client-side code.
+
 </Banner>

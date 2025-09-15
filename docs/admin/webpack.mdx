@@ -22,12 +22,12 @@ yarn add @payloadcms/bundler-webpack
 // payload.config.ts
 
 import { buildConfig } from 'payload/config'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
+import { webpackBundler } from '@mzinga/bundler-webpack'
 
 export default buildConfig({
   // highlight-start
   admin: {
-    bundler: webpackBundler()
+    bundler: webpackBundler(),
   },
   // highlight-end
 })
@@ -42,7 +42,7 @@ The function will receive the Webpack config as an argument and should return th
 // payload.config.ts
 
 import { buildConfig } from 'payload/config'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
+import { webpackBundler } from '@mzinga/bundler-webpack'
 
 export default buildConfig({
   admin: {
@@ -61,7 +61,8 @@ export default buildConfig({
 <Banner type="success">
   **Tip:**
 
-  If changes to your Webpack aliases are not surfacing, they might be
-  [cached](https://webpack.js.org/configuration/cache/) in `node_modules/.cache/webpack`. Try
-  deleting that folder and restarting your server.
+If changes to your Webpack aliases are not surfacing, they might be
+[cached](https://webpack.js.org/configuration/cache/) in `node_modules/.cache/webpack`. Try
+deleting that folder and restarting your server.
+
 </Banner>

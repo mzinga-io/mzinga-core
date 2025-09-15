@@ -48,7 +48,7 @@ In the `plugins` array of your [Payload config](https://payloadcms.com/docs/conf
 
 ```js
 import { buildConfig } from 'payload/config'
-import search from '@payloadcms/plugin-search'
+import search from '@mzinga/plugin-search'
 
 const config = buildConfig({
   collections: [
@@ -147,5 +147,5 @@ If true, will delete documents from search whose status changes to draft. This i
 All types can be directly imported:
 
 ```ts
-import type { SearchConfig, BeforeSync } from '@payloadcms/plugin-search/types'
+import type { SearchConfig, BeforeSync } from '@mzinga/plugin-search/types'
 ```

@@ -1,7 +1,7 @@
 {
   "name": "@mzinga/plugin-cloud-storage",
-  "description": "The official cloud storage plugin for Payload CMS",
-  "version": "0.0.1",
+  "description": "The official cloud storage plugin for MZinga",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -17,7 +17,8 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "prepublishOnly": "pnpm clean && pnpm build",
-    "test": "echo \"No tests available.\""
+    "test": "echo \"No tests available.\"",
+    "version": "npm version"
   },
   "peerDependencies": {
     "@aws-sdk/client-s3": "^3.142.0",

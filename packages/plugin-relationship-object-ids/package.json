@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-relationship-object-ids",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix --ext .ts,.tsx src",
     "clean": "rimraf {dist,*.tsbuildinfo}",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "author": "dev@payloadcms.com",
   "license": "MIT",

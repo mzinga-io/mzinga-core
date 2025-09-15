@@ -8,7 +8,7 @@ This repository contains the officially supported Payload Cloud Storage plugin. 
 
 ## Installation
 
-`yarn add @payloadcms/plugin-cloud-storage` or `npm install @payloadcms/plugin-cloud-storage`
+`yarn add @payloadcms/plugin-cloud-storage` or `npm install @mzinga/plugin-cloud-storage`
 
 ## Usage
 

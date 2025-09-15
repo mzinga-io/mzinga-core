@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-stripe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "test": "echo 'No tests available.'",
-    "prepublishOnly": "yarn clean && yarn build"
+    "prepublishOnly": "yarn clean && yarn build",
+    "version": "npm version"
   },
   "keywords": [
     "payload",

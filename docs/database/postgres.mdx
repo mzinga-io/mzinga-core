@@ -6,10 +6,11 @@ desc: Payload supports Postgres through an officially supported Drizzle database
 keywords: Postgres, documentation, typescript, Content Management System, cms, headless, javascript, node, react, express
 ---
 
-To use Payload with Postgres, install the package `@payloadcms/db-postgres`. It leverages Drizzle ORM and `node-postgres` to interact with a Postgres database that you provide.
+To use Payload with Postgres, install the package `@mzinga/db-postgres`. It leverages Drizzle ORM and `node-postgres` to interact with a Postgres database that you provide.
 
 <Banner>
-  The Postgres database adapter is currently in beta. If you would like to help us test this package, we'd love to hear if you find any bugs or issues!
+  The Postgres database adapter is currently in beta. If you would like to help us test this
+  package, we'd love to hear if you find any bugs or issues!
 </Banner>
 
 It automatically manages changes to your database for you in development mode, and exposes a full suite of migration controls for you to leverage in order to keep other database environments in sync with your schema. DDL transformations are automatically generated.
@@ -17,7 +18,7 @@ It automatically manages changes to your database for you in development mode, a
 To configure Payload to use Postgres, pass the `postgresAdapter` to your Payload config as follows:
 
 ```ts
-import { postgresAdapter } from '@payloadcms/db-postgres'
+import { postgresAdapter } from '@mzinga/db-postgres'
 
 export default buildConfig({
   // Your config goes here
@@ -30,25 +31,23 @@ export default buildConfig({
     // `pool` is required.
     pool: {
       connectionString: process.env.DATABASE_URI,
-    }
+    },
   }),
 })
 ```
 
 ### Options
 
-| Option                | Description                                                                                                                                                                                           |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pool` \*             | [Pool connection options](https://orm.drizzle.team/docs/quick-postgresql/node-postgres) that will be passed to Drizzle and `node-postgres`.                                                           |
-| `push`                | Disable Drizzle's [`db push`](https://orm.drizzle.team/kit-docs/overview#prototyping-with-db-push) in development mode. By default, `push` is enabled for development mode only.                      |
-| `migrationDir`        | Customize the directory that migrations are stored.                                                                                                                                                   |
-| `logger`              | The instance of the logger to be passed to drizzle. By default Payload's will be used.                                                                                                                |
-| `schemaName`   | A string for the postgres schema to use, defaults to 'public'.                                                                                                                   |
-| `localesSuffix`       | A string appended to the end of table names for storing localized fields. Default is '_locales'.                                                                                                      |
-| `relationshipsSuffix` | A string appended to the end of table names for storing relationships. Default is '_rels'.                                                                                                            |
-| `versionsSuffix`      | A string appended to the end of table names for storing versions. Defaults to '_v'.                                                                                                                   |
-
-
+| Option                | Description                                                                                                                                                                      |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pool` \*             | [Pool connection options](https://orm.drizzle.team/docs/quick-postgresql/node-postgres) that will be passed to Drizzle and `node-postgres`.                                      |
+| `push`                | Disable Drizzle's [`db push`](https://orm.drizzle.team/kit-docs/overview#prototyping-with-db-push) in development mode. By default, `push` is enabled for development mode only. |
+| `migrationDir`        | Customize the directory that migrations are stored.                                                                                                                              |
+| `logger`              | The instance of the logger to be passed to drizzle. By default Payload's will be used.                                                                                           |
+| `schemaName`          | A string for the postgres schema to use, defaults to 'public'.                                                                                                                   |
+| `localesSuffix`       | A string appended to the end of table names for storing localized fields. Default is '\_locales'.                                                                                |
+| `relationshipsSuffix` | A string appended to the end of table names for storing relationships. Default is '\_rels'.                                                                                      |
+| `versionsSuffix`      | A string appended to the end of table names for storing versions. Defaults to '\_v'.                                                                                             |
 
 ### Access to Drizzle
 
@@ -90,5 +89,7 @@ Migrations are extremely powerful thanks to the seamless way that Payload and Dr
 1. Now your production database is in sync with your Payload config!
 
 <Banner type="warning">
-  Warning: do not mix "push" and migrations with your local development database. If you use "push" locally, and then try to migrate, Payload will throw a warning, telling you that these two methods are not meant to be used interchangeably.
+  Warning: do not mix "push" and migrations with your local development database. If you use "push"
+  locally, and then try to migrate, Payload will throw a warning, telling you that these two methods
+  are not meant to be used interchangeably.
 </Banner>

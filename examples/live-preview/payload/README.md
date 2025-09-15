@@ -68,10 +68,10 @@ While using Live Preview, the Admin panel emits a new `window.postMessage` event
 
 If your front-end application is built with React or Next.js, use the [`useLivePreview`](#react) React hook that Payload provides.
 
-First, install the `@payloadcms/live-preview-react` package:
+First, install the `@mzinga/live-preview-react` package:
 
 ```bash
-npm install @payloadcms/live-preview-react
+npm install @mzinga/live-preview-react
 ```
 
 Then, use the `useLivePreview` hook in your React component:
@@ -105,10 +105,10 @@ export const PageClient: React.FC<{
 
 In the future, all other major frameworks like Vue, Svelte, etc will be officially supported. If you are using any of these framework today, you can still integrate with Live Preview yourself using the tooling that Payload provides.
 
-First, install the `@payloadcms/live-preview` package:
+First, install the `@mzinga/live-preview` package:
 
 ```bash
-npm install @payloadcms/live-preview
+npm install @mzinga/live-preview
 ```
 
 Then, build your own hook:

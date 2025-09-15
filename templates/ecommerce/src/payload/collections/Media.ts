@@ -1,4 +1,4 @@
-import { slateEditor } from '@payloadcms/richtext-slate'
+import { slateEditor } from '@mzinga/richtext-slate'
 import type { CollectionConfig } from 'mzinga/types'
 import path from 'path'
 

@@ -8,7 +8,7 @@ Slate Rich Text Editor for [Payload](https://mzinga.io).
 ## Installation
 
 ```bash
-npm install @payloadcms/richtext-slate
+npm install @mzinga/richtext-slate
 ```
 
 ## Usage
