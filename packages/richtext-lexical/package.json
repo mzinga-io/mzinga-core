@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/richtext-lexical",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The officially supported Lexical richtext adapter for MZinga",
   "repository": {
     "type": "git",
