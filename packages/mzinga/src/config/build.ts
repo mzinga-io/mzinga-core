@@ -5,9 +5,9 @@ import type { Config, SanitizedConfig } from './types'
 import { sanitizeConfig } from './sanitize'
 
 /**
- * @description Builds and validates Payload configuration
- * @param config Payload Config
- * @returns Built and sanitized Payload Config
+ * @description Builds and validates MZinga configuration
+ * @param config MZinga Config
+ * @returns Built and sanitized MZinga Config
  */
 export async function buildConfig(config: Config): Promise<SanitizedConfig> {
   if (Array.isArray(config.plugins)) {

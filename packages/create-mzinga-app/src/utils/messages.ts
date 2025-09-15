@@ -10,7 +10,7 @@ import { getValidTemplates } from '../lib/templates'
 const header = (message: string): string => `${chalk.yellow(figures.star)} ${chalk.bold(message)}`
 
 export const welcomeMessage = chalk`
-  {green Welcome to Payload. Let's create a project! }
+  {green Welcome to MZinga. Let's create a project! }
 `
 
 const spacer = ' '.repeat(8)
@@ -20,13 +20,13 @@ export function helpMessage(): string {
   return chalk`
   {bold USAGE}
 
-      {dim $} {bold npx create-payload-app}
-      {dim $} {bold npx create-payload-app} my-project
-      {dim $} {bold npx create-payload-app} -n my-project -t blog
+      {dim $} {bold npx create-mzinga-app}
+      {dim $} {bold npx create-mzinga-app} my-project
+      {dim $} {bold npx create-mzinga-app} -n my-project -t blog
 
   {bold OPTIONS}
 
-      -n     {underline my-payload-app}         Set project name
+      -n     {underline my-mzinga-app}         Set project name
       -t     {underline template_name}          Choose specific template
 
         {dim Available templates: ${formatTemplates(validTemplates)}}
@@ -61,9 +61,9 @@ export function successMessage(projectDir: string, packageManager: string): stri
 
     - ${createTerminalLink(
       'Getting Started',
-      'https://payloadcms.com/docs/getting-started/what-is-payload',
+      'https://mzinga.io/docs/getting-started/what-is-mzinga',
     )}
-    - ${createTerminalLink('Configuration', 'https://payloadcms.com/docs/configuration/overview')}
+    - ${createTerminalLink('Configuration', 'https://mzinga.io/docs/configuration/overview')}
 
 `
 }

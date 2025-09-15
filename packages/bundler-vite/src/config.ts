@@ -98,7 +98,7 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
         '@mzinga/db-postgres',
         ...(Object.keys(absoluteAliases) || []),
       ],
-      include: ['payload/components/root', 'react-dom/client'],
+      include: ['mzinga/components/root', 'react-dom/client'],
     },
     plugins: [
       {
@@ -140,7 +140,7 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
     root: path.resolve(__dirname, './'),
     server: {
       fs: {
-        allow: [searchForWorkspaceRoot(process.cwd()), path.resolve(__dirname, '../../../payload')],
+        allow: [searchForWorkspaceRoot(process.cwd()), path.resolve(__dirname, '../../../mzinga')],
       },
       hmr: {
         port: hmrPort,

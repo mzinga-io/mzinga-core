@@ -88,8 +88,9 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
         dotenv: mockDotENVPath,
         path: require.resolve('path-browserify'),
         payload$: mockModulePath,
-        'payload-config': payloadConfig.paths.rawConfig,
-        'payload-user-css': payloadConfig.admin.css,
+        mzinga$: mockModulePath,
+        'mzinga-config': payloadConfig.paths.rawConfig,
+        'mzinga-user-css': payloadConfig.admin.css,
       },
       extensions: ['.ts', '.tsx', '.js', '.json'],
       fallback: {

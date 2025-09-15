@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/eslint-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "MZinga styles for ESLint and Prettier",
   "license": "MIT",
   "homepage": "https://mzinga.io",
