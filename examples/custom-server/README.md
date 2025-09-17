@@ -1,6 +1,6 @@
 # Payload Custom Server Example
 
-This example demonstrates how to serve your front-end alongside [Payload](https://github.com/payloadcms/payload) in a single Express server. This pattern will cut down on hosting costs and can simplify your deployment process.
+This example demonstrates how to serve your front-end alongside [Payload](https://github.com/mzinga-io/mzinga-core) in a single Express server. This pattern will cut down on hosting costs and can simplify your deployment process.
 
 ## Quick Start
 
@@ -102,8 +102,8 @@ On boot, a seed script is included to scaffold a basic database for you to use a
 
 >In a monorepo when routes are bootstrapped to the same host, they can conflict with Payload's own routes if they have the same name. In our template we've named the Nextjs API routes to `next` to avoid this conflict.
 >
->This can happen with any other routes conflicting with Payload such as `admin` and we recommend using different names for custom routes.  
->Alternatively you can also rename Payload's own routes via the [configuration](https://payloadcms.com/docs/configuration/overview).
+>This can happen with any other routes conflicting with Payload such as `admin` and we recommend using different names for custom routes.
+>Alternatively you can also rename Payload's own routes via the [configuration](https://mzinga.io/docs/configuration/overview).
 
 ## Production
 
@@ -114,8 +114,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://payloadcms.com/docs/production/deployment) docs for more details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://mzinga.io/docs/production/deployment) docs for more details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

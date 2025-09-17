@@ -1,4 +1,4 @@
-import type { CollectionAfterDeleteHook } from 'payload/types'
+import type { CollectionAfterDeleteHook } from 'mzinga/types'
 
 const deleteFromSearch: CollectionAfterDeleteHook = async ({ doc, req: { payload }, req }) => {
   try {

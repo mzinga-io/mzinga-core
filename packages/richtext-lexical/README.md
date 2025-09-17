@@ -1,28 +1,26 @@
 # Payload Lexical Rich Text Editor
 
-Lexical Rich Text Editor for [Payload](https://payloadcms.com).
+Lexical Rich Text Editor for [Payload](https://mzinga.io).
 
-- [Main Repository](https://github.com/payloadcms/payload)
-- [Payload Docs](https://payloadcms.com/docs)
+- [Main Repository](https://github.com/mzinga-io/mzinga-core)
+- [MZinga Docs](https://mzinga.io/docs)
 
 ## Installation
 
 ```bash
-npm install @payloadcms/richtext-lexical
+npm install @mzinga/richtext-lexical
 ```
 
 ## Usage
 
 ```ts
-import { buildConfig } from 'payload/config'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { buildConfig } from 'mzinga/config'
+import { lexicalEditor } from '@mzinga/richtext-lexical'
 
 export default buildConfig({
-  editor: lexicalEditor({})
+  editor: lexicalEditor({}),
   // ...rest of config
 })
-
 ```
 
-More detailed usage can be found in the [Payload Docs](https://payloadcms.com/docs/configuration/overview).
-
+More detailed usage can be found in the [MZinga Docs](https://mzinga.io/docs/configuration/overview).

@@ -1,6 +1,6 @@
-import type { BlockField } from 'payload/types'
+import type { BlockField } from 'mzinga/types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPayloadTest } from '../helpers/configHelpers'
 
 require('isomorphic-fetch')

@@ -1,4 +1,4 @@
-import type { AfterReadHook } from 'payload/dist/collections/config/types'
+import type { AfterReadHook } from 'mzinga/dist/collections/config/types'
 
 import { adminsOrPublished } from '../access/adminsOrPublished'
 import type { Page, Post } from '../payload-types'

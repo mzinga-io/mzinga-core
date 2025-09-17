@@ -1,4 +1,4 @@
-import type { BeforeChangeHook } from 'payload/dist/collections/config/types'
+import type { BeforeChangeHook } from 'mzinga/dist/collections/config/types'
 import Stripe from 'stripe'
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY

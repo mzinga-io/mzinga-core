@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import type { Config } from 'payload/config'
+import type { Config } from 'mzinga/config'
 
 import type { PluginOptions } from './types'
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
-import { fieldAffectsData } from 'payload/types'
+import { fieldAffectsData } from 'mzinga/types'
 import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from '../../types'

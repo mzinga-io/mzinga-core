@@ -1,0 +1,28 @@
+name: Publish Packages to npmjs
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+permissions: read-all
+jobs:
+  build:
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.6.0
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9.7.0
+          run_install: false
+
+      - run: pnpm i
+
+      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

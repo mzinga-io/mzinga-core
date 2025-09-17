@@ -1,7 +1,7 @@
 import path from 'path'
 
-import { type Payload } from '../../packages/payload/src'
-import getFileByPath from '../../packages/payload/src/uploads/getFileByPath'
+import { type Payload } from '../../packages/mzinga/src'
+import getFileByPath from '../../packages/mzinga/src/uploads/getFileByPath'
 import { devUser } from '../credentials'
 import { seedDB } from '../helpers/seed'
 import { anotherArrayDoc, arrayDoc } from './collections/Array/shared'

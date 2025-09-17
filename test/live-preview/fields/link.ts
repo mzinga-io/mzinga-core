@@ -1,4 +1,4 @@
-import type { Field } from '../../../packages/payload/src/fields/config/types'
+import type { Field } from '../../../packages/mzinga/src/fields/config/types'
 
 import deepMerge from '../utilities/deepMerge'
 

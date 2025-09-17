@@ -5,8 +5,8 @@ import path from 'path'
 
 import type { RelationshipField, TextField } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import wait from '../../packages/payload/src/utilities/wait'
+import payload from '../../packages/mzinga/src'
+import wait from '../../packages/mzinga/src/utilities/wait'
 import {
   exactText,
   initPageConsoleErrorCatch,
@@ -1846,7 +1846,7 @@ describe('fields', () => {
       await saveDocAndAssert(page)
     })
 
-    // Related issue: https://github.com/payloadcms/payload/issues/2815
+    // Related issue: https://github.com/mzinga-io/mzinga-core/issues/2815
     test('should modify fields in relationship drawer', async () => {
       await page.goto(url.create)
 

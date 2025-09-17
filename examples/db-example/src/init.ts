@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import type { Init } from 'payload/database'
+import type { Init } from 'mzinga/database'
 
 import type { ExampleAdapter } from '.'
 

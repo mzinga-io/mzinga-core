@@ -1,4 +1,4 @@
-import type { CollectionConfig, IncomingUploadType, PayloadRequest } from 'payload/types'
+import type { CollectionConfig, IncomingUploadType, PayloadRequest } from 'mzinga/types'
 
 export async function getFilePrefix({
   collection,

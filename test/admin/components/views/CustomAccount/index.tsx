@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 
-import type { AdminViewComponent } from '../../../../../packages/payload/src/config/types'
+import type { AdminViewComponent } from '../../../../../packages/mzinga/src/config/types'
 
 const CustomAccountView: AdminViewComponent = () => {
   return (

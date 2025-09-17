@@ -1,11 +1,11 @@
 import type { Form } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
+import { ValidationError } from '../../packages/mzinga/src/errors'
 import { serializeLexical } from '../../packages/plugin-form-builder/src/utilities/lexical/serializeLexical'
 import { serializeSlate } from '../../packages/plugin-form-builder/src/utilities/slate/serializeSlate'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { formSubmissionsSlug, formsSlug } from './shared'
-import { ValidationError } from '../../packages/payload/src/errors'
 
 describe('Form Builder Plugin', () => {
   let form: Form

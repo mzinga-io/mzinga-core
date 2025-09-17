@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { PaginatedDocs, QueryDrafts } from 'payload/database'
-import type { PayloadRequest, Where } from 'payload/types'
+import type { PaginatedDocs, QueryDrafts } from 'mzinga/database'
+import type { PayloadRequest, Where } from 'mzinga/types'
 
 import type { ExampleAdapter } from '.'
 

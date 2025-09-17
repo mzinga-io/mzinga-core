@@ -1,4 +1,4 @@
-import type { Config } from 'payload/config'
+import type { Config } from 'mzinga/config'
 import type { Configuration as WebpackConfig } from 'webpack'
 
 import path from 'path'
@@ -17,7 +17,7 @@ export const extendWebpackConfig =
         ...(existingWebpackConfig.resolve || {}),
         alias: {
           ...(existingWebpackConfig.resolve?.alias || {}),
-          '@payloadcms/plugin-cloud': path.resolve(__dirname, './admin.js'),
+          '@mzinga/plugin-cloud': path.resolve(__dirname, './admin.js'),
         },
       },
     }

@@ -1,7 +1,7 @@
 import type {
   AfterOperationHook,
   CollectionConfig,
-} from '../../../../packages/payload/src/collections/config/types'
+} from '../../../../packages/mzinga/src/collections/config/types'
 
 import { AfterOperation } from '../../payload-types'
 

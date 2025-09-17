@@ -1,5 +1,5 @@
-import type { UpdateGlobalArgs } from 'payload/database'
-import type { PayloadRequest, TypeWithID } from 'payload/types'
+import type { UpdateGlobalArgs } from 'mzinga/database'
+import type { PayloadRequest, TypeWithID } from 'mzinga/types'
 
 import toSnakeCase from 'to-snake-case'
 

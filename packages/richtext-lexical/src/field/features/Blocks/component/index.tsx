@@ -1,19 +1,19 @@
 'use client'
-import { Form, buildInitialState, useFormSubmitted } from 'payload/components/forms'
+import { Form, buildInitialState, useFormSubmitted } from 'mzinga/components/forms'
 import React, { useEffect, useMemo } from 'react'
 
 import { type BlockFields } from '../nodes/BlocksNode'
 const baseClass = 'lexical-block'
 
-import type { Data } from 'payload/types'
+import type { Data } from 'mzinga/types'
 
 import {
   buildStateFromSchema,
   useConfig,
   useDocumentInfo,
   useLocale,
-} from 'payload/components/utilities'
-import { sanitizeFields } from 'payload/config'
+} from 'mzinga/components/utilities'
+import { sanitizeFields } from 'mzinga/config'
 import { useTranslation } from 'react-i18next'
 
 import type { BlocksFeatureProps } from '..'

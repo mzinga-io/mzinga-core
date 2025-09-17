@@ -1,7 +1,7 @@
 import { spawn } from 'child_process'
 import path from 'path'
 
-import type { Payload } from '../../packages/payload/src'
+import type { Payload } from '../../packages/mzinga/src'
 
 const installNodeModules = async (args: { payload: Payload }): Promise<void> => {
   const { payload } = args

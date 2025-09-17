@@ -1,6 +1,6 @@
 # Payload Nested Docs Example
 
-This example demonstrates how to achieve nested docs in Payload using the official [Nested Docs Plugin](https://github.com/payloadcms/payload/tree/main/packages/plugin-nested-docs).
+This example demonstrates how to achieve nested docs in Payload using the official [Nested Docs Plugin](https://github.com/mzinga-io/mzinga-core/tree/main/packages/plugin-nested-docs).
 
 There are various fully working front-ends made explicitly for this example, including:
 
@@ -22,11 +22,11 @@ To spin up this example locally, follow these steps:
 
 ## How it works
 
-The [Nested Docs Plugin](https://github.com/payloadcms/payload/tree/main/packages/plugin-nested-docs) automatically adds a `parent` field onto each enabled collection. Each parent is a reference to another document of the same collection and is used to create the document hierarchy.
+The [Nested Docs Plugin](https://github.com/mzinga-io/mzinga-core/tree/main/packages/plugin-nested-docs) automatically adds a `parent` field onto each enabled collection. Each parent is a reference to another document of the same collection and is used to create the document hierarchy.
 
 The plugin also adds a `breadcrumbs` field to each document, which is an array of references to each parent document in the tree. This field is automatically populated by the plugin, and can used to generate the full titles, URLs, etc.
 
-See the official [Nested Docs Plugin](https://github.com/payloadcms/payload/tree/main/packages/plugin-nested-docs) for full details.
+See the official [Nested Docs Plugin](https://github.com/mzinga-io/mzinga-core/tree/main/packages/plugin-nested-docs) for full details.
 
 ## Development
 
@@ -58,8 +58,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

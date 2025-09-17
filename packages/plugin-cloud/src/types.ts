@@ -1,8 +1,6 @@
 import type { NextFunction, Response } from 'express'
-import type { Config } from 'payload/config'
-import type { TypeWithID } from 'payload/types'
-import type { FileData } from 'payload/types'
-import type { CollectionConfig, PayloadRequest } from 'payload/types'
+import type { Config } from 'mzinga/config'
+import type { CollectionConfig, FileData, PayloadRequest, TypeWithID } from 'mzinga/types'
 
 export interface File {
   buffer: Buffer

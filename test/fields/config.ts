@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import path from 'path'
 
-import type { CollectionConfig } from '../../packages/payload/src/collections/config/types'
+import type { CollectionConfig } from '../../packages/mzinga/src/collections/config/types'
 
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import ArrayFields from './collections/Array'

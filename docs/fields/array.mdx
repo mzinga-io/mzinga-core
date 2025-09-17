@@ -12,10 +12,10 @@ keywords: array, fields, config, configuration, documentation, Content Managemen
 </Banner>
 
 <LightDarkImage
-srcLight="https://payloadcms.com/images/docs/fields/array.png"
-srcDark="https://payloadcms.com/images/docs/fields/array-dark.png"
-alt="Array field with two Rows in Payload admin panel"
-caption="Admin panel screenshot of an Array field with two Rows"
+  srcLight="https://payloadcms.com/images/docs/fields/array.png"
+  srcDark="https://payloadcms.com/images/docs/fields/array-dark.png"
+  alt="Array field with two Rows in Payload admin panel"
+  caption="Admin panel screenshot of an Array field with two Rows"
 />
 
 **Example uses:**
@@ -29,7 +29,7 @@ caption="Admin panel screenshot of an Array field with two Rows"
 ### Config
 
 | Option              | Description                                                                                                                                                                                                                                                                        |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`name`** \*       | To be used as the property name when stored and retrieved from the database. [More](/docs/fields/overview#field-names)                                                                                                                                                             |
 | **`label`**         | Text used as the heading in the Admin panel or an object with keys for each language. Auto-generated from name if not defined.                                                                                                                                                     |
 | **`fields`** \*     | Array of field types to correspond to each row of the Array.                                                                                                                                                                                                                       |
@@ -57,9 +57,9 @@ In addition to the default [field admin config](/docs/fields/overview#admin-conf
 properties:
 
 | Option                    | Description                                                                                                          |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------|
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **`initCollapsed`**       | Set the initial collapsed state                                                                                      |
-| **`isSortable`**          | Disable array order sorting by setting this value to `false`                                                               |
+| **`isSortable`**          | Disable array order sorting by setting this value to `false`                                                         |
 | **`components.RowLabel`** | Function or React component to be rendered as the label on the array row. Receives `({ data, index, path })` as args |
 
 ### Example
@@ -67,8 +67,8 @@ properties:
 `collections/ExampleCollection.ts`
 
 ```ts
-import { CollectionConfig } from 'payload/types'
-import { RowLabelArgs } from 'payload/dist/admin/components/forms/RowLabel/types'
+import { CollectionConfig } from 'mzinga/types'
+import { RowLabelArgs } from 'mzinga/dist/admin/components/forms/RowLabel/types'
 
 export const ExampleCollection: CollectionConfig = {
   slug: 'example-collection',

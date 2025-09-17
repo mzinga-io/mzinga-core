@@ -4,8 +4,8 @@ import { expect, test } from '@playwright/test'
 
 import type { LocalizedPost } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import wait from '../../packages/payload/src/utilities/wait'
+import payload from '../../packages/mzinga/src'
+import wait from '../../packages/mzinga/src/utilities/wait'
 import {
   changeLocale,
   initPageConsoleErrorCatch,

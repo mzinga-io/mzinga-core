@@ -29,18 +29,18 @@ Writing plugins is no more complex than writing regular JavaScript. If you know 
 
 ### How to install plugins
 
-The base Payload config allows for a `plugins` property which takes an `array` of [`Plugins`](https://github.com/payloadcms/payload/blob/main/packages/payload/src/config/types.ts).
+The base Payload config allows for a `plugins` property which takes an `array` of [`Plugins`](https://github.com/mzinga-io/mzinga-core/blob/main/packages/mzinga/src/config/types.ts).
 
 ```js
 import { buildConfig } from 'payload/config'
 // note: these plugins are not real (yet?)
 import addLastModified from 'payload-add-last-modified'
 import passwordProtect from 'payload-password-protect'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { postgresAdapter } from '@payloadcms/db-postgres'
+import { mongooseAdapter } from '@mzinga/db-mongodb'
+import { postgresAdapter } from '@mzinga/db-postgres'
 
-import { viteBundler } from '@payloadcms/bundler-vite'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
+import { viteBundler } from '@mzinga/bundler-vite'
+import { webpackBundler } from '@mzinga/bundler-webpack'
 
 
 const config = buildConfig({
@@ -148,6 +148,6 @@ Payload supports both official plugins, maintained by the Payload team, and comm
 
 You can discover existing plugins by browsing the `payload-plugin` topic on [GitHub](https://github.com/topics/payload-plugin). These plugins offer a wide range of functionality. Some are maintained by the Payload team, while others are community-built. While we encourage users to explore them, please note that only official plugins are maintained and supported by the Payload team. For community plugins, support may vary as they are developed and maintained independently.
 
-For maintainers building plugins for others to use, please add the topic to help others find it. If you would like one to be built by the core Payload team, [open a Feature Request](https://github.com/payloadcms/payload/discussions) in our GitHub Discussions board. We would be happy to review your code and maybe feature you and your plugin where appropriate.
+For maintainers building plugins for others to use, please add the topic to help others find it. If you would like one to be built by the core Payload team, [open a Feature Request](https://github.com/mzinga-io/mzinga-core/discussions) in our GitHub Discussions board. We would be happy to review your code and maybe feature you and your plugin where appropriate.
 
-For a list of official plugins, check the [Payload monorepo](https://github.com/payloadcms/payload/tree/main/packages).
+For a list of official plugins, check the [Payload monorepo](https://github.com/mzinga-io/mzinga-core/tree/main/packages).

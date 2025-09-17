@@ -1,4 +1,4 @@
-import type { PayloadRequest, RichTextAdapter, RichTextField } from 'payload/types'
+import type { PayloadRequest, RichTextAdapter, RichTextField } from 'mzinga/types'
 
 import type { AdapterArguments } from '../types'
 

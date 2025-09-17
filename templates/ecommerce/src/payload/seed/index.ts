@@ -1,6 +1,6 @@
 import fs from 'fs'
+import type { Payload } from 'mzinga'
 import path from 'path'
-import type { Payload } from 'payload'
 
 import { cartPage } from './cart-page'
 import { home } from './home'

@@ -1,6 +1,6 @@
-import path from 'path'
 import express from 'express'
-import payload from 'payload'
+import payload from 'mzinga'
+import path from 'path'
 
 // Use `dotenv` to import your `.env` file automatically
 require('dotenv').config({

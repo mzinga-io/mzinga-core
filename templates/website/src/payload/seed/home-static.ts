@@ -61,7 +61,7 @@ export const staticHome: Page = {
           {
             type: 'link',
             linkType: 'custom',
-            url: 'https://github.com/payloadcms/payload/tree/main/templates/website',
+            url: 'https://github.com/mzinga-io/mzinga-core/tree/main/templates/website',
             newTab: true,
             children: [
               {

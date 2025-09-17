@@ -8,9 +8,9 @@ import {
   type LexicalEditor,
   createCommand,
 } from 'lexical'
-import { formatDrawerSlug } from 'payload/components/elements'
-import { BlocksDrawer } from 'payload/components/fields/Blocks'
-import { useEditDepth } from 'payload/components/utilities'
+import { formatDrawerSlug } from 'mzinga/components/elements'
+import { BlocksDrawer } from 'mzinga/components/fields/Blocks'
+import { useEditDepth } from 'mzinga/components/utilities'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 

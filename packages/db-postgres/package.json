@@ -1,18 +1,18 @@
 {
-  "name": "@payloadcms/db-postgres",
-  "version": "0.8.10",
-  "description": "The officially supported Postgres database adapter for Payload",
+  "name": "@mzinga/db-postgres",
+  "version": "0.0.6",
+  "description": "The officially supported Postgres database adapter for MZinga",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/db-postgres"
   },
   "license": "MIT",
-  "homepage": "https://payloadcms.com",
+  "homepage": "https://mzinga.io",
   "author": {
-    "email": "info@payloadcms.com",
-    "name": "Payload",
-    "url": "https://payloadcms.com"
+    "email": "info@mzinga.io",
+    "name": "MZinga",
+    "url": "https://mzinga.io"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,7 +21,8 @@
     "build:swc": "swc ./src -d ./dist --config-file .swcrc",
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",
@@ -34,10 +35,10 @@
     "uuid": "10.0.0"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
     "@types/pg": "8.10.2",
     "@types/to-snake-case": "1.0.0",
-    "payload": "workspace:*"
+    "mzinga": "workspace:*"
   },
   "peerDependencies": {
     "payload": "^2.0.0"

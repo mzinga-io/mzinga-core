@@ -1,7 +1,7 @@
 import type { Response } from 'express'
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadRequest } from 'mzinga/types'
 
-import { Forbidden } from 'payload/errors'
+import { Forbidden } from 'mzinga/errors'
 
 import type { StripeConfig } from '../types'
 

@@ -1,13 +1,13 @@
-import { webpackBundler } from '@payloadcms/bundler-webpack'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { slateEditor } from '@payloadcms/richtext-slate'
-import { buildConfig } from 'payload/config'
+import { webpackBundler } from '@mzinga/bundler-webpack'
+import { mongooseAdapter } from '@mzinga/db-mongodb'
+import FormBuilder from '@mzinga/plugin-form-builder'
+import { slateEditor } from '@mzinga/richtext-slate'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import FormBuilder from '@payloadcms/plugin-form-builder'
-import { Users } from './collections/Users'
 import { Pages } from './collections/Pages'
-import { MainMenu } from './globals/MainMenu'
+import { Users } from './collections/Users'
 import BeforeLogin from './components/BeforeLogin'
+import { MainMenu } from './globals/MainMenu'
 
 export default buildConfig({
   collections: [Pages, Users],

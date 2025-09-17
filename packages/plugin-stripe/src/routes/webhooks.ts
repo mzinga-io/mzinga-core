@@ -1,6 +1,6 @@
 import type { Response } from 'express'
-import type { Config as PayloadConfig } from 'payload/config'
-import type { PayloadRequest } from 'payload/dist/types'
+import type { Config as PayloadConfig } from 'mzinga/config'
+import type { PayloadRequest } from 'mzinga/dist/types/index'
 
 import Stripe from 'stripe'
 
@@ -23,8 +23,8 @@ export const stripeWebhooks = async (args: {
     const stripe = new Stripe(stripeSecretKey, {
       apiVersion: '2022-08-01',
       appInfo: {
-        name: 'Stripe Payload Plugin',
-        url: 'https://payloadcms.com',
+        name: 'Stripe MZinga Plugin',
+        url: 'https://mzinga.io',
       },
     })
 

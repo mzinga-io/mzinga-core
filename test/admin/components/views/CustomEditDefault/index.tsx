@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import type { AdminViewComponent } from '../../../../../packages/payload/src/config/types'
+import type { AdminViewComponent } from '../../../../../packages/mzinga/src/config/types'
 
-import { useStepNav } from '../../../../../packages/payload/src/admin/components/elements/StepNav'
-import { useConfig } from '../../../../../packages/payload/src/admin/components/utilities/Config'
+import { useStepNav } from '../../../../../packages/mzinga/src/admin/components/elements/StepNav'
+import { useConfig } from '../../../../../packages/mzinga/src/admin/components/utilities/Config'
 
 const CustomDefaultEditView: AdminViewComponent = ({
   canAccessAdmin,

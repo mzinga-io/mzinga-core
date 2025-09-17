@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { NextFunction, Request, Response } from 'express'
 import type express from 'express'
-import type { Payload } from 'payload'
+import type { NextFunction, Request, Response } from 'express'
+import type { Payload } from 'mzinga'
 
 /* eslint-disable no-console */
 import * as Sentry from '@sentry/node'

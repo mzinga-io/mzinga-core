@@ -1,7 +1,7 @@
-import type { FindGlobalVersions } from 'payload/database'
-import type { PayloadRequest, SanitizedGlobalConfig } from 'payload/types'
+import type { FindGlobalVersions } from 'mzinga/database'
+import type { PayloadRequest, SanitizedGlobalConfig } from 'mzinga/types'
 
-import { buildVersionGlobalFields } from 'payload/versions'
+import { buildVersionGlobalFields } from 'mzinga/versions'
 import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from './types'

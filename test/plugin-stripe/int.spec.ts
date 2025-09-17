@@ -1,4 +1,4 @@
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPayloadTest } from '../helpers/configHelpers'
 
 describe('Stripe Plugin', () => {

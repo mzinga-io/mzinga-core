@@ -1,4 +1,4 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
 export const idToUUID = (fields: Field[]): Field[] =>
   fields.map((field) => {

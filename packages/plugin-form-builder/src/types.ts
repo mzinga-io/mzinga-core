@@ -1,4 +1,4 @@
-import type { Block, CollectionConfig, Field } from 'payload/types'
+import type { Block, CollectionConfig, Field } from 'mzinga/types'
 
 export interface BlockConfig {
   block: Block
@@ -17,9 +17,9 @@ export interface FieldValues {
   [key: string]: boolean | null | number | string | undefined
 }
 
-export type PaymentFieldConfig = Partial<Field> & {
+export type PaymentFieldConfig = {
   paymentProcessor: Partial<SelectField>
-}
+} & Partial<Field>
 
 export type FieldConfig = Partial<Field> | PaymentFieldConfig
 

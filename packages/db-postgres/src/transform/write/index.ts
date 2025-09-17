@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
 import type { PostgresAdapter } from '../../types'
 import type { RowToInsert } from './types'

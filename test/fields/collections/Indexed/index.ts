@@ -1,7 +1,7 @@
 import type {
   BeforeDuplicate,
   CollectionConfig,
-} from '../../../../packages/payload/src/collections/config/types'
+} from '../../../../packages/mzinga/src/collections/config/types'
 import type { IndexedField } from '../../payload-types'
 
 import { indexedFieldsSlug } from '../../slugs'

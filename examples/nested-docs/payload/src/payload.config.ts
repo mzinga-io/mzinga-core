@@ -1,14 +1,14 @@
-import { webpackBundler } from '@payloadcms/bundler-webpack'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { slateEditor } from '@payloadcms/richtext-slate'
-import nestedDocs from '@payloadcms/plugin-nested-docs'
+import { webpackBundler } from '@mzinga/bundler-webpack'
+import { mongooseAdapter } from '@mzinga/db-mongodb'
+import nestedDocs from '@mzinga/plugin-nested-docs'
+import { slateEditor } from '@mzinga/richtext-slate'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import { buildConfig } from 'payload/config'
 
+import BeforeLogin from './BeforeLogin'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { MainMenu } from './globals/MainMenu'
-import BeforeLogin from './BeforeLogin'
 
 export default buildConfig({
   collections: [Pages, Users],

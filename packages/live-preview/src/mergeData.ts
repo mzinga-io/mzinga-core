@@ -1,5 +1,5 @@
-import type { PaginatedDocs } from 'payload/database'
-import type { fieldSchemaToJSON } from 'payload/utilities'
+import type { PaginatedDocs } from 'mzinga/database'
+import type { fieldSchemaToJSON } from 'mzinga/utilities'
 
 import type { PopulationsByCollection, UpdatedDocument } from './types'
 
@@ -15,9 +15,9 @@ export const mergeData = async <T>(args: {
   returnNumberOfRequests?: boolean
   serverURL: string
 }): Promise<
-  T & {
+  {
     _numberOfRequests?: number
-  }
+  } & T
 > => {
   const {
     apiRoute,

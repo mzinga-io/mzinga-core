@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 
-import type { GlobalConfig } from '../../../../packages/payload/src/globals/config/types'
+import type { GlobalConfig } from '../../../../packages/mzinga/src/globals/config/types'
 
 export const dataHooksGlobalSlug = 'data-hooks-global'
 

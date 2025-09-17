@@ -27,7 +27,7 @@ export const home: Partial<Page> = {
           type: 'link',
           linkType: 'custom',
           newTab: true,
-          url: 'https://github.com/payloadcms/payload/tree/master/examples/live-preview/payload',
+          url: 'https://github.com/mzinga-io/mzinga-core/tree/master/examples/live-preview/payload',
           children: [{ text: 'Live Preview Example' }],
         },
         { text: '. With ' },

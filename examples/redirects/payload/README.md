@@ -36,7 +36,7 @@ To spin up this example locally, follow the [Quick Start](#quick-start).
 
 On boot, a seed script is included to create a user, a home page, and a the following redirects for you to test with:
 
-- From `/redirect-to-external` to `https://payloadcms.com`
+- From `/redirect-to-external` to `https://mzinga.io`
 - From `/redirect-to-internal` to `/redirected`
 
 ## Production
@@ -48,8 +48,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://mzinga.io/docs/production/deployment) for full details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

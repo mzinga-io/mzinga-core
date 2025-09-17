@@ -1,10 +1,10 @@
-import type { PayloadHandler } from 'payload/config'
+import type { PayloadHandler } from 'mzinga/config'
 // @ts-expect-error
 import type { InlineConfig } from 'vite'
 
 import express from 'express'
 
-import type { Payload } from '../../../payload'
+import type { Payload } from '../../../mzinga'
 
 import { getViteConfig } from '../config'
 

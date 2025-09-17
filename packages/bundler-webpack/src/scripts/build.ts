@@ -1,4 +1,4 @@
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 
 import webpack from 'webpack'
 

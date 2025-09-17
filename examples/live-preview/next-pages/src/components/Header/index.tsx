@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 import { MainMenu } from '../../payload-types'
 import { CMSLink } from '../CMSLink'
@@ -19,14 +19,14 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ children }) => {
         <Link href="/" className={classes.logo}>
           <picture>
             <source
-              srcSet="https://raw.githubusercontent.com/payloadcms/payload/master/src/admin/assets/images/payload-logo-light.svg"
+              srcSet="https://raw.githubusercontent.com/mzinga-io/mzinga-core/master/src/admin/assets/images/payload-logo-light.svg"
               media="(prefers-color-scheme: dark)"
             />
             <Image
               width={150}
               height={30}
               alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/master/src/admin/assets/images/payload-logo-dark.svg"
+              src="https://raw.githubusercontent.com/mzinga-io/mzinga-core/master/src/admin/assets/images/payload-logo-dark.svg"
             />
           </picture>
         </Link>

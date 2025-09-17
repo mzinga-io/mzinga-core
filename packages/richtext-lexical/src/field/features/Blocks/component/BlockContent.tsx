@@ -1,14 +1,14 @@
-import type { Block, Data, Field, Fields } from 'payload/types'
+import type { Block, Data, Field, Fields } from 'mzinga/types'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import isDeepEqual from 'deep-equal'
 import { $getNodeByKey } from 'lexical'
-import { Button, ErrorPill, Pill } from 'payload/components'
-import { Collapsible } from 'payload/components/elements'
-import { SectionTitle } from 'payload/components/fields/Blocks'
-import { RenderFields, createNestedFieldPath, useFormSubmitted } from 'payload/components/forms'
-import { useDocumentInfo } from 'payload/components/utilities'
-import { getTranslation } from 'payload/utilities'
+import { Button, ErrorPill, Pill } from 'mzinga/components'
+import { Collapsible } from 'mzinga/components/elements'
+import { SectionTitle } from 'mzinga/components/fields/Blocks'
+import { RenderFields, createNestedFieldPath, useFormSubmitted } from 'mzinga/components/forms'
+import { useDocumentInfo } from 'mzinga/components/utilities'
+import { getTranslation } from 'mzinga/utilities'
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -105,7 +105,7 @@ export const BlockContent: React.FC<Props> = (props) => {
       // Only update if the data has actually changed. Otherwise, we may be triggering an unnecessary value change,
       // which would trigger the "Leave without saving" dialog unnecessarily
       if (!isDeepEqual(formData, newFormData)) {
-        // Running this in the next tick in the meantime fixes this issue: https://github.com/payloadcms/payload/issues/4108
+        // Running this in the next tick in the meantime fixes this issue: https://github.com/mzinga-io/mzinga-core/issues/4108
         // I don't know why. When this is called immediately, it might focus out of a nested lexical editor field if an update is made there.
         // My hypothesis is that the nested editor might not have fully finished its update cycle yet. By updating in the next tick, we
         // ensure that the nested editor has finished its update cycle before we update the block node.

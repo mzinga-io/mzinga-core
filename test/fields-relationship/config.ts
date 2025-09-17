@@ -1,5 +1,5 @@
-import type { CollectionConfig } from '../../packages/payload/src/collections/config/types'
-import type { FilterOptionsProps } from '../../packages/payload/src/fields/config/types'
+import type { CollectionConfig } from '../../packages/mzinga/src/collections/config/types'
+import type { FilterOptionsProps } from '../../packages/mzinga/src/fields/config/types'
 
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'

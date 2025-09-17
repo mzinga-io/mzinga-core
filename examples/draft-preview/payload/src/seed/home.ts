@@ -21,7 +21,7 @@ export const home: Partial<Page> = {
         {
           type: 'link',
           newTab: true,
-          url: 'https://github.com/payloadcms/payload/tree/main/examples/redirects',
+          url: 'https://github.com/mzinga-io/mzinga-core/tree/main/examples/redirects',
           children: [{ text: '' }],
         },
         { text: '' },
@@ -29,7 +29,7 @@ export const home: Partial<Page> = {
           type: 'link',
           linkType: 'custom',
           newTab: true,
-          url: 'https://github.com/payloadcms/payload/tree/main/examples/draft-preview/payload',
+          url: 'https://github.com/mzinga-io/mzinga-core/tree/main/examples/draft-preview/payload',
           children: [{ text: 'Draft Preview Example' }],
         },
         { text: '. This example demonstrates how to implement draft preview into Payload using ' },
@@ -57,7 +57,7 @@ export const home: Partial<Page> = {
           type: 'link',
           linkType: 'custom',
           newTab: true,
-          url: 'https://github.com/payloadcms/payload-admin-bar',
+          url: 'https://github.com/mzinga-io/mzinga-core-admin-bar',
           children: [{ text: 'Payload Admin Bar' }],
         },
         {

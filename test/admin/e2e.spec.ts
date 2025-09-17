@@ -5,9 +5,9 @@ import qs from 'qs'
 
 import type { Geo, Post } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import { mapAsync } from '../../packages/payload/src/utilities/mapAsync'
-import wait from '../../packages/payload/src/utilities/wait'
+import payload from '../../packages/mzinga/src'
+import { mapAsync } from '../../packages/mzinga/src/utilities/mapAsync'
+import wait from '../../packages/mzinga/src/utilities/wait'
 import {
   checkBreadcrumb,
   checkPageTitle,

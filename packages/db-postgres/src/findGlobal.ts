@@ -1,4 +1,4 @@
-import type { FindGlobal } from 'payload/database'
+import type { FindGlobal } from 'mzinga/database'
 
 import toSnakeCase from 'to-snake-case'
 

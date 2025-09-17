@@ -1,4 +1,4 @@
-import type { CollectionConfig } from '../../../packages/payload/src/collections/config/types'
+import type { CollectionConfig } from '../../../packages/mzinga/src/collections/config/types'
 
 import { createBreadcrumbsField } from '../../../packages/plugin-nested-docs/src/fields/breadcrumbs'
 import createParentField from '../../../packages/plugin-nested-docs/src/fields/parent'

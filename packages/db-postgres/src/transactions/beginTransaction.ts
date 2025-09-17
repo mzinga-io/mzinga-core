@@ -1,4 +1,4 @@
-import type { BeginTransaction } from 'payload/database'
+import type { BeginTransaction } from 'mzinga/database'
 
 import { v4 as uuid } from 'uuid'
 

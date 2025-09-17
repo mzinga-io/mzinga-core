@@ -1,6 +1,6 @@
-import { commitTransaction } from '../../packages/payload/src/utilities/commitTransaction'
-import { initTransaction } from '../../packages/payload/src/utilities/initTransaction'
-import { killTransaction } from '../../packages/payload/src/utilities/killTransaction'
+import { commitTransaction } from '../../packages/mzinga/src/utilities/commitTransaction'
+import { initTransaction } from '../../packages/mzinga/src/utilities/initTransaction'
+import { killTransaction } from '../../packages/mzinga/src/utilities/killTransaction'
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'
 

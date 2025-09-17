@@ -1,8 +1,8 @@
-import type { User } from 'payload/auth'
-import type { Config } from 'payload/config'
-import type { Field, RadioField, TextField } from 'payload/types'
+import type { User } from 'mzinga/auth'
+import type { Config } from 'mzinga/config'
+import type { Field, RadioField, TextField } from 'mzinga/types'
 
-import { extractTranslations } from 'payload/utilities'
+import { extractTranslations } from 'mzinga/utilities'
 
 import { validateUrl } from '../../../lexical/utils/url'
 

@@ -1,6 +1,6 @@
-import type { RichTextAdapter } from 'payload/types'
+import type { RichTextAdapter } from 'mzinga/types'
 
-import { withMergedProps, withNullableJSONSchemaType } from 'payload/utilities'
+import { withMergedProps, withNullableJSONSchemaType } from 'mzinga/utilities'
 
 import type { AdapterArguments } from './types'
 

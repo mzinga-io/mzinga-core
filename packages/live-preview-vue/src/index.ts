@@ -1,12 +1,12 @@
 import type { Ref } from 'vue'
 
-import { ready, subscribe, unsubscribe } from '@payloadcms/live-preview'
+import { ready, subscribe, unsubscribe } from '@mzinga/live-preview'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 /**
- * Vue composable to implement Payload CMS Live Preview.
+ * Vue composable to implement MZinga Live Preview.
  *
- * {@link https://payloadcms.com/docs/live-preview/frontend View the documentation}
+ * {@link https://mzinga.io/docs/live-preview/frontend View the documentation}
  */
 export const useLivePreview = <T>(props: {
   apiRoute?: string

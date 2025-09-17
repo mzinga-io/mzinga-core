@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax, no-await-in-loop */
-import type { CreateMigration } from 'payload/database'
+import type { CreateMigration } from 'mzinga/database'
 
 import fs from 'fs'
 import path from 'path'
@@ -32,10 +32,10 @@ export const createMigration: CreateMigration = async function createMigration({
 
   // Check for predefined migration.
   // Either passed in via --file or prefixed with @payloadcms/db-mongodb/
-  if (file || migrationName?.startsWith('@payloadcms/db-mongodb/')) {
+  if (file || migrationName?.startsWith('@mzinga/db-mongodb/')) {
     if (!file) file = migrationName
 
-    const predefinedMigrationName = file.replace('@payloadcms/db-mongodb/', '')
+    const predefinedMigrationName = file.replace('@mzinga/db-mongodb/', '')
     migrationName = predefinedMigrationName
     const cleanPath = path.join(__dirname, `../predefinedMigrations/${predefinedMigrationName}.js`)
 

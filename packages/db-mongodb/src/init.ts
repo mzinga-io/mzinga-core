@@ -1,12 +1,12 @@
 /* eslint-disable no-param-reassign */
 import type { PaginateOptions } from 'mongoose'
-import type { Init } from 'payload/database'
-import type { SanitizedCollectionConfig } from 'payload/types'
+import type { Init } from 'mzinga/database'
+import type { SanitizedCollectionConfig } from 'mzinga/types'
 
 import mongoose from 'mongoose'
 import mongooseAggregatePaginate from 'mongoose-aggregate-paginate-v2'
 import paginate from 'mongoose-paginate-v2'
-import { buildVersionCollectionFields, buildVersionGlobalFields } from 'payload/versions'
+import { buildVersionCollectionFields, buildVersionGlobalFields } from 'mzinga/versions'
 
 import type { MongooseAdapter } from '.'
 import type { CollectionModel } from './types'

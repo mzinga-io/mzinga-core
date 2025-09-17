@@ -1,5 +1,4 @@
-import type { GroupField, TextField } from 'payload/types'
-import type { CollectionConfig, Field } from 'payload/types'
+import type { CollectionConfig, Field, GroupField, TextField } from 'mzinga/types'
 
 import path from 'path'
 
@@ -24,21 +23,21 @@ export const getFields = ({
 }: Args): Field[] => {
   const baseURLField: Field = {
     name: 'url',
+    type: 'text',
     admin: {
       hidden: true,
       readOnly: true,
     },
     label: 'URL',
-    type: 'text',
   }
 
   const basePrefixField: Field = {
     name: 'prefix',
+    type: 'text',
     admin: {
       hidden: true,
       readOnly: true,
     },
-    type: 'text',
   }
 
   const fields = [...collection.fields]
@@ -89,6 +88,7 @@ export const getFields = ({
     const sizesField: Field = {
       ...(existingSizesField || {}),
       name: 'sizes',
+      type: 'group',
       admin: {
         hidden: true,
       },
@@ -104,6 +104,7 @@ export const getFields = ({
         return {
           ...existingSizeField,
           name: size.name,
+          type: 'group',
           fields: [
             {
               ...(existingSizeURLField || {}),
@@ -122,10 +123,8 @@ export const getFields = ({
               },
             },
           ],
-          type: 'group',
         }
       }),
-      type: 'group',
     }
 
     fields.push(sizesField)

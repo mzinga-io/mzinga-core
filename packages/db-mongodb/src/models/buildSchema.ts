@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-use-before-define */
 import type { IndexOptions, SchemaOptions, SchemaTypeOptions } from 'mongoose'
-import type { SanitizedConfig, SanitizedLocalizationConfig } from 'payload/config'
+import type { SanitizedLocalizationConfig } from 'mzinga/config'
 import type {
   ArrayField,
   Block,
@@ -30,7 +30,7 @@ import type {
   TextField,
   TextareaField,
   UploadField,
-} from 'payload/types'
+} from 'mzinga/types'
 
 import { Schema } from 'mongoose'
 import {
@@ -38,7 +38,7 @@ import {
   fieldIsLocalized,
   fieldIsPresentationalOnly,
   tabHasName,
-} from 'payload/types'
+} from 'mzinga/types'
 
 import type { MongooseAdapter } from '..'
 

@@ -1,6 +1,6 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'mzinga/types'
 
-import payload from 'payload'
+import payload from 'mzinga'
 
 import type { HTMLConverter } from '../converters/html/converter/types'
 import type { FeatureProvider } from '../types'

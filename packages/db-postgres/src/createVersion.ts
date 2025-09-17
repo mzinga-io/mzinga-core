@@ -1,8 +1,8 @@
-import type { CreateVersionArgs, TypeWithVersion } from 'payload/database'
-import type { PayloadRequest, TypeWithID } from 'payload/types'
+import type { CreateVersionArgs, TypeWithVersion } from 'mzinga/database'
+import type { PayloadRequest, TypeWithID } from 'mzinga/types'
 
 import { sql } from 'drizzle-orm'
-import { buildVersionCollectionFields } from 'payload/versions'
+import { buildVersionCollectionFields } from 'mzinga/versions'
 import toSnakeCase from 'to-snake-case'
 
 import type { PostgresAdapter } from './types'

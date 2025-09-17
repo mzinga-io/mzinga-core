@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax, no-await-in-loop */
 import type { DrizzleSnapshotJSON } from 'drizzle-kit/api'
-import type { CreateMigration } from 'payload/database'
+import type { CreateMigration } from 'mzinga/database'
 
 import fs from 'fs'
 import prompts from 'prompts'
@@ -10,7 +10,7 @@ import type { PostgresAdapter } from './types'
 const migrationTemplate = (
   upSQL?: string,
   downSQL?: string,
-) => `import { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
+) => `import { MigrateUpArgs, MigrateDownArgs } from '@mzinga/db-postgres'
 import { sql } from 'drizzle-orm'
 
 export async function up({ payload }: MigrateUpArgs): Promise<void> {

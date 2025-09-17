@@ -1,7 +1,7 @@
-import type { Payload } from 'payload'
-import type { Field, Where } from 'payload/types'
+import type { Payload } from 'mzinga'
+import type { Field, Where } from 'mzinga/types'
 
-import { QueryError } from 'payload/errors'
+import { QueryError } from 'mzinga/errors'
 
 import { parseParams } from './parseParams'
 

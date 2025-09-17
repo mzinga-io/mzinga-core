@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { FindOne } from 'payload/database'
-import type { PayloadRequest, Where } from 'payload/types'
-import type { Document } from 'payload/types'
+import type { FindOne } from 'mzinga/database'
+import type { Document, PayloadRequest, Where } from 'mzinga/types'
 
 import type { ExampleAdapter } from '.'
 

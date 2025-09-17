@@ -1,5 +1,5 @@
-import type { Find } from 'payload/database'
-import type { PayloadRequest, SanitizedCollectionConfig } from 'payload/types'
+import type { Find } from 'mzinga/database'
+import type { PayloadRequest, SanitizedCollectionConfig } from 'mzinga/types'
 
 import toSnakeCase from 'to-snake-case'
 

@@ -1,4 +1,4 @@
-import { Access } from 'payload/config'
+import { Access } from 'mzinga/config'
 
 export const publishedOnly: Access = ({ req: { user } }) => {
   if (user) return true

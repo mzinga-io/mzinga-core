@@ -1,5 +1,5 @@
 /* eslint-disable jest/no-if */
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPayloadTest } from '../helpers/configHelpers'
 
 describe('Relationship Object IDs Plugin', () => {

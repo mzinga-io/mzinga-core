@@ -3,12 +3,12 @@ import type { IndexDirection, IndexOptions } from 'mongoose'
 import { GraphQLClient } from 'graphql-request'
 
 import type { MongooseAdapter } from '../../packages/db-mongodb/src/index'
-import type { SanitizedConfig } from '../../packages/payload/src/config/types'
-import type { PaginatedDocs } from '../../packages/payload/src/database/types'
+import type { SanitizedConfig } from '../../packages/mzinga/src/config/types'
+import type { PaginatedDocs } from '../../packages/mzinga/src/database/types'
 import type { GroupField, RichTextField } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import { NotFound } from '../../packages/payload/src/errors'
+import payload from '../../packages/mzinga/src'
+import { NotFound } from '../../packages/mzinga/src/errors'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { isMongoose } from '../helpers/isMongoose'
@@ -349,7 +349,7 @@ describe('Fields', () => {
       expect(updatedDoc.selectHasMany).toEqual(['one', 'two'])
     })
 
-    // https://github.com/payloadcms/payload/issues/6485
+    // https://github.com/mzinga-io/mzinga-core/issues/6485
     it('delete with selectHasMany relationship', async () => {
       const { id } = await payload.create({
         collection: 'select-fields',

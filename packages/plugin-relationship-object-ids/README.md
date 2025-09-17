@@ -13,23 +13,22 @@ It injects a `beforeChange` field hook into each `relationship` and `upload` fie
 Simply import and install the plugin to make it work:
 
 ```ts
-import { relationshipsAsObjectID } from '@payloadcms/plugin-relationship-object-ids'
-import { buildConfig } from 'payload/config'
+import { relationshipsAsObjectID } from '@mzinga/plugin-relationship-object-ids'
+import { buildConfig } from 'mzinga/config'
 
 export default buildConfig({
   // your config here
   plugins: [
     // Call the plugin within your `plugins` array
-    relationshipsAsObjectID()
-  ]
+    relationshipsAsObjectID(),
+  ],
 })
 ```
 
 ### Migration
 
-Note - this plugin will only store newly created or resaved documents' relations as `ObjectID`s. It will not modify any of your existing data. If you'd like to convert existing data into an `ObjectID` format, you should write a migration script to loop over all documents in your database and then simply resave each one. 
+Note - this plugin will only store newly created or resaved documents' relations as `ObjectID`s. It will not modify any of your existing data. If you'd like to convert existing data into an `ObjectID` format, you should write a migration script to loop over all documents in your database and then simply resave each one.
 
 ### Support
 
 If you need help with this plugin, [join our Discord](https://t.co/30APlsQUPB) and we'd be happy to give you a hand.
-

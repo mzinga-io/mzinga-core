@@ -1,7 +1,7 @@
 import type { NestedAfterReadHook } from './payload-types'
 
-import payload from '../../packages/payload/src'
-import { AuthenticationError } from '../../packages/payload/src/errors'
+import payload from '../../packages/mzinga/src'
+import { AuthenticationError } from '../../packages/mzinga/src/errors'
 import { devUser, regularUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'

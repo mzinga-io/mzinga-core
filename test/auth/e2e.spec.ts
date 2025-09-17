@@ -3,7 +3,7 @@ import type { Page } from '@playwright/test'
 import { expect, test } from '@playwright/test'
 import { v4 as uuid } from 'uuid'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { initPageConsoleErrorCatch, login, saveDocAndAssert } from '../helpers'
 import { AdminUrlUtil } from '../helpers/adminUrlUtil'
 import { initPayloadE2E } from '../helpers/configHelpers'

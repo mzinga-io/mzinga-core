@@ -1,4 +1,4 @@
-import type { AfterReadHook } from 'payload/dist/collections/config/types'
+import type { AfterReadHook } from 'mzinga/dist/collections/config/types'
 
 // The `user` collection has access control locked so that users are not publicly accessible
 // This means that we need to populate the user manually here to protect user privacy

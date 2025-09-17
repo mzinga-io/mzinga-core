@@ -1,6 +1,6 @@
-import { webpackBundler } from '@payloadcms/bundler-webpack'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { slateEditor } from '@payloadcms/richtext-slate'
+import { webpackBundler } from '@mzinga/bundler-webpack'
+import { mongooseAdapter } from '@mzinga/db-mongodb'
+import { slateEditor } from '@mzinga/richtext-slate'
 import dotenv from 'dotenv'
 import path from 'path'
 
@@ -8,7 +8,7 @@ dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
 
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'mzinga/config'
 
 import { Pages } from './collections/Pages'
 import { Tenants } from './collections/Tenants'

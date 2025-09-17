@@ -1,9 +1,9 @@
 'use client'
 
-import type { FormField, UIField } from 'payload/types'
+import type { FormField, UIField } from 'mzinga/types'
 
-import { useAllFormFields } from 'payload/components/forms'
-import { useDocumentInfo, useLocale } from 'payload/components/utilities'
+import { useAllFormFields } from 'mzinga/components/forms'
+import { useDocumentInfo, useLocale } from 'mzinga/components/utilities'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 

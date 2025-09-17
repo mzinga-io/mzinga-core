@@ -1,18 +1,18 @@
 'use client'
 
-import type { Fields } from 'payload/types'
+import type { Fields } from 'mzinga/types'
 
 import { useModal } from '@faceless-ui/modal'
-import { useDrawerSlug } from 'payload/components/elements'
-import { reduceFieldsToValues } from 'payload/components/forms'
+import { useDrawerSlug } from 'mzinga/components/elements'
+import { reduceFieldsToValues } from 'mzinga/components/forms'
 import {
   buildStateFromSchema,
   useAuth,
   useConfig,
   useDocumentInfo,
   useLocale,
-} from 'payload/components/utilities'
-import { sanitizeFields } from 'payload/config'
+} from 'mzinga/components/utilities'
+import { sanitizeFields } from 'mzinga/config'
 import React, { Fragment, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Editor, Range, Transforms } from 'slate'

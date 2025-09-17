@@ -1,18 +1,18 @@
 {
-  "name": "@payloadcms/bundler-vite",
-  "version": "0.1.9",
-  "description": "The officially supported Vite bundler adapter for Payload",
+  "name": "@mzinga/bundler-vite",
+  "version": "0.0.6",
+  "description": "The officially supported Vite bundler adapter for MZinga",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/bundler-vite"
   },
   "license": "MIT",
-  "homepage": "https://payloadcms.com",
+  "homepage": "https://mzinga.io",
   "author": {
-    "email": "info@payloadcms.com",
-    "name": "Payload",
-    "url": "https://payloadcms.com"
+    "email": "info@mzinga.io",
+    "name": "MZinga",
+    "url": "https://mzinga.io"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,7 +23,8 @@
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
     "copyTsx": "copyfiles -u 1 \"src/entry.tsx\" dist/",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "dependencies": {
     "@rollup/plugin-image": "^3.0.3",
@@ -36,8 +37,8 @@
     "vite-plugin-virtual": "^0.2.0"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
-    "payload": "workspace:*"
+    "@mzinga/eslint-config": "workspace:*",
+    "mzinga": "workspace:*"
   },
   "peerDependencies": {
     "payload": "^2.0.0",

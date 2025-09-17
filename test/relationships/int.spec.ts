@@ -1,17 +1,17 @@
 import { randomBytes } from 'crypto'
 
-import type { PayloadRequest } from '../../packages/payload/types'
+import type { PayloadRequest } from '../../packages/mzinga/types'
 import type {
   ChainedRelation,
   CustomIdNumberRelation,
   CustomIdRelation,
   Director,
   Post,
+  PostsLocalized,
   Relation,
 } from './payload-types'
-import type { PostsLocalized } from './payload-types'
 
-import payload from '../../packages/payload/src'
+import payload from '../../packages/mzinga/src'
 import { devUser } from '../credentials'
 import { initPayloadTest } from '../helpers/configHelpers'
 import { RESTClient } from '../helpers/rest'
@@ -274,7 +274,7 @@ describe('Relationships', () => {
         expect(query.totalDocs).toEqual(2)
       })
 
-      // https://github.com/payloadcms/payload/issues/4240
+      // https://github.com/mzinga-io/mzinga-core/issues/4240
       it('should allow querying by relationship id field', async () => {
         /**
          * This test shows something which breaks on postgres but not on mongodb.

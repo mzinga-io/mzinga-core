@@ -1,4 +1,4 @@
-import type { GlobalConfig } from '../../../packages/payload/src/globals/config/types'
+import type { GlobalConfig } from '../../../packages/mzinga/src/globals/config/types'
 
 import CustomTabComponent from '../components/CustomTabComponent'
 import CustomDefaultEditView from '../components/views/CustomEditDefault'

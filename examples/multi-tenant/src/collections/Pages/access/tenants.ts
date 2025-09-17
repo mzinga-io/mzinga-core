@@ -1,4 +1,4 @@
-import type { Access } from 'payload/types'
+import type { Access } from 'mzinga/types'
 
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 

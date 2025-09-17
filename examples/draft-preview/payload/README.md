@@ -1,6 +1,6 @@
 # Payload Draft Preview Example
 
-The [Payload Draft Preview Example](https://github.com/payloadcms/payload/tree/main/examples/draft-preview/payload) demonstrates how to implement draft preview in [Payload](https://github.com/payloadcms/payload) using [Versions](https://payloadcms.com/docs/versions/overview) and [Drafts](https://payloadcms.com/docs/versions/drafts). Draft preview allows you to see content on your front-end before it is published. There are various fully working front-ends made explicitly for this example, including:
+The [Payload Draft Preview Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/draft-preview/payload) demonstrates how to implement draft preview in [Payload](https://github.com/mzinga-io/mzinga-core) using [Versions](https://mzinga.io/docs/versions/overview) and [Drafts](https://mzinga.io/docs/versions/drafts). Draft preview allows you to see content on your front-end before it is published. There are various fully working front-ends made explicitly for this example, including:
 
 - [Next.js App Router](../next-app)
 - [Next.js Pages Router](../next-pages)
@@ -24,13 +24,13 @@ Draft preview works by sending the user to your front-end with a `secret` along 
 
 ### Collections
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend any of this functionality.
+See the [Collections](https://mzinga.io/docs/configuration/collections) docs for details on how to extend any of this functionality.
 
 - #### Users
 
   The `users` collection is auth-enabled which provides access to the admin panel. When previewing documents on your front-end, the user's JWT is used to authenticate the request. See [Pages](#pages) for more details.
 
-  For additional help with authentication, see the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs or the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth).
+  For additional help with authentication, see the [Authentication](https://mzinga.io/docs/authentication/overview#authentication-overview) docs or the official [Auth Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/auth).
 
 - #### Pages
 
@@ -51,11 +51,11 @@ See the [Collections](https://payloadcms.com/docs/configuration/collections) doc
     })
   ```
 
-  For more details on how to extend this functionality, see the [Authentication](https://payloadcms.com/docs/authentication) docs.
+  For more details on how to extend this functionality, see the [Authentication](https://mzinga.io/docs/authentication) docs.
 
 ### Preview Mode
 
-To preview draft documents, the user first needs to have at least one draft document saved. When they click the "preview" button from the Payload admin panel, a custom [preview function](https://payloadcms.com/docs/configuration/collections#preview) routes them to your front-end with a `secret` along with their http-only cookies. An API route on your front-end will verify the secret and token before entering into it's own preview mode. Once in preview mode, it can begin requesting drafts from Payload using the `Authorization` header. See [Pages](#pages) for more details.
+To preview draft documents, the user first needs to have at least one draft document saved. When they click the "preview" button from the Payload admin panel, a custom [preview function](https://mzinga.io/docs/configuration/collections#preview) routes them to your front-end with a `secret` along with their http-only cookies. An API route on your front-end will verify the secret and token before entering into it's own preview mode. Once in preview mode, it can begin requesting drafts from Payload using the `Authorization` header. See [Pages](#pages) for more details.
 
 > "Preview mode" looks differently for every front-end framework. For instance, check out the differences between Next.js [Preview Mode](https://nextjs.org/docs/pages/building-your-application/configuring/preview-mode) in the Pages Router and [Draft Mode](https://nextjs.org/docs/pages/building-your-application/configuring/draft-mode) in the App Router. In Next.js, methods are provided that set cookies in your browser, but this may not be the case for all frameworks.
 
@@ -67,13 +67,13 @@ If your front-end is statically generated then you may also want to regenerate t
 
 ### Admin Bar
 
-You might also want to render an admin bar on your front-end so that logged-in users can quickly navigate between the front-end and Payload as they're editing. For React apps, check out the official [Payload Admin Bar](https://github.com/payloadcms/payload-admin-bar). For other frameworks, simply hit the `/me` route with `credentials: 'include'` and render your own admin bar if the user is logged in.
+You might also want to render an admin bar on your front-end so that logged-in users can quickly navigate between the front-end and Payload as they're editing. For React apps, check out the official [Payload Admin Bar](https://github.com/mzinga-io/mzinga-core-admin-bar). For other frameworks, simply hit the `/me` route with `credentials: 'include'` and render your own admin bar if the user is logged in.
 
 ### CORS
 
-The [`cors`](https://payloadcms.com/docs/production/preventing-abuse#cross-origin-resource-sharing-cors), [`csrf`](https://payloadcms.com/docs/production/preventing-abuse#cross-site-request-forgery-csrf), and [`cookies`](https://payloadcms.com/docs/authentication/config#options) settings are configured to ensure that the admin panel and front-end can communicate with each other securely. If you are combining your front-end and admin panel into a single application that runs of a shared port and domain, you can simplify your config by removing these settings.
+The [`cors`](https://mzinga.io/docs/production/preventing-abuse#cross-origin-resource-sharing-cors), [`csrf`](https://mzinga.io/docs/production/preventing-abuse#cross-site-request-forgery-csrf), and [`cookies`](https://mzinga.io/docs/authentication/config#options) settings are configured to ensure that the admin panel and front-end can communicate with each other securely. If you are combining your front-end and admin panel into a single application that runs of a shared port and domain, you can simplify your config by removing these settings.
 
-For more details on this, see the [CORS](https://payloadcms.com/docs/production/preventing-abuse#cross-origin-resource-sharing-cors) docs.
+For more details on this, see the [CORS](https://mzinga.io/docs/production/preventing-abuse#cross-origin-resource-sharing-cors) docs.
 
 ## Development
 
@@ -94,8 +94,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://payloadcms.com/docs/production/deployment) docs for more details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://mzinga.io/docs/production/deployment) docs for more details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

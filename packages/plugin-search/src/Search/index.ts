@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'mzinga/types'
 
 import deepMerge from 'ts-deepmerge'
 
@@ -10,6 +10,7 @@ import { LinkToDoc } from './ui'
 export const generateSearchCollection = (searchConfig: SearchConfig): CollectionConfig =>
   deepMerge(
     {
+      slug: 'search',
       access: {
         create: (): boolean => false,
         read: (): boolean => true,
@@ -24,20 +25,21 @@ export const generateSearchCollection = (searchConfig: SearchConfig): Collection
       fields: [
         {
           name: 'title',
+          type: 'text',
           admin: {
             readOnly: true,
           },
-          type: 'text',
         },
         {
           name: 'priority',
+          type: 'number',
           admin: {
             position: 'sidebar',
           },
-          type: 'number',
         },
         {
           name: 'doc',
+          type: 'relationship',
           admin: {
             position: 'sidebar',
             readOnly: true,
@@ -46,24 +48,22 @@ export const generateSearchCollection = (searchConfig: SearchConfig): Collection
           maxDepth: 0,
           relationTo: searchConfig?.collections || [],
           required: true,
-          type: 'relationship',
         },
         {
           name: 'docUrl',
+          type: 'ui',
           admin: {
             components: {
               Field: LinkToDoc,
             },
             position: 'sidebar',
           },
-          type: 'ui',
         },
       ],
       labels: {
         plural: 'Search Results',
         singular: 'Search Result',
       },
-      slug: 'search',
     },
     searchConfig?.searchOverrides || {},
   )

@@ -1,5 +1,4 @@
-import { sanitizeConfig } from 'payload/config'
-import { Config } from 'payload/config'
+import { Config, sanitizeConfig } from 'mzinga/config'
 import { getLocalizedSortProperty } from './getLocalizedSortProperty'
 
 const config = {

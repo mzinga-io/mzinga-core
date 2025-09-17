@@ -1,4 +1,4 @@
-import type { FieldHook } from 'payload/types'
+import type { FieldHook } from 'mzinga/types'
 
 import type { Order } from '../../../payload-types'
 

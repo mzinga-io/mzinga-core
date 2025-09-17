@@ -1,15 +1,14 @@
 {
-  "name": "@payloadcms/live-preview",
-  "version": "0.2.2",
-  "description": "The official live preview JavaScript SDK for Payload",
+  "name": "@mzinga/live-preview",
+  "version": "0.0.6",
+  "description": "The official live preview JavaScript SDK for MZinga",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/live-preview"
   },
   "license": "MIT",
-  "homepage": "https://payloadcms.com",
-  "author": "Payload CMS, Inc.",
+  "homepage": "https://mzinga.io",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
@@ -18,11 +17,12 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
-    "payload": "workspace:*"
+    "@mzinga/eslint-config": "workspace:*",
+    "mzinga": "workspace:*"
   },
   "exports": {
     ".": {

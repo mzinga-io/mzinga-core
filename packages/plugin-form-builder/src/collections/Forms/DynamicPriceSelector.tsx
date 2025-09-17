@@ -1,10 +1,10 @@
 'use client'
 
-import type { Data } from 'payload/dist/admin/components/forms/Form/types'
-import type { Props as TextFieldType } from 'payload/dist/admin/components/forms/field-types/Text/types'
+import type { Data } from 'mzinga/dist/admin/components/forms/Form/types'
+import type { Props as TextFieldType } from 'mzinga/dist/admin/components/forms/field-types/Text/types'
 
-import { Text, useWatchForm } from 'payload/components/forms'
-import { useLocale } from 'payload/components/utilities'
+import { Text, useWatchForm } from 'mzinga/components/forms'
+import { useLocale } from 'mzinga/components/utilities'
 import React, { useEffect, useState } from 'react'
 
 type FieldWithID = {

@@ -38,7 +38,7 @@ export default {
 
 ```ts
 import { resolve } from 'path'
-import payload from 'payload'
+import payload from 'mzinga'
 import express from 'express'
 import testCredentials from './credentials'
 

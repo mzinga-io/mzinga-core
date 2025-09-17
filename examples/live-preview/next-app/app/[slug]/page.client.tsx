@@ -1,6 +1,6 @@
 'use client'
 
-import { useLivePreview } from '@payloadcms/live-preview-react'
+import { useLivePreview } from '@mzinga/live-preview-react'
 
 import { Page } from '../../payload-types'
 import { Gutter } from '../_components/Gutter'

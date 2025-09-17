@@ -1,7 +1,7 @@
 'use client'
 import type { SerializedEditorState } from 'lexical'
 import type { EditorConfig as LexicalEditorConfig } from 'lexical/LexicalEditor'
-import type { CellComponentProps, RichTextField } from 'payload/types'
+import type { CellComponentProps, RichTextField } from 'mzinga/types'
 
 import { createHeadlessEditor } from '@lexical/headless'
 import { $getRoot } from 'lexical'

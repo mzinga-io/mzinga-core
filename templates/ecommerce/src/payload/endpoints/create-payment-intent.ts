@@ -1,4 +1,4 @@
-import type { PayloadHandler } from 'payload/config'
+import type { PayloadHandler } from 'mzinga/config'
 import Stripe from 'stripe'
 
 import type { CartItems } from '../payload-types'

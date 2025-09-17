@@ -11,9 +11,9 @@ import {
   FieldDescription,
   useField,
   withCondition,
-} from 'payload/components/forms'
-import { useEditDepth } from 'payload/components/utilities'
-import { getTranslation } from 'payload/utilities'
+} from 'mzinga/components/forms'
+import { useEditDepth } from 'mzinga/components/utilities'
+import { getTranslation } from 'mzinga/utilities'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Node, Element as SlateElement, Text, Transforms, createEditor } from 'slate'

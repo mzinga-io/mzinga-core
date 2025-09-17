@@ -1,13 +1,13 @@
 {
-  "name": "@payloadcms/plugin-redirects",
-  "version": "1.0.2",
-  "homepage:": "https://payloadcms.com",
+  "name": "@mzinga/plugin-redirects",
+  "version": "0.0.6",
+  "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/mzinga-io/mzinga-core.git",
     "directory": "packages/plugin-redirects"
   },
-  "description": "Redirects plugin for Payload",
+  "description": "Redirects plugin for MZinga",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -16,7 +16,8 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "keywords": [
     "payload",
@@ -34,10 +35,10 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "workspace:*",
+    "@mzinga/eslint-config": "workspace:*",
     "@types/express": "^5.0.3",
     "@types/react": "18.0.21",
-    "payload": "workspace:*"
+    "mzinga": "workspace:*"
   },
   "exports": {
     ".": {

@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
 import { Metadata } from 'next'
+import { Fragment } from 'react'
 
 import { Settings } from '../../../payload/payload-types'
 import { fetchSettings } from '../../_api/fetchGlobals'
@@ -46,7 +46,7 @@ export default async function Checkout() {
                 </a>
                 {' then set them as environment variables. See the '}
                 <a
-                  href="https://github.com/payloadcms/payload/blob/main/templates/ecommerce/README.md#stripe"
+                  href="https://github.com/mzinga-io/mzinga-core/blob/main/templates/ecommerce/README.md#stripe"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

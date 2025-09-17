@@ -1,4 +1,4 @@
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 import type { Configuration } from 'webpack'
 
 import findNodeModules from 'find-node-modules'
@@ -15,7 +15,7 @@ const nodeModulesPaths = findNodeModules({ cwd: process.cwd(), relative: false }
 
 export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => {
   let nodeModulesPath = nodeModulesPaths.find((p) => {
-    const guess = path.resolve(p, 'payload/dist/admin')
+    const guess = path.resolve(p, 'mzinga/dist/admin')
     if (fs.existsSync(guess)) {
       return true
     }
@@ -26,7 +26,7 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
     nodeModulesPath = process.cwd()
   }
 
-  const adminFolderPath = path.resolve(nodeModulesPath, 'payload/dist/admin')
+  const adminFolderPath = path.resolve(nodeModulesPath, 'mzinga/dist/admin')
 
   const config: Configuration = {
     entry: {
@@ -54,8 +54,8 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
         {
           oneOf: [
             {
-              test: /\.(?:ico|gif|png|jpg|jpeg|woff(2)?|eot|ttf|otf|svg)$/i,
               type: 'asset/resource',
+              test: /\.(?:ico|gif|png|jpg|jpeg|woff(2)?|eot|ttf|otf|svg)$/i,
             },
           ],
         },
@@ -82,14 +82,15 @@ export const getBaseConfig = (payloadConfig: SanitizedConfig): Configuration => 
     ],
     resolve: {
       alias: {
-        '@payloadcms/bundler-webpack': mockModulePath,
-        '@payloadcms/db-mongodb': mockDBAdapterPath,
-        '@payloadcms/db-postgres': mockDBAdapterPath,
+        '@mzinga/bundler-webpack': mockModulePath,
+        '@mzinga/db-mongodb': mockDBAdapterPath,
+        '@mzinga/db-postgres': mockDBAdapterPath,
         dotenv: mockDotENVPath,
         path: require.resolve('path-browserify'),
         payload$: mockModulePath,
-        'payload-config': payloadConfig.paths.rawConfig,
-        'payload-user-css': payloadConfig.admin.css,
+        mzinga$: mockModulePath,
+        'mzinga-config': payloadConfig.paths.rawConfig,
+        'mzinga-user-css': payloadConfig.admin.css,
       },
       extensions: ['.ts', '.tsx', '.js', '.json'],
       fallback: {

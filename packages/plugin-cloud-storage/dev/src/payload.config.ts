@@ -1,12 +1,12 @@
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'mzinga/config'
 import path from 'path'
-import Users from './collections/Users'
 import { cloudStorage } from '../../src'
-import { s3Adapter } from '../../src/adapters/s3'
-import { gcsAdapter } from '../../src/adapters/gcs'
 import { azureBlobStorageAdapter } from '../../src/adapters/azure'
+import { gcsAdapter } from '../../src/adapters/gcs'
+import { s3Adapter } from '../../src/adapters/s3'
 import type { Adapter } from '../../src/types'
 import { Media } from './collections/Media'
+import Users from './collections/Users'
 
 let adapter: Adapter
 let uploadOptions

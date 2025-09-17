@@ -1,4 +1,4 @@
-import type { BeforeChangeHook } from 'payload/dist/collections/config/types'
+import type { BeforeChangeHook } from 'mzinga/dist/collections/config/types'
 
 export const populatePublishedAt: BeforeChangeHook = ({ data, req, operation }) => {
   if (operation === 'create' || operation === 'update') {

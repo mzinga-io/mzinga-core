@@ -1,7 +1,7 @@
-import type { Config } from 'payload/config'
+import type { Config } from 'mzinga/config'
 
+import { defaults } from 'mzinga/config'
 import nodemailer from 'nodemailer'
-import { defaults } from 'payload/config'
 
 import { payloadCloud } from './plugin'
 

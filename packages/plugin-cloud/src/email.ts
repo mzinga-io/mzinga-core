@@ -1,4 +1,4 @@
-import type { EmailTransport } from 'payload/config'
+import type { EmailTransport } from 'mzinga/config'
 
 import nodemailer from 'nodemailer'
 
@@ -27,7 +27,7 @@ export const payloadCloudEmail = (args: PayloadCloudEmailOptions): EmailTranspor
     )
   }
 
-  const fromName = config.email?.fromName || 'Payload CMS'
+  const fromName = config.email?.fromName || 'MZinga'
   const fromAddress =
     config.email?.fromAddress || `cms@${customDomains.length ? customDomains[0] : defaultDomain}`
 

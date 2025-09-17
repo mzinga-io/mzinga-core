@@ -1,14 +1,12 @@
 import type { SerializedEditorState, SerializedLexicalNode } from 'lexical'
-import type { PayloadRequest, RichTextAdapter, RichTextField } from 'payload/types'
+import type { PayloadRequest, RichTextAdapter, RichTextField } from 'mzinga/types'
 
 import type { PopulationPromise } from '../field/features/types'
 import type { AdapterProps } from '../types'
 
-export type Args = Parameters<
-  RichTextAdapter<SerializedEditorState, AdapterProps>['populationPromise']
->[0] & {
+export type Args = {
   editorPopulationPromises: Map<string, Array<PopulationPromise>>
-}
+} & Parameters<RichTextAdapter<SerializedEditorState, AdapterProps>['populationPromise']>[0]
 
 type RecurseRichTextArgs = {
   children: SerializedLexicalNode[]
@@ -39,7 +37,7 @@ export const recurseRichText = ({
   req,
   showHiddenFields,
   siblingDoc,
-}: RecurseRichTextArgs & Args): void => {
+}: Args & RecurseRichTextArgs): void => {
   if (depth <= 0 || currentDepth > depth) {
     return
   }

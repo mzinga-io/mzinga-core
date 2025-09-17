@@ -1,8 +1,7 @@
-import { CollectionConfig, FieldHook } from 'payload/types';
+import { CollectionConfig, FieldHook } from 'mzinga/types'
 
-const populateFullTitle: FieldHook = async ({ data }) => (
+const populateFullTitle: FieldHook = async ({ data }) =>
   `${data.title} ${data.firstName} ${data.lastName}`
-);
 
 const Staff: CollectionConfig = {
   slug: 'staff',
@@ -19,14 +18,14 @@ const Staff: CollectionConfig = {
         update: () => false,
       },
       hooks: {
-        beforeChange: [({ siblingData }) => {
-          // Mutate the sibling data to prevent DB storage
-          // eslint-disable-next-line no-param-reassign
-          siblingData.fullTitle = undefined;
-        }],
-        afterRead: [
-          populateFullTitle,
+        beforeChange: [
+          ({ siblingData }) => {
+            // Mutate the sibling data to prevent DB storage
+            // eslint-disable-next-line no-param-reassign
+            siblingData.fullTitle = undefined
+          },
         ],
+        afterRead: [populateFullTitle],
       },
       admin: {
         hidden: true,
@@ -56,6 +55,6 @@ const Staff: CollectionConfig = {
       required: true,
     },
   ],
-};
+}
 
-export default Staff;
+export default Staff

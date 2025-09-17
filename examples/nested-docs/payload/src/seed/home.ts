@@ -31,7 +31,7 @@ export const home: Partial<Page> = {
         {
           type: 'link',
           linkType: 'custom',
-          url: 'https://github.com/payloadcms/payload/tree/main/examples/nested-docs/payload',
+          url: 'https://github.com/mzinga-io/mzinga-core/tree/main/examples/nested-docs/payload',
           children: [
             {
               text: 'Nested Docs Example',
@@ -44,7 +44,7 @@ export const home: Partial<Page> = {
         {
           type: 'link',
           linkType: 'custom',
-          url: 'https://github.com/payloadcms/payload/tree/main/packages/plugin-nested-docs',
+          url: 'https://github.com/mzinga-io/mzinga-core/tree/main/packages/plugin-nested-docs',
           children: [
             {
               text: 'Nested Docs Plugin',

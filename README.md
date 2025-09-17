@@ -3,7 +3,7 @@
 </p>
 <hr/>
 <h4>
-<a target="_blank" href="https://payloadcms.com/docs/getting-started/what-is-payload" rel="dofollow"><strong>Explore the Docs</strong></a>
+<a target="_blank" href="https://mzinga.io/docs/getting-started/what-is-payload" rel="dofollow"><strong>Explore the Docs</strong></a>
 </h4>
 <hr/>
 
@@ -23,19 +23,19 @@
 ## ✨ Features
 
 - Completely free and open-source
-- [GraphQL](https://payloadcms.com/docs/graphql/overview), [REST](https://payloadcms.com/docs/rest-api/overview), and [Local](https://payloadcms.com/docs/local-api/overview) APIs
-- [Easily customizable ReactJS Admin](https://payloadcms.com/docs/admin/overview)
-- [Fully self-hosted](https://payloadcms.com/docs/production/deployment)
-- [Extensible Authentication](https://payloadcms.com/docs/authentication/overview)
-- [Local file storage & upload](https://payloadcms.com/docs/upload/overview)
-- [Version History and Drafts](https://payloadcms.com/docs/versions/overview)
-- [Field-based Localization](https://payloadcms.com/docs/configuration/localization)
-- [Block-based Layout Builder](https://payloadcms.com/docs/fields/blocks)
-- [Extensible SlateJS rich text editor](https://payloadcms.com/docs/fields/rich-text)
-- [Array field type](https://payloadcms.com/docs/fields/array)
-- [Field conditional logic](https://payloadcms.com/docs/fields/overview#conditional-logic)
-- Extremely granular [Access Control](https://payloadcms.com/docs/access-control/overview)
-- [Document and field-level hooks](https://payloadcms.com/docs/hooks/overview) for every action Payload provides
+- [GraphQL](https://mzinga.io/docs/graphql/overview), [REST](https://mzinga.io/docs/rest-api/overview), and [Local](https://mzinga.io/docs/local-api/overview) APIs
+- [Easily customizable ReactJS Admin](https://mzinga.io/docs/admin/overview)
+- [Fully self-hosted](https://mzinga.io/docs/production/deployment)
+- [Extensible Authentication](https://mzinga.io/docs/authentication/overview)
+- [Local file storage & upload](https://mzinga.io/docs/upload/overview)
+- [Version History and Drafts](https://mzinga.io/docs/versions/overview)
+- [Field-based Localization](https://mzinga.io/docs/configuration/localization)
+- [Block-based Layout Builder](https://mzinga.io/docs/fields/blocks)
+- [Extensible SlateJS rich text editor](https://mzinga.io/docs/fields/rich-text)
+- [Array field type](https://mzinga.io/docs/fields/array)
+- [Field conditional logic](https://mzinga.io/docs/fields/overview#conditional-logic)
+- Extremely granular [Access Control](https://mzinga.io/docs/access-control/overview)
+- [Document and field-level hooks](https://mzinga.io/docs/hooks/overview) for every action Payload provides
 - Built with Typescript & very Typescript-friendly
 - Intensely fast API
 - Highly secure thanks to HTTP-only cookies, CSRF protection, and more
@@ -46,9 +46,9 @@
 
 ## 🗒️ Documentation
 
-Check out the [Payload website](https://payloadcms.com/docs/getting-started/what-is-payload) to find in-depth documentation for everything that Payload offers.
+Check out the [Payload website](https://mzinga.io/docs/getting-started/what-is-payload) to find in-depth documentation for everything that Payload offers.
 
-Migrating from v1 to v2? Check out the [2.0 Release Notes](https://github.com/payloadcms/payload/releases/tag/v2.0.0) on how to do it.
+Migrating from v1 to v2? Check out the [2.0 Release Notes](https://github.com/mzinga-io/mzinga-core/releases/tag/v2.0.0) on how to do it.
 
 ## 🙋 Contributing
 
@@ -71,8 +71,7 @@ There are lots of good conversations and resources in our Github Discussions boa
 - [GitHub Discussions](https://github.com/mzinga-io/mzinga-core/discussions)
 - [GitHub Issues](https://github.com/mzinga-io/mzinga-core/issues)
 
-
-### TODO: one day 
+### TODO: one day
 
 ## ⭐ Like what we're doing? Give us a star
 

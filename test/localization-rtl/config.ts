@@ -1,11 +1,10 @@
-import en from '../../packages/payload/src/translations/en.json'
+import en from '../../packages/mzinga/src/translations/en.json'
 import { buildConfigWithDefaults } from '../buildConfigWithDefaults'
 import { devUser } from '../credentials'
 import { ar } from './ar'
 import { Posts } from './collections/posts'
 import { Users } from './collections/users'
 import deepMerge from './deepMerge'
-import { localization } from './localization'
 
 export default buildConfigWithDefaults({
   collections: [Users, Posts],

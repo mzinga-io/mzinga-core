@@ -1,6 +1,6 @@
 import type { NextFunction, Response } from 'express'
-import type { Config, Endpoint } from 'payload/config'
-import type { PayloadRequest } from 'payload/types'
+import type { Config, Endpoint } from 'mzinga/config'
+import type { PayloadRequest } from 'mzinga/types'
 
 import express from 'express'
 

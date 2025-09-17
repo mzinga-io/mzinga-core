@@ -1,7 +1,7 @@
+import { Text, useFormFields } from 'mzinga/components/forms'
+import CopyToClipboard from 'mzinga/dist/admin/components/elements/CopyToClipboard'
+import { TextField } from 'mzinga/dist/fields/config/types'
 import * as React from 'react'
-import { Select, Text, useFormFields } from 'payload/components/forms'
-import CopyToClipboard from 'payload/dist/admin/components/elements/CopyToClipboard'
-import { TextField } from 'payload/dist/fields/config/types'
 
 export const LinkToPaymentIntent: React.FC<TextField> = props => {
   const { name, label } = props

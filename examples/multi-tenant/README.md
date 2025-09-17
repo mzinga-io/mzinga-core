@@ -1,6 +1,6 @@
 # Payload Multi-Tenant Example
 
-This example demonstrates how to achieve a multi-tenancy in [Payload](https://github.com/payloadcms/payload). This is a powerful way to vertically scale your application by sharing infrastructure across tenants.
+This example demonstrates how to achieve a multi-tenancy in [Payload](https://github.com/mzinga-io/mzinga-core). This is a powerful way to vertically scale your application by sharing infrastructure across tenants.
 
 ## Quick Start
 
@@ -22,19 +22,19 @@ Each tenant has its own set of users, pages, and other data that is scoped to th
 
 ### Collections
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend any of this functionality.
+See the [Collections](https://mzinga.io/docs/configuration/collections) docs for details on how to extend any of this functionality.
 
 - #### Users
 
   The `users` collection is auth-enabled and encompass both app-wide and tenant-scoped users based on the value of their `roles` and `tenants` fields. Users with the role `super-admin` can manage your entire application, while users with the _tenant role_ of `admin` have limited access to the platform and can manage only the tenant(s) they are assigned to, see [Tenants](#tenants) for more details.
 
-  For additional help with authentication, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth/cms#readme) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+  For additional help with authentication, see the official [Auth Example](https://github.com/mzinga-io/mzinga-core/tree/main/examples/auth/cms#readme) or the [Authentication](https://mzinga.io/docs/authentication/overview#authentication-overview) docs.
 
 - #### Tenants
 
-  A `tenants` collection is used to achieve tenant-based access control. Each user is assigned an array of `tenants` which includes a relationship to a `tenant` and their `roles` within that tenant. You can then scope any document within your application to any of your tenants using a simple [relationship](https://payloadcms.com/docs/fields/relationship) field on the `users` or `pages` collections, or any other collection that your application needs. The value of this field is used to filter documents in the admin panel and API to ensure that users can only access documents that belong to their tenant and are within their role. See [Access Control](#access-control) for more details.
+  A `tenants` collection is used to achieve tenant-based access control. Each user is assigned an array of `tenants` which includes a relationship to a `tenant` and their `roles` within that tenant. You can then scope any document within your application to any of your tenants using a simple [relationship](https://mzinga.io/docs/fields/relationship) field on the `users` or `pages` collections, or any other collection that your application needs. The value of this field is used to filter documents in the admin panel and API to ensure that users can only access documents that belong to their tenant and are within their role. See [Access Control](#access-control) for more details.
 
-  For more details on how to extend this functionality, see the [Payload Access Control](https://payloadcms.com/docs/access-control/overview) docs.
+  For more details on how to extend this functionality, see the [Payload Access Control](https://mzinga.io/docs/access-control/overview) docs.
 
 - #### Pages
 
@@ -57,7 +57,7 @@ When a user logs in, a `lastLoggedInTenant` field is saved to their profile. Thi
 
 > If you have versions and drafts enabled on your pages, you will need to add additional read access control condition to check the user's tenants that prevents them from accessing draft documents of other tenants.
 
-For more details on how to extend this functionality, see the [Payload Access Control](https://payloadcms.com/docs/access-control/overview#access-control) docs.
+For more details on how to extend this functionality, see the [Payload Access Control](https://mzinga.io/docs/access-control/overview#access-control) docs.
 
 ## CORS
 
@@ -65,7 +65,7 @@ This multi-tenant setup requires an open CORS policy. Since each tenant contains
 
 Alternatively, if you know the domains of your tenants ahead of time and these values won't change often, you could simply remove the `domains` field altogether and instead use static values.
 
-For more details on this, see the [CORS](https://payloadcms.com/docs/production/preventing-abuse#cross-origin-resource-sharing-cors) docs.
+For more details on this, see the [CORS](https://mzinga.io/docs/production/preventing-abuse#cross-origin-resource-sharing-cors) docs.
 
 ## Front-end
 
@@ -125,8 +125,8 @@ To run Payload in production, you need to build and serve the Admin panel. To do
 
 ### Deployment
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://payloadcms.com/docs/production/deployment) docs for more details.
+The easiest way to deploy your project is to use [Payload Cloud](https://mzinga.io/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also choose to self-host your app, check out the [Deployment](https://mzinga.io/docs/production/deployment) docs for more details.
 
 ## Questions
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/mzinga-io/mzinga-core/discussions).

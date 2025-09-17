@@ -1,9 +1,9 @@
-import type { Payload } from 'payload'
+import type { Payload } from 'mzinga'
 
-import { home } from './home'
-import { parent } from './parent'
 import { child } from './child'
 import { grandchild } from './grandchild'
+import { home } from './home'
+import { parent } from './parent'
 
 export const seed = async (payload: Payload): Promise<void> => {
   await payload.create({

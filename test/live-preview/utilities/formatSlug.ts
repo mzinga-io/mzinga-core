@@ -1,4 +1,4 @@
-import type { FieldHook } from '../../../packages/payload/src/fields/config/types'
+import type { FieldHook } from '../../../packages/mzinga/src/fields/config/types'
 
 const format = (val: string): string =>
   val

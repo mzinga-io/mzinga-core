@@ -1,12 +1,12 @@
 import path from 'path'
 
-import type { Config, SanitizedConfig } from '../packages/payload/src/config/types'
+import type { Config, SanitizedConfig } from '../packages/mzinga/src/config/types'
 
 import { viteBundler } from '../packages/bundler-vite/src'
 import { webpackBundler } from '../packages/bundler-webpack/src'
 import { mongooseAdapter } from '../packages/db-mongodb/src'
 import { postgresAdapter } from '../packages/db-postgres/src'
-import { buildConfig as buildPayloadConfig } from '../packages/payload/src/config/build'
+import { buildConfig as buildPayloadConfig } from '../packages/mzinga/src/config/build'
 import { slateEditor } from '../packages/richtext-slate/src'
 
 // process.env.PAYLOAD_DATABASE = 'postgres'
@@ -100,7 +100,7 @@ export function buildConfigWithDefaults(testConfig?: Partial<Config>): Promise<S
             `webpack-hot-middleware/client?path=${
               testConfig?.routes?.admin || '/admin'
             }/__webpack_hmr`,
-            path.resolve(__dirname, '../packages/payload/src/admin'),
+            path.resolve(__dirname, '../packages/mzinga/src/admin'),
           ],
         },
         resolve: {
@@ -117,13 +117,13 @@ export function buildConfigWithDefaults(testConfig?: Partial<Config>): Promise<S
             ),
             [path.resolve(__dirname, '../packages/db-mongodb/src/index')]: path.resolve(
               __dirname,
-              '../packages/payload/src/bundlers/mocks/db-mongodb.js',
+              '../packages/mzinga/src/bundlers/mocks/db-mongodb.js',
             ),
             [path.resolve(__dirname, '../packages/db-postgres/src/index')]: path.resolve(
               __dirname,
-              '../packages/payload/src/bundlers/mocks/db-postgres.js',
+              '../packages/mzinga/src/bundlers/mocks/db-postgres.js',
             ),
-            react: path.resolve(__dirname, '../packages/payload/node_modules/react'),
+            react: path.resolve(__dirname, '../packages/mzinga/node_modules/react'),
           },
         },
       }

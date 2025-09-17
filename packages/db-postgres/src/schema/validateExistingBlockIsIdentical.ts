@@ -1,7 +1,7 @@
-import type { Block, Field } from 'payload/types'
+import type { Block, Field } from 'mzinga/types'
 
-import { InvalidConfiguration } from 'payload/errors'
-import { fieldAffectsData, fieldHasSubFields, tabHasName } from 'payload/types'
+import { InvalidConfiguration } from 'mzinga/errors'
+import { fieldAffectsData, fieldHasSubFields, tabHasName } from 'mzinga/types'
 
 import type { GenericTable } from '../types'
 

@@ -1,4 +1,4 @@
-import type { Access } from 'payload/config'
+import type { Access } from 'mzinga/config'
 
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 

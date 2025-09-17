@@ -1,9 +1,8 @@
-import type { SanitizedConfig } from 'payload/config'
+import type { SanitizedConfig } from 'mzinga/config'
 import type { Configuration } from 'webpack'
 
 import MiniCSSExtractPlugin from 'mini-css-extract-plugin'
 import { SwcMinifyWebpackPlugin } from 'swc-minify-webpack-plugin'
-import { WebpackPluginInstance } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 import { getBaseConfig } from './base'
