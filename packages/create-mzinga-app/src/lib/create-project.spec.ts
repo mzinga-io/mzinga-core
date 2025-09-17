@@ -60,7 +60,7 @@ describe('createProject', () => {
         name: 'plugin',
         type: 'plugin',
         url: 'https://github.com/mzinga-io/mzinga-core-plugin-template',
-        description: 'Template for creating a Payload plugin',
+        description: 'Template for creating a MZinga plugin',
       }
       await createProject({
         cliArgs: args,
@@ -112,12 +112,12 @@ describe('createProject', () => {
         const packageJson = fse.readJsonSync(packageJsonPath)
 
         // Check deps
-        expect(packageJson.dependencies['payload']).toEqual('^2.0.0')
+        expect(packageJson.dependencies['mzinga']).toEqual('^0.0.1')
         expect(packageJson.dependencies[dbReplacement.packageName]).toEqual(dbReplacement.version)
 
         // Should only have one db adapter
         expect(
-          Object.keys(packageJson.dependencies).filter((n) => n.startsWith('@payloadcms/db-')),
+          Object.keys(packageJson.dependencies).filter((n) => n.startsWith('@mzinga/db-')),
         ).toHaveLength(1)
 
         expect(packageJson.dependencies[bundlerReplacement.packageName]).toEqual(
@@ -127,11 +127,11 @@ describe('createProject', () => {
           editorReplacement.version,
         )
 
-        let payloadConfigPath = path.resolve(projectDir, 'src/payload.config.ts')
+        let payloadConfigPath = path.resolve(projectDir, 'src/mzinga.config.ts')
 
         // Website and ecommerce templates have payload.config.ts in src/payload
         if (!fse.existsSync(payloadConfigPath)) {
-          payloadConfigPath = path.resolve(projectDir, 'src/payload/payload.config.ts')
+          payloadConfigPath = path.resolve(projectDir, 'src/mzinga/mzinga.config.ts')
         }
         const content = fse.readFileSync(payloadConfigPath, 'utf-8')
 

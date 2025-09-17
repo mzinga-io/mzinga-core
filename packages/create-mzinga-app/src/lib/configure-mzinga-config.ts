@@ -44,24 +44,26 @@ export async function configurePayloadConfig(args: {
 
   try {
     const possiblePaths = [
+      path.resolve(args.projectDir, 'src/mzinga.config.ts'),
+      path.resolve(args.projectDir, 'src/mzinga/mzinga.config.ts'),
       path.resolve(args.projectDir, 'src/payload.config.ts'),
       path.resolve(args.projectDir, 'src/payload/payload.config.ts'),
     ]
 
-    let payloadConfigPath: string | undefined
+    let mzingaConfigPath: string | undefined
 
     possiblePaths.forEach((p) => {
-      if (fse.pathExistsSync(p) && !payloadConfigPath) {
-        payloadConfigPath = p
+      if (fse.pathExistsSync(p) && !mzingaConfigPath) {
+        mzingaConfigPath = p
       }
     })
 
-    if (!payloadConfigPath) {
-      warning('Unable to update payload.config.ts with plugins')
+    if (!mzingaConfigPath) {
+      warning('Unable to update mzinga.config.ts with plugins')
       return
     }
 
-    const configContent = fse.readFileSync(payloadConfigPath, 'utf-8')
+    const configContent = fse.readFileSync(mzingaConfigPath, 'utf-8')
     const configLines = configContent.split('\n')
 
     const dbReplacement = dbPackages[args.dbDetails.type]
@@ -100,7 +102,7 @@ export async function configurePayloadConfig(args: {
     })
 
     if (!dbConfigStartLineIndex || !dbConfigEndLineIndex) {
-      warning('Unable to update payload.config.ts with database adapter import')
+      warning('Unable to update mzinga.config.ts with database adapter import')
     } else {
       // Replaces lines between `// database-adapter-config-start` and `// database-adapter-config-end`
       configLines.splice(
@@ -110,8 +112,8 @@ export async function configurePayloadConfig(args: {
       )
     }
 
-    fse.writeFileSync(payloadConfigPath, configLines.join('\n'))
+    fse.writeFileSync(mzingaConfigPath, configLines.join('\n'))
   } catch (err: unknown) {
-    warning('Unable to update payload.config.ts with plugins')
+    warning('Unable to update mzinga.config.ts with plugins')
   }
 }

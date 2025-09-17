@@ -1,6 +1,6 @@
 {
   "name": "create-mzinga-app",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "license": "MIT",
   "homepage": "https://mzinga.io",
   "bin": {
@@ -16,7 +16,8 @@
     "build:swc": "swc ./src -d ./dist --config-file .swcrc",
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "test": "jest",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "files": [
     "package.json",

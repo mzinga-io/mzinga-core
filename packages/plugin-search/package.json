@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-search",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "prepublishOnly": "pnpm clean && pnpm build",
-    "test": "echo \"Error: no tests specified\""
+    "test": "echo \"Error: no tests specified\"",
+    "version": "npm version"
   },
   "keywords": [
     "payload",

@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/bundler-vite",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "The officially supported Vite bundler adapter for MZinga",
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
     "clean": "rimraf {dist,*.tsbuildinfo}",
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
     "copyTsx": "copyfiles -u 1 \"src/entry.tsx\" dist/",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "dependencies": {
     "@rollup/plugin-image": "^3.0.3",

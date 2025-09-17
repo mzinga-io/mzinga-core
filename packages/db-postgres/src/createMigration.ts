@@ -10,7 +10,7 @@ import type { PostgresAdapter } from './types'
 const migrationTemplate = (
   upSQL?: string,
   downSQL?: string,
-) => `import { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
+) => `import { MigrateUpArgs, MigrateDownArgs } from '@mzinga/db-postgres'
 import { sql } from 'drizzle-orm'
 
 export async function up({ payload }: MigrateUpArgs): Promise<void> {

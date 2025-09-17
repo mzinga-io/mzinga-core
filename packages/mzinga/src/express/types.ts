@@ -11,7 +11,7 @@ import type { Payload } from '../mzinga'
 /** Express request with some Payload related context added */
 export declare type PayloadRequest<U = any> = {
   /** Information about the collection that is being accessed
-   * - Configuration from payload-config.ts
+   * - Configuration from mzinga-config.ts
    * - MongoDB model for this collection
    * - GraphQL type metadata
    */

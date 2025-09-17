@@ -1,7 +1,7 @@
-import { webpackBundler } from '@payloadcms/bundler-webpack'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import redirects from '@payloadcms/plugin-redirects'
-import { slateEditor } from '@payloadcms/richtext-slate'
+import { webpackBundler } from '@mzinga/bundler-webpack'
+import { mongooseAdapter } from '@mzinga/db-mongodb'
+import redirects from '@mzinga/plugin-redirects'
+import { slateEditor } from '@mzinga/richtext-slate'
 import { buildConfig } from 'mzinga/config'
 import path from 'path'
 

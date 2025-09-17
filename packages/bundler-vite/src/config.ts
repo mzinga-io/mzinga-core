@@ -28,13 +28,14 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
   const absoluteAliases = {}
 
   const alias = [
-    { find: '@payloadcms/bundler-vite', replacement: path.resolve(__dirname, '../mock.js') },
-    { find: '@payloadcms/db-mongodb', replacement: path.resolve(__dirname, '../mock.js') },
-    { find: '@payloadcms/db-postgres', replacement: path.resolve(__dirname, '../mock.js') },
+    { find: '@mzinga/bundler-vite', replacement: path.resolve(__dirname, '../mock.js') },
+    { find: '@mzinga/db-mongodb', replacement: path.resolve(__dirname, '../mock.js') },
+    { find: '@mzinga/db-postgres', replacement: path.resolve(__dirname, '../mock.js') },
     { find: 'path', replacement: require.resolve('path-browserify') },
-    { find: 'payload-config', replacement: payloadConfig.paths.rawConfig },
+    { find: 'mzinga-config', replacement: payloadConfig.paths.rawConfig },
     { find: /payload$/, replacement: mockModulePath },
-    { find: '~payload-user-css', replacement: payloadConfig.admin.css },
+    { find: /mzinga$/, replacement: mockModulePath },
+    { find: '~mzinga-user-css', replacement: payloadConfig.admin.css },
     { find: '~react-toastify', replacement: 'react-toastify' },
     { find: 'dotenv', replacement: mockDotENVPath },
   ]
@@ -93,12 +94,12 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
       exclude: [
         // Dependencies that need aliases should be excluded
         // from pre-bundling
-        '@payloadcms/bundler-vite',
-        '@payloadcms/db-mongodb',
-        '@payloadcms/db-postgres',
+        '@mzinga/bundler-vite',
+        '@mzinga/db-mongodb',
+        '@mzinga/db-postgres',
         ...(Object.keys(absoluteAliases) || []),
       ],
-      include: ['payload/components/root', 'react-dom/client'],
+      include: ['mzinga/components/root', 'react-dom/client'],
     },
     plugins: [
       {
@@ -140,7 +141,7 @@ export const getViteConfig = async (payloadConfig: SanitizedConfig): Promise<Inl
     root: path.resolve(__dirname, './'),
     server: {
       fs: {
-        allow: [searchForWorkspaceRoot(process.cwd()), path.resolve(__dirname, '../../../payload')],
+        allow: [searchForWorkspaceRoot(process.cwd()), path.resolve(__dirname, '../../../mzinga')],
       },
       hmr: {
         port: hmrPort,

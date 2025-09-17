@@ -4,8 +4,8 @@
 import { ModalContainer, ModalProvider } from '@faceless-ui/modal'
 import { ScrollInfoProvider } from '@faceless-ui/scroll-info'
 import { WindowInfoProvider } from '@faceless-ui/window-info'
-// @ts-ignore - need to do this because this file doesn't actually exist
-import config from 'payload-config'
+// @ts-expect-error - need to do this because this file doesn't actually exist
+import config from 'mzinga-config'
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Slide, ToastContainer } from 'react-toastify'

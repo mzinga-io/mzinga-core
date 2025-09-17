@@ -62,7 +62,7 @@ export async function selectDb(args: CliArgs, projectName: string): Promise<DbDe
     {
       name: 'value',
       initial: `${dbChoice.dbConnectionPrefix}${
-        projectName === '.' ? `payload-${getRandomDigitSuffix()}` : slugify(projectName)
+        projectName === '.' ? `mzinga-${getRandomDigitSuffix()}` : slugify(projectName)
       }`,
       message: `Enter ${dbChoice.title.split(' ')[0]} connection string`, // strip beta from title
       type: 'text',

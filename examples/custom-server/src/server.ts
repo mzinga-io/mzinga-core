@@ -19,7 +19,7 @@ const start = async (): Promise<void> => {
     initOptions: {
       express: app,
       onInit: async newPayload => {
-        newPayload.logger.info(`Payload Admin URL: ${newPayload.getAdminURL()}`)
+        newPayload.logger.info(`MZinga Admin URL: ${newPayload.getAdminURL()}`)
       },
     },
     seed: process.env.PAYLOAD_PUBLIC_SEED === 'true',

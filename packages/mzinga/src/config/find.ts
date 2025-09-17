@@ -57,18 +57,26 @@ const findConfig = (): string => {
   for (const searchPath of searchPaths) {
     const configPath = findUp.sync(
       (dir) => {
-        const tsPath = path.join(dir, 'payload.config.ts')
-        const hasTS = findUp.sync.exists(tsPath)
-
-        if (hasTS) {
-          return tsPath
+        const payloadTsPath = path.join(dir, 'payload.config.ts')
+        const hasPayloadTS = findUp.sync.exists(payloadTsPath)
+        if (hasPayloadTS) {
+          return payloadTsPath
+        }
+        const mzingaTsPath = path.join(dir, 'mzinga.config.ts')
+        const hasMZingaTS = findUp.sync.exists(mzingaTsPath)
+        if (hasMZingaTS) {
+          return mzingaTsPath
         }
 
-        const jsPath = path.join(dir, 'payload.config.js')
-        const hasJS = findUp.sync.exists(jsPath)
-
-        if (hasJS) {
-          return jsPath
+        const payloadJsPath = path.join(dir, 'payload.config.js')
+        const hasPayloadJS = findUp.sync.exists(payloadJsPath)
+        if (hasPayloadJS) {
+          return payloadJsPath
+        }
+        const mzingaJsPath = path.join(dir, 'mzinga.config.js')
+        const hasMZingaJS = findUp.sync.exists(mzingaJsPath)
+        if (hasMZingaJS) {
+          return mzingaJsPath
         }
 
         return undefined
@@ -84,21 +92,27 @@ const findConfig = (): string => {
   // If no config file is found in the directories defined by tsconfig.json,
   // try searching in the 'src' and 'dist' directory as a last resort, as they are most commonly used
   if (process.env.NODE_ENV === 'production') {
-    const distConfigPath = findUp.sync(['payload.config.js', 'payload.config.ts'], {
-      cwd: path.resolve(process.cwd(), 'dist'),
-    })
+    const distConfigPath = findUp.sync(
+      ['payload.config.js', 'payload.config.ts', 'mzinga.config.js', 'mzinga.config.ts'],
+      {
+        cwd: path.resolve(process.cwd(), 'dist'),
+      },
+    )
 
     if (distConfigPath) return distConfigPath
   } else {
-    const srcConfigPath = findUp.sync(['payload.config.js', 'payload.config.ts'], {
-      cwd: path.resolve(process.cwd(), 'src'),
-    })
+    const srcConfigPath = findUp.sync(
+      ['payload.config.js', 'payload.config.ts', 'mzinga.config.js', 'mzinga.config.ts'],
+      {
+        cwd: path.resolve(process.cwd(), 'src'),
+      },
+    )
 
     if (srcConfigPath) return srcConfigPath
   }
 
   throw new Error(
-    'Error: cannot find Payload config. Please create a configuration file located at the root of your current working directory called "payload.config.js" or "payload.config.ts".',
+    'Error: cannot find MZinga config. Please create a configuration file located at the root of your current working directory called "payload.config.js" or "payload.config.ts" or "mzinga.config.js" or "mzinga.config.ts".',
   )
 }
 

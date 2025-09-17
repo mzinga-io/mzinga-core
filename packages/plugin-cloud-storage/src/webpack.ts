@@ -24,7 +24,7 @@ export const extendWebpackConfig =
         ...(existingWebpackConfig.resolve || {}),
         alias: {
           ...(existingWebpackConfig.resolve?.alias ? existingWebpackConfig.resolve.alias : {}),
-          '@payloadcms/plugin-cloud-storage$': path.resolve(__dirname, './admin/index.js'),
+          '@mzinga/plugin-cloud-storage$': path.resolve(__dirname, './admin/index.js'),
         },
       },
     }

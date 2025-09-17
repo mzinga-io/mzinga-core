@@ -8,7 +8,7 @@ Lexical Rich Text Editor for [Payload](https://mzinga.io).
 ## Installation
 
 ```bash
-npm install @payloadcms/richtext-lexical
+npm install @mzinga/richtext-lexical
 ```
 
 ## Usage

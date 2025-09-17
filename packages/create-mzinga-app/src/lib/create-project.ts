@@ -8,7 +8,7 @@ import path from 'path'
 import type { CliArgs, DbDetails, PackageManager, ProjectTemplate } from '../types'
 
 import { error, success, warning } from '../utils/log'
-import { configurePayloadConfig } from './configure-payload-config'
+import { configurePayloadConfig } from './configure-mzinga-config'
 
 async function createOrFindProjectDir(projectDir: string): Promise<void> {
   const pathExists = await fse.pathExists(projectDir)
@@ -64,7 +64,7 @@ export async function createProject(args: {
     await emitter.clone(projectDir)
   }
 
-  const spinner = ora('Checking latest Payload version...').start()
+  const spinner = ora('Checking latest MZinga version...').start()
 
   await updatePackageJSON({ projectDir, projectName })
   await configurePayloadConfig({ dbDetails, projectDir })

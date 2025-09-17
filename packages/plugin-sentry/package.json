@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-sentry",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "build:swc": "swc ./src -d ./dist --config-file .swcrc",
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "clean": "rimraf {dist,*.tsbuildinfo}",
-    "prepublishOnly": "pnpm clean && pnpm build"
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version": "npm version"
   },
   "keywords": [
     "payload",

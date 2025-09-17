@@ -108,7 +108,7 @@ export const promise = async ({
               previousSiblingDoc: previousDoc?.[field.name]?.[i] || ({} as Record<string, unknown>),
               req,
               siblingData: siblingData?.[field.name]?.[i] || {},
-              siblingDoc: { ...row } || {},
+              siblingDoc: { ...row },
             }),
           )
         })
@@ -140,7 +140,7 @@ export const promise = async ({
                   previousDoc?.[field.name]?.[i] || ({} as Record<string, unknown>),
                 req,
                 siblingData: siblingData?.[field.name]?.[i] || {},
-                siblingDoc: { ...row } || {},
+                siblingDoc: { ...row },
               }),
             )
           }

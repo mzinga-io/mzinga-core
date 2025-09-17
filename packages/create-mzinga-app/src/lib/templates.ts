@@ -18,37 +18,25 @@ export function getValidTemplates(): ProjectTemplate[] {
       name: 'blank',
       type: 'starter',
       description: 'Blank Template',
-      url: 'https://github.com/mzinga-io/mzinga-core/templates/blank#v2.30.3',
+      url: 'https://github.com/mzinga-io/mzinga-core/templates/blank#v0.0.3',
     },
     {
       name: 'website',
       type: 'starter',
       description: 'Website Template',
-      url: 'https://github.com/mzinga-io/mzinga-core/templates/website#v2.30.3',
+      url: 'https://github.com/mzinga-io/mzinga-core/templates/website#v0.0.3',
     },
     {
       name: 'ecommerce',
       type: 'starter',
       description: 'E-commerce Template',
-      url: 'https://github.com/mzinga-io/mzinga-core/templates/ecommerce#v2.30.3',
+      url: 'https://github.com/mzinga-io/mzinga-core/templates/ecommerce#v0.0.3',
     },
     {
       name: 'plugin',
       type: 'plugin',
       description: 'Template for creating a Payload plugin',
       url: 'https://github.com/mzinga-io/mzinga-core-plugin-template',
-    },
-    {
-      name: 'payload-demo',
-      type: 'starter',
-      description: 'Payload demo site at https://demo.payloadcms.com',
-      url: 'https://github.com/payloadcms/public-demo',
-    },
-    {
-      name: 'payload-website',
-      type: 'starter',
-      description: 'Payload website CMS at https://payloadcms.com',
-      url: 'https://github.com/payloadcms/website-cms',
     },
   ]
 }

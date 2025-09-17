@@ -54,7 +54,7 @@ In the `plugins` array of your [Payload config](https://payloadcms.com/docs/conf
 
 ```ts
 import { buildConfig } from 'payload/config'
-import { sentry } from '@payloadcms/plugin-sentry'
+import { sentry } from '@mzinga/plugin-sentry'
 import { Pages, Media } from './collections'
 
 const config = buildConfig({
@@ -104,7 +104,7 @@ Configure any of these options by passing them to the plugin:
 
 ```ts
 import { buildConfig } from 'payload/config'
-import { sentry } from '@payloadcms/plugin-sentry'
+import { sentry } from '@mzinga/plugin-sentry'
 import { Pages, Media } from './collections'
 
 const config = buildConfig({
@@ -136,5 +136,5 @@ export default config
 All types can be directly imported:
 
 ```ts
-import { PluginOptions } from '@payloadcms/plugin-sentry/types'
+import { PluginOptions } from '@mzinga/plugin-sentry/types'
 ```

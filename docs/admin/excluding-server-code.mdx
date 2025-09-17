@@ -71,10 +71,11 @@ export const createStripeSubscription = async ({ data, operation }) => {
 <Banner type="error">
   **Warning:**
 
-  The above code is NOT production-ready and should not be referenced to create Stripe
-  subscriptions. Although creating a beforeChange hook is a completely valid spot to do things like
-  create subscriptions, the code above is incomplete and insecure, meant for explanation purposes
-  only.
+The above code is NOT production-ready and should not be referenced to create Stripe
+subscriptions. Although creating a beforeChange hook is a completely valid spot to do things like
+create subscriptions, the code above is incomplete and insecure, meant for explanation purposes
+only.
+
 </Banner>
 
 **As-is, this collection will prevent your Admin panel from bundling or loading correctly, because Stripe relies on some Node-only packages.**
@@ -104,6 +105,7 @@ By default the browser bundle will now include all the code from that file and a
 To fix this, we need to alias the `createStripeSubscription` file to a different file that can safely be included in the browser bundle.
 
 First, we will create a mock file to replace the server-only file when bundling:
+
 ```js
 // mocks/modules.js
 
@@ -124,14 +126,14 @@ Aliasing with [Webpack](/docs/admin/webpack) can be done by:
 // payload.config.ts
 
 import { buildConfig } from 'payload/config'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
+import { webpackBundler } from '@mzinga/bundler-webpack'
 
 import { Subscriptions } from './collections/Subscriptions'
 
 const mockModulePath = path.resolve(__dirname, 'mocks/emptyObject.js')
 const fullFilePath = path.resolve(
   __dirname,
-  'collections/Subscriptions/hooks/createStripeSubscription'
+  'collections/Subscriptions/hooks/createStripeSubscription',
 )
 
 export default buildConfig({
@@ -162,7 +164,7 @@ Aliasing with [Vite](/docs/admin/vite) can be done by:
 // payload.config.ts
 
 import { buildConfig } from 'payload/config'
-import { viteBundler } from '@payloadcms/bundler-vite'
+import { viteBundler } from '@mzinga/bundler-vite'
 
 import { Subscriptions } from './collections/Subscriptions'
 
@@ -173,24 +175,23 @@ export default buildConfig({
   admin: {
     bundler: viteBundler(),
     vite: (incomingViteConfig) => {
-      const existingAliases = incomingViteConfig?.resolve?.alias || {};
-      let aliasArray: { find: string | RegExp; replacement: string; }[] = [];
+      const existingAliases = incomingViteConfig?.resolve?.alias || {}
+      let aliasArray: { find: string | RegExp; replacement: string }[] = []
 
       // Pass the existing Vite aliases
       if (Array.isArray(existingAliases)) {
-        aliasArray = existingAliases;
+        aliasArray = existingAliases
       } else {
-        aliasArray = Object.values(existingAliases);
+        aliasArray = Object.values(existingAliases)
       }
-
 
       // highlight-start
       // Add your own aliases using the find and replacement keys
       // remember, vite aliases are exact-match only
       aliasArray.push({
         find: '../server-only-module',
-        replacement: path.resolve(__dirname, './path/to/browser-safe-module.js')
-      });
+        replacement: path.resolve(__dirname, './path/to/browser-safe-module.js'),
+      })
       // highlight-end
 
       return {
@@ -198,8 +199,8 @@ export default buildConfig({
         resolve: {
           ...(incomingViteConfig?.resolve || {}),
           alias: aliasArray,
-        }
-      };
+        },
+      }
     },
   },
 })

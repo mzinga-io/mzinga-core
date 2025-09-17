@@ -186,18 +186,22 @@ dialog {
   color: currentColor;
 }
 
-.payload__modal-item {
+.payload__modal-item,
+.mzinga__modal-item {
   min-height: 100%;
   background: transparent;
 }
 
-.payload__modal-container--enterDone {
+.payload__modal-container--enterDone,
+.mzinga__modal-container--enterDone {
   overflow: auto;
 }
 
 .payload__modal-item--enter,
-.payload__modal-item--enterDone {
+.mzinga__modal-item--enter,
+.payload__modal-item--enterDone,
+.mzinga__modal-item--enterDone {
   z-index: var(--z-modal);
 }
 
-@import '~payload-user-css';
+@import '~mzinga-user-css';
