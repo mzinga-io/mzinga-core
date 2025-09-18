@@ -8,7 +8,7 @@
     "@mzinga/db-mongodb": "latest",
     "@mzinga/richtext-slate": "latest",
     "dotenv": "^16.3.1",
-    "express": "^4.19.2",
+    "express": "^4.20.0",
     "get-tsconfig": "^4.7.0",
     "mongoose": "6.13.8",
     "mzinga": "latest"

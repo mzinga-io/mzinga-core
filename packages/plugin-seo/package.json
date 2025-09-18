@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@mzinga/eslint-config": "workspace:*",
-    "@types/express": "4.17.17",
+    "@types/express": "5.0.3",
     "@types/react": "18.2.15",
     "mzinga": "workspace:*"
   },

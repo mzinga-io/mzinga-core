@@ -45,11 +45,11 @@
     "@types/lodash.get": "^4.4.7",
     "@types/uuid": "^9.0.0",
     "@mzinga/eslint-config": "workspace:*",
-    "@types/express": "^4.17.9",
+    "@types/express": "^5.0.3",
     "@types/react": "18.0.21",
     "mzinga": "workspace:*",
     "prettier": "^2.7.1",
-    "webpack": "5.91.0"
+    "webpack": "5.94.0"
   },
   "files": [
     "dist",
