@@ -235,8 +235,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       slate:
-        specifier: 0.91.4
-        version: 0.91.4
+        specifier: 0.118.1
+        version: 0.118.1
       tempfile:
         specifier: ^3.0.0
         version: 3.0.0
@@ -1550,17 +1550,17 @@ importers:
         specifier: 11.18.6
         version: 11.18.6(i18next@22.5.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       slate:
-        specifier: 0.91.4
-        version: 0.91.4
+        specifier: 0.118.1
+        version: 0.118.1
       slate-history:
         specifier: 0.86.0
-        version: 0.86.0(slate@0.91.4)
+        version: 0.86.0(slate@0.118.1)
       slate-hyperscript:
         specifier: 0.81.3
-        version: 0.81.3(slate@0.91.4)
+        version: 0.81.3(slate@0.118.1)
       slate-react:
         specifier: 0.92.0
-        version: 0.92.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.91.4)
+        version: 0.92.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.118.1)
     devDependencies:
       '@mzinga/eslint-config':
         specifier: workspace:*
@@ -6349,8 +6349,8 @@ packages:
   immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
-  immer@9.0.21:
-    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
+  immer@10.1.3:
+    resolution: {integrity: sha512-tmjF/k8QDKydUlm3mZU+tjM6zeq9/fFpPqH9SzWmBnVVKsPBg/V66qsMwb3/Bo90cgUN+ghdVBess+hPsxUyRw==}
 
   immutable@4.3.7:
     resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
@@ -8943,8 +8943,8 @@ packages:
       react-dom: '>=16.8.0'
       slate: '>=0.65.3'
 
-  slate@0.91.4:
-    resolution: {integrity: sha512-aUJ3rpjrdi5SbJ5G1Qjr3arytfRkEStTmHjBfWq2A2Q8MybacIzkScSvGJjQkdTk3djCK9C9SEOt39sSeZFwTw==}
+  slate@0.118.1:
+    resolution: {integrity: sha512-6H1DNgnSwAFhq/pIgf+tLvjNzH912M5XrKKhP9Frmbds2zFXdSJ6L/uFNyVKxQIkPzGWPD0m+wdDfmEuGFH5Tg==}
 
   slice-ansi@5.0.0:
     resolution: {integrity: sha512-FC+lgizVPfie0kkhqUScwRu1O/lF6NOgJmlCgK+/LYxDCTk8sGelYaHDhFcDN+Sn3Cv+3VSa4Byeo+IMCzpMgQ==}
@@ -16505,7 +16505,7 @@ snapshots:
 
   immediate@3.0.6: {}
 
-  immer@9.0.21: {}
+  immer@10.1.3: {}
 
   immutable@4.3.7: {}
 
@@ -20294,17 +20294,17 @@ snapshots:
 
   slash@3.0.0: {}
 
-  slate-history@0.86.0(slate@0.91.4):
+  slate-history@0.86.0(slate@0.118.1):
     dependencies:
       is-plain-object: 5.0.0
-      slate: 0.91.4
+      slate: 0.118.1
 
-  slate-hyperscript@0.81.3(slate@0.91.4):
+  slate-hyperscript@0.81.3(slate@0.118.1):
     dependencies:
       is-plain-object: 5.0.0
-      slate: 0.91.4
+      slate: 0.118.1
 
-  slate-react@0.92.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.91.4):
+  slate-react@0.92.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.118.1):
     dependencies:
       '@juggle/resize-observer': 3.4.0
       '@types/is-hotkey': 0.1.7
@@ -20316,13 +20316,12 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       scroll-into-view-if-needed: 2.2.31
-      slate: 0.91.4
+      slate: 0.118.1
       tiny-invariant: 1.0.6
 
-  slate@0.91.4:
+  slate@0.118.1:
     dependencies:
-      immer: 9.0.21
-      is-plain-object: 5.0.0
+      immer: 10.1.3
       tiny-warning: 1.0.3
 
   slice-ansi@5.0.0:
