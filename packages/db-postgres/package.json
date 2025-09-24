@@ -41,7 +41,7 @@
     "mzinga": "workspace:*"
   },
   "peerDependencies": {
-    "payload": "^2.0.0"
+    "mzinga": "0.0.6"
   },
   "publishConfig": {
     "main": "./dist/index.js",
