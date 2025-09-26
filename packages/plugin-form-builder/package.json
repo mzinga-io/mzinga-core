@@ -1,7 +1,7 @@
 {
   "name": "@mzinga/plugin-form-builder",
   "description": "Form builder plugin for MZinga",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
