@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/bundler-webpack",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "The officially supported Webpack bundler adapter for MZinga",
   "repository": {
     "type": "git",
