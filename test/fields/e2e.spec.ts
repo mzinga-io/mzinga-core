@@ -1278,7 +1278,7 @@ describe('fields', () => {
         await editLinkModal.locator('#field-doc .rs__control').click()
         await page.keyboard.type('dev@')
         await editLinkModal
-          .locator('#field-doc .rs__menu .rs__option:has-text("dev@payloadcms.com")')
+          .locator('#field-doc .rs__menu .rs__option:has-text("contact@mzinga.io")')
           .click()
         // await wait(200);
         await editLinkModal.locator('button[type="submit"]').click()
@@ -1832,10 +1832,10 @@ describe('fields', () => {
       await page.goto(url.create)
       await expect(
         page.locator('#field-relationWithDynamicDefault .relationship--single-value__text'),
-      ).toContainText('dev@payloadcms.com')
+      ).toContainText('contact@mzinga.io')
       await expect(
         page.locator('#field-relationHasManyWithDynamicDefault .relationship--single-value__text'),
-      ).toContainText('dev@payloadcms.com')
+      ).toContainText('contact@mzinga.io')
     })
 
     test('should filter relationship options', async () => {

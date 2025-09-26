@@ -40,7 +40,7 @@ export default buildConfig({
       await payload.create({
         collection: 'users',
         data: {
-          email: 'dev@payloadcms.com',
+          email: 'contact@mzinga.io',
           password: 'test',
         },
       })

@@ -879,7 +879,7 @@ describe('Localization', () => {
 
     it('should allow user to login and retrieve populated localized field', async () => {
       const query = `mutation {
-        loginUser(email: "dev@payloadcms.com", password: "test") {
+        loginUser(email: "contact@mzinga.io", password: "test") {
           token
           user {
             relation {

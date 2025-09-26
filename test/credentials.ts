@@ -1,10 +1,10 @@
 export const devUser = {
-  email: 'dev@payloadcms.com',
+  email: 'contact@mzinga.io',
   password: 'test',
   roles: ['admin'],
 }
 export const regularUser = {
-  email: 'user@payloadcms.com',
+  email: 'user@mzinga.io',
   password: 'test2',
   roles: ['user'],
 }

@@ -61,4 +61,4 @@ Once they are installed you can open the `testing` tab in vscode sidebar and dri
 
 #### Notes
 
-The default credentials are `dev@payloadcms.com` as email and `test` as password. They can be found in `test/credentials.ts`. By default, these will be autofilled, so no log-in is required.
+The default credentials are `contact@mzinga.io` as email and `test` as password. They can be found in `test/credentials.ts`. By default, these will be autofilled, so no log-in is required.

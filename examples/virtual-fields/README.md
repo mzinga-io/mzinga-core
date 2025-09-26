@@ -11,7 +11,7 @@ To spin up this example locally, follow these steps:
 3. `cp .env.example .env` to copy the example environment variables
 4. `yarn dev` or `npm run dev` to start the server and seed the database
 5. `open http://localhost:8000/admin` to access the admin panel
-6. Login with email `dev@payloadcms.com` and password `test`
+6. Login with email `contact@mzinga.io` and password `test`
 
 ## How it works
 

@@ -16,7 +16,7 @@ To spin up this example locally, follow these steps:
 3. `cp .env.example .env` to copy the example environment variables
 4. `yarn dev` or `npm run dev` to start the server and seed the database
 5. Open [http://localhost:3000/admin](http://localhost:3000/admin)  to access the admin panel
-6. Login with email `demo@payloadcms.com` and password `demo`
+6. Login with email `demo@mzinga.io` and password `demo`
 
 That's it! Changes made in `./src` will be reflected in your app. See the [Development](#development) section for more details.
 
@@ -50,7 +50,7 @@ To spin up this example locally, follow the [Quick Start](#quick-start).
 
 ### Seed
 
-On boot, a seed script is included to create a user with email `demo@payloadcms.com`, password `demo`, the role `admin`.
+On boot, a seed script is included to create a user with email `demo@mzinga.io`, password `demo`, the role `admin`.
 
 > NOTICE: seeding the database is destructive because it drops your current database to populate a fresh one from the seed template. Only run this command if you are starting a new project or can afford to lose your current data.
 

@@ -11,7 +11,7 @@ export const seed = async (payload: Payload): Promise<boolean> => {
     await payload.create({
       collection: 'users',
       data: {
-        email: 'demo@payloadcms.com',
+        email: 'demo@mzinga.io',
         password: 'demo',
       },
       req,
