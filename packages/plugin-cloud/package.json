@@ -21,7 +21,7 @@
     "version": "npm version"
   },
   "peerDependencies": {
-    "mzinga": "0.0.6"
+    "mzinga": "0.0.7"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity": "^3.289.0",

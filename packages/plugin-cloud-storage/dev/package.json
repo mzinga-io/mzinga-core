@@ -22,7 +22,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "image-size": "^1.0.2",
-    "mzinga": "0.0.6",
+    "mzinga": "0.0.7",
     "probe-image-size": "^7.2.3"
   },
   "devDependencies": {
