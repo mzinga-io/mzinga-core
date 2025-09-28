@@ -51,7 +51,7 @@ const expressApp = express()
 const startDev = async () => {
   await payload.init({
     email: {
-      fromAddress: 'hello@payloadcms.com',
+      fromAddress: 'hello@mzinga.io',
       fromName: 'Payload',
       logMockCredentials: false,
     },

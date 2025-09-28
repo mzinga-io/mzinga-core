@@ -66,7 +66,7 @@ export const signUpForm = {
   emails: [
     {
       emailTo: '{{email}}',
-      emailFrom: 'demo@payloadcms.com',
+      emailFrom: 'demo@mzinga.io',
       emailFromName: 'Payload Team',
       subject: "You've received a new message.",
       message: [

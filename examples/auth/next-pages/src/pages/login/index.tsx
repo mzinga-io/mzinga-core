@@ -31,7 +31,7 @@ const Login: React.FC = () => {
     formState: { errors, isLoading },
   } = useForm<FormData>({
     defaultValues: {
-      email: 'demo@payloadcms.com',
+      email: 'demo@mzinga.io',
       password: 'demo',
     },
   })
@@ -56,7 +56,7 @@ const Login: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <p>
           {'To log in, use the email '}
-          <b>demo@payloadcms.com</b>
+          <b>demo@mzinga.io</b>
           {' with the password '}
           <b>demo</b>
           {'. To manage your users, '}

@@ -82,7 +82,7 @@ Example response:
 ```ts
 {
   user: { // The JWT "payload" ;) from the logged in user
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
     createdAt: "2020-12-27T21:16:45.645Z",
     updatedAt: "2021-01-02T18:37:41.588Z",
     id: "5ae8f9bde69e394e717c8832"
@@ -118,7 +118,7 @@ const res = await fetch('http://localhost:3000/api/[collection-slug]/login', {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
     password: 'this-is-not-our-password...or-is-it?',
   }),
 })
@@ -129,7 +129,7 @@ const json = await res.json()
 /*
 {
   user: {
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
     createdAt: "2020-12-27T21:16:45.645Z",
     updatedAt: "2021-01-02T18:37:41.588Z",
     id: "5ae8f9bde69e394e717c8832"
@@ -144,7 +144,7 @@ const json = await res.json()
 
 ```graphql
 mutation {
-  login[collection-singular-label](email: "dev@payloadcms.com", password: "yikes") {
+  login[collection-singular-label](email: "contact@mzinga.io", password: "yikes") {
     user {
       email
     }
@@ -160,7 +160,7 @@ mutation {
 const result = await payload.login({
   collection: '[collection-slug]',
   data: {
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
     password: 'get-out',
   },
 })
@@ -213,7 +213,7 @@ const json = await res.json()
 /*
 {
   user: {
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
     createdAt: "2020-12-27T21:16:45.645Z",
     updatedAt: "2021-01-02T18:37:41.588Z",
     id: "5ae8f9bde69e394e717c8832"
@@ -284,7 +284,7 @@ const res = await fetch(`http://localhost:3000/api/[collection-slug]/unlock`, {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
   }),
 })
 ```
@@ -293,7 +293,7 @@ const res = await fetch(`http://localhost:3000/api/[collection-slug]/unlock`, {
 
 ```
 mutation {
-  unlock[collection-singular-label](email: "dev@payloadcms.com")
+  unlock[collection-singular-label](email: "contact@mzinga.io")
 }
 ```
 
@@ -303,7 +303,7 @@ mutation {
 const result = await payload.unlock({
   collection: '[collection-slug]',
   data: {
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
   },
 })
 ```
@@ -325,7 +325,7 @@ const res = await fetch(`http://localhost:3000/api/[collection-slug]/forgot-pass
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
   }),
 })
 ```
@@ -334,7 +334,7 @@ const res = await fetch(`http://localhost:3000/api/[collection-slug]/forgot-pass
 
 ```
 mutation {
-  forgotPassword[collection-singular-label](email: "dev@payloadcms.com")
+  forgotPassword[collection-singular-label](email: "contact@mzinga.io")
 }
 ```
 
@@ -344,7 +344,7 @@ mutation {
 const token = await payload.forgotPassword({
   collection: '[collection-slug]',
   data: {
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
   },
   disableEmail: false, // you can disable the auto-generation of email via local API
 })
@@ -384,7 +384,7 @@ const json = await res.json();
 /*
 {
   user: {
-    email: 'dev@payloadcms.com',
+    email: 'contact@mzinga.io',
     createdAt: "2020-12-27T21:16:45.645Z",
     updatedAt: "2021-01-02T18:37:41.588Z",
     id: "5ae8f9bde69e394e717c8832"

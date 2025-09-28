@@ -1,6 +1,6 @@
 import type { EmailOptions } from '../config/types'
 
 export const defaults: EmailOptions = {
-  fromAddress: 'info@payloadcms.com',
+  fromAddress: 'info@mzinga.io',
   fromName: 'Payload',
 }

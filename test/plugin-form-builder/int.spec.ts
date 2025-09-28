@@ -140,7 +140,7 @@ describe('Form Builder Plugin', () => {
 
     it('replaces curly braces with data when using slate serializer', async () => {
       const mockName = 'Test Submission'
-      const mockEmail = 'dev@payloadcms.com'
+      const mockEmail = 'contact@mzinga.io'
 
       const serializedEmail = serializeSlate(
         [
@@ -167,7 +167,7 @@ describe('Form Builder Plugin', () => {
 
     it('replaces curly braces with data when using lexical serializer', async () => {
       const mockName = 'Test Submission'
-      const mockEmail = 'dev@payloadcms.com'
+      const mockEmail = 'contact@mzinga.io'
 
       const serializedEmail = await serializeLexical(
         {

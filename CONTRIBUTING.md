@@ -8,13 +8,13 @@ Before you submit an issue, please check all existing [open and closed issues](h
 
 ## Security issues & vulnerabilities
 
-If you come across an issue related to security, or a potential attack vector within MZinga or one of its dependencies, please DO NOT create a publicly viewable issue. Instead, please contact us directly at [`dev@payloadcms.com`](mailto:dev@payloadcms.com). We will do everything we can to respond to the issue as soon as possible.
+If you come across an issue related to security, or a potential attack vector within MZinga or one of its dependencies, please DO NOT create a publicly viewable issue. Instead, please contact us directly at [`contact@mzinga.io`](mailto:contact@mzinga.io). We will do everything we can to respond to the issue as soon as possible.
 
-If you find a vulnerability within the core MZinga repository, and we determine that it is remediable and of significant nature, we will be happy to pay you a reward for your findings and diligence. [`Contact us`](mailto:dev@payloadcms.com) to find out more.
+If you find a vulnerability within the core MZinga repository, and we determine that it is remediable and of significant nature, we will be happy to pay you a reward for your findings and diligence. [`Contact us`](mailto:contact@mzinga.io) to find out more.
 
 ## Documentation edits
 
-MZinga documentation can be found directly within its codebase, and you can feel free to make changes / improvements to any of it through opening a PR. We utilize these files directly in our website and will periodically deploy documentation updates as necessary.
+MZinga documentation can be found directly within its codebase, and you can feel free to make changes / improvements to any of it through opening a PR. 
 
 ## Building additional features
 
@@ -32,11 +32,13 @@ To help us work on new features, you can create a new feature request post in [G
 
 ### Installation & Requirements
 
-MZinga is structured as a Monorepo, encompassing not only the core MZinga platform but also various plugins and packages. To install all required dependencies, you have to run `pnpm install` once in the root directory. **PNPM IS REQUIRED!** Yarn or npm will not work - you will have to use pnpm to develop in the core repository. In most systems, the easiest way to install pnpm is to run `corepack enable` in your terminal.
+MZinga Core is structured as a Monorepo, encompassing not only the core MZinga platform but also various plugins and packages. To install all required dependencies, you have to run `pnpm install` once in the root directory. **PNPM IS REQUIRED!** Yarn or npm will not work - you will have to use pnpm to develop in the core repository. In most systems, the easiest way to install pnpm is to run `corepack enable` in your terminal.
 
 If you're coming from a very outdated version of mzinga, it is recommended to nuke the node_modules folder before running pnpm install. On UNIX systems, you can easily do that using the `pnpm clean:unix` command, which will delete all node_modules folders and build artefacts.
 
 It is also recommended to use at least Node v18 or higher. You can check your current node version by typing `node --version` in your terminal. The easiest way to switch between different node versions is to use [nvm](https://github.com/nvm-sh/nvm#intro).
+
+We encourage you to check Mzinga Apps repository to get the full Mzinga solution, and to use our official images and Helm Charts to run the applications.
 
 ### Code
 
@@ -65,7 +67,7 @@ The following command will start MZinga with your config: `pnpm dev my-test-dir`
 
 By default, mzinga will [automatically log you in](https://payloadcms.com/docs/authentication/config#admin-autologin) with the default credentials. To disable that, you can either pass in the --no-auto-login flag (example: `pnpm dev my-test-dir --no-auto-login`) or set the `PAYLOAD_PUBLIC_DISABLE_AUTO_LOGIN` environment variable to `false`.
 
-The default credentials are `dev@payloadcms.com` as E-Mail and `test` as password. These are used in the auto-login.
+The default credentials are `contact@mzinga.io` as E-Mail and `test` as password. These are used in the auto-login.
 
 ### Testing with your own MongoDB database
 
@@ -111,14 +113,3 @@ If you are committing to [templates](./templates) or [examples](./examples), use
 ## Pull Requests
 
 For all Pull Requests, you should be extremely descriptive about both your problem and proposed solution. If there are any affected open or closed issues, please leave the issue number in your PR message.
-
-## Previewing docs
-
-This is how you can preview changes you made locally to the docs:
-
-1. Clone our [website repository](https://github.com/payloadcms/website)
-2. Run `yarn install`
-3. Duplicate the `.env.example` file and rename it to `.env`
-4. Add a `DOCS_DIR` environment variable to the `.env` file which points to the absolute path of your modified docs folder. For example `DOCS_DIR=/Users/yourname/Documents/GitHub/payload/docs`
-5. Run `yarn run fetchDocs:local`. If this was successful, you should see no error messages and the following output: _Docs successfully written to /.../website/src/app/docs.json_. There could be error messages if you have incorrect markdown in your local docs folder. In this case, it will tell you how you can fix it
-6. You're done! Now you can start the website locally using `yarn run dev` and preview the docs under [http://localhost:3000/docs/](http://localhost:3000/docs/)

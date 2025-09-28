@@ -2,4 +2,4 @@
 
 ## Reporting a Vulnerability
 
-Please report any security issues or concerns to [info@payloadcms.com](mailto:info@payloadcms.com).
+Please report any security issues or concerns to [contact@mznga.io](mailto:contact@mzinga.io).

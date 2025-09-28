@@ -1,5 +1,6 @@
 (The MIT License)
 
+Copyright (c) 2025 Newesis Srl <contact@newesis.com>
 Copyright (c) 2018-20223 Payload CMS, INC <info@payloadcms.com>
 
 Permission is hereby granted, free of charge, to any person obtaining

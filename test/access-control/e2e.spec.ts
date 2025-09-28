@@ -279,7 +279,7 @@ describe('access control', () => {
     await button.click()
     const documentDrawer2 = page.locator('[id^=doc-drawer_user-restricted_1_]')
     await expect(documentDrawer2).toBeVisible()
-    await documentDrawer2.locator('#field-name').fill('dev@payloadcms.com')
+    await documentDrawer2.locator('#field-name').fill('contact@mzinga.io')
     await documentDrawer2.locator('#action-save').click()
     await wait(200)
     await expect(page.locator('.Toastify')).toContainText('successfully')
