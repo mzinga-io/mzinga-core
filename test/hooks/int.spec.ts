@@ -331,7 +331,7 @@ describe('Hooks', () => {
     let hookUserToken
 
     beforeAll(async () => {
-      const email = 'dontrefresh@payloadcms.com'
+      const email = 'dontrefresh@mzinga.io'
 
       hookUser = await payload.create({
         collection: hooksUsersSlug,

@@ -57,7 +57,7 @@ export const seed = async (payload: Payload): Promise<void> => {
   payload.logger.info(`— Seeding demo author and user...`)
 
   await Promise.all(
-    ['demo-author@payloadcms.com', 'demo-user@payloadcms.com'].map(async email => {
+    ['demo-author@mzinga.io', 'demo-user@mzinga.io'].map(async email => {
       await payload.delete({
         collection: 'users',
         where: {
@@ -73,7 +73,7 @@ export const seed = async (payload: Payload): Promise<void> => {
     await payload.create({
       collection: 'users',
       data: {
-        email: 'demo-author@payloadcms.com',
+        email: 'demo-author@mzinga.io',
         name: 'Demo Author',
         password: 'password',
         roles: ['admin'],
@@ -82,7 +82,7 @@ export const seed = async (payload: Payload): Promise<void> => {
     await payload.create({
       collection: 'users',
       data: {
-        email: 'demo-user@payloadcms.com',
+        email: 'demo-user@mzinga.io',
         name: 'Demo User',
         password: 'password',
         roles: ['user'],

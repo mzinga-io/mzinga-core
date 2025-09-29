@@ -3,12 +3,11 @@ let email
 if (process.env.NODE_ENV === 'production') {
   email = {
     fromName: 'Payload',
-    fromAddress: 'info@payloadcms.com',
+    fromAddress: 'info@mzinga.io',
     transportOptions: {
       // Configure a custom transport here
     },
   }
-
 } else {
   email = {
     fromName: 'Ethereal Email',

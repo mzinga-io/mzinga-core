@@ -80,7 +80,7 @@ export function buildConfigWithDefaults(testConfig?: Partial<Config>): Promise<S
       process.env.PAYLOAD_PUBLIC_DISABLE_AUTO_LOGIN === 'true'
         ? false
         : {
-            email: 'dev@payloadcms.com',
+            email: 'contact@mzinga.io',
             password: 'test',
           },
     ...(config.admin || {}),

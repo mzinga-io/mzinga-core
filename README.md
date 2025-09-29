@@ -1,54 +1,42 @@
 <p align="left">
   <a href="https://github.com/mzinga-io/mzinga-core/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/mzinga-io/mzinga-core/main.yml?style=flat-square"></a>
 </p>
-<hr/>
-<h4>
-<a target="_blank" href="https://mzinga.io/docs/getting-started/what-is-payload" rel="dofollow"><strong>Explore the Docs</strong></a>
-</h4>
-<hr/>
 
-<h3>Benefits over a regular CMS</h3>
+
+<h3>The Story: Why We Forked PayloadCMS v2</h3>
 <ul>
-  <li>Don’t hit some third-party SaaS API, hit your own API</li>
-  <li>Use your own database and own your data</li>
-  <li>It's just Express - do what you want outside of Payload</li>
-  <li>No need to learn how Payload works - if you know JS, you know Payload</li>
-  <li>No vendor lock-in</li>
-  <li>Avoid microservices hell - get everything (even auth) in one place</li>
-  <li>Never touch ancient WP code again</li>
-  <li>Build faster, never hit a roadblock</li>
-  <li>Both admin and backend are 100% extensible</li>
+<li>Our journey began with a deep appreciation for PayloadCMS. The team at Newesis embraced PayloadCMS from its early days, recognizing its powerful architecture and contributing as individual developers to the open-source project. Mzinga was initially born as a suite of extensions on top of PayloadCMS version 2, adding new capabilities to an already excellent core.</li>
+<li>When PayloadCMS evolved to version 3, it introduced significant architectural changes. After careful consideration, we decided that the v2 architecture remained the ideal foundation for our vision of a highly extensible, event-driven data platform.</li>
+<li>With PayloadCMS v2 no longer actively maintained, we were at a crossroads. To ensure the long-term stability and evolution of the platform our clients and projects relied on, we made a crucial decision: we forked the latest release of PayloadCMS v2.</li>
+<li>This fork is now Mzinga Core. By taking ownership of the core, we guarantee its maintenance and evolution, allowing us to innovate while preserving the architectural principles we value. The entire Mzinga.io ecosystem—Mzinga Core, Mzinga Apps, and Mzinga Tools, is now fully open source under the new mzinga-io organization on GitHub. This is our commitment to the community and to the future of this powerful platform.</li>
 </ul>
 
-## ✨ Features
 
-- Completely free and open-source
-- [GraphQL](https://mzinga.io/docs/graphql/overview), [REST](https://mzinga.io/docs/rest-api/overview), and [Local](https://mzinga.io/docs/local-api/overview) APIs
-- [Easily customizable ReactJS Admin](https://mzinga.io/docs/admin/overview)
-- [Fully self-hosted](https://mzinga.io/docs/production/deployment)
-- [Extensible Authentication](https://mzinga.io/docs/authentication/overview)
-- [Local file storage & upload](https://mzinga.io/docs/upload/overview)
-- [Version History and Drafts](https://mzinga.io/docs/versions/overview)
-- [Field-based Localization](https://mzinga.io/docs/configuration/localization)
-- [Block-based Layout Builder](https://mzinga.io/docs/fields/blocks)
-- [Extensible SlateJS rich text editor](https://mzinga.io/docs/fields/rich-text)
-- [Array field type](https://mzinga.io/docs/fields/array)
-- [Field conditional logic](https://mzinga.io/docs/fields/overview#conditional-logic)
-- Extremely granular [Access Control](https://mzinga.io/docs/access-control/overview)
-- [Document and field-level hooks](https://mzinga.io/docs/hooks/overview) for every action Payload provides
-- Built with Typescript & very Typescript-friendly
-- Intensely fast API
-- Highly secure thanks to HTTP-only cookies, CSRF protection, and more
+## The Core Concept: Dynamic, API-First Data Modeling
+
+The true power of Mzinga lies in its dynamic nature. You are not limited by a predefined schema. Instead, you can create entirely new classes of entities, or "Collections", at runtime.
+
+The process is simple and powerful:
+<ul>
+<li>Define: You design your entity structure as a JSON object, defining fields, types, and relationships.</li>
+<li>POST: You post this JSON definition to Mzinga's Custom Entities API.</li>
+<li>Publish: Once the entity is published, Mzinga’s engine automatically goes to work.<li>
+</ul>
+Instantly, the platform provisions a complete set of APIs for your new entity, with no code generation or server restarts required. You get:
+<ul>
+<li>REST APIs: A full suite of CRUD (Create, Read, Update, Delete) endpoints.</li>
+<li>GraphQL APIs: Powerful and flexible query capabilities, automatically reflecting your schema.</li>
+<li>WebSockets: Real-time data publication for any operation, enabling reactive frontend applications.</li>
+</ul>
+
 
 <a target="_blank" href="https://github.com/mzinga-io/mzinga-core/discussions"><strong>Request Feature</strong></a>
 
-### TODO: rewrite the below section
 
 ## 🗒️ Documentation
 
-Check out the [Payload website](https://mzinga.io/docs/getting-started/what-is-payload) to find in-depth documentation for everything that Payload offers.
+Check out the [Doc Directory](./docs) of the repo to find in-depth documentation for everything that the core solution offers.
 
-Migrating from v1 to v2? Check out the [2.0 Release Notes](https://github.com/mzinga-io/mzinga-core/releases/tag/v2.0.0) on how to do it.
 
 ## 🙋 Contributing
 
@@ -56,7 +44,8 @@ If you want to add contributions to this repository, please follow the instructi
 
 ## 📚 Examples
 
-The [Examples Directory](./examples) is a great resource for learning how to setup Payload in a variety of different ways, but you can also find great examples in our blog and throughout our social media.
+The [Examples Directory](./examples) is a great resource for learning how to setup Mzinga-Core in a variety of different ways, but we encourage you to test the Mzinga-Apps repo, containing the extension to the Core platform. 
+You can find the source code but also the Helm Chart to deploy the application in Kubernetes using the official images built by Newesis Srl. 
 
 If you'd like to run the examples, you can either copy them to a folder outside this repo or run them directly by (1) navigating to the example's subfolder (`cd examples/your-example-folder`) and (2) using the `--ignore-workspace` flag to bypass workspace restrictions (e.g., `pnpm --ignore-workspace install` or `pnpm --ignore-workspace dev`).
 
@@ -66,16 +55,13 @@ You can see more examples at:
 
 ## 🚨 Need help?
 
-There are lots of good conversations and resources in our Github Discussions board and our Discord Server. If you're struggling with something, chances are, someone's already solved what you're up against. :point_down:
+You can open a new conversations in our Github Discussions board or create a new Issue if you identify a problem.
 
 - [GitHub Discussions](https://github.com/mzinga-io/mzinga-core/discussions)
 - [GitHub Issues](https://github.com/mzinga-io/mzinga-core/issues)
 
-### TODO: one day
 
 ## ⭐ Like what we're doing? Give us a star
-
-![payload-github-star](https://cms.payloadcms.com/media/payload-github-star.gif)
 
 ## 👏 Thanks to all our contributors
 

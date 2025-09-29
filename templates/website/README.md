@@ -229,11 +229,11 @@ To seed the database with a few pages, posts, and projects you can run `yarn see
 
 The seed script will also create two users for demonstration purposes only:
 1. Demo Author
-    - Email: `demo-author@payloadcms.com`
+    - Email: `demo-author@mzinga.io`
     - Password: `password`
     - Role: `admin`
 2. Demo User
-    - Email: `demo-user@payloadcms.com`
+    - Email: `demo-user@mzinga.io`
     - Password: `password`
     - Role: `user`
 

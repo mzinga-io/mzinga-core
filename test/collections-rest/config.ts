@@ -42,7 +42,7 @@ export default buildConfigWithDefaults({
       method: 'get',
       handler: async (req, res) => {
         await req.payload.sendEmail({
-          from: 'dev@payloadcms.com',
+          from: 'contact@mzinga.io',
           to: devUser.email,
           subject: 'Test Email',
           html: 'This is a test email.',
