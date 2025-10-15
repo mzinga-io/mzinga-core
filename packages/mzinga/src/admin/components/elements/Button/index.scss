@@ -117,7 +117,7 @@ a.btn {
     $hover-box-shadow: inset 0 0 0 $style-stroke-width var(--theme-error-700);
 
     box-shadow: $base-box-shadow;
-    color: var(--theme-error-800);
+    color: var(--theme-elevation-800);
     background: none;
     backdrop-filter: blur(5px);
 
@@ -132,9 +132,39 @@ a.btn {
     }
 
     &.btn--disabled {
-      color: var(--theme-error-400);
+      color: var(--theme-elevation-400);
       background: none;
       box-shadow: inset 0 0 0 $style-stroke-width var(--theme-error-400);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: $hover-box-shadow, $focus-box-shadow;
+    }
+  }
+  &--style-success {
+    $base-box-shadow: inset 0 0 0 $style-stroke-width var(--theme-success-800);
+    $hover-box-shadow: inset 0 0 0 $style-stroke-width var(--theme-success-700);
+
+    box-shadow: $base-box-shadow;
+    color: var(--theme-elevation-800);
+    background: none;
+    backdrop-filter: blur(5px);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--theme-success-100);
+      box-shadow: $hover-box-shadow;
+    }
+
+    &:active {
+      background: var(--theme-success-200);
+    }
+
+    &.btn--disabled {
+      color: var(--theme-elevation-400);
+      background: none;
+      box-shadow: inset 0 0 0 $style-stroke-width var(--theme-success-400);
     }
 
     &:focus:not(:focus-visible) {

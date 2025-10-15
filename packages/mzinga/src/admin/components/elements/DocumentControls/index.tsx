@@ -231,6 +231,7 @@ export const DocumentControls: React.FC<{
                   <React.Fragment>
                     <PopupList.Button
                       id="action-create"
+                      className="btn--style-success"
                       to={`${adminRoute}/collections/${collection?.slug}/create`}
                     >
                       {t('createNew')}
