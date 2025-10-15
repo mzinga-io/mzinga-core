@@ -100,6 +100,7 @@ const DeleteMany: React.FC<Props> = (props) => {
     <React.Fragment>
       <Pill
         className={`${baseClass}__toggle`}
+        pillStyle="error"
         onClick={() => {
           setDeleting(false)
           toggleModal(modalSlug)
