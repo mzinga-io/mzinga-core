@@ -112,6 +112,36 @@ a.btn {
       box-shadow: $hover-box-shadow, $focus-box-shadow;
     }
   }
+  &--style-disruptive {
+    $base-box-shadow: inset 0 0 0 $style-stroke-width var(--theme-error-800);
+    $hover-box-shadow: inset 0 0 0 $style-stroke-width var(--theme-error-700);
+
+    box-shadow: $base-box-shadow;
+    color: var(--theme-error-800);
+    background: none;
+    backdrop-filter: blur(5px);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--theme-error-100);
+      box-shadow: $hover-box-shadow;
+    }
+
+    &:active {
+      background: var(--theme-error-200);
+    }
+
+    &.btn--disabled {
+      color: var(--theme-error-400);
+      background: none;
+      box-shadow: inset 0 0 0 $style-stroke-width var(--theme-error-400);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: $hover-box-shadow, $focus-box-shadow;
+    }
+  }
 
   &--style-none {
     padding: 0;
@@ -213,5 +243,13 @@ a.btn {
   &:focus-visible {
     outline: var(--accessibility-outline);
     outline-offset: var(--accessibility-outline-offset);
+  }
+}
+
+#action-save {
+  background-color: var(--theme-success-400);
+  color: var(--theme-base-1000);
+  &:hover {
+    background-color: var(--theme-success-300);
   }
 }
