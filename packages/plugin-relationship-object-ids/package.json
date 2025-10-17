@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-relationship-object-ids",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
