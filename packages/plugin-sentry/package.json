@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-sentry",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "mzinga": "0.0.6",
+    "mzinga": "^0.1.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {

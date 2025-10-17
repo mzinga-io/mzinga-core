@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import swcRegister from '@swc/register'
+import swcRegister from '@swc-node/register'
 import dotenv from 'dotenv'
 import findUp from 'find-up'
 import fs from 'fs'
@@ -45,7 +45,6 @@ if (tsConfig?.config?.compilerOptions?.paths) {
 // Allow disabling SWC for debugging
 if (process.env.DISABLE_SWC !== 'true') {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error - bad @swc/register types
   swcRegister(swcOptions)
 }
 
