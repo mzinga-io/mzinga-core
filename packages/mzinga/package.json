@@ -46,7 +46,8 @@
     "prepublishOnly": "pnpm clean && pnpm build",
     "pretest": "pnpm build",
     "translateNewKeys": "ts-node -T ./scripts/translateNewKeys.ts",
-    "version": "npm version"
+    "version": "npm version",
+    "version:all": "pnpm --filter \"./packages/**\""
   },
   "dependencies": {
     "@date-io/date-fns": "2.16.0",
