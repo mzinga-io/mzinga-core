@@ -31,7 +31,7 @@
   "author": "dev@payloadcms.com",
   "license": "MIT",
   "peerDependencies": {
-    "mzinga": "0.0.6",
+    "mzinga": "^0.1.0",
     "react": "^18.0.0"
   },
   "devDependencies": {
