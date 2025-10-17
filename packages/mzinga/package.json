@@ -1,6 +1,6 @@
 {
   "name": "mzinga",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node, React and MongoDB Headless CMS and Application Framework",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -46,8 +46,7 @@
     "prepublishOnly": "pnpm clean && pnpm build",
     "pretest": "pnpm build",
     "translateNewKeys": "ts-node -T ./scripts/translateNewKeys.ts",
-    "version": "npm version",
-    "version:all": "pnpm --filter \"./packages/**\""
+    "version": "npm version"
   },
   "dependencies": {
     "@date-io/date-fns": "2.16.0",

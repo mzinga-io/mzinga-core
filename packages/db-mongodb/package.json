@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/db-mongodb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The officially supported MongoDB database adapter for MZinga",
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "mzinga": "workspace:*"
   },
   "peerDependencies": {
-    "mzinga": "0.0.8"
+    "mzinga": "^0.1.0"
   },
   "publishConfig": {
     "main": "./dist/index.js",
