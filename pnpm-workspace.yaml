@@ -3,3 +3,11 @@ packages:
   - 'packages/*'
   # exclude packages that are inside test directories
   - '!**/test/**'
+supportedArchitectures:
+  os:
+  - win32
+  - darwin
+  - current
+  cpu:
+  - x64
+  - arm64
