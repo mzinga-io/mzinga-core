@@ -1,51 +1,66 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import swcRegister from '@swc-node/register'
+const { register } = require('@swc-node/register/register')
 import dotenv from 'dotenv'
 import findUp from 'find-up'
 import fs from 'fs'
 import { getTsconfig as getTSconfig } from 'get-tsconfig'
 import minimist from 'minimist'
 import path from 'path'
-
+import * as ts from 'typescript'
 import { generateGraphQLSchema } from './generateGraphQLSchema'
 import { generateTypes } from './generateTypes'
 import { migrate } from './migrate'
-
 loadEnv()
 
 const tsConfig = getTSconfig()
 
+// const swcOptions = {
+//   ignore: [
+//     /.*[\\/]node_modules[\\/].*/, // parse everything besides files within node_modules
+//   ],
+//   jsc: {
+//     baseUrl: path.resolve(),
+//     parser: {
+//       syntax: 'typescript',
+//       tsx: true,
+//     },
+//     paths: undefined,
+//   },
+//   module: {
+//     type: 'commonjs',
+//   },
+//   sourceMaps: 'inline',
+// }
 const swcOptions = {
-  ignore: [
-    /.*[\\/]node_modules[\\/].*/, // parse everything besides files within node_modules
-  ],
-  jsc: {
-    baseUrl: path.resolve(),
-    parser: {
-      syntax: 'typescript',
-      tsx: true,
-    },
-    paths: undefined,
+  ignore: ['node_modules'],
+  baseUrl: path.resolve(),
+  parser: {
+    syntax: 'typescript',
+    tsx: true,
   },
-  module: {
-    type: 'commonjs',
-  },
+  paths: undefined,
+  module: ts.ModuleKind.CommonJS,
   sourceMaps: 'inline',
 }
 
 if (tsConfig?.config?.compilerOptions?.paths) {
-  swcOptions.jsc.paths = tsConfig.config.compilerOptions.paths
+  swcOptions.paths = tsConfig.config.compilerOptions.paths
 
   if (tsConfig?.config?.compilerOptions?.baseUrl) {
-    swcOptions.jsc.baseUrl = path.resolve(tsConfig.config.compilerOptions.baseUrl)
+    swcOptions.baseUrl = path.resolve(tsConfig.config.compilerOptions.baseUrl)
   }
 }
 
 // Allow disabling SWC for debugging
 if (process.env.DISABLE_SWC !== 'true') {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  swcRegister(swcOptions)
+  console.log('// Registering SWC for mzinga scripts', register)
+  register({
+    extensions: ['.ts', '.tsx'],
+    swc: swcOptions,
+    cache: true,
+  })
 }
 
 const { build } = require('./build')
@@ -81,7 +96,7 @@ if (script) {
     }
   }
 } else {
-  console.error('No payload script specified. Did you mean to run `payload migrate`?')
+  console.error('No mzinga script specified. Did you mean to run `mzinga migrate`?')
 }
 
 /**

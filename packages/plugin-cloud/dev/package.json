@@ -17,7 +17,7 @@
     "@aws-sdk/client-s3": "^3.142.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mzinga": "0.0.8"
+    "mzinga": "^0.1.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",
