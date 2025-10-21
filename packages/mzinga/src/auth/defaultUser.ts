@@ -1,5 +1,4 @@
 import type { CollectionConfig } from '../collections/config/types'
-
 import { extractTranslations } from '../translations/extractTranslations'
 
 const labels = extractTranslations(['general:user', 'general:users'])

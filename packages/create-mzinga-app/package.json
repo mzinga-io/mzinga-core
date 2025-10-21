@@ -4,7 +4,7 @@
   "license": "MIT",
   "homepage": "https://mzinga.io",
   "bin": {
-    "create-payload-app": "bin/cli.js"
+    "create-mzinga-app": "bin/cli.js"
   },
   "repository": {
     "type": "git",

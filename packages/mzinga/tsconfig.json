@@ -9,6 +9,10 @@
     "paths": {
       "mzinga/auth": ["./src/auth/types.ts"],
       "mzinga/config": ["./src/config/types.ts"],
+      "mzinga/database": ["./src/database/types.ts"],
+      "mzinga/email": ["./src/email/types.ts"],
+      "mzinga/errors": ["./src/errors/types.ts"],
+      "mzinga/express": ["./src/express/types.ts"],
       "mzinga/generated-types": ["./src/generated-types.ts"],
       "mzinga/types": ["./src/types/index.ts"]
     },

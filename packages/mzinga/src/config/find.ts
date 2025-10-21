@@ -1,6 +1,7 @@
 import findUp from 'find-up'
 import fs from 'fs'
 import path from 'path'
+const requireJSON = require('json-easy-strip')
 
 /**
  * Returns the source and output paths from the nearest tsconfig.json file.
@@ -13,15 +14,14 @@ const getTSConfigPaths = (): { outPath: string; srcPath: string } => {
   if (!tsConfigPath) {
     return { outPath: process.cwd(), srcPath: process.cwd() }
   }
-
   try {
-    // Read the file as a string and remove trailing commas
-    const rawTsConfig = fs
-      .readFileSync(tsConfigPath, 'utf-8')
-      .replace(/,\s*\]/g, ']')
-      .replace(/,\s*\}/g, '}')
-
-    const tsConfig = JSON.parse(rawTsConfig)
+    // Read the file as a string and remove trailing commas and comments
+    const tsConfig = requireJSON.strip(
+      fs
+        .readFileSync(tsConfigPath, 'utf-8')
+        .replace(/,\s*\]/g, ']')
+        .replace(/,\s*\}/g, '}'),
+    )
 
     const srcPath = tsConfig.compilerOptions?.rootDir || process.cwd()
     const outPath = tsConfig.compilerOptions?.outDir || process.cwd()

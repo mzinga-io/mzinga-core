@@ -6,10 +6,15 @@ export const extractTranslations = (keys: string[]): Record<string, Record<strin
     result[key] = {}
   })
   Object.entries(translations).forEach(([language, resource]) => {
-    keys.forEach((key) => {
-      const [section, target] = key.split(':')
-      result[key][language] = resource[section][target]
-    })
+    if (!resource) {
+      return
+
+    }
+      keys.forEach((key) => {
+        console.log(key, language, resource)
+        const [section, target] = key.split(':')
+        result[key][language] = resource[section][target]
+      })
   })
   return result
 }
