@@ -23,7 +23,7 @@ import { transformInputFormSchema } from '../utils/transformInputFormSchema'
 import { BlockContent } from './BlockContent'
 import './index.scss'
 
-type Props = {
+export type BlockComponentProps = {
   blockFieldWrapperName: string
   children?: React.ReactNode
   /**
@@ -33,7 +33,7 @@ type Props = {
   nodeKey?: string
 }
 
-export const BlockComponent: React.FC<Props> = (props) => {
+export const BlockComponent: React.FC<BlockComponentProps> = (props) => {
   const { blockFieldWrapperName, formData, nodeKey } = props
   const payloadConfig = useConfig()
   const submitted = useFormSubmitted()

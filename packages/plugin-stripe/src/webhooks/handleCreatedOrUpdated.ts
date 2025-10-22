@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid'
+const { v4 } = require('uuid')
 
 import type { SanitizedStripeConfig, StripeWebhookHandler } from '../types'
 
@@ -62,15 +62,12 @@ export const handleCreatedOrUpdated: HandleCreatedOrUpdated = async (args) => {
     const foundDoc = payloadQuery.docs[0] as any
 
     // combine all properties of the Stripe doc and match their respective fields within the document
-    let syncedData = syncConfig.fields.reduce(
-      (acc, field) => {
-        const { fieldPath, stripeProperty } = field
+    let syncedData = syncConfig.fields.reduce((acc, field) => {
+      const { fieldPath, stripeProperty } = field
 
-        acc[fieldPath] = stripeDoc[stripeProperty]
-        return acc
-      },
-      {} as Record<string, any>,
-    )
+      acc[fieldPath] = stripeDoc[stripeProperty]
+      return acc
+    }, {} as Record<string, any>)
 
     syncedData = deepen({
       ...syncedData,
@@ -148,7 +145,7 @@ export const handleCreatedOrUpdated: HandleCreatedOrUpdated = async (args) => {
             )
 
           // generate a strong, unique password for the new user
-          const password: string = uuid()
+          const password: string = v4()
 
           await payload.create({
             collection: collectionSlug,

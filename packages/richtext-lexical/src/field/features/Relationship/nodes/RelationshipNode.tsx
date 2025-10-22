@@ -15,8 +15,8 @@ import {
   type SerializedDecoratorBlockNode,
 } from '@lexical/react/LexicalDecoratorBlockNode'
 import * as React from 'react'
-
-const RelationshipComponent = React.lazy(() =>
+import { RelationshipComponent as Component } from './components/RelationshipComponent'
+const RelationshipComponent = React.lazy<typeof Component>(() =>
   // @ts-expect-error TypeScript being dumb
   import('./components/RelationshipComponent').then((module) => ({
     default: module.RelationshipComponent,
