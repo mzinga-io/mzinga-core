@@ -42,7 +42,7 @@ export const connect: Connect = async function connect(this: MongooseAdapter, pa
           storageEngine: 'ephemeralForTest',
         },
         binary: {
-          version: process.env.PAYLOAD_TEST_MONGO_VERSION || '7.0.14',
+          version: process.env.PAYLOAD_TEST_MONGO_VERSION || '6.0.14',
         },
         replSet: {
           count: 3,
