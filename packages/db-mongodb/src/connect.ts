@@ -39,6 +39,9 @@ export const connect: Connect = async function connect(this: MongooseAdapter, pa
           dbName: 'payloadmemory',
           port,
         },
+        binary: {
+          version: process.env.PAYLOAD_TEST_MONGO_VERSION,
+        },
         replSet: {
           count: 3,
         },

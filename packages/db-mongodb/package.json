@@ -39,7 +39,7 @@
     "@mzinga/eslint-config": "workspace:*",
     "@types/mongoose-aggregate-paginate-v2": "1.0.9",
     "mongodb": "4.17.2",
-    "mongodb-memory-server": "^9",
+    "mongodb-memory-server": "^10",
     "mzinga": "workspace:*"
   },
   "peerDependencies": {
