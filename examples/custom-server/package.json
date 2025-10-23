@@ -23,7 +23,7 @@
     "@mzinga/bundler-webpack": "latest",
     "@mzinga/db-mongodb": "latest",
     "@mzinga/richtext-slate": "latest",
-    "dotenv": "^8.2.0",
+    "dotenv": "^17.2.3",
     "escape-html": "^1.0.3",
     "express": "^4.19.2",
     "next": "^14.2.25",
