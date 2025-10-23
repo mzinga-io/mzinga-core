@@ -1261,7 +1261,7 @@ importers:
   packages/plugin-relationship-object-ids:
     dependencies:
       mongoose:
-        specifier: ^6.12.3
+        specifier: ^6.13.8
         version: 6.13.8
     devDependencies:
       '@mzinga/eslint-config':
