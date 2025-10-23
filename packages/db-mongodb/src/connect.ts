@@ -30,6 +30,7 @@ export const connect: Connect = async function connect(this: MongooseAdapter, pa
       urlToConnect = process.env.PAYLOAD_TEST_MONGO_URL
     } else {
       connectionOptions.dbName = 'payloadmemory'
+      connectionOptions.connectTimeoutMS = 1000
       const { MongoMemoryReplSet } = require('mongodb-memory-server')
       const getPort = require('get-port')
 
@@ -38,9 +39,10 @@ export const connect: Connect = async function connect(this: MongooseAdapter, pa
         instance: {
           dbName: 'payloadmemory',
           port,
+          storageEngine: 'ephemeralForTest',
         },
         binary: {
-          version: process.env.PAYLOAD_TEST_MONGO_VERSION,
+          version: process.env.PAYLOAD_TEST_MONGO_VERSION || '7.0.14',
         },
         replSet: {
           count: 3,
