@@ -37,7 +37,7 @@
     "@types/nodemailer": "6.4.16",
     "mzinga": "workspace:*",
     "ts-jest": "^29.4.0",
-    "webpack": "5.91.0"
+    "webpack": "5.94.0"
   },
   "files": [
     "dist"

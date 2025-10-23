@@ -20,20 +20,20 @@
     "version": "npm version"
   },
   "dependencies": {
-    "@types/eslint": "8.56.12",
-    "@typescript-eslint/eslint-plugin": "6.21.0",
-    "@typescript-eslint/parser": "6.21.0",
-    "eslint": "8.57.1",
+    "@types/eslint": "9.6.1",
+    "@typescript-eslint/eslint-plugin": "8.46.2",
+    "@typescript-eslint/parser": "8.46.2",
+    "eslint": "9.37.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-jest": "27.9.0",
+    "eslint-plugin-jest": "29.0.1",
     "eslint-plugin-jest-dom": "5.5.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-perfectionist": "2.11.0",
+    "eslint-plugin-perfectionist": "4.15.1",
     "eslint-plugin-playwright": "2.2.2",
     "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-hooks": "7.0.0",
     "eslint-plugin-regexp": "1.15.0"
   },
   "keywords": []

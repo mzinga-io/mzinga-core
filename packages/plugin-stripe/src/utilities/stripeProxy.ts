@@ -1,4 +1,3 @@
-import lodashGet from 'lodash.get'
 import Stripe from 'stripe'
 
 import type { StripeProxy } from '../types'
@@ -15,9 +14,8 @@ export const stripeProxy: StripeProxy = async ({ stripeArgs, stripeMethod, strip
   if (typeof stripeMethod === 'string') {
     const topLevelMethod = stripeMethod.split('.')[0] as keyof Stripe
     const contextToBind = stripe[topLevelMethod]
-    // NOTE: 'lodashGet' uses dot notation to get the property of an object
     // NOTE: Stripe API methods using reference "this" within their functions, so we need to bind context
-    const foundMethod = lodashGet(stripe, stripeMethod).bind(contextToBind)
+    const foundMethod = (stripe as any).stripeMethod?.bind(contextToBind)
 
     if (typeof foundMethod === 'function') {
       if (Array.isArray(stripeArgs)) {

@@ -18,7 +18,7 @@ export const beginTransaction: BeginTransaction = async function beginTransactio
   const id = uuid()
 
   if (!this.sessions[id]) {
-    this.sessions[id] = client.startSession()
+    this.sessions[id] = client.startSession() as any
   }
   if (this.sessions[id].inTransaction()) {
     this.payload.logger.warn('beginTransaction called while transaction already exists')
