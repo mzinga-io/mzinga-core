@@ -474,6 +474,7 @@ jobs:
           version: 9.7.0
           run_install: false
       - run: pnpm i
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag=rc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
