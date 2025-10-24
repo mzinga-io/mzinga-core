@@ -6,7 +6,7 @@ import './index.scss'
 const baseClass = 'live-preview-iframe'
 
 export const IFrame: React.FC<{
-  ref: React.Ref<HTMLIFrameElement>
+  ref: React.LegacyRef<HTMLIFrameElement>
   setIframeHasLoaded: (value: boolean) => void
   url: string
 }> = forwardRef((props, ref) => {

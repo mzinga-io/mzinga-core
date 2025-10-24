@@ -55,7 +55,6 @@ if (tsConfig?.config?.compilerOptions?.paths) {
 // Allow disabling SWC for debugging
 if (process.env.DISABLE_SWC !== 'true') {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  console.log('// Registering SWC for mzinga scripts', register)
   register({
     extensions: ['.ts', '.tsx'],
     swc: swcOptions,

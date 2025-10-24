@@ -1,4 +1,4 @@
-import glob from 'glob'
+const glob = require('glob')
 import minimist from 'minimist'
 import path from 'path'
 import shelljs from 'shelljs'

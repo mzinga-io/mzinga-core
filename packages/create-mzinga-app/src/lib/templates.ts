@@ -18,19 +18,19 @@ export function getValidTemplates(): ProjectTemplate[] {
       name: 'blank',
       type: 'starter',
       description: 'Blank Template',
-      url: 'https://github.com/mzinga-io/mzinga-core/templates/blank#v0.0.3',
+      url: 'https://github.com/mzinga-io/mzinga-core/templates/blank#0.0.8',
     },
     {
       name: 'website',
       type: 'starter',
       description: 'Website Template',
-      url: 'https://github.com/mzinga-io/mzinga-core/templates/website#v0.0.3',
+      url: 'https://github.com/mzinga-io/mzinga-core/templates/website#0.0.8',
     },
     {
       name: 'ecommerce',
       type: 'starter',
       description: 'E-commerce Template',
-      url: 'https://github.com/mzinga-io/mzinga-core/templates/ecommerce#v0.0.3',
+      url: 'https://github.com/mzinga-io/mzinga-core/templates/ecommerce#0.0.8',
     },
     {
       name: 'plugin',

@@ -1,10 +1,10 @@
 {
   "name": "create-mzinga-app",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "homepage": "https://mzinga.io",
   "bin": {
-    "create-payload-app": "bin/cli.js"
+    "create-mzinga-app": "bin/cli.js"
   },
   "repository": {
     "type": "git",

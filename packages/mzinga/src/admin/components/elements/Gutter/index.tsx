@@ -1,6 +1,4 @@
-import type { Ref } from 'react'
-
-import React, { forwardRef } from 'react'
+import React, { forwardRef, LegacyRef } from 'react'
 
 import './index.scss'
 
@@ -10,7 +8,7 @@ type Props = {
   left?: boolean
   negativeLeft?: boolean
   negativeRight?: boolean
-  ref?: Ref<HTMLDivElement>
+  ref?: LegacyRef<HTMLDivElement>
   right?: boolean
 }
 

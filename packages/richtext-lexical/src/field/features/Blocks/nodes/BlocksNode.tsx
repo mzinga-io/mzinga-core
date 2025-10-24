@@ -14,6 +14,7 @@ import { DecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
 import ObjectID from 'bson-objectid'
 import React from 'react'
 
+import { BlockComponent as Component } from '../component'
 import { transformInputFormData } from '../utils/transformInputFormData'
 
 export type BlockFields = {
@@ -24,7 +25,7 @@ export type BlockFields = {
   id: string
 }
 
-const BlockComponent = React.lazy(() =>
+const BlockComponent = React.lazy<typeof Component>(() =>
   // @ts-expect-error TypeScript being dumb
   import('../component').then((module) => ({
     default: module.BlockComponent,

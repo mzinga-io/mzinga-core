@@ -58,7 +58,6 @@ export async function createProject(args: {
   await createOrFindProjectDir(projectDir)
 
   console.log(`\n  Creating project in ${chalk.green(path.resolve(projectDir))}\n`)
-
   if ('url' in template) {
     const emitter = degit(template.url)
     await emitter.clone(projectDir)

@@ -17,7 +17,7 @@
     "lint:fix": "eslint --fix --ext .ts,.tsx src"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^17.2.3",
     "express": "^4.19.2",
     "payload": "latest",
     "handlebars": "^4.7.7",

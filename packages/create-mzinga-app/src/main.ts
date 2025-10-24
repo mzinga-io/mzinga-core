@@ -100,7 +100,7 @@ export class Main {
         }
       }
 
-      success('Payload project successfully created')
+      success('MZinga project successfully created')
       console.log(successMessage(projectDir, packageManager))
     } catch (error: unknown) {
       console.log(error)

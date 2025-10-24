@@ -3,7 +3,7 @@ import type { SerializedLexicalNode, Spread } from 'lexical'
 import { addClassNamesToElement } from '@lexical/utils'
 import { DecoratorNode, type EditorConfig, type LexicalNode, type NodeKey } from 'lexical'
 import * as React from 'react'
-
+import { UnknownConvertedNodeComponent } from './Component'
 export type UnknownConvertedNodeData = {
   nodeData: unknown
   nodeType: string
@@ -16,7 +16,7 @@ export type SerializedUnknownConvertedNode = Spread<
   SerializedLexicalNode
 >
 
-const Component = React.lazy(() =>
+const Component = React.lazy<typeof UnknownConvertedNodeComponent>(() =>
   // @ts-expect-error TypeScript being dumb
   import('./Component').then((module) => ({
     default: module.UnknownConvertedNodeComponent,

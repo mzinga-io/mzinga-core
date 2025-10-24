@@ -9,8 +9,8 @@ import type {
 
 import { $applyNodeReplacement, DecoratorNode, createCommand } from 'lexical'
 import * as React from 'react'
-
-const HorizontalRuleComponent = React.lazy(() =>
+import { HorizontalRuleComponent as Component } from '../component'
+const HorizontalRuleComponent = React.lazy<typeof Component>(() =>
   // @ts-expect-error TypeScript being dumb
   import('../component').then((module) => ({
     default: module.HorizontalRuleComponent,
