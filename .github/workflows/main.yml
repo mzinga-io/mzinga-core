@@ -458,7 +458,7 @@ jobs:
   publish-rc:
     needs: [upload-test-results]
     runs-on: [self-hosted]
-    if: startsWith(github.ref, 'refs/tags/rc-')
+    if: contains(github.head_ref, 'rc-')
     steps:
       - run: pnpm i
       - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag rc
