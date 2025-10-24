@@ -195,7 +195,7 @@
     "postcss-preset-env": "9.0.0",
     "rimraf": "4.4.1",
     "sass-loader": "12.6.0",
-    "serve-static": "1.15.0",
+    "serve-static": "1.16.0",
     "swc-loader": "^0.2.6",
     "terser": "5.19.2",
     "terser-webpack-plugin": "^5.3.14",
