@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/bundler-vite",
-  "version": "0.1.3",
+  "version": "0.1.4-rc1",
   "description": "The officially supported Vite bundler adapter for MZinga",
   "repository": {
     "type": "git",

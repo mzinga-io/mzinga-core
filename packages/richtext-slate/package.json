@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/richtext-slate",
-  "version": "0.1.3",
+  "version": "0.1.4-rc1",
   "description": "The officially supported Slate richtext adapter for MZinga",
   "repository": {
     "type": "git",

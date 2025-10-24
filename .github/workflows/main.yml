@@ -454,3 +454,13 @@ jobs:
           name: test-results
           path: test-results/
           retention-days: 1
+
+  publish-rc:
+    needs: [upload-test-results]
+    runs-on: [self-hosted]
+    if: startsWith(github.ref, 'refs/tags/rc-')
+    steps:
+      - run: pnpm i
+      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag rc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

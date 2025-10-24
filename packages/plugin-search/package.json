@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-search",
-  "version": "0.1.3",
+  "version": "0.1.4-rc1",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
