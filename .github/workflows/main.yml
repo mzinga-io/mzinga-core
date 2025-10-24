@@ -474,6 +474,6 @@ jobs:
           version: 9.7.0
           run_install: false
       - run: pnpm i
-      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag rc
+      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag=rc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
