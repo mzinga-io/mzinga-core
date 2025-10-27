@@ -25,7 +25,7 @@
     "bin"
   ],
   "dependencies": {
-    "@sindresorhus/slugify": "^1.1.0",
+    "@sindresorhus/slugify": "^3.0.0",
     "arg": "^5.0.0",
     "chalk": "^4.1.0",
     "command-exists": "^1.2.9",
