@@ -1,0 +1,7 @@
+{
+  "ext": "ts,js,tsx",
+  "ignore": [
+    "__tests__"
+  ],
+  "exec": "ts-node-esm src/server.ts"
+}

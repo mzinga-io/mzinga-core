@@ -35,7 +35,8 @@
     "test:int:postgres": "cross-env PAYLOAD_DATABASE=postgres DISABLE_LOGGING=true jest --forceExit --detectOpenHandles",
     "test:int": "cross-env DISABLE_LOGGING=true jest --forceExit --detectOpenHandles",
     "translateNewKeys": "pnpm --filter mzinga run translateNewKeys",
-    "version:all": "pnpm --filter \"./packages/**\" version"
+    "version:all": "pnpm --filter \"./packages/**\" version",
+    "yalc:all": "pnpm --filter \"./packages/**\" exec yalc publish --private"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.888.0",

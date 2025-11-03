@@ -1,0 +1,25 @@
+{
+  "version": "v1",
+  "packages": {
+    "@mzinga/bundler-webpack": {
+      "signature": "af56a4ab9b8563e8cce9016d0e7a54e5",
+      "file": true,
+      "replaced": "latest"
+    },
+    "@mzinga/db-mongodb": {
+      "signature": "52e126d4bf3d31e5c0ac30ec1c97c29e",
+      "file": true,
+      "replaced": "latest"
+    },
+    "@mzinga/richtext-slate": {
+      "signature": "3e5ccb662051b3c22c668bcc2e5fd82d",
+      "file": true,
+      "replaced": "latest"
+    },
+    "mzinga": {
+      "signature": "746f8c26631e9e73b76941bcbf8fa348",
+      "file": true,
+      "replaced": "latest"
+    }
+  }
+}
