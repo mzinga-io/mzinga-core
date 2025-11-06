@@ -21,8 +21,8 @@
     "version": "npm version"
   },
   "peerDependencies": {
-    "@aws-sdk/client-s3": "^3.888.0",
-    "@aws-sdk/lib-storage": "^3.267.0",
+    "@aws-sdk/client-s3": "^3.925.0",
+    "@aws-sdk/lib-storage": "^3.925.0",
     "@azure/abort-controller": "^1.0.0",
     "@azure/storage-blob": "^12.11.0",
     "@google-cloud/storage": "^6.4.1",
@@ -51,8 +51,8 @@
     "*.d.ts"
   ],
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.888.0",
-    "@aws-sdk/lib-storage": "^3.267.0",
+    "@aws-sdk/client-s3": "^3.925.0",
+    "@aws-sdk/lib-storage": "^3.925.0",
     "@azure/core-http": "^3.0.0",
     "@azure/storage-blob": "^12.11.0",
     "@google-cloud/storage": "^6.4.1",
@@ -61,10 +61,10 @@
     "cross-env": "^7.0.3",
     "dotenv": "17.2.3",
     "mzinga": "workspace:*",
-    "nodemon": "3.0.3",
+    "nodemon": "3.1.10",
     "rimraf": "^4.1.2",
-    "ts-node": "^9.1.1",
-    "webpack": "5.94.0"
+    "ts-node": "^10.9.2",
+    "webpack": "5.102.1"
   },
   "dependencies": {
     "find-node-modules": "^2.1.3",
