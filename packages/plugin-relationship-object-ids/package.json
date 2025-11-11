@@ -36,6 +36,6 @@
   "devDependencies": {
     "@mzinga/eslint-config": "workspace:*",
     "mzinga": "workspace:*",
-    "webpack": "5.94.0"
+    "webpack": "5.102.1"
   }
 }
