@@ -24,11 +24,11 @@
     "mzinga": "^0.1.0"
   },
   "dependencies": {
-    "@aws-sdk/client-cognito-identity": "^3.289.0",
-    "@aws-sdk/client-s3": "^3.888.0",
-    "@aws-sdk/credential-providers": "^3.289.0",
-    "@aws-sdk/lib-storage": "^3.267.0",
-    "amazon-cognito-identity-js": "^6.1.2",
+    "@aws-sdk/client-cognito-identity": "^3.928.0",
+    "@aws-sdk/client-s3": "^3.928.0",
+    "@aws-sdk/credential-providers": "^3.928.0",
+    "@aws-sdk/lib-storage": "^3.928.0",
+    "amazon-cognito-identity-js": "^6.3.16",
     "nodemailer": "^7.0.9"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "@types/nodemailer": "6.4.16",
     "mzinga": "workspace:*",
     "ts-jest": "^29.4.0",
-    "webpack": "5.94.0"
+    "webpack": "5.102.1"
   },
   "files": [
     "dist"
