@@ -45,6 +45,6 @@
     "@types/jest": "^27.0.3",
     "@types/node": "^16.6.2",
     "@types/prompts": "^2.4.1",
-    "ts-jest": "^29.4.0"
+    "ts-jest": "^29.4.6"
   }
 }
