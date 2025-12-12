@@ -22,10 +22,10 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 25
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
@@ -53,17 +53,17 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 25
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
@@ -73,7 +73,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -86,7 +86,7 @@ jobs:
       - run: pnpm run build
 
       - name: Cache build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -121,7 +121,7 @@ jobs:
           dpkg --configure -a
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
@@ -151,13 +151,13 @@ jobs:
       #   if: startsWith(matrix.database, 'mongoose')
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -264,18 +264,18 @@ jobs:
           dpkg --configure -a
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -289,7 +289,7 @@ jobs:
 
       - name: Cache Playwright Browsers for Playwright's Version
         id: cache-playwright-browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
@@ -303,7 +303,7 @@ jobs:
         run: pnpm exec playwright install-deps chromium
 
       - name: E2E Tests
-        uses: nick-fields/retry@v2
+        uses: nick-fields/retry@v3
         with:
           retry_on: error
           max_attempts: 2
@@ -323,18 +323,18 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -371,18 +371,18 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -415,18 +415,18 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -448,7 +448,7 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: always()
         with:
           name: test-results
@@ -460,16 +460,16 @@ jobs:
     runs-on: [self-hosted]
     if: contains(github.head_ref, 'rc-')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 1
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.6.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9.7.0
           run_install: false
