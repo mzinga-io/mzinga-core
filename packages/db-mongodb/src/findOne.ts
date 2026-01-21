@@ -9,7 +9,7 @@ import { withSession } from './withSession'
 
 export const findOne: FindOne = async function findOne(
   this: MongooseAdapter,
-  { collection, locale, req = {} as PayloadRequest, where },
+  { collection, locale, req = {} as PayloadRequest, where, projection },
 ) {
   const Model = this.collections[collection]
   const options: MongooseQueryOptions = {
@@ -23,7 +23,7 @@ export const findOne: FindOne = async function findOne(
     where,
   })
 
-  let doc = await Model.findOne(query, {}, options)
+  let doc = await Model.findOne(query, projection, options)
 
   if (!doc) {
     return null

@@ -22,6 +22,7 @@ export const findVersions: FindVersions = async function findVersions(
     skip,
     sort: sortArg,
     where,
+    projection,
   },
 ) {
   const Model = this.versions[collection]
@@ -104,7 +105,10 @@ export const findVersions: FindVersions = async function findVersions(
     }
   }
 
-  const result = await Model.paginate(query, paginationOptions)
+  const result = await Model.paginate(query, {
+    ...paginationOptions,
+    projection,
+  })
 
   const docs = this.jsonParse ? JSON.parse(JSON.stringify(result.docs)) : result.docs
 

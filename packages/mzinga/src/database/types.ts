@@ -195,6 +195,7 @@ export type FindArgs = {
   sort?: string
   versions?: boolean
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 export type Find = <T = TypeWithID>(args: FindArgs) => Promise<PaginatedDocs<T>>
@@ -218,6 +219,7 @@ type BaseVersionArgs = {
   sort?: string
   versions?: boolean
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 export type FindVersionsArgs = {
@@ -237,6 +239,7 @@ export type FindGlobalArgs = {
   req: PayloadRequest
   slug: string
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 export type UpdateGlobalVersionArgs<T = TypeWithID> = {
