@@ -20,7 +20,7 @@ export const defaultLoggerOptions: pino.LoggerOptions = {
 export const prettySyncLoggerDestination = prettifier({
   ...prettyOptions,
   destination: 1, // stdout
-  sync: true,
+  sync: false,
 })
 
 const getLogger = (
