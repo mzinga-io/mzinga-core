@@ -25,6 +25,7 @@ export type Arguments = {
   showHiddenFields?: boolean
   sort?: string
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 async function findVersions<T extends TypeWithVersion<T>>(
@@ -42,6 +43,7 @@ async function findVersions<T extends TypeWithVersion<T>>(
     showHiddenFields,
     sort,
     where,
+    projection,
   } = args
 
   try {
@@ -82,6 +84,7 @@ async function findVersions<T extends TypeWithVersion<T>>(
       req,
       sort,
       where: fullWhere,
+      projection,
     })
 
     // /////////////////////////////////////

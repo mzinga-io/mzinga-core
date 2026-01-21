@@ -30,6 +30,7 @@ export type Arguments = {
   showHiddenFields?: boolean
   sort?: string
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 async function find<T extends TypeWithID & Record<string, unknown>>(
@@ -73,6 +74,7 @@ async function find<T extends TypeWithID & Record<string, unknown>>(
       showHiddenFields,
       sort,
       where,
+      projection,
     } = args
 
     // /////////////////////////////////////
@@ -133,6 +135,7 @@ async function find<T extends TypeWithID & Record<string, unknown>>(
         req,
         sort: getQueryDraftsSort(sort),
         where: fullWhere,
+        projection,
       })
     } else {
       await validateQueryPaths({
@@ -151,6 +154,7 @@ async function find<T extends TypeWithID & Record<string, unknown>>(
         req,
         sort,
         where: fullWhere,
+        projection,
       }
 
       if (collectionConfig?.db?.find) {

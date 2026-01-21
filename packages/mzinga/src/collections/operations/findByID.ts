@@ -23,6 +23,7 @@ export type Arguments = {
   overrideAccess?: boolean
   req: PayloadRequest
   showHiddenFields?: boolean
+  projection?: Record<string, 0 | 1>
 }
 
 async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<T> {
@@ -59,6 +60,7 @@ async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<
       req: { fallbackLocale, locale, t },
       req,
       showHiddenFields,
+      projection,
     } = args
 
     // /////////////////////////////////////
@@ -79,6 +81,7 @@ async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<
         transactionID: req.transactionID,
       } as PayloadRequest,
       where: combineQueries({ id: { equals: id } }, accessResult),
+      projection,
     }
 
     // /////////////////////////////////////

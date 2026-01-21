@@ -22,6 +22,7 @@ export type Arguments = {
   overrideAccess?: boolean
   req: PayloadRequest
   showHiddenFields?: boolean
+  projection?: Record<string, 0 | 1>
 }
 
 async function findVersionByID<T extends TypeWithID = any>(
@@ -37,6 +38,7 @@ async function findVersionByID<T extends TypeWithID = any>(
     req: { fallbackLocale, locale, payload, t },
     req,
     showHiddenFields,
+    projection,
   } = args
 
   if (!id) {
@@ -72,6 +74,7 @@ async function findVersionByID<T extends TypeWithID = any>(
       pagination: false,
       req,
       where: fullWhere,
+      projection,
     })
 
     const result = versionsQuery.docs[0]

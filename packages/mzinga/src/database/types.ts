@@ -170,6 +170,7 @@ export type QueryDraftsArgs = {
   req: PayloadRequest
   sort?: string
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 export type QueryDrafts = <T = TypeWithID>(args: QueryDraftsArgs) => Promise<PaginatedDocs<T>>
@@ -179,6 +180,7 @@ export type FindOneArgs = {
   locale?: string
   req: PayloadRequest
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 export type FindOne = <T extends TypeWithID>(args: FindOneArgs) => Promise<T | null>
