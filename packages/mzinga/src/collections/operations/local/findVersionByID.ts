@@ -24,6 +24,7 @@ export type Options<T extends keyof GeneratedTypes['collections']> = {
   req?: PayloadRequest
   showHiddenFields?: boolean
   user?: Document
+  projection?: Record<string, 0 | 1>
 }
 
 export default async function findVersionByIDLocal<T extends keyof GeneratedTypes['collections']>(

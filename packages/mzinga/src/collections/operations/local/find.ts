@@ -29,6 +29,7 @@ export type Options<T extends keyof GeneratedTypes['collections']> = {
   sort?: string
   user?: Document
   where?: Where
+  projection?: Record<string, 0 | 1>
 }
 
 export default async function findLocal<T extends keyof GeneratedTypes['collections']>(

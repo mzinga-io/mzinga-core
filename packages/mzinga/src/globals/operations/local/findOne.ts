@@ -18,6 +18,7 @@ export type Options<T extends keyof GeneratedTypes['globals']> = {
   showHiddenFields?: boolean
   slug: T
   user?: Document
+  projection?: Record<string, 0 | 1>
 }
 
 export default async function findOneLocal<T extends keyof GeneratedTypes['globals']>(
