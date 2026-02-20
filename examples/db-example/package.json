@@ -27,7 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "@mzinga/eslint-config": "^1.1.1",
-    "payload": "^2.18.3",
+    "payload": "^3.74.0",
     "rimraf": "^4.1.2"
   },
   "peerDependencies": {
