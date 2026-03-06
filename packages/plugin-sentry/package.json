@@ -53,6 +53,6 @@
     "mzinga": "workspace:*",
     "nodemon": "3.0.3",
     "ts-jest": "^29.4.0",
-    "webpack": "5.94.0"
+    "webpack": "5.104.1"
   }
 }
