@@ -9,19 +9,19 @@ import type { SanitizedGlobalConfig } from '../config/types'
 import { isNumber } from '../../utilities/isNumber'
 import findOne from '../operations/findOne'
 
-export type FindOneGlobalResult = Promise<Response<Document> | void>
+export type FindOneGlobalResult = Response<Document> | void
 export type FindOneGlobalResponse = (
   req: PayloadRequest,
   res: Response,
   next: NextFunction,
-) => FindOneGlobalResult
+) => Promise<FindOneGlobalResult>
 
 export default function findOneHandler(globalConfig: SanitizedGlobalConfig): FindOneGlobalResponse {
   return async function handler(
     req: PayloadRequest,
     res: Response,
     next: NextFunction,
-  ): FindOneGlobalResult {
+  ): Promise<FindOneGlobalResult> {
     try {
       const { slug } = globalConfig
 
