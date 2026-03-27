@@ -231,6 +231,7 @@ jobs:
   tests-e2e:
     runs-on: [self-hosted]
     needs: core-build
+    if: ${{ vars.ENABLE_TESTS == '1' }}
     strategy:
       fail-fast: false
       matrix:
@@ -315,6 +316,7 @@ jobs:
   tests-type-generation:
     runs-on: [self-hosted]
     needs: core-build
+    if: ${{ vars.ENABLE_TESTS == '1' }}
 
     steps:
       - name: 'Cleanup build folder'
