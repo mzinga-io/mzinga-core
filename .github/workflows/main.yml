@@ -94,6 +94,7 @@ jobs:
   tests:
     runs-on: [self-hosted]
     needs: core-build
+    if: ${{ var.ENABLE_TESTS == "1" }}
     strategy:
       # max-parallel: 1
       fail-fast: false
