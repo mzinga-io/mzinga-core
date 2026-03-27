@@ -12,6 +12,7 @@ import { afterRead } from '../../fields/hooks/afterRead'
 import { commitTransaction } from '../../utilities/commitTransaction'
 import { initTransaction } from '../../utilities/initTransaction'
 import { killTransaction } from '../../utilities/killTransaction'
+import { Select } from 'mzinga/types'
 
 export type Arguments = {
   collection: Collection
@@ -22,6 +23,7 @@ export type Arguments = {
   overrideAccess?: boolean
   req: PayloadRequest
   showHiddenFields?: boolean
+  select?: Select
 }
 
 async function findVersionByID<T extends TypeWithID = any>(
@@ -37,6 +39,7 @@ async function findVersionByID<T extends TypeWithID = any>(
     req: { fallbackLocale, locale, payload, t },
     req,
     showHiddenFields,
+    select,
   } = args
 
   if (!id) {
@@ -72,6 +75,7 @@ async function findVersionByID<T extends TypeWithID = any>(
       pagination: false,
       req,
       where: fullWhere,
+      select,
     })
 
     const result = versionsQuery.docs[0]
