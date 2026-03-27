@@ -21,7 +21,7 @@ export const find: Find = async function find(
     req = {} as PayloadRequest,
     sort: sortArg,
     where,
-    projection,
+    select,
   },
 ) {
   const Model = this.collections[collection]
@@ -98,10 +98,9 @@ export const find: Find = async function find(
       paginationOptions.pagination = false
     }
   }
-
   const result = await Model.paginate(query, {
     ...paginationOptions,
-    projection: projection,
+    projection: select,
   })
 
   const docs = this.jsonParse ? JSON.parse(JSON.stringify(result.docs)) : result.docs

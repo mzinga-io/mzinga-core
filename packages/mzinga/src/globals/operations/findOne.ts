@@ -49,7 +49,6 @@ async function findOne<T extends Record<string, unknown>>(args: Args): Promise<T
     // /////////////////////////////////////
     // Perform database operation
     // /////////////////////////////////////
-
     let doc = await req.payload.db.findGlobal({
       slug,
       locale,

@@ -1,7 +1,7 @@
 import type { GeneratedTypes } from '../../..'
 import type { PayloadRequest, RequestContext } from '../../../express/types'
 import type { Payload } from '../../../mzinga'
-import type { Document } from '../../../types'
+import type { Document, Select } from '../../../types'
 
 import { APIError } from '../../../errors'
 import { createLocalReq } from '../../../utilities/createLocalReq'
@@ -24,7 +24,7 @@ export type Options<T extends keyof GeneratedTypes['collections']> = {
   req?: PayloadRequest
   showHiddenFields?: boolean
   user?: Document
-  projection?: Record<string, 0 | 1>
+  select?: Select
 }
 
 export default async function findByIDLocal<T extends keyof GeneratedTypes['collections']>(

@@ -2,7 +2,7 @@ import type { GeneratedTypes, RequestContext } from '../../..'
 import type { PaginatedDocs } from '../../../database/types'
 import type { PayloadRequest } from '../../../express/types'
 import type { Payload } from '../../../mzinga'
-import type { Document, Where } from '../../../types'
+import type { Document, Select, Where } from '../../../types'
 import type { TypeWithVersion } from '../../../versions/types'
 
 import { APIError } from '../../../errors'
@@ -23,7 +23,7 @@ export type Options<T extends keyof GeneratedTypes['globals']> = {
   sort?: string
   user?: Document
   where?: Where
-  projection?: Record<string, 0 | 1>
+  select?: Select
 }
 
 export default async function findVersionsLocal<T extends keyof GeneratedTypes['globals']>(

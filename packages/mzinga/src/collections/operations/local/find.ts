@@ -2,7 +2,7 @@ import type { GeneratedTypes } from '../../..'
 import type { PaginatedDocs } from '../../../database/types'
 import type { PayloadRequest, RequestContext } from '../../../express/types'
 import type { Payload } from '../../../mzinga'
-import type { Document, Where } from '../../../types'
+import type { Document, Select, Where } from '../../../types'
 
 import { APIError } from '../../../errors'
 import { createLocalReq } from '../../../utilities/createLocalReq'
@@ -29,7 +29,7 @@ export type Options<T extends keyof GeneratedTypes['collections']> = {
   sort?: string
   user?: Document
   where?: Where
-  projection?: Record<string, 0 | 1>
+  select?: Select
 }
 
 export default async function findLocal<T extends keyof GeneratedTypes['collections']>(

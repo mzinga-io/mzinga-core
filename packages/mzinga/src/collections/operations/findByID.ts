@@ -3,6 +3,7 @@ import type { FindOneArgs } from '../../database/types'
 import type { PayloadRequest } from '../../express/types'
 import type { Collection, TypeWithID } from '../config/types'
 
+import { Select } from 'mzinga/types'
 import executeAccess from '../../auth/executeAccess'
 import { combineQueries } from '../../database/combineQueries'
 import { NotFound } from '../../errors'
@@ -23,7 +24,7 @@ export type Arguments = {
   overrideAccess?: boolean
   req: PayloadRequest
   showHiddenFields?: boolean
-  projection?: Record<string, 0 | 1>
+  select?: Select
 }
 
 async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<T> {
@@ -60,8 +61,14 @@ async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<
       req: { fallbackLocale, locale, t },
       req,
       showHiddenFields,
-      projection,
     } = args
+
+    let select = {} as Select
+    if (req.query.select) {
+      for (const field of Object.keys(req.query.select)) {
+        select[field] = req.query.select[field] === '1' ? 1 : 0
+      }
+    }
 
     // /////////////////////////////////////
     // Access
@@ -81,7 +88,7 @@ async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<
         transactionID: req.transactionID,
       } as PayloadRequest,
       where: combineQueries({ id: { equals: id } }, accessResult),
-      projection,
+      select,
     }
 
     // /////////////////////////////////////

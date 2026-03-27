@@ -1,7 +1,7 @@
 import type { AccessResult } from '../../config/types'
 import type { PaginatedDocs } from '../../database/types'
 import type { PayloadRequest } from '../../express/types'
-import type { Where } from '../../types'
+import type { Select, Where } from '../../types'
 import type { Collection, TypeWithID } from '../config/types'
 
 import executeAccess from '../../auth/executeAccess'
@@ -30,7 +30,7 @@ export type Arguments = {
   showHiddenFields?: boolean
   sort?: string
   where?: Where
-  projection?: Record<string, 0 | 1>
+  select?: Select
 }
 
 async function find<T extends TypeWithID & Record<string, unknown>>(
@@ -74,7 +74,7 @@ async function find<T extends TypeWithID & Record<string, unknown>>(
       showHiddenFields,
       sort,
       where,
-      projection,
+      select,
     } = args
 
     // /////////////////////////////////////
@@ -135,7 +135,7 @@ async function find<T extends TypeWithID & Record<string, unknown>>(
         req,
         sort: getQueryDraftsSort(sort),
         where: fullWhere,
-        projection,
+        select,
       })
     } else {
       await validateQueryPaths({
@@ -154,7 +154,7 @@ async function find<T extends TypeWithID & Record<string, unknown>>(
         req,
         sort,
         where: fullWhere,
-        projection,
+        select,
       }
 
       if (collectionConfig?.db?.find) {
