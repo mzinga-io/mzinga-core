@@ -36,10 +36,10 @@ type Args<T> = {
   throwOnMissingFile?: boolean
 }
 
-type Result<T> = Promise<{
+type Result<T> = {
   data: T
   files: FileToSave[]
-}>
+}
 
 export const generateFileData = async <T>({
   collection: { config: collectionConfig },
@@ -50,7 +50,7 @@ export const generateFileData = async <T>({
   overwriteExistingFiles,
   req,
   throwOnMissingFile,
-}: Args<T>): Result<T> => {
+}: Args<T>): Promise<Result<T>> => {
   if (!collectionConfig.upload) {
     return {
       data,
