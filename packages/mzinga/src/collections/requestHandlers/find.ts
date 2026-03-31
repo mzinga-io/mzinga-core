@@ -29,7 +29,8 @@ export default async function findHandler<T extends TypeWithID = any>(
     let select = {} as Select
     if (req.query.select) {
       for (const field of Object.keys(req.query.select)) {
-        select[field] = req.query.select[field] === '1' ? 1 : 0
+        select[field] =
+          req.query.select[field] === '1' || req.query.select[field] === 'true' ? 1 : 0
       }
     }
     const result = await find({
