@@ -60,16 +60,9 @@ async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<
       overrideAccess = false,
       req: { fallbackLocale, locale, t },
       req,
+      select,
       showHiddenFields,
     } = args
-
-    let select = {} as Select
-    if (req.query.select) {
-      for (const field of Object.keys(req.query.select)) {
-        select[field] =
-          req.query.select[field] === '1' || req.query.select[field] === 'true' ? 1 : 0
-      }
-    }
     // /////////////////////////////////////
     // Access
     // /////////////////////////////////////
@@ -90,7 +83,6 @@ async function findByID<T extends TypeWithID>(incomingArgs: Arguments): Promise<
       where: combineQueries({ id: { equals: id } }, accessResult),
       select,
     }
-
     // /////////////////////////////////////
     // Find by ID
     // /////////////////////////////////////

@@ -1,7 +1,7 @@
 import type { NextFunction, Response } from 'express'
 
 import type { PayloadRequest } from '../../express/types'
-import type { Document } from '../../types'
+import type { Document, Select } from '../../types'
 
 import { sanitizeCollectionID } from '../../utilities/sanitizeCollectionID'
 import findByID from '../operations/findByID'
@@ -21,6 +21,13 @@ export default async function findByIDHandler(
     collectionSlug: req.collection.config.slug,
     payload: req.payload,
   })
+  let select = {} as Select
+  if (req.query.select) {
+    for (const field of Object.keys(req.query.select)) {
+      const selectValue = (req.query.select[field] || '').toString()
+      select[field] = selectValue === '1' || selectValue === 'true' ? 1 : 0
+    }
+  }
 
   try {
     const doc = await findByID({
@@ -29,6 +36,7 @@ export default async function findByIDHandler(
       depth: Number(req.query.depth),
       draft: req.query.draft === 'true',
       req,
+      select,
     })
     return res.json(doc)
   } catch (error) {
