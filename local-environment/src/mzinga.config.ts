@@ -1,3 +1,4 @@
+import { loader } from '@monaco-editor/react'
 import { webpackBundler } from '@mzinga/bundler-webpack'
 import { mongooseAdapter } from '@mzinga/db-mongodb'
 import FormBuilder from '@mzinga/plugin-form-builder'
@@ -8,8 +9,13 @@ import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import BeforeLogin from './components/BeforeLogin'
 import { MainMenu } from './globals/MainMenu'
+loader.config({
+  paths: {
+    vs: `http://localhost:3000/monaco-editor/min/vs`,
+  },
+})
 
-export default buildConfig({
+const config = buildConfig({
   collections: [Pages, Users],
   globals: [MainMenu],
   admin: {
@@ -26,6 +32,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),
+  telemetry: false,
   plugins: [
     FormBuilder({
       fields: {
@@ -33,4 +40,8 @@ export default buildConfig({
       },
     }),
   ],
+  graphQL: {
+    disablePlaygroundInProduction: false,
+  },
 })
+export default config

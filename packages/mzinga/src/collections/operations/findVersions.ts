@@ -1,6 +1,6 @@
 import type { PaginatedDocs } from '../../database/types'
 import type { PayloadRequest } from '../../express/types'
-import type { Where } from '../../types'
+import type { Select, Where } from '../../types'
 import type { TypeWithVersion } from '../../versions/types'
 import type { Collection } from '../config/types'
 
@@ -25,6 +25,7 @@ export type Arguments = {
   showHiddenFields?: boolean
   sort?: string
   where?: Where
+  select?: Select
 }
 
 async function findVersions<T extends TypeWithVersion<T>>(
@@ -42,6 +43,7 @@ async function findVersions<T extends TypeWithVersion<T>>(
     showHiddenFields,
     sort,
     where,
+    select,
   } = args
 
   try {
@@ -82,6 +84,7 @@ async function findVersions<T extends TypeWithVersion<T>>(
       req,
       sort,
       where: fullWhere,
+      select,
     })
 
     // /////////////////////////////////////

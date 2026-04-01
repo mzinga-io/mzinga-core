@@ -2,6 +2,9 @@ import type { GeneratedTypes } from '../../..'
 import type { PayloadRequest } from '../../../express/types'
 import type { Collection } from '../../config/types'
 
+import { fieldsProjection } from 'graphql-fields-list'
+import type { GraphQLResolveInfo } from 'graphql/type'
+import { ParsedQs } from 'qs'
 import isolateObjectProperty from '../../../utilities/isolateObjectProperty'
 import findByID from '../../operations/findByID'
 
@@ -17,12 +20,13 @@ export type Resolver<T> = (
     req: PayloadRequest
     res: Response
   },
+  info?: GraphQLResolveInfo,
 ) => Promise<T>
 
 export default function findByIDResolver<T extends keyof GeneratedTypes['collections']>(
   collection: Collection,
 ): Resolver<GeneratedTypes['collections'][T]> {
-  return async function resolver(_, args, context) {
+  return async function resolver(_, args, context, info) {
     let { req } = context
     const locale = req.locale
     const fallbackLocale = req.fallbackLocale
@@ -31,7 +35,6 @@ export default function findByIDResolver<T extends keyof GeneratedTypes['collect
     req.locale = args.locale || locale
     req.fallbackLocale = args.fallbackLocale || fallbackLocale
     if (!req.query) req.query = {}
-
     const draft: boolean =
       (args.draft ?? req.query?.draft === 'false')
         ? false
@@ -39,7 +42,7 @@ export default function findByIDResolver<T extends keyof GeneratedTypes['collect
           ? true
           : undefined
     if (typeof draft === 'boolean') req.query.draft = String(draft)
-
+    req.query.select = (info ? fieldsProjection(info) : {}) as unknown as ParsedQs
     context.req = req
 
     const options = {

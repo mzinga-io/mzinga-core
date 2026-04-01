@@ -1,7 +1,7 @@
 import type { GeneratedTypes, RequestContext } from '../../..'
 import type { PayloadRequest } from '../../../express/types'
 import type { Payload } from '../../../mzinga'
-import type { Document } from '../../../types'
+import type { Document, Select } from '../../../types'
 import type { TypeWithVersion } from '../../../versions/types'
 
 import { APIError } from '../../../errors'
@@ -20,6 +20,7 @@ export type Options<T extends keyof GeneratedTypes['globals']> = {
   showHiddenFields?: boolean
   slug: T
   user?: Document
+  select?: Select
 }
 
 export default async function findVersionByIDLocal<T extends keyof GeneratedTypes['globals']>(

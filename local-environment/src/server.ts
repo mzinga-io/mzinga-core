@@ -9,6 +9,7 @@ require('dotenv').config({
 })
 
 const app = express()
+app.use('/monaco-editor', express.static(path.resolve(__dirname, '../node_modules/monaco-editor')))
 
 app.get('/', (_, res) => {
   res.redirect('/admin')

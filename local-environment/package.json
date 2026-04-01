@@ -10,22 +10,53 @@
     "generate:graphQLSchema": "PAYLOAD_CONFIG_PATH=src/mzinga.config.ts mzinga generate:graphQLSchema"
   },
   "dependencies": {
+    "@faceless-ui/modal": "2.0.2",
+    "@monaco-editor/loader": "1.5.0",
+    "@monaco-editor/react": "^4.5.1",
     "@mzinga/bundler-webpack": "../packages/bundler-webpack",
     "@mzinga/db-mongodb": "../packages/db-mongodb",
-    "@mzinga/richtext-slate": "../packages/richtext-slate",
-    "@faceless-ui/modal": "2.0.2",
     "@mzinga/plugin-form-builder": "../packages/plugin-form-builder",
     "@mzinga/plugin-seo": "../packages/plugin-seo",
+    "@mzinga/richtext-slate": "../packages/richtext-slate",
     "dotenv": "^17.2.3",
     "express": "^4.19.2",
-    "mzinga": "../packages/mzinga"
+    "jsoneditor-react": "^3.1.2",
+    "monaco-editor": "^0.52.2",
+    "mzinga": "../packages/mzinga",
+    "react": "18.3.1",
+    "react-dom": "18.2.0",
+    "slate": "0.91.4",
+    "slate-history": "0.86.0",
+    "slate-hyperscript": "0.81.3",
+    "slate-react": "0.92.0",
+    "nodemailer": "^7.0.13",
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.67.0",
+    "@opentelemetry/core": "2.2.0",
+    "@opentelemetry/exporter-prometheus": "^0.208.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.208.0",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.208.0",
+    "@opentelemetry/instrumentation": "^0.208.0",
+    "@opentelemetry/resource-detector-container": "^0.7.0",
+    "@opentelemetry/resources": "2.2.0",
+    "@opentelemetry/sdk-node": "^0.208.0",
+    "@opentelemetry/sdk-trace-base": "2.2.0",
+    "@opentelemetry/sdk-trace-node": "2.2.0",
+    "@opentelemetry/semantic-conventions": "1.38.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",
+    "@types/react": "18.3.1",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.6",
     "ts-node": "^9.1.1",
     "typescript": "5.9.3"
+  },
+  "resolutions": {
+    "@types/mime": "2.0.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "nodemailer": "^7.0.9"
   }
 }

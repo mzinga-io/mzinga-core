@@ -12,7 +12,17 @@ import { withSession } from './withSession'
 
 export const find: Find = async function find(
   this: MongooseAdapter,
-  { collection, limit, locale, page, pagination, req = {} as PayloadRequest, sort: sortArg, where },
+  {
+    collection,
+    limit,
+    locale,
+    page,
+    pagination,
+    req = {} as PayloadRequest,
+    sort: sortArg,
+    where,
+    select,
+  },
 ) {
   const Model = this.collections[collection]
   const collectionConfig = this.payload.collections[collection].config
@@ -88,8 +98,10 @@ export const find: Find = async function find(
       paginationOptions.pagination = false
     }
   }
-
-  const result = await Model.paginate(query, paginationOptions)
+  const result = await Model.paginate(query, {
+    ...paginationOptions,
+    projection: select,
+  })
 
   const docs = this.jsonParse ? JSON.parse(JSON.stringify(result.docs)) : result.docs
 

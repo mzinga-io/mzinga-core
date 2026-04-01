@@ -4,7 +4,7 @@ import httpStatus from 'http-status'
 
 import type { PaginatedDocs } from '../../database/types'
 import type { PayloadRequest } from '../../express/types'
-import type { Where } from '../../types'
+import type { Select, Where } from '../../types'
 import type { TypeWithID } from '../config/types'
 
 import { isNumber } from '../../utilities/isNumber'
@@ -26,7 +26,13 @@ export default async function findHandler<T extends TypeWithID = any>(
         page = parsedPage
       }
     }
-
+    let select = {} as Select
+    if (req.query.select) {
+      for (const field of Object.keys(req.query.select)) {
+        const selectValue = (req.query.select[field] || '').toString()
+        select[field] = selectValue === '1' || selectValue === 'true' ? 1 : 0
+      }
+    }
     const result = await find({
       collection: req.collection,
       depth: isNumber(req.query.depth) ? Number(req.query.depth) : undefined,
@@ -36,6 +42,7 @@ export default async function findHandler<T extends TypeWithID = any>(
       req,
       sort: req.query.sort as string,
       where: req.query.where as Where, // This is a little shady
+      select,
     })
 
     return res.status(httpStatus.OK).json(result)

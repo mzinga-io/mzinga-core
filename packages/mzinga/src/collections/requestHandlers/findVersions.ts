@@ -35,6 +35,7 @@ export default async function findVersionsHandler<T extends TypeWithID = any>(
       req,
       sort: req.query.sort as string,
       where: req.query.where as Where, // This is a little shady,
+      select: req.query.select as any,
     }
 
     const result = await findVersions(options)

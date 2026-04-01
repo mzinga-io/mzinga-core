@@ -4,9 +4,10 @@ import prettifier from 'pino-pretty'
 export type PayloadLogger = pino.Logger
 
 const prettyOptions = {
-  colorize: true,
+  colorize: false,
   ignore: 'pid,hostname',
   translateTime: 'SYS:HH:MM:ss',
+  singleLine: true,
 }
 
 export const defaultLoggerOptions: pino.LoggerOptions = {
@@ -19,7 +20,7 @@ export const defaultLoggerOptions: pino.LoggerOptions = {
 export const prettySyncLoggerDestination = prettifier({
   ...prettyOptions,
   destination: 1, // stdout
-  sync: true,
+  sync: false,
 })
 
 const getLogger = (

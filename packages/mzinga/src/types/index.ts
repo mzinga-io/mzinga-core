@@ -15,6 +15,10 @@ export type Where = {
   or?: Where[]
 }
 
+export type Select = {
+  [key: string]: 1 | 0
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Document = any
 

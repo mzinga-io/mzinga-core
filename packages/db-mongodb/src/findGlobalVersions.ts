@@ -23,6 +23,7 @@ export const findGlobalVersions: FindGlobalVersions = async function findGlobalV
     skip,
     sort: sortArg,
     where,
+    select,
   },
 ) {
   const Model = this.versions[global]
@@ -72,6 +73,7 @@ export const findGlobalVersions: FindGlobalVersions = async function findGlobalV
     pagination,
     sort,
     useEstimatedCount,
+    select,
   }
 
   if (this.collation) {

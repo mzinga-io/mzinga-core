@@ -1,7 +1,7 @@
 import type { TypeWithID } from '../collections/config/types'
 import type { TypeWithID as GlobalsTypeWithID } from '../globals/config/types'
 import type { Payload } from '../mzinga'
-import type { Document, PayloadRequest, Where } from '../types'
+import type { Document, PayloadRequest, Select, Where } from '../types'
 import type { TypeWithVersion } from '../versions/types'
 
 export type { TypeWithVersion }
@@ -170,6 +170,7 @@ export type QueryDraftsArgs = {
   req: PayloadRequest
   sort?: string
   where?: Where
+  select?: Select
 }
 
 export type QueryDrafts = <T = TypeWithID>(args: QueryDraftsArgs) => Promise<PaginatedDocs<T>>
@@ -179,6 +180,7 @@ export type FindOneArgs = {
   locale?: string
   req: PayloadRequest
   where?: Where
+  select?: Select
 }
 
 export type FindOne = <T extends TypeWithID>(args: FindOneArgs) => Promise<T | null>
@@ -195,6 +197,7 @@ export type FindArgs = {
   sort?: string
   versions?: boolean
   where?: Where
+  select?: Select
 }
 
 export type Find = <T = TypeWithID>(args: FindArgs) => Promise<PaginatedDocs<T>>
@@ -218,6 +221,7 @@ type BaseVersionArgs = {
   sort?: string
   versions?: boolean
   where?: Where
+  select?: Select
 }
 
 export type FindVersionsArgs = {
@@ -237,6 +241,7 @@ export type FindGlobalArgs = {
   req: PayloadRequest
   slug: string
   where?: Where
+  select?: Select
 }
 
 export type UpdateGlobalVersionArgs<T = TypeWithID> = {
