@@ -1,5 +1,5 @@
 {
   "ext": "ts",
-  "exec": "ts-node src/server.ts -- -I",
+  "exec": "ts-node --require ./src/tracing.ts src/server.ts",
   "stdin": false
 }
