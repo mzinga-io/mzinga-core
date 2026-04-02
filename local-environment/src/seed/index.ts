@@ -5,6 +5,7 @@ import { basicForm } from './basicForm'
 import { contact } from './contact'
 import { contactForm } from './contactForm'
 import { home } from './home'
+import { nestedAndJsonFields } from './nestedAndJsonFields'
 import { signUp } from './signUp'
 import { signUpForm } from './signUpForm'
 
@@ -79,6 +80,11 @@ export const seed = async (payload: Payload) => {
   const { id: signupPageID } = await payload.create({
     collection: 'pages',
     data: signupPageJSON,
+  })
+  const nestedAndJsonFieldsJSON = JSON.parse(JSON.stringify(nestedAndJsonFields))
+  const { id: nestedAndJsonFieldsID } = await payload.create({
+    collection: 'nested-json-fields',
+    data: nestedAndJsonFieldsJSON,
   })
 
   await payload.updateGlobal({

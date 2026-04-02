@@ -5,6 +5,7 @@ import FormBuilder from '@mzinga/plugin-form-builder'
 import { slateEditor } from '@mzinga/richtext-slate'
 import { buildConfig } from 'mzinga/config'
 import path from 'path'
+import { NestedAndJsonFields } from './collections/NestedAndJsonFields'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import BeforeLogin from './components/BeforeLogin'
@@ -16,7 +17,7 @@ loader.config({
 })
 
 const config = buildConfig({
-  collections: [Pages, Users],
+  collections: [Pages, Users, NestedAndJsonFields],
   globals: [MainMenu],
   admin: {
     bundler: webpackBundler(),
