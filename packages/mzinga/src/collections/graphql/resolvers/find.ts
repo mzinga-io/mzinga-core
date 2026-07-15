@@ -52,7 +52,12 @@ export default function findResolver(collection: Collection): Resolver {
     let select = {} as Select
     for (const field of Object.keys(selectProjection)) {
       const selectValue = (selectProjection[field] || '').toString()
-      select[field.replace('docs.', '')] = selectValue === '1' || selectValue === 'true' ? 1 : 0
+      // Only the top-level path segment is meaningful for projection: a relationship
+      // field like `tags` stores raw related IDs, not the shape of its populated subfields
+      // (e.g. `tags.name`), so requesting `tags { name }` must still project the whole
+      // `tags` field or the relationship resolver has no raw value left to populate from.
+      const key = field.replace('docs.', '').split('.')[0]
+      select[key] = selectValue === '1' || selectValue === 'true' ? 1 : 0
     }
     const options = {
       collection,
