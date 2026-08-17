@@ -74,7 +74,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -87,7 +87,7 @@ jobs:
       - run: pnpm run build
 
       - name: Cache build
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -160,7 +160,7 @@ jobs:
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -280,7 +280,7 @@ jobs:
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -294,7 +294,7 @@ jobs:
 
       - name: Cache Playwright Browsers for Playwright's Version
         id: cache-playwright-browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
@@ -341,7 +341,7 @@ jobs:
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -390,7 +390,7 @@ jobs:
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
@@ -435,7 +435,7 @@ jobs:
           run_install: false
 
       - name: Restore build
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}
