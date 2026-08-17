@@ -488,7 +488,7 @@ jobs:
       - run: |
           pnpm version:all ${{ env.GitVersion_FullSemVer }}
 
-      - name: Release
+      - name: trigger release creation
         uses: softprops/action-gh-release@v3
         with:
           generate_release_notes: true
