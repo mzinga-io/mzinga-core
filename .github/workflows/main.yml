@@ -458,7 +458,7 @@ jobs:
           path: test-results/
           retention-days: 1
 
-  prepare-new-version:
+  release-new-version:
     needs: [tests]
     runs-on: [self-hosted]
     if: contains(github.ref, 'refs/heads/main')
@@ -470,6 +470,7 @@ jobs:
         uses: gittools/actions/gitversion/setup@v4.7.0
         with:
           versionSpec: '5.x'
+
       - name: Determine Version
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.7.0
