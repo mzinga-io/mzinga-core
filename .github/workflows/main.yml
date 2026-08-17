@@ -466,7 +466,7 @@ jobs:
   release-new-version:
     needs: [build-packages]
     runs-on: [self-hosted]
-    if: contains(github.ref, 'refs/heads/main')
+    if: ${{ contains(github.ref, 'refs/heads/main') || contains(github.head_ref, 'rc-') }}
     steps:
       - uses: actions/checkout@v6
         with:
