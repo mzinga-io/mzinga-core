@@ -58,9 +58,10 @@ jobs:
           fetch-depth: 25
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -122,9 +123,10 @@ jobs:
           dpkg --configure -a
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: install PostgreSQL manually
         run: |
@@ -266,9 +268,10 @@ jobs:
           dpkg --configure -a
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -326,9 +329,10 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -374,9 +378,10 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -418,9 +423,10 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -476,9 +482,10 @@ jobs:
         uses: gittools/actions/gitversion/execute@v4.7.0
 
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -503,9 +510,10 @@ jobs:
         with:
           fetch-depth: 1
       - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22.6.0
+          package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
