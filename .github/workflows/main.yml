@@ -505,6 +505,7 @@ jobs:
   publish-rc:
     needs: [build-packages]
     runs-on: [self-hosted]
+    environment: publish-rc
     if: contains(github.head_ref, 'rc-')
     steps:
       - uses: actions/checkout@v6
