@@ -22,7 +22,7 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 25
       - uses: dorny/paths-filter@v2
@@ -458,12 +458,48 @@ jobs:
           path: test-results/
           retention-days: 1
 
+  release-new-version:
+    needs: [tests]
+    runs-on: [self-hosted]
+    if: contains(github.ref, 'refs/heads/main')
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v4.7.0
+        with:
+          versionSpec: '5.x'
+
+      - name: Determine Version
+        id: version_step # step id used as a reference for output values
+        uses: gittools/actions/gitversion/execute@v4.7.0
+
+      - name: Use Node.js 22.6.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.6.0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9.7.0
+          run_install: false
+
+      - run: |
+          pnpm version:all ${{ env.GitVersion_FullSemVer }}
+
+      - name: trigger release creation
+        uses: softprops/action-gh-release@v3
+        with:
+          generate_release_notes: true
+
   publish-rc:
     needs: [tests]
     runs-on: [self-hosted]
     if: contains(github.head_ref, 'rc-')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 1
       - name: Use Node.js 22.6.0
