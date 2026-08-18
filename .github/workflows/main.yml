@@ -464,6 +464,8 @@ jobs:
           retention-days: 1
 
   release-new-version:
+    permissions:
+      contents: write
     needs: [build-packages]
     runs-on: [self-hosted]
     if: ${{ contains(github.ref, 'refs/heads/main') || contains(github.head_ref, 'rc-') }}
@@ -507,7 +509,7 @@ jobs:
           git commit -a --allow-empty --no-verify -m "chore: update packages to version '$new_version'"
           git tag -a "$new_version" -m "$new_version"
           git push origin HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF} -o ci.skip
-
+          git push origin tag $new_version
       - name: trigger release creation
         uses: softprops/action-gh-release@v3
         with:
