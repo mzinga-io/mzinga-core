@@ -497,10 +497,22 @@ jobs:
       - run: |
           pnpm version:all ${{ env.GitVersion_FullSemVer }}
 
+      - name: Add files and commit
+        run: |
+          new_version="${{ env.GitVersion_FullSemVer }}"
+          git config --global user.name "mzingabot"
+          git config --global user.email "mzingabot@mzinga.io"
+          git pull origin HEAD:$GITHUB_REF -o ci.skip
+          git add .
+          git commit -a --allow-empty -m "chore: update packages to version '$new_version'"
+          git tag -a "$new_version" -m "$new_version"
+          git push origin HEAD:$GITHUB_REF -o ci.skip
+
       - name: trigger release creation
         uses: softprops/action-gh-release@v3
         with:
           generate_release_notes: true
+          tag_name: ${{ env.GitVersion_FullSemVer }}
 
   publish-rc:
     needs: [build-packages]
