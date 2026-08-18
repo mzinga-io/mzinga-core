@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/live-preview-react",
-  "version": "1.0.10-PullRequest0091.14",
+  "version": "1.0.10-PullRequest0091.16",
   "description": "The official live preview React SDK for MZinga",
   "repository": {
     "type": "git",
