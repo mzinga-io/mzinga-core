@@ -43,7 +43,7 @@ Create a cloud account, connect your GitHub, and [deploy in minutes](https://mzi
 Before beginning to work with Payload, make sure you have all of the [required software](https://mzinga.io/docs/getting-started/installation).
 
 ```text
-npx create-payload-app@latest
+npx create-mzinga-app@latest
 ```
 
 Alternatively, it only takes about five minutes to [create an app from scratch](https://mzinga.io/docs/getting-started/installation#from-scratch).
