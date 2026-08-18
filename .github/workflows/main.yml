@@ -464,21 +464,26 @@ jobs:
           retention-days: 1
 
   release-new-version:
+    permissions:
+      contents: write
     needs: [build-packages]
     runs-on: [self-hosted]
-    if: contains(github.ref, 'refs/heads/main')
+    if: ${{ contains(github.ref, 'refs/heads/main') || contains(github.head_ref, 'rc-') }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '8.0.x'
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v4.7.0
+        uses: gittools/actions/gitversion/setup@v3
         with:
           versionSpec: '5.x'
 
       - name: Determine Version
         id: version_step # step id used as a reference for output values
-        uses: gittools/actions/gitversion/execute@v4.7.0
+        uses: gittools/actions/gitversion/execute@v3
 
       - name: Use Node.js 22.6.0
         uses: actions/setup-node@v7
@@ -489,16 +494,30 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
           run_install: false
 
       - run: |
           pnpm version:all ${{ env.GitVersion_FullSemVer }}
 
+      - name: Add files and commit
+        run: |
+          new_version="${{ env.GitVersion_FullSemVer }}"
+          git config --global user.name "mzingabot"
+          git config --global user.email "mzingabot@mzinga.io"
+          #git pull origin HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF} -o ci.skip
+          git add .
+          git commit -a --allow-empty --no-verify -m "chore: update packages to version '$new_version'"
+          git tag -a "$new_version" -m "$new_version"
+          git push origin HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF} -o ci.skip
+          git push origin tag $new_version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: trigger release creation
         uses: softprops/action-gh-release@v3
         with:
           generate_release_notes: true
+          tag_name: ${{ env.GitVersion_FullSemVer }}
 
   publish-rc:
     needs: [build-packages]
@@ -517,7 +536,6 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
           run_install: false
       - run: pnpm i
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
