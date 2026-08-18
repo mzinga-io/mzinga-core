@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/plugin-nested-docs",
-  "version": "1.0.8-PullRequest0089.16",
+  "version": "1.0.10-PullRequest0091.14",
   "description": "The official Nested Docs plugin for MZinga",
   "repository": {
     "type": "git",
