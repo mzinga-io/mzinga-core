@@ -1,6 +1,6 @@
 {
   "name": "@mzinga/bundler-vite",
-  "version": "1.0.8-PullRequest0089.16",
+  "version": "1.0.10-PullRequest0091.6",
   "description": "The officially supported Vite bundler adapter for MZinga",
   "repository": {
     "type": "git",
