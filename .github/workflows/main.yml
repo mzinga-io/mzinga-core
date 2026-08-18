@@ -511,7 +511,8 @@ jobs:
           git push origin HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF} -o ci.skip
           git push origin tag $new_version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: trigger release creation
         uses: softprops/action-gh-release@v3
