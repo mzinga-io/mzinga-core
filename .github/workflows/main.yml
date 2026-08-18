@@ -468,11 +468,12 @@ jobs:
       contents: write
     needs: [build-packages]
     runs-on: [self-hosted]
-    if: ${{ contains(github.ref, 'refs/heads/main') || contains(github.head_ref, 'rc-') }}
+    if: ${{ contains(github.ref, 'refs/heads/main') || contains(github.head_ref, 'test-release-') }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'

@@ -1,6 +1,6 @@
 {
   "name": "mzinga",
-  "version": "1.0.8-PullRequest0089.16",
+  "version": "1.0.10-PullRequest0091.12",
   "description": "Node, React and MongoDB Headless CMS and Application Framework",
   "license": "MIT",
   "main": "./dist/index.js",
