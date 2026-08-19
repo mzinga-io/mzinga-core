@@ -507,16 +507,8 @@ jobs:
           git add .
           git commit -a --allow-empty --no-verify -m "chore: update packages to version '$new_version'"
           git push origin HEAD:refs/heads/main-release -o ci.skip
-          git push origin tag $new_version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
-        with:
-          title: "chore(release): version '${{ env.GitVersion_FullSemVer }}'"
-          commit-message: ''
-          base: 'main'
 
   publish-rc:
     needs: [build-packages]
