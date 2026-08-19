@@ -1,7 +1,7 @@
 {
   "name": "@mzinga/plugin-form-builder",
   "description": "Form builder plugin for MZinga",
-  "version": "1.0.8-PullRequest0089.16",
+  "version": "1.0.10-PullRequest0091.18",
   "homepage:": "https://mzinga.io",
   "repository": {
     "type": "git",
