@@ -86,7 +86,7 @@
     "graphql-type-json": "0.3.2",
     "html-webpack-plugin": "5.5.3",
     "http-status": "1.6.2",
-    "i18next": "22.5.1",
+    "i18next": "26.3.4",
     "i18next-browser-languagedetector": "6.1.8",
     "i18next-http-middleware": "3.3.2",
     "is-buffer": "^2.0.5",
