@@ -97,7 +97,7 @@
     "rimraf": "4.4.1",
     "semver": "^7.5.4",
     "shelljs": "0.8.5",
-    "simple-git": "^3.28.0",
+    "simple-git": "^4.0.1",
     "slash": "3.0.0",
     "slate": "0.91.4",
     "tempfile": "^3.0.0",
