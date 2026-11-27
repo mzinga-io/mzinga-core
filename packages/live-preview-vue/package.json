@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@mzinga/eslint-config": "workspace:*",
-    "vue": "^3.0.0",
+    "vue": "^3.5.46",
     "mzinga": "workspace:*"
   },
   "peerDependencies": {

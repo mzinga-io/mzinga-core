@@ -134,6 +134,7 @@ const collectionSchema = joi.object().keys({
   hooks: joi.object({
     afterChange: joi.array().items(joi.func()),
     afterDelete: joi.array().items(joi.func()),
+    afterError: joi.func(),
     afterForgotPassword: joi.array().items(joi.func()),
     afterLogin: joi.array().items(joi.func()),
     afterLogout: joi.array().items(joi.func()),
