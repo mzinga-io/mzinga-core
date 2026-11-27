@@ -1,29 +1,72 @@
 name: Publish Packages to npmjs
+# Versions are not committed to the repository: the release tag is the source of truth.
+# This workflow checks out the tag, stamps every package with that version
+# (`pnpm version:all <tag>`) in the CI workspace only, then builds and publishes.
 on:
+  # Releases created manually in the GitHub UI (releases created by the
+  # release-new-version job use GITHUB_TOKEN and call this workflow via workflow_call)
   release:
     types: [created]
   workflow_dispatch:
-permissions: read-all
+    inputs:
+      tag:
+        description: 'Existing release tag to publish (e.g. 1.0.16)'
+        required: true
+        type: string
+      npm_tag:
+        description: 'npm dist-tag'
+        required: false
+        default: 'latest'
+        type: string
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Existing release tag to publish'
+        required: true
+        type: string
+      npm_tag:
+        description: 'npm dist-tag'
+        required: false
+        default: 'latest'
+        type: string
+permissions:
+  contents: read
 jobs:
   build:
     runs-on: [self-hosted]
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
+      NPM_DIST_TAG: ${{ inputs.npm_tag || (github.event.release.prerelease && 'rc') || 'latest' }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Validate release tag
+        run: |
+          if ! echo "$RELEASE_TAG" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$'; then
+            echo "::error::'$RELEASE_TAG' is not a valid semver release tag"
+            exit 1
+          fi
+          echo "Publishing $RELEASE_TAG with npm dist-tag '$NPM_DIST_TAG'"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
         with:
-          node-version: 22.6.0
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
           run_install: false
 
-      - run: pnpm i
+      - run: pnpm install --frozen-lockfile
+
+      - name: Set package versions from the release tag
+        run: pnpm version:all "$RELEASE_TAG"
+
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public
+      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag "$NPM_DIST_TAG"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

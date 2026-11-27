@@ -7,6 +7,15 @@ on:
   push:
     branches: ['main']
 
+env:
+  # Keep in sync with .nvmrc / .node-version and the packageManager field in package.json.
+  # Jobs that restore the workspace from cache set up node/pnpm before any checkout,
+  # so they cannot read those files.
+  NODE_VERSION: 22.23.5
+  PNPM_VERSION: 10.28.1
+  # GitVersion 7 CLI telemetry opt-out
+  DO_NOT_TRACK: '1'
+
 jobs:
   changes:
     runs-on: [self-hosted]
@@ -22,7 +31,7 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 25
       - uses: dorny/paths-filter@v4
@@ -53,14 +62,14 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 25
 
-      - name: Use Node.js 22.6.0
+      - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.6.0
+          node-version: ${{ env.NODE_VERSION }}
           package-manager-cache: true
 
       - name: Install pnpm
@@ -121,10 +130,10 @@ jobs:
           apt update
           dpkg --configure -a
 
-      - name: Use Node.js 22.6.0
+      - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.6.0
+          node-version: ${{ env.NODE_VERSION }}
           package-manager-cache: true
 
       - name: install PostgreSQL manually
@@ -155,7 +164,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Restore build
@@ -266,16 +275,16 @@ jobs:
           apt update
           dpkg --configure -a
 
-      - name: Use Node.js 22.6.0
+      - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.6.0
+          node-version: ${{ env.NODE_VERSION }}
           package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Restore build
@@ -307,7 +316,7 @@ jobs:
         run: pnpm exec playwright install-deps chromium
 
       - name: E2E Tests
-        uses: nick-fields/retry@v2
+        uses: nick-fields/retry@v4
         with:
           retry_on: error
           max_attempts: 2
@@ -327,16 +336,16 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - name: Use Node.js 22.6.0
+      - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.6.0
+          node-version: ${{ env.NODE_VERSION }}
           package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Restore build
@@ -376,16 +385,16 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - name: Use Node.js 22.6.0
+      - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.6.0
+          node-version: ${{ env.NODE_VERSION }}
           package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Restore build
@@ -395,7 +404,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
       - name: Build ${{ matrix.pkg }}
-        run: pnpm turbo run build --filter=${{ matrix.pkg }}
+        run: pnpm turbo run build --filter=./packages/${{ matrix.pkg }}
 
   plugins:
     runs-on: [self-hosted]
@@ -421,16 +430,16 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - name: Use Node.js 22.6.0
+      - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.6.0
+          node-version: ${{ env.NODE_VERSION }}
           package-manager-cache: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
         with:
-          version: 9.7.0
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Restore build
@@ -440,7 +449,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}
 
       - name: Build ${{ matrix.pkg }}
-        run: pnpm turbo run build --filter=${{ matrix.pkg }}
+        run: pnpm turbo run build --filter=./packages/${{ matrix.pkg }}
 
       - name: Test ${{ matrix.pkg }}
         run: pnpm --filter ${{ matrix.pkg }} run test
@@ -456,90 +465,93 @@ jobs:
           rm -rf ./* || true
           rm -rf ./.??* || true
           ls -la ./
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: test-results
           path: test-results/
           retention-days: 1
 
+  # Releases are tag-only: the version is computed with GitVersion 7 and applied to the
+  # packages at publish time (publish.yml runs `pnpm version:all <tag>` in CI), so nothing
+  # is committed back to the protected main branch (the ruleset blocks direct pushes).
   release-new-version:
     permissions:
       contents: write
     needs: [build-packages]
     runs-on: [self-hosted]
-    if: ${{ contains(github.ref, 'refs/heads/main') || contains(github.head_ref, 'rc-') }}
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && contains(github.head_ref, 'rc-')) }}
+    concurrency:
+      group: release-${{ github.ref }}
+      cancel-in-progress: false
+    outputs:
+      version: ${{ steps.version_step.outputs.fullSemVer }}
+      created: ${{ steps.tag.outputs.created }}
+      prerelease: ${{ github.event_name == 'pull_request' }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '11.0.x'
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v3
+        uses: gittools/actions/gitversion/setup@v5.0.0
         with:
-          versionSpec: '5.x'
+          versionSpec: '7.0.x'
 
       - name: Determine Version
         id: version_step # step id used as a reference for output values
-        uses: gittools/actions/gitversion/execute@v3
+        uses: gittools/actions/gitversion/execute@v5.0.0
 
-      - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v7
-        with:
-          node-version: 22.6.0
-          package-manager-cache: true
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          run_install: false
-
-      - run: |
-          pnpm version:all ${{ env.GitVersion_FullSemVer }}
-
-      - name: Add files and commit
-        run: |
-          new_version="${{ env.GitVersion_FullSemVer }}"
-          git config --global user.name "mzingabot"
-          git config --global user.email "mzingabot@mzinga.io"
-          #git pull origin HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF} -o ci.skip
-          git add .
-          git commit -a --allow-empty --no-verify -m "chore: update packages to version '$new_version'"
-          git tag -a "$new_version" -m "$new_version"
-          git push origin HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF} -o ci.skip
-          git push origin tag $new_version
+      - name: Create and push release tag
+        id: tag
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          VERSION: ${{ steps.version_step.outputs.fullSemVer }}
+        run: |
+          set -euo pipefail
+          if [ -z "$VERSION" ]; then
+            echo "::error::GitVersion did not return a version"
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" > /dev/null; then
+            echo "::warning::Tag $VERSION already exists, skipping release creation"
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "mzingabot"
+          git config user.email "mzingabot@mzinga.io"
+          git tag -a "$VERSION" -m "Release $VERSION" HEAD
+          git push origin "refs/tags/$VERSION"
+          echo "created=true" >> "$GITHUB_OUTPUT"
 
-      - name: trigger release creation
+      - name: Create GitHub release
+        if: steps.tag.outputs.created == 'true'
         uses: softprops/action-gh-release@v3
         with:
+          tag_name: ${{ steps.version_step.outputs.fullSemVer }}
           generate_release_notes: true
-          tag_name: ${{ env.GitVersion_FullSemVer }}
+          prerelease: ${{ github.event_name == 'pull_request' }}
 
-  publish-rc:
-    needs: [build-packages]
-    runs-on: [self-hosted]
-    if: contains(github.head_ref, 'rc-')
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-      - name: Use Node.js 22.6.0
-        uses: actions/setup-node@v7
-        with:
-          node-version: 22.6.0
-          package-manager-cache: true
+  # Releases created with GITHUB_TOKEN do not trigger other workflows (`on: release`),
+  # so publishing and the post-release comments are invoked explicitly.
+  publish:
+    needs: [release-new-version]
+    if: ${{ needs.release-new-version.outputs.created == 'true' }}
+    permissions:
+      contents: read
+    uses: ./.github/workflows/publish.yml
+    with:
+      tag: ${{ needs.release-new-version.outputs.version }}
+      npm_tag: ${{ needs.release-new-version.outputs.prerelease == 'true' && 'rc' || 'latest' }}
+    secrets: inherit
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          run_install: false
-      - run: pnpm i
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-      - run: pnpm --filter "./packages/**" publish --no-git-checks --access=public --tag=rc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  post-release:
+    needs: [release-new-version, publish]
+    if: ${{ needs.release-new-version.outputs.created == 'true' && needs.release-new-version.outputs.prerelease != 'true' }}
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/post-release.yml
+    secrets: inherit

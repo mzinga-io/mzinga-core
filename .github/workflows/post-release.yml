@@ -5,25 +5,31 @@ on:
     types:
       - published
   workflow_dispatch:
+  # Called by main.yml after release-new-version: releases created with GITHUB_TOKEN
+  # do not trigger the `release` event for other workflows.
+  workflow_call:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   post_release:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           # Only needed if debugging on a branch other than default
           # ref: ${{ github.event.release.target_commitish || github.ref }}
-      - run: echo "npm_version=$(npm pkg get version | tr -d '"')" >> "$GITHUB_ENV"
       - uses: ./.github/actions/release-commenter
         continue-on-error: true
         env:
           ACTIONS_STEP_DEBUG: true
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag-filter: 'v\d'
-
+          # No tag-filter: release tags have no prefix (e.g. 1.0.16), the former 'v\d' filter never matched
 
           # Change to blank to disable commenting
           # comment-template: ''
